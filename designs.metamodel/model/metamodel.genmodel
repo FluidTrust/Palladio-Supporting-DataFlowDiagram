@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/designs.metamodel/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/designs.metamodel/src-gen" creationIcons="false"
     editDirectory="/designs.metamodel.edit/src-gen" editorDirectory="/designs.metamodel.editor/src-gen"
     modelPluginID="designs.metamodel" modelName="Metamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
@@ -8,5 +9,20 @@
   <foreignModel>metamodel.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Metamodel" basePackage="designs" disposableProviderFactory="true"
-      ecorePackage="metamodel.ecore#/"/>
+      ecorePackage="metamodel.ecore#/">
+    <genClasses ecoreClass="metamodel.ecore#//DataFlowDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlowDiagram/components"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Terminator"/>
+    <genClasses ecoreClass="metamodel.ecore#//Process"/>
+    <genClasses ecoreClass="metamodel.ecore#//Store"/>
+    <genClasses ecoreClass="metamodel.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Component/outputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Component/name"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//InternalComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//InternalComponent/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ExternalComponent"/>
+  </genPackages>
 </genmodel:GenModel>
