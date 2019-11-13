@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:metamodel="http://www.example.org/metamodel" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_OevgwAYzEeqy8OlBsTdJNA" selectedViews="_JmAawAY0Eeqy8OlBsTdJNA" version="14.1.0.201810161215">
+    <semanticResources>basic.metamodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_JmAawAY0Eeqy8OlBsTdJNA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_LL-6EAY0Eeqy8OlBsTdJNA" name="BaseDiagram" repPath="#_LLLo0AY0Eeqy8OlBsTdJNA">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']"/>
+        <target xmi:type="metamodel:DataFlowDiagram" href="basic.metamodel#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_LLLo0AY0Eeqy8OlBsTdJNA" name="BaseDiagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_LL6BkAY0Eeqy8OlBsTdJNA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_LL6BkQY0Eeqy8OlBsTdJNA"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_LMZw0AY0Eeqy8OlBsTdJNA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_LMZw0QY0Eeqy8OlBsTdJNA" type="Sirius" element="_LLLo0AY0Eeqy8OlBsTdJNA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_LMmlIAY0Eeqy8OlBsTdJNA" type="2001" element="_LLubYAY0Eeqy8OlBsTdJNA">
+          <children xmi:type="notation:Node" xmi:id="_LMsrwAY0Eeqy8OlBsTdJNA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_LMsrwQY0Eeqy8OlBsTdJNA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LM6uMAY0Eeqy8OlBsTdJNA" type="3003" element="_LLz68AY0Eeqy8OlBsTdJNA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LM6uMQY0Eeqy8OlBsTdJNA" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LM6uMgY0Eeqy8OlBsTdJNA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_LMmlIQY0Eeqy8OlBsTdJNA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LMmlIgY0Eeqy8OlBsTdJNA" x="84" y="24" width="100" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_YMrJMAY0Eeqy8OlBsTdJNA" type="2001" element="_YMgxIgY0Eeqy8OlBsTdJNA">
+          <children xmi:type="notation:Node" xmi:id="_YMrwQAY0Eeqy8OlBsTdJNA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_YMrwQQY0Eeqy8OlBsTdJNA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_YMsXUAY0Eeqy8OlBsTdJNA" type="3003" element="_YMhYMAY0Eeqy8OlBsTdJNA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_YMsXUQY0Eeqy8OlBsTdJNA" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YMsXUgY0Eeqy8OlBsTdJNA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_YMrJMQY0Eeqy8OlBsTdJNA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YMrJMgY0Eeqy8OlBsTdJNA" width="100" height="50"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_LMZw0gY0Eeqy8OlBsTdJNA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_LLubYAY0Eeqy8OlBsTdJNA" width="10" height="5" resizeKind="NSEW">
+      <target xmi:type="metamodel:Terminator" href="basic.metamodel#//@components.0"/>
+      <semanticElements xmi:type="metamodel:Terminator" href="basic.metamodel#//@components.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_LLz68AY0Eeqy8OlBsTdJNA" labelSize="12" labelPosition="node" width="10" height="5" color="194,239,255">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_YMgxIgY0Eeqy8OlBsTdJNA" width="10" height="5" resizeKind="NSEW">
+      <target xmi:type="metamodel:Terminator" href="basic.metamodel#//@components.3"/>
+      <semanticElements xmi:type="metamodel:Terminator" href="basic.metamodel#//@components.3"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_YMhYMAY0Eeqy8OlBsTdJNA" labelSize="12" labelPosition="node" width="10" height="5" color="194,239,255">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_LLXPAAY0Eeqy8OlBsTdJNA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/editor.design/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@defaultLayer"/>
+    <target xmi:type="metamodel:DataFlowDiagram" href="basic.metamodel#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
