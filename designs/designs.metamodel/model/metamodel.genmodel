@@ -8,7 +8,7 @@
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>metamodel.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Metamodel" basePackage="designs" disposableProviderFactory="true"
+  <genPackages prefix="Metamodel" basePackage="designs.metamodel.sample" disposableProviderFactory="true"
       ecorePackage="metamodel.ecore#/">
     <genClasses ecoreClass="metamodel.ecore#//DataFlowDiagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlowDiagram/components"/>
