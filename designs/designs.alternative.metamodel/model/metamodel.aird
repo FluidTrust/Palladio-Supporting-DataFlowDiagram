@@ -267,9 +267,9 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_svT34AYVEeqUg7LOh-SWqw" name="DFD" tooltipText="" outgoingEdges="_cFQDdgYXEeqUg7LOh-SWqw" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="metamodel.ecore#//DFD"/>
-      <semanticElements xmi:type="ecore:EClass" href="metamodel.ecore#//DFD"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_svT34AYVEeqUg7LOh-SWqw" name="DataFlowDiagram" tooltipText="" outgoingEdges="_cFQDdgYXEeqUg7LOh-SWqw" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="metamodel.ecore#//DataFlowDiagram"/>
+      <semanticElements xmi:type="ecore:EClass" href="metamodel.ecore#//DataFlowDiagram"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -346,8 +346,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_cFQDdgYXEeqUg7LOh-SWqw" name="[0..*] components" sourceNode="_svT34AYVEeqUg7LOh-SWqw" targetNode="_NGXrMAeJEeqY57wps8XSsw">
-      <target xmi:type="ecore:EReference" href="metamodel.ecore#//DFD/components"/>
-      <semanticElements xmi:type="ecore:EReference" href="metamodel.ecore#//DFD/components"/>
+      <target xmi:type="ecore:EReference" href="metamodel.ecore#//DataFlowDiagram/components"/>
+      <semanticElements xmi:type="ecore:EReference" href="metamodel.ecore#//DataFlowDiagram/components"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cFQDdwYXEeqUg7LOh-SWqw" description="_rDR-cQYWEeqUg7LOh-SWqw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cFQDeQYXEeqUg7LOh-SWqw" showIcon="false">
           <customFeatures>labelSize</customFeatures>

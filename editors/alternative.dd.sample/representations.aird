@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dd="http://www.example.org/dd" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description">
+  <viewpoint:DAnalysis uid="_A92ZMAeUEeqlo_1PhWsXIA" selectedViews="_e8wAcAeVEeqkl5wKzHwZRQ _1mbGkAeWEeqkl5wKzHwZRQ" version="14.1.0.201810161215">
+    <semanticResources>basic.dd</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_e8wAcAeVEeqkl5wKzHwZRQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_fPR64AeVEeqkl5wKzHwZRQ" name="new Base" repPath="#_fPCDQAeVEeqkl5wKzHwZRQ">
+        <description xmi:type="description_1:TreeDescription" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']"/>
+        <target xmi:type="dd:DataDictionary" href="MyDd.dd#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_VMLBwAeWEeqkl5wKzHwZRQ" name="new Base" repPath="#_VMDtAAeWEeqkl5wKzHwZRQ">
+        <description xmi:type="description_1:TreeDescription" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']"/>
+        <target xmi:type="dd:DataDictionary" href="basic.dd#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_1mbGkAeWEeqkl5wKzHwZRQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_1_NaAQeWEeqkl5wKzHwZRQ" name="new Table" repPath="#_1_IhgAeWEeqkl5wKzHwZRQ">
+        <description xmi:type="description_2:EditionTableDescription" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Table']"/>
+        <target xmi:type="dd:DataDictionary" href="basic.dd#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <tree:DTree uid="_fPCDQAeVEeqkl5wKzHwZRQ" name="new Base">
+    <target xmi:type="dd:DataDictionary" href="MyDd.dd#/"/>
+    <description xmi:type="description_1:TreeDescription" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']"/>
+  </tree:DTree>
+  <tree:DTree uid="_VMDtAAeWEeqkl5wKzHwZRQ" name="new Base">
+    <target xmi:type="dd:DataDictionary" href="basic.dd#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_VMGwUAeWEeqkl5wKzHwZRQ" name="one">
+      <target xmi:type="dd:Element" href="basic.dd#//@elements.0"/>
+      <semanticElements xmi:type="dd:Element" href="basic.dd#//@elements.0"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_VMH-cAeWEeqkl5wKzHwZRQ"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@subItemMappings[name='ElementNode']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_YqGhMAeWEeqkl5wKzHwZRQ" name="two">
+      <target xmi:type="dd:Element" href="basic.dd#//@elements.1"/>
+      <semanticElements xmi:type="dd:Element" href="basic.dd#//@elements.1"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_YqHIQAeWEeqkl5wKzHwZRQ"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']/@subItemMappings[name='ElementNode']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_1:TreeDescription" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='all']/@ownedRepresentations[name='Base']"/>
+  </tree:DTree>
+  <table:DTable uid="_1_IhgAeWEeqkl5wKzHwZRQ" name="new Table" headerColumnWidth="1071">
+    <target xmi:type="dd:DataDictionary" href="basic.dd#/"/>
+    <lines xmi:type="table:DLine" uid="_guLP4AeXEeqkl5wKzHwZRQ" label="one">
+      <target xmi:type="dd:Element" href="basic.dd#//@elements.0"/>
+      <semanticElements xmi:type="dd:Element" href="basic.dd#//@elements.0"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Table']/@ownedLineMappings[name='ElementLine']"/>
+      <cells xmi:type="table:DCell" uid="_7LMhRAeXEeqkl5wKzHwZRQ" label="[]" column="_7LMhQgeXEeqkl5wKzHwZRQ">
+        <target xmi:type="dd:Element" href="basic.dd#//@elements.0"/>
+        <semanticElements xmi:type="dd:Element" href="basic.dd#//@elements.0"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_guLP4geXEeqkl5wKzHwZRQ" label="two">
+      <target xmi:type="dd:Element" href="basic.dd#//@elements.1"/>
+      <semanticElements xmi:type="dd:Element" href="basic.dd#//@elements.1"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Table']/@ownedLineMappings[name='ElementLine']"/>
+      <cells xmi:type="table:DCell" uid="_7LNIUAeXEeqkl5wKzHwZRQ" label="[]" column="_7LMhQgeXEeqkl5wKzHwZRQ">
+        <target xmi:type="dd:Element" href="basic.dd#//@elements.1"/>
+        <semanticElements xmi:type="dd:Element" href="basic.dd#//@elements.1"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" uid="_7LMhQgeXEeqkl5wKzHwZRQ" cells="_7LMhRAeXEeqkl5wKzHwZRQ _7LNIUAeXEeqkl5wKzHwZRQ" width="30" featureName="composition">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Table']/@ownedColumnMappings[name='compositeColumn']"/>
+    </columns>
+    <description xmi:type="description_2:EditionTableDescription" href="platform:/resource/dd.editor/description/editor.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Table']"/>
+  </table:DTable>
+</xmi:XMI>

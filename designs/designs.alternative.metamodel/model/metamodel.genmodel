@@ -10,8 +10,8 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Metamodel" basePackage="designs.alternative" disposableProviderFactory="true"
       ecorePackage="metamodel.ecore#/">
-    <genClasses ecoreClass="metamodel.ecore#//DFD">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DFD/components"/>
+    <genClasses ecoreClass="metamodel.ecore#//DataFlowDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlowDiagram/components"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//DataFlow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlow/data"/>
