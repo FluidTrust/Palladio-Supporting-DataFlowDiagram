@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:metamodelalt="http://www.example.org/metamodelalt" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_vKsJgAenEeqg3f_7DayDag" selectedViews="_nWL18AeoEeqg3f_7DayDag" version="14.1.0.201810161215">
+    <semanticResources>basic.metamodelalt</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_nWL18AeoEeqg3f_7DayDag">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_n8ZhYAeoEeqg3f_7DayDag" name="new Base" repPath="#_n7UjUAeoEeqg3f_7DayDag">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']"/>
+        <target xmi:type="metamodelalt:DataFlowDiagram" href="basic.metamodelalt#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_n7UjUAeoEeqg3f_7DayDag" name="new Base">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_n8XFIAeoEeqg3f_7DayDag" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_n8XFIQeoEeqg3f_7DayDag"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_n8zKAAeoEeqg3f_7DayDag" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_n8zKAQeoEeqg3f_7DayDag" type="Sirius" element="_n7UjUAeoEeqg3f_7DayDag" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_n8_XQAeoEeqg3f_7DayDag" type="2001" element="_n79cgAeoEeqg3f_7DayDag">
+          <children xmi:type="notation:Node" xmi:id="_n9Fd4AeoEeqg3f_7DayDag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_n9Fd4QeoEeqg3f_7DayDag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_21WSoAeoEeqg3f_7DayDag" type="3003" element="_20ZQYQeoEeqg3f_7DayDag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_21WSoQeoEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_21WSogeoEeqg3f_7DayDag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_n8_XQQeoEeqg3f_7DayDag" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n8_XQgeoEeqg3f_7DayDag" x="288" y="68" width="100" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_21VrkAeoEeqg3f_7DayDag" type="2001" element="_20Z3cQeoEeqg3f_7DayDag">
+          <children xmi:type="notation:Node" xmi:id="_21VrkweoEeqg3f_7DayDag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_21VrlAeoEeqg3f_7DayDag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5VCBIAeoEeqg3f_7DayDag" type="3016" element="_5UxicAeoEeqg3f_7DayDag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5VCBIQeoEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5VCBIgeoEeqg3f_7DayDag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_21VrkQeoEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_21VrkgeoEeqg3f_7DayDag" x="104" y="160" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_aRolEAepEeqg3f_7DayDag" type="2001" element="_aQMaowepEeqg3f_7DayDag">
+          <children xmi:type="notation:Node" xmi:id="_aRpMIAepEeqg3f_7DayDag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_aRpMIQepEeqg3f_7DayDag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gFO7YAepEeqg3f_7DayDag" type="3003" element="_gD9JAAepEeqg3f_7DayDag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gFO7YQepEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gFO7YgepEeqg3f_7DayDag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_aRolEQepEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aRolEgepEeqg3f_7DayDag" x="392" y="136" width="113" height="49"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_5PgWAAeqEeqg3f_7DayDag" type="2001" element="_5PdSsAeqEeqg3f_7DayDag">
+          <children xmi:type="notation:Node" xmi:id="_5Pg9EAeqEeqg3f_7DayDag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5Pg9EQeqEeqg3f_7DayDag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5Pg9EgeqEeqg3f_7DayDag" type="3003" element="_5PdSsQeqEeqg3f_7DayDag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5Pg9EweqEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Pg9FAeqEeqg3f_7DayDag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5PgWAQeqEeqg3f_7DayDag" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5PgWAgeqEeqg3f_7DayDag" x="296" y="308" width="100" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_z7j6sAerEeqg3f_7DayDag" type="2001" element="_z7fpQAerEeqg3f_7DayDag">
+          <children xmi:type="notation:Node" xmi:id="_z7j6swerEeqg3f_7DayDag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_z7j6tAerEeqg3f_7DayDag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_z7khwAerEeqg3f_7DayDag" type="3016" element="_z7fpQQerEeqg3f_7DayDag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_z7khwQerEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z7khwgerEeqg3f_7DayDag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_z7j6sQerEeqg3f_7DayDag" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z7j6sgerEeqg3f_7DayDag" x="524" y="92" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_8kF2wAerEeqg3f_7DayDag" type="2001" element="_8kAXMAerEeqg3f_7DayDag">
+          <children xmi:type="notation:Node" xmi:id="_8kF2wwerEeqg3f_7DayDag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_8kF2xAerEeqg3f_7DayDag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8kGd0AerEeqg3f_7DayDag" type="3016" element="_8kAXMQerEeqg3f_7DayDag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8kGd0QerEeqg3f_7DayDag" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8kGd0gerEeqg3f_7DayDag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_8kF2wQerEeqg3f_7DayDag" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8kF2wgerEeqg3f_7DayDag" x="480" y="216" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_n8zKAgeoEeqg3f_7DayDag"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_n79cgAeoEeqg3f_7DayDag" name="Store 1" width="10" height="5">
+      <target xmi:type="metamodelalt:Store" href="basic.metamodelalt#//@components.0"/>
+      <semanticElements xmi:type="metamodelalt:Store" href="basic.metamodelalt#//@components.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_20ZQYQeoEeqg3f_7DayDag" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="10" height="5" color="255,255,255">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_5PdSsAeqEeqg3f_7DayDag" name="new Store" width="10" height="5">
+      <target xmi:type="metamodelalt:Store" href="basic.metamodelalt#//@components.3"/>
+      <semanticElements xmi:type="metamodelalt:Store" href="basic.metamodelalt#//@components.3"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_5PdSsQeqEeqg3f_7DayDag" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="10" height="5" color="255,255,255">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_20Z3cQeoEeqg3f_7DayDag" name="Function 1" width="8" height="8">
+      <target xmi:type="metamodelalt:Function" href="basic.metamodelalt#//@components.2"/>
+      <semanticElements xmi:type="metamodelalt:Function" href="basic.metamodelalt#//@components.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_5UxicAeoEeqg3f_7DayDag" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_z7fpQAerEeqg3f_7DayDag" name="new Function" width="8" height="8">
+      <target xmi:type="metamodelalt:Function" href="basic.metamodelalt#//@components.4"/>
+      <semanticElements xmi:type="metamodelalt:Function" href="basic.metamodelalt#//@components.4"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_z7fpQQerEeqg3f_7DayDag" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_8kAXMAerEeqg3f_7DayDag" name="new Terminator" width="8" height="8">
+      <target xmi:type="metamodelalt:Function" href="basic.metamodelalt#//@components.5"/>
+      <semanticElements xmi:type="metamodelalt:Function" href="basic.metamodelalt#//@components.5"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_8kAXMQerEeqg3f_7DayDag" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_aQMaowepEeqg3f_7DayDag" name="Terminator 1" width="10" height="5">
+      <target xmi:type="metamodelalt:Terminator" href="basic.metamodelalt#//@components.1"/>
+      <semanticElements xmi:type="metamodelalt:Terminator" href="basic.metamodelalt#//@components.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_gD9JAAepEeqg3f_7DayDag" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="10" height="5" color="255,255,255">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_n7gwkAeoEeqg3f_7DayDag"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/editor.alt.design/description/alt.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer"/>
+    <target xmi:type="metamodelalt:DataFlowDiagram" href="basic.metamodelalt#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

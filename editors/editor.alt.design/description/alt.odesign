@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="alt" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Base" domainClass="metamodelalt::DataFlowDiagram" enablePopupBars="true">
+      <metamodel href="http://www.example.org/metamodelalt#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="StoreNode" domainClass="metamodelalt::Store">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelPosition="node" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="FunctionNode" domainClass="metamodelalt::Function">
+          <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="8" labelPosition="node">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="TerminatorNode" domainClass="metamodelalt::Terminator">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelPosition="node" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="DataFlowEdge" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']" targetFinderExpression="var:components" domainClass="metamodelalt::DataFlow" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createStore" label="new Store" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="metamodelalt::Store" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Store"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createFunction" label="new Function" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="metamodelalt::Function" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Function"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createTerminator" label="new Terminator" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="metamodelalt::Function" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Terminator"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="editor.alt.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metamodelalt:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metamodelalt="http://www.example.org/metamodelalt">
+  <components xsi:type="metamodelalt:Store" name="Store 1"/>
+  <components xsi:type="metamodelalt:Terminator" name="Terminator 1"/>
+  <components xsi:type="metamodelalt:Function" name="Function 1"/>
+  <components xsi:type="metamodelalt:Store" name="new Store"/>
+  <components xsi:type="metamodelalt:Function" name="new Function"/>
+  <components xsi:type="metamodelalt:Function" name="new Terminator"/>
+</metamodelalt:DataFlowDiagram>
