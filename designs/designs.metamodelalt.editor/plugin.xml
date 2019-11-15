@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated metamodelalt -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="designs.metamodelalt.presentation.MetamodelaltModelWizardID"
+            name="%_UI_MetamodelaltModelWizard_label"
+            class="designs.metamodelalt.presentation.MetamodelaltModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MetamodelaltModelFile.gif">
+         <description>%_UI_MetamodelaltModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated metamodelalt -->
+      <editor
+            id="designs.metamodelalt.presentation.MetamodelaltEditorID"
+            name="%_UI_MetamodelaltEditor_label"
+            icon="icons/full/obj16/MetamodelaltModelFile.gif"
+            extensions="metamodelalt"
+            class="designs.metamodelalt.presentation.MetamodelaltEditor"
+            contributorClass="designs.metamodelalt.presentation.MetamodelaltActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
