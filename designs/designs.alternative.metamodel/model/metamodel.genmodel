@@ -21,5 +21,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Process/target"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//Data"/>
+    <genClasses ecoreClass="metamodel.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Component/name"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Store">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Store/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Store/target"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Terminator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Terminator/target"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
