@@ -306,13 +306,22 @@ public interface MetamodelaltPackage extends EPackage {
 	int DATA_FLOW__DATA = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = 1;
+	int DATA_FLOW_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Data Flow</em>' class.
@@ -509,6 +518,17 @@ public interface MetamodelaltPackage extends EPackage {
 	EReference getDataFlow_Data();
 
 	/**
+	 * Returns the meta object for the attribute '{@link designs.metamodelalt.DataFlow#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see designs.metamodelalt.DataFlow#getName()
+	 * @see #getDataFlow()
+	 * @generated
+	 */
+	EAttribute getDataFlow_Name();
+
+	/**
 	 * Returns the meta object for class '{@link designs.metamodelalt.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -675,6 +695,14 @@ public interface MetamodelaltPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_FLOW__DATA = eINSTANCE.getDataFlow_Data();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_FLOW__NAME = eINSTANCE.getDataFlow_Name();
 
 		/**
 		 * The meta object literal for the '{@link designs.metamodelalt.impl.DataImpl <em>Data</em>}' class.

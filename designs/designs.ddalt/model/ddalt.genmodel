@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/designs.ddalt/src-gen" creationIcons="false" editDirectory="/designs.ddalt.edit/src-gen"
+    editorDirectory="/designs.ddalt.editor/src-gen" modelPluginID="designs.ddalt"
+    modelName="Ddalt" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ddalt.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Ddalt" basePackage="designs" disposableProviderFactory="true"
+      ecorePackage="ddalt.ecore#/">
+    <genClasses ecoreClass="ddalt.ecore#//DataDictionary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddalt.ecore#//DataDictionary/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Definition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Definition/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Definition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Unit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddalt.ecore#//Unit/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Unit/range"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Unit/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Range">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddalt.ecore#//Range/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddalt.ecore#//Range/to"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Description"/>
+    <genClasses ecoreClass="ddalt.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddalt.ecore#//Comment/text"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Composition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddalt.ecore#//Composition/selections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddalt.ecore#//Composition/iterations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddalt.ecore#//Composition/options"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Iteration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Iteration/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Iteration/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Option">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Option/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Option/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//Selection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Selection/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddalt.ecore#//Selection/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="ddalt.ecore#//DefinitionName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddalt.ecore#//DefinitionName/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

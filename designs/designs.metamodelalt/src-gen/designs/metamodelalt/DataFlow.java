@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link designs.metamodelalt.DataFlow#getData <em>Data</em>}</li>
+ *   <li>{@link designs.metamodelalt.DataFlow#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see designs.metamodelalt.MetamodelaltPackage#getDataFlow()
@@ -34,5 +35,27 @@ public interface DataFlow extends EObject {
 	 * @generated
 	 */
 	EList<Data> getData();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see designs.metamodelalt.MetamodelaltPackage#getDataFlow_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link designs.metamodelalt.DataFlow#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // DataFlow

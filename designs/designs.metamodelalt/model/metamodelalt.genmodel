@@ -29,6 +29,7 @@
     </genClasses>
     <genClasses ecoreClass="metamodelalt.ecore#//DataFlow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelalt.ecore#//DataFlow/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelalt.ecore#//DataFlow/name"/>
     </genClasses>
     <genClasses ecoreClass="metamodelalt.ecore#//Data">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelalt.ecore#//Data/name"/>

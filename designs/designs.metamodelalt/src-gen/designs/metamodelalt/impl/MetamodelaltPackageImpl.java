@@ -290,6 +290,16 @@ public class MetamodelaltPackageImpl extends EPackageImpl implements Metamodelal
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDataFlow_Name() {
+		return (EAttribute) dataFlowEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getData() {
 		return dataEClass;
 	}
@@ -353,6 +363,7 @@ public class MetamodelaltPackageImpl extends EPackageImpl implements Metamodelal
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__DATA);
+		createEAttribute(dataFlowEClass, DATA_FLOW__NAME);
 
 		dataEClass = createEClass(DATA);
 		createEAttribute(dataEClass, DATA__NAME);
@@ -435,6 +446,8 @@ public class MetamodelaltPackageImpl extends EPackageImpl implements Metamodelal
 		initEReference(getDataFlow_Data(), this.getData(), null, "data", null, 0, -1, DataFlow.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getDataFlow_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getData_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Data.class, !IS_TRANSIENT,

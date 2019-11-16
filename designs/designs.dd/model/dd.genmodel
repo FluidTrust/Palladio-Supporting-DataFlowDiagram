@@ -10,7 +10,6 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Dd" basePackage="designs" disposableProviderFactory="true"
       ecorePackage="dd.ecore#/">
-    <genDataTypes ecoreDataType="dd.ecore#//NewDataType1"/>
     <genClasses ecoreClass="dd.ecore#//DataDictionary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dd.ecore#//DataDictionary/elements"/>
     </genClasses>

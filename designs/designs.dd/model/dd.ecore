@@ -12,7 +12,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="subelements" upperBound="-1"
         eType="#//Element" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="NewDataType1" instanceClassName=""/>
   <eClassifiers xsi:type="ecore:EClass" name="ElementDescription" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Unit" eSuperTypes="#//ElementDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
