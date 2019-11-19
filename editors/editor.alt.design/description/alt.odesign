@@ -5,24 +5,21 @@
       <metamodel href="http://www.example.org/metamodelalt#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="StoreNode" domainClass="metamodelalt::Store">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelPosition="node" width="10" height="5">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/editor.alt.design/icons/store.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="FunctionNode" domainClass="metamodelalt::Function">
-          <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="8" labelPosition="node">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/editor.alt.design/icons/process.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="TerminatorNode" domainClass="metamodelalt::Terminator">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelPosition="node" width="10" height="5">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/editor.alt.design/icons/terminator.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
         <edgeMappings name="DataFlowEdge" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']" targetFinderExpression="var:components" domainClass="metamodelalt::DataFlow" useDomainElement="true">
