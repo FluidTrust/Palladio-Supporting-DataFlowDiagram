@@ -10,7 +10,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="FunctionNode" domainClass="metamodelalt::Function">
+        <nodeMappings name="FunctionNode" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="metamodelalt::Function">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/editor.alt.design/icons/process.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -22,7 +22,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="DataFlowEdge" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']" targetFinderExpression="var:components" domainClass="metamodelalt::DataFlow" useDomainElement="true">
+        <edgeMappings name="DataFlowEdge" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='TerminatorNode']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='StoreNode']" targetFinderExpression="var:components" domainClass="metamodelalt::DataFlow" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -62,6 +62,24 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Terminator"/>
                 </subModelOperations>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createDataFlow" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="metamodel::DataFlow" referenceName="output"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" forceRefresh="true" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']/@defaultLayer/@nodeMappings[name='FunctionNode']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Base']"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

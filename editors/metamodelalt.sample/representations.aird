@@ -80,7 +80,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iGY5kgrEEeqD5vwBjtPtqA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_8kF2wQerEeqg3f_7DayDag" fontName=".AppleSystemUIFont" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8kF2wgerEeqg3f_7DayDag" x="568" y="227" width="151" height="151"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8kF2wgerEeqg3f_7DayDag" x="560" y="236" width="151" height="151"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_n8zKAgeoEeqg3f_7DayDag"/>
       </data>
