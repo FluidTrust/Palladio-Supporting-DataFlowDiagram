@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_88Ig4A0dEeqc19a0zro1nw" selectedViews="_9KY_UA0dEeqc19a0zro1nw" version="12.0.0.201704271200">
+    <semanticResources>metamodel.ecore</semanticResources>
+    <semanticResources>metamodel.genmodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_9KY_UA0dEeqc19a0zro1nw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_9OOWcA0dEeqc19a0zro1nw" name="metamodel" repPath="#_9OLTIA0dEeqc19a0zro1nw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="metamodel.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_9OLTIA0dEeqc19a0zro1nw" name="metamodel">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9OLTIQ0dEeqc19a0zro1nw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_9OLTIg0dEeqc19a0zro1nw">
+        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_P_EJ0A0fEeqBH6ZL0z47Hg" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelFormat>bold</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </computedStyleDescriptions>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9Ok7wA0dEeqc19a0zro1nw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_9Ok7wQ0dEeqc19a0zro1nw" type="Sirius" element="_9OLTIA0dEeqc19a0zro1nw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_P_HNIA0fEeqBH6ZL0z47Hg" type="2003" element="_P-8OAA0fEeqBH6ZL0z47Hg">
+          <children xmi:type="notation:Node" xmi:id="_P_HNIw0fEeqBH6ZL0z47Hg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_P_HNJA0fEeqBH6ZL0z47Hg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_P_H0MA0fEeqBH6ZL0z47Hg" type="3010" element="_P_C7sA0fEeqBH6ZL0z47Hg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_P_IbQA0fEeqBH6ZL0z47Hg" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_P_IbQQ0fEeqBH6ZL0z47Hg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_P_HNJQ0fEeqBH6ZL0z47Hg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_P_HNJg0fEeqBH6ZL0z47Hg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_P_HNIQ0fEeqBH6ZL0z47Hg" fontName=".AppleSystemUIFont" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_HNIg0fEeqBH6ZL0z47Hg" x="560" y="32"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_9Ok7wg0dEeqc19a0zro1nw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P-8OAA0fEeqBH6ZL0z47Hg" name="Identifier" tooltipText="" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="metamodel.ecore#//Identifier"/>
+      <semanticElements xmi:type="ecore:EClass" href="metamodel.ecore#//Identifier"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P-9cIA0fEeqBH6ZL0z47Hg" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P_C7sA0fEeqBH6ZL0z47Hg" name="id : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="metamodel.ecore#//Identifier/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="metamodel.ecore#//Identifier/id"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P_FX8A0fEeqBH6ZL0z47Hg" labelAlignment="LEFT" description="_P_EJ0A0fEeqBH6ZL0z47Hg">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_9OLTJA0dEeqc19a0zro1nw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="metamodel.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
