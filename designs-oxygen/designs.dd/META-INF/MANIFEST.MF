@@ -1,8 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: designs.dd
-Bundle-SymbolicName: designs.dd; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: designs.dd;singleton:=true
 Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: designs.dd,
+ designs.dd.impl,
+ designs.dd.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
  de.uka.ipd.sdq.identifier;bundle-version="4.2.0"
+Bundle-ActivationPolicy: lazy
