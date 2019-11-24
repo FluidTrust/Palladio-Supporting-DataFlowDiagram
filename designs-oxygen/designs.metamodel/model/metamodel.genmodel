@@ -10,9 +10,6 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Metamodel" basePackage="designs" disposableProviderFactory="true"
       ecorePackage="metamodel.ecore#/">
-    <genClasses image="false" ecoreClass="metamodel.ecore#//Identifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Identifier/id"/>
-    </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//DataFlowDiagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlowDiagram/component"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlowDiagram/refines"/>
@@ -27,6 +24,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlow/data"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlow/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlow/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//DataFlow/type"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//Process"/>
     <genClasses ecoreClass="metamodel.ecore#//ExternalActor"/>
@@ -38,5 +36,31 @@
     <genClasses ecoreClass="metamodel.ecore#//RefiningReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//RefiningReference/refinedProcesses"/>
     </genClasses>
+    <nestedGenPackages prefix="Dd" disposableProviderFactory="true" ecorePackage="metamodel.ecore#//dd">
+      <genClasses image="false" ecoreClass="metamodel.ecore#//dd/DataType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//dd/DataType/name"/>
+      </genClasses>
+      <genClasses ecoreClass="metamodel.ecore#//dd/CompositeDataType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//dd/CompositeDataType/entries"/>
+      </genClasses>
+      <genClasses ecoreClass="metamodel.ecore#//dd/CollectionDataType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference metamodel.ecore#//dd/CollectionDataType/type"/>
+      </genClasses>
+      <genClasses ecoreClass="metamodel.ecore#//dd/PrimitiveDataType"/>
+      <genClasses ecoreClass="metamodel.ecore#//dd/Entry">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference metamodel.ecore#//dd/Entry/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//dd/Entry/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="metamodel.ecore#//dd/Identifier">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//dd/Identifier/id"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Identifier" disposableProviderFactory="true" ecorePackage="metamodel.ecore#//identifier">
+      <genClasses image="false" ecoreClass="metamodel.ecore#//identifier/Identifier">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//identifier/Identifier/id"/>
+      </genClasses>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
