@@ -3,7 +3,6 @@
 package designs.dd.util;
 
 import designs.dd.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -113,13 +112,6 @@ public class DdSwitch<T> extends Switch<T> {
 			T result = caseEntry(entry);
 			if (result == null)
 				result = caseIdentifier(entry);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DdPackage.IDENTIFIER: {
-			Identifier identifier = (Identifier) theEObject;
-			T result = caseIdentifier(identifier);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

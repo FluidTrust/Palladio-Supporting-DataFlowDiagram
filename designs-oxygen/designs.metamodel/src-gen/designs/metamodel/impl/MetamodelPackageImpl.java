@@ -7,21 +7,20 @@ import designs.metamodel.Data;
 import designs.metamodel.DataFlow;
 import designs.metamodel.DataFlowDiagram;
 import designs.metamodel.ExternalActor;
-import designs.metamodel.Identifier;
 import designs.metamodel.MetamodelFactory;
 import designs.metamodel.MetamodelPackage;
 import designs.metamodel.Port;
 import designs.metamodel.RefiningReference;
 import designs.metamodel.Store;
 
-import designs.metamodel.util.MetamodelValidator;
-
+import designs.metamodel.dd.DdPackage;
+import designs.metamodel.dd.impl.DdPackageImpl;
+import designs.metamodel.identifier.IdentifierPackage;
+import designs.metamodel.identifier.impl.IdentifierPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -31,13 +30,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass identifierEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,18 +142,25 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		DdPackageImpl theDdPackage = (DdPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(DdPackage.eNS_URI) instanceof DdPackageImpl
+						? EPackage.Registry.INSTANCE.getEPackage(DdPackage.eNS_URI)
+						: DdPackage.eINSTANCE);
+		IdentifierPackageImpl theIdentifierPackage = (IdentifierPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(IdentifierPackage.eNS_URI) instanceof IdentifierPackageImpl
+						? EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI)
+						: IdentifierPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theMetamodelPackage.createPackageContents();
+		theDdPackage.createPackageContents();
+		theIdentifierPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMetamodelPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put(theMetamodelPackage, new EValidator.Descriptor() {
-			public EValidator getEValidator() {
-				return MetamodelValidator.INSTANCE;
-			}
-		});
+		theDdPackage.initializePackageContents();
+		theIdentifierPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMetamodelPackage.freeze();
@@ -169,24 +168,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MetamodelPackage.eNS_URI, theMetamodelPackage);
 		return theMetamodelPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIdentifier() {
-		return identifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIdentifier_Id() {
-		return (EAttribute) identifierEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -302,6 +283,15 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataFlow_Type() {
+		return (EReference) dataFlowEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProcess() {
 		return processEClass;
 	}
@@ -398,9 +388,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		isCreated = true;
 
 		// Create classes and their features
-		identifierEClass = createEClass(IDENTIFIER);
-		createEAttribute(identifierEClass, IDENTIFIER__ID);
-
 		dataFlowDiagramEClass = createEClass(DATA_FLOW_DIAGRAM);
 		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__COMPONENT);
 		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__REFINES);
@@ -415,6 +402,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		createEReference(dataFlowEClass, DATA_FLOW__DATA);
 		createEReference(dataFlowEClass, DATA_FLOW__SOURCE);
 		createEReference(dataFlowEClass, DATA_FLOW__TARGET);
+		createEReference(dataFlowEClass, DATA_FLOW__TYPE);
 
 		processEClass = createEClass(PROCESS);
 
@@ -455,27 +443,31 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		DdPackage theDdPackage = (DdPackage) EPackage.Registry.INSTANCE.getEPackage(DdPackage.eNS_URI);
+		IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
+				.getEPackage(IdentifierPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theDdPackage);
+		getESubpackages().add(theIdentifierPackage);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		dataFlowDiagramEClass.getESuperTypes().add(this.getIdentifier());
-		componentEClass.getESuperTypes().add(this.getIdentifier());
-		dataFlowEClass.getESuperTypes().add(this.getIdentifier());
+		dataFlowDiagramEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		componentEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		dataFlowEClass.getESuperTypes().add(this.getComponent());
 		processEClass.getESuperTypes().add(this.getComponent());
 		externalActorEClass.getESuperTypes().add(this.getComponent());
 		storeEClass.getESuperTypes().add(this.getComponent());
-		dataEClass.getESuperTypes().add(this.getIdentifier());
+		dataEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		portEClass.getESuperTypes().add(this.getComponent());
-		refiningReferenceEClass.getESuperTypes().add(this.getIdentifier());
+		refiningReferenceEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(identifierEClass, Identifier.class, "Identifier", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIdentifier_Id(), ecorePackage.getEString(), "id", null, 1, 1, Identifier.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(dataFlowDiagramEClass, DataFlowDiagram.class, "DataFlowDiagram", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlowDiagram_Component(), this.getComponent(), null, "component", null, 0, -1,
@@ -509,6 +501,9 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlow_Target(), this.getComponent(), null, "target", null, 1, 1, DataFlow.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlow_Type(), theDdPackage.getDataType(), null, "type", null, 1, 1, DataFlow.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(processEClass, designs.metamodel.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE,
@@ -551,8 +546,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation(this, source,
 				new String[] { "identifierIsUnique", "Identifier.allInstances()->isUnique(p: Identifier | p.id)" });
-		addAnnotation(identifierEClass, source,
-				new String[] { "identifierIsUnique", "Identifier.allInstances()->isUnique(p: Identifier | p.id)" });
 	}
 
 	/**
@@ -564,7 +557,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation(this, source, new String[] { "constraints", "identifierIsUnique" });
-		addAnnotation(identifierEClass, source, new String[] { "constraints", "identifierIsUnique" });
 	}
 
 } //MetamodelPackageImpl

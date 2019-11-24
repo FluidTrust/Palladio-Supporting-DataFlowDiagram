@@ -2,6 +2,8 @@
  */
 package designs.metamodel;
 
+import designs.metamodel.identifier.Identifier;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Data</b></em>'.

@@ -154,6 +154,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import designs.dd.provider.DdItemProviderAdapterFactory;
 
+import designs.dd.identifier.provider.IdentifierItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
@@ -674,6 +675,7 @@ public class DdEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DdItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

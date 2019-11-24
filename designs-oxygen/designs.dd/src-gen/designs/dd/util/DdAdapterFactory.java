@@ -3,7 +3,6 @@
 package designs.dd.util;
 
 import designs.dd.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -186,13 +185,13 @@ public class DdAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link designs.dd.Identifier <em>Identifier</em>}'.
+	 * Creates a new adapter for an object of class '{@link designs.dd.identifier.Identifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see designs.dd.Identifier
+	 * @see designs.dd.identifier.Identifier
 	 * @generated
 	 */
 	public Adapter createIdentifierAdapter() {

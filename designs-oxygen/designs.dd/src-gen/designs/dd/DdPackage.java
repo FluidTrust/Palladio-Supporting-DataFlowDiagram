@@ -2,6 +2,7 @@
  */
 package designs.dd;
 
+import designs.dd.identifier.IdentifierPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -63,43 +64,6 @@ public interface DdPackage extends EPackage {
 	DdPackage eINSTANCE = designs.dd.impl.DdPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link designs.dd.impl.IdentifierImpl <em>Identifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see designs.dd.impl.IdentifierImpl
-	 * @see designs.dd.impl.DdPackageImpl#getIdentifier()
-	 * @generated
-	 */
-	int IDENTIFIER = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDENTIFIER__ID = 0;
-
-	/**
-	 * The number of structural features of the '<em>Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDENTIFIER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDENTIFIER_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link designs.dd.impl.DataTypeImpl <em>Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +80,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__ID = IDENTIFIER__ID;
+	int DATA_TYPE__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -125,7 +89,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__NAME = IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA_TYPE__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
@@ -134,7 +98,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 1;
+	int DATA_TYPE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Data Type</em>' class.
@@ -143,7 +107,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
+	int DATA_TYPE_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link designs.dd.impl.CompositeDataTypeImpl <em>Composite Data Type</em>}' class.
@@ -318,7 +282,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__ID = IDENTIFIER__ID;
+	int ENTRY__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -327,7 +291,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__TYPE = IDENTIFIER_FEATURE_COUNT + 0;
+	int ENTRY__TYPE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -336,7 +300,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__NAME = IDENTIFIER_FEATURE_COUNT + 1;
+	int ENTRY__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Entry</em>' class.
@@ -345,7 +309,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 2;
+	int ENTRY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Entry</em>' class.
@@ -354,7 +318,7 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
+	int ENTRY_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link designs.dd.DataType <em>Data Type</em>}'.
@@ -460,27 +424,6 @@ public interface DdPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntry_Name();
-
-	/**
-	 * Returns the meta object for class '{@link designs.dd.Identifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Identifier</em>'.
-	 * @see designs.dd.Identifier
-	 * @generated
-	 */
-	EClass getIdentifier();
-
-	/**
-	 * Returns the meta object for the attribute '{@link designs.dd.Identifier#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see designs.dd.Identifier#getId()
-	 * @see #getIdentifier()
-	 * @generated
-	 */
-	EAttribute getIdentifier_Id();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -594,24 +537,6 @@ public interface DdPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTRY__NAME = eINSTANCE.getEntry_Name();
-
-		/**
-		 * The meta object literal for the '{@link designs.dd.impl.IdentifierImpl <em>Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see designs.dd.impl.IdentifierImpl
-		 * @see designs.dd.impl.DdPackageImpl#getIdentifier()
-		 * @generated
-		 */
-		EClass IDENTIFIER = eINSTANCE.getIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IDENTIFIER__ID = eINSTANCE.getIdentifier_Id();
 
 	}
 

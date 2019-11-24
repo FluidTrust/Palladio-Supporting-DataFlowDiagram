@@ -2,6 +2,7 @@
  */
 package designs.metamodel;
 
+import designs.metamodel.identifier.IdentifierPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -67,43 +68,6 @@ public interface MetamodelPackage extends EPackage {
 	MetamodelPackage eINSTANCE = designs.metamodel.impl.MetamodelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link designs.metamodel.impl.IdentifierImpl <em>Identifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see designs.metamodel.impl.IdentifierImpl
-	 * @see designs.metamodel.impl.MetamodelPackageImpl#getIdentifier()
-	 * @generated
-	 */
-	int IDENTIFIER = 0;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDENTIFIER__ID = 0;
-
-	/**
-	 * The number of structural features of the '<em>Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDENTIFIER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDENTIFIER_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link designs.metamodel.impl.DataFlowDiagramImpl <em>Data Flow Diagram</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,7 +75,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getDataFlowDiagram()
 	 * @generated
 	 */
-	int DATA_FLOW_DIAGRAM = 1;
+	int DATA_FLOW_DIAGRAM = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -120,7 +84,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__ID = IDENTIFIER__ID;
+	int DATA_FLOW_DIAGRAM__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -129,7 +93,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__COMPONENT = IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA_FLOW_DIAGRAM__COMPONENT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' containment reference.
@@ -138,7 +102,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__REFINES = IDENTIFIER_FEATURE_COUNT + 1;
+	int DATA_FLOW_DIAGRAM__REFINES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Refined By</b></em>' containment reference list.
@@ -147,7 +111,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__REFINED_BY = IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW_DIAGRAM__REFINED_BY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Flow Diagram</em>' class.
@@ -156,7 +120,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 3;
+	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Data Flow Diagram</em>' class.
@@ -165,7 +129,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
+	int DATA_FLOW_DIAGRAM_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link designs.metamodel.impl.ComponentImpl <em>Component</em>}' class.
@@ -175,7 +139,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 2;
+	int COMPONENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -184,7 +148,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ID = IDENTIFIER__ID;
+	int COMPONENT__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
@@ -193,7 +157,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__INCOMING_DATA_FLOW = IDENTIFIER_FEATURE_COUNT + 0;
+	int COMPONENT__INCOMING_DATA_FLOW = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
@@ -202,7 +166,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__OUTGOING_DATA_FLOW = IDENTIFIER_FEATURE_COUNT + 1;
+	int COMPONENT__OUTGOING_DATA_FLOW = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -211,7 +175,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__NAME = IDENTIFIER_FEATURE_COUNT + 2;
+	int COMPONENT__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -220,7 +184,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 3;
+	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -229,7 +193,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
+	int COMPONENT_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link designs.metamodel.impl.DataFlowImpl <em>Data Flow</em>}' class.
@@ -239,7 +203,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getDataFlow()
 	 * @generated
 	 */
-	int DATA_FLOW = 3;
+	int DATA_FLOW = 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -248,7 +212,34 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__ID = IDENTIFIER__ID;
+	int DATA_FLOW__ID = COMPONENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__INCOMING_DATA_FLOW = COMPONENT__INCOMING_DATA_FLOW;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__OUTGOING_DATA_FLOW = COMPONENT__OUTGOING_DATA_FLOW;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
@@ -257,7 +248,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__DATA = IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA_FLOW__DATA = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -266,7 +257,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__SOURCE = IDENTIFIER_FEATURE_COUNT + 1;
+	int DATA_FLOW__SOURCE = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -275,7 +266,16 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW__TARGET = IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW__TARGET = COMPONENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__TYPE = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
@@ -284,7 +284,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 3;
+	int DATA_FLOW_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Data Flow</em>' class.
@@ -293,7 +293,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
+	int DATA_FLOW_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link designs.metamodel.impl.ProcessImpl <em>Process</em>}' class.
@@ -303,7 +303,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getProcess()
 	 * @generated
 	 */
-	int PROCESS = 4;
+	int PROCESS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -367,7 +367,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getExternalActor()
 	 * @generated
 	 */
-	int EXTERNAL_ACTOR = 5;
+	int EXTERNAL_ACTOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -431,7 +431,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getStore()
 	 * @generated
 	 */
-	int STORE = 6;
+	int STORE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -495,7 +495,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getData()
 	 * @generated
 	 */
-	int DATA = 7;
+	int DATA = 6;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -504,7 +504,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__ID = IDENTIFIER__ID;
+	int DATA__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -513,7 +513,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA__NAME = IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Data</em>' class.
@@ -522,7 +522,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 1;
+	int DATA_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Data</em>' class.
@@ -531,7 +531,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
+	int DATA_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link designs.metamodel.impl.PortImpl <em>Port</em>}' class.
@@ -541,7 +541,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getPort()
 	 * @generated
 	 */
-	int PORT = 8;
+	int PORT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -605,7 +605,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see designs.metamodel.impl.MetamodelPackageImpl#getRefiningReference()
 	 * @generated
 	 */
-	int REFINING_REFERENCE = 9;
+	int REFINING_REFERENCE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -614,7 +614,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINING_REFERENCE__ID = IDENTIFIER__ID;
+	int REFINING_REFERENCE__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Refined Processes</b></em>' reference list.
@@ -623,7 +623,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINING_REFERENCE__REFINED_PROCESSES = IDENTIFIER_FEATURE_COUNT + 0;
+	int REFINING_REFERENCE__REFINED_PROCESSES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Refining Reference</em>' class.
@@ -632,7 +632,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINING_REFERENCE_FEATURE_COUNT = IDENTIFIER_FEATURE_COUNT + 1;
+	int REFINING_REFERENCE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Refining Reference</em>' class.
@@ -641,28 +641,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINING_REFERENCE_OPERATION_COUNT = IDENTIFIER_OPERATION_COUNT + 0;
-
-	/**
-	 * Returns the meta object for class '{@link designs.metamodel.Identifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Identifier</em>'.
-	 * @see designs.metamodel.Identifier
-	 * @generated
-	 */
-	EClass getIdentifier();
-
-	/**
-	 * Returns the meta object for the attribute '{@link designs.metamodel.Identifier#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see designs.metamodel.Identifier#getId()
-	 * @see #getIdentifier()
-	 * @generated
-	 */
-	EAttribute getIdentifier_Id();
+	int REFINING_REFERENCE_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link designs.metamodel.DataFlowDiagram <em>Data Flow Diagram</em>}'.
@@ -794,6 +773,17 @@ public interface MetamodelPackage extends EPackage {
 	EReference getDataFlow_Target();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link designs.metamodel.DataFlow#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see designs.metamodel.DataFlow#getType()
+	 * @see #getDataFlow()
+	 * @generated
+	 */
+	EReference getDataFlow_Type();
+
+	/**
 	 * Returns the meta object for class '{@link designs.metamodel.Process <em>Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -899,24 +889,6 @@ public interface MetamodelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link designs.metamodel.impl.IdentifierImpl <em>Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see designs.metamodel.impl.IdentifierImpl
-		 * @see designs.metamodel.impl.MetamodelPackageImpl#getIdentifier()
-		 * @generated
-		 */
-		EClass IDENTIFIER = eINSTANCE.getIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IDENTIFIER__ID = eINSTANCE.getIdentifier_Id();
-
-		/**
 		 * The meta object literal for the '{@link designs.metamodel.impl.DataFlowDiagramImpl <em>Data Flow Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1017,6 +989,14 @@ public interface MetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_FLOW__TARGET = eINSTANCE.getDataFlow_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_FLOW__TYPE = eINSTANCE.getDataFlow_Type();
 
 		/**
 		 * The meta object literal for the '{@link designs.metamodel.impl.ProcessImpl <em>Process</em>}' class.

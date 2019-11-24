@@ -6,7 +6,7 @@ import designs.metamodel.Component;
 import designs.metamodel.DataFlowDiagram;
 import designs.metamodel.MetamodelPackage;
 import designs.metamodel.RefiningReference;
-
+import designs.metamodel.identifier.impl.IdentifierImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

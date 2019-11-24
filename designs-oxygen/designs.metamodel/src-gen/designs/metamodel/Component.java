@@ -2,6 +2,7 @@
  */
 package designs.metamodel;
 
+import designs.metamodel.identifier.Identifier;
 import org.eclipse.emf.common.util.EList;
 
 /**

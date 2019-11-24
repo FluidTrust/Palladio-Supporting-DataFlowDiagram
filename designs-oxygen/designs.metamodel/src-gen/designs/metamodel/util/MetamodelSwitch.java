@@ -7,12 +7,12 @@ import designs.metamodel.Data;
 import designs.metamodel.DataFlow;
 import designs.metamodel.DataFlowDiagram;
 import designs.metamodel.ExternalActor;
-import designs.metamodel.Identifier;
 import designs.metamodel.MetamodelPackage;
 import designs.metamodel.Port;
 import designs.metamodel.RefiningReference;
 import designs.metamodel.Store;
 
+import designs.metamodel.identifier.Identifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -75,13 +75,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case MetamodelPackage.IDENTIFIER: {
-			Identifier identifier = (Identifier) theEObject;
-			T result = caseIdentifier(identifier);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case MetamodelPackage.DATA_FLOW_DIAGRAM: {
 			DataFlowDiagram dataFlowDiagram = (DataFlowDiagram) theEObject;
 			T result = caseDataFlowDiagram(dataFlowDiagram);
@@ -103,6 +96,8 @@ public class MetamodelSwitch<T> extends Switch<T> {
 		case MetamodelPackage.DATA_FLOW: {
 			DataFlow dataFlow = (DataFlow) theEObject;
 			T result = caseDataFlow(dataFlow);
+			if (result == null)
+				result = caseComponent(dataFlow);
 			if (result == null)
 				result = caseIdentifier(dataFlow);
 			if (result == null)
@@ -174,21 +169,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIdentifier(Identifier object) {
-		return null;
 	}
 
 	/**
@@ -323,6 +303,21 @@ public class MetamodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRefiningReference(RefiningReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIdentifier(Identifier object) {
 		return null;
 	}
 

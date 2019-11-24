@@ -7,12 +7,12 @@ import designs.metamodel.Data;
 import designs.metamodel.DataFlow;
 import designs.metamodel.DataFlowDiagram;
 import designs.metamodel.ExternalActor;
-import designs.metamodel.Identifier;
 import designs.metamodel.MetamodelPackage;
 import designs.metamodel.Port;
 import designs.metamodel.RefiningReference;
 import designs.metamodel.Store;
 
+import designs.metamodel.identifier.Identifier;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -76,11 +76,6 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected MetamodelSwitch<Adapter> modelSwitch = new MetamodelSwitch<Adapter>() {
 		@Override
-		public Adapter caseIdentifier(Identifier object) {
-			return createIdentifierAdapter();
-		}
-
-		@Override
 		public Adapter caseDataFlowDiagram(DataFlowDiagram object) {
 			return createDataFlowDiagramAdapter();
 		}
@@ -126,6 +121,11 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIdentifier(Identifier object) {
+			return createIdentifierAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -145,13 +145,13 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link designs.metamodel.Identifier <em>Identifier</em>}'.
+	 * Creates a new adapter for an object of class '{@link designs.metamodel.identifier.Identifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see designs.metamodel.Identifier
+	 * @see designs.metamodel.identifier.Identifier
 	 * @generated
 	 */
 	public Adapter createIdentifierAdapter() {

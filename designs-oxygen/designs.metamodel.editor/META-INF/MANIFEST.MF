@@ -8,7 +8,8 @@ Bundle-Activator: designs.metamodel.presentation.MetamodelEditorPlugin$Implement
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: designs.metamodel.presentation
+Export-Package: designs.metamodel.dd.presentation,
+ designs.metamodel.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  designs.metamodel.edit;visibility:=reexport,

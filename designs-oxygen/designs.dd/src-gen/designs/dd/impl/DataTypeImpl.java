@@ -4,7 +4,6 @@ package designs.dd.impl;
 
 import designs.dd.DataType;
 import designs.dd.DdPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;

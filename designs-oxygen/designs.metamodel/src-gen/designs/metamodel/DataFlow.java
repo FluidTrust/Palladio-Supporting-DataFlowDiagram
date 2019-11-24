@@ -2,6 +2,7 @@
  */
 package designs.metamodel;
 
+import designs.metamodel.dd.DataType;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -16,13 +17,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link designs.metamodel.DataFlow#getData <em>Data</em>}</li>
  *   <li>{@link designs.metamodel.DataFlow#getSource <em>Source</em>}</li>
  *   <li>{@link designs.metamodel.DataFlow#getTarget <em>Target</em>}</li>
+ *   <li>{@link designs.metamodel.DataFlow#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see designs.metamodel.MetamodelPackage#getDataFlow()
  * @model
  * @generated
  */
-public interface DataFlow extends Identifier {
+public interface DataFlow extends Component {
 	/**
 	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
 	 * The list contents are of type {@link designs.metamodel.Data}.
@@ -90,5 +92,31 @@ public interface DataFlow extends Identifier {
 	 * @generated
 	 */
 	void setTarget(Component value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(DataType)
+	 * @see designs.metamodel.MetamodelPackage#getDataFlow_Type()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	DataType getType();
+
+	/**
+	 * Sets the value of the '{@link designs.metamodel.DataFlow#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(DataType value);
 
 } // DataFlow

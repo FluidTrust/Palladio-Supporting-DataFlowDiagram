@@ -6,6 +6,7 @@ import designs.metamodel.DataFlow;
 import designs.metamodel.MetamodelFactory;
 import designs.metamodel.MetamodelPackage;
 
+import designs.metamodel.dd.DdFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,7 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataFlowItemProvider extends IdentifierItemProvider {
+public class DataFlowItemProvider extends ComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -95,6 +96,7 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(MetamodelPackage.Literals.DATA_FLOW__DATA);
+			childrenFeatures.add(MetamodelPackage.Literals.DATA_FLOW__TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -141,7 +143,7 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataFlow) object).getId();
+		String label = ((DataFlow) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_DataFlow_type")
 				: getString("_UI_DataFlow_type") + " " + label;
 	}
@@ -159,6 +161,7 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 
 		switch (notification.getFeatureID(DataFlow.class)) {
 		case MetamodelPackage.DATA_FLOW__DATA:
+		case MetamodelPackage.DATA_FLOW__TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -178,6 +181,15 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 
 		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW__DATA,
 				MetamodelFactory.eINSTANCE.createData()));
+
+		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW__TYPE,
+				DdFactory.eINSTANCE.createCompositeDataType()));
+
+		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW__TYPE,
+				DdFactory.eINSTANCE.createCollectionDataType()));
+
+		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW__TYPE,
+				DdFactory.eINSTANCE.createPrimitiveDataType()));
 	}
 
 }

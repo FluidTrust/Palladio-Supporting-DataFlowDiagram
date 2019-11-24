@@ -8,17 +8,14 @@ import designs.dd.DataType;
 import designs.dd.DdFactory;
 import designs.dd.DdPackage;
 import designs.dd.Entry;
-import designs.dd.Identifier;
 import designs.dd.PrimitiveDataType;
 
-import designs.dd.util.DdValidator;
-
+import designs.dd.identifier.IdentifierPackage;
+import designs.dd.identifier.impl.IdentifierPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -62,13 +59,6 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 	 * @generated
 	 */
 	private EClass entryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass identifierEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -119,18 +109,19 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		IdentifierPackageImpl theIdentifierPackage = (IdentifierPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(IdentifierPackage.eNS_URI) instanceof IdentifierPackageImpl
+						? EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI)
+						: IdentifierPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theDdPackage.createPackageContents();
+		theIdentifierPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theDdPackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put(theDdPackage, new EValidator.Descriptor() {
-			public EValidator getEValidator() {
-				return DdValidator.INSTANCE;
-			}
-		});
+		theIdentifierPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theDdPackage.freeze();
@@ -235,24 +226,6 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIdentifier() {
-		return identifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIdentifier_Id() {
-		return (EAttribute) identifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DdFactory getDdFactory() {
 		return (DdFactory) getEFactoryInstance();
 	}
@@ -291,9 +264,6 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 		entryEClass = createEClass(ENTRY);
 		createEReference(entryEClass, ENTRY__TYPE);
 		createEAttribute(entryEClass, ENTRY__NAME);
-
-		identifierEClass = createEClass(IDENTIFIER);
-		createEAttribute(identifierEClass, IDENTIFIER__ID);
 	}
 
 	/**
@@ -320,16 +290,23 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
+				.getEPackage(IdentifierPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theIdentifierPackage);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		dataTypeEClass.getESuperTypes().add(this.getIdentifier());
+		dataTypeEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
 		collectionDataTypeEClass.getESuperTypes().add(this.getDataType());
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
-		entryEClass.getESuperTypes().add(this.getIdentifier());
+		entryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -358,19 +335,12 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 		initEAttribute(getEntry_Name(), ecorePackage.getEString(), "name", null, 1, 1, Entry.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(identifierEClass, Identifier.class, "Identifier", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIdentifier_Id(), ecorePackage.getEString(), "id", null, 1, 1, Identifier.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -385,19 +355,6 @@ public class DdPackageImpl extends EPackageImpl implements DdPackage {
 				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL", "settingDelegates",
 						"http://www.eclipse.org/emf/2002/Ecore/OCL", "validationDelegates",
 						"http://www.eclipse.org/emf/2002/Ecore/OCL" });
-		addAnnotation(identifierEClass, source, new String[] { "constraints", "identifierIsUnique" });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation(identifierEClass, source,
-				new String[] { "identifierIsUnique", "Identifier.allInstances()->isUnique(p: Identifier | p.id)" });
 	}
 
 } //DdPackageImpl

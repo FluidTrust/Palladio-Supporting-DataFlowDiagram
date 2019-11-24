@@ -5,13 +5,14 @@ package designs.metamodel.provider;
 import designs.metamodel.DataFlowDiagram;
 import designs.metamodel.MetamodelFactory;
 import designs.metamodel.MetamodelPackage;
-
+import designs.metamodel.identifier.provider.IdentifierItemProvider;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -148,6 +149,9 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENT,
+				MetamodelFactory.eINSTANCE.createDataFlow()));
+
+		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENT,
 				MetamodelFactory.eINSTANCE.createProcess()));
 
 		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENT,
@@ -161,6 +165,17 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 
 		newChildDescriptors.add(createChildParameter(MetamodelPackage.Literals.DATA_FLOW_DIAGRAM__REFINES,
 				MetamodelFactory.eINSTANCE.createRefiningReference()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MetamodelEditPlugin.INSTANCE;
 	}
 
 }

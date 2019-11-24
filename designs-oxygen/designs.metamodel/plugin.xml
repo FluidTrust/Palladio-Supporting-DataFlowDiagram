@@ -14,4 +14,20 @@
             genModel="model/metamodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated metamodel -->
+      <package
+            uri="http://www.example.org/dd"
+            class="designs.metamodel.dd.DdPackage"
+            genModel="model/metamodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated metamodel -->
+      <package
+            uri="http://sdq.ipd.uka.de/Identifier/2.1"
+            class="designs.metamodel.identifier.IdentifierPackage"
+            genModel="model/metamodel.genmodel"/>
+   </extension>
+
 </plugin>

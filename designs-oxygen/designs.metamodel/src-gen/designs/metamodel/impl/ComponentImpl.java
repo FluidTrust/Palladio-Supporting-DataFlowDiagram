@@ -4,7 +4,7 @@ package designs.metamodel.impl;
 
 import designs.metamodel.Component;
 import designs.metamodel.MetamodelPackage;
-
+import designs.metamodel.identifier.impl.IdentifierImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

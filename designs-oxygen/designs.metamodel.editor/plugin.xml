@@ -34,4 +34,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated metamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="designs.metamodel.dd.presentation.DdModelWizardID"
+            name="%_UI_DdModelWizard_label"
+            class="designs.metamodel.dd.presentation.DdModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DdModelFile.gif">
+         <description>%_UI_DdModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated metamodel -->
+      <editor
+            id="designs.metamodel.dd.presentation.DdEditorID"
+            name="%_UI_DdEditor_label"
+            icon="icons/full/obj16/DdModelFile.gif"
+            extensions="dd"
+            class="designs.metamodel.dd.presentation.DdEditor"
+            contributorClass="designs.metamodel.dd.presentation.DdActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

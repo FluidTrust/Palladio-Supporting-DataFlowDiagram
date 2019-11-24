@@ -154,6 +154,8 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import designs.metamodel.provider.MetamodelItemProviderAdapterFactory;
 
+import designs.metamodel.dd.provider.DdItemProviderAdapterFactory;
+import designs.metamodel.identifier.provider.IdentifierItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
@@ -674,6 +676,8 @@ public class MetamodelEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new MetamodelItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DdItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
