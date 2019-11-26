@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.palladiosimulator.dataflow.diagram/src-gen"
+    creationIcons="false" editDirectory="/org.palladiosimulator.dataflow.diagram.edit/src-gen"
+    editorDirectory="/org.palladiosimulator.dataflow.diagram.editor/src-gen" modelPluginID="org.palladiosimulator.dataflow.diagram"
+    modelName="DataFlowDiagram" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>DataFlowDiagram.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="DataFlowDiagram" basePackage="org.palladiosimulator.dataflow.diagram"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="DataFlowDiagram.ecore#/">
+    <genClasses ecoreClass="DataFlowDiagram.ecore#//DataFlowDiagram"/>
+  </genPackages>
+  <genPackages prefix="Identifier" ecorePackage="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/">
+    <genClasses image="false" ecoreClass="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

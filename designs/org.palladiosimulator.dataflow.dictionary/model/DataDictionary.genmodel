@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.palladiosimulator.dataflow.dictionary/src-gen"
+    creationIcons="false" editDirectory="/org.palladiosimulator.dataflow.dictionary.edit/src-gen"
+    editorDirectory="/org.palladiosimulator.dataflow.dictionary.editor/src-gen" modelPluginID="org.palladiosimulator.dataflow.dictionary"
+    modelName="DataDictionary" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>DataDictionary.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="DataDictionary" basePackage="org.palladiosimulator.dataflow.dictionary"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="DataDictionary.ecore#/">
+    <genClasses ecoreClass="DataDictionary.ecore#//DataDictionary"/>
+  </genPackages>
+  <genPackages prefix="Identifier" ecorePackage="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/">
+    <genClasses image="false" ecoreClass="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

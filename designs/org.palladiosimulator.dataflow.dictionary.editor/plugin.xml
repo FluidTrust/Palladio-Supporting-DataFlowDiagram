@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated DataDictionary -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.dataflow.dictionary.DataDictionary.presentation.DataDictionaryModelWizardID"
+            name="%_UI_DataDictionaryModelWizard_label"
+            class="org.palladiosimulator.dataflow.dictionary.DataDictionary.presentation.DataDictionaryModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DataDictionaryModelFile.gif">
+         <description>%_UI_DataDictionaryModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated DataDictionary -->
+      <editor
+            id="org.palladiosimulator.dataflow.dictionary.DataDictionary.presentation.DataDictionaryEditorID"
+            name="%_UI_DataDictionaryEditor_label"
+            icon="icons/full/obj16/DataDictionaryModelFile.gif"
+            extensions="datadictionary"
+            class="org.palladiosimulator.dataflow.dictionary.DataDictionary.presentation.DataDictionaryEditor"
+            contributorClass="org.palladiosimulator.dataflow.dictionary.DataDictionary.presentation.DataDictionaryActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
