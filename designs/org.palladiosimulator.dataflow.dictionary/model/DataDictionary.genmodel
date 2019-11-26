@@ -10,8 +10,7 @@
   <foreignModel>DataDictionary.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="DataDictionary" basePackage="org.palladiosimulator.dataflow.dictionary"
-      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
-      ecorePackage="DataDictionary.ecore#/">
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="DataDictionary.ecore#/">
     <genClasses ecoreClass="DataDictionary.ecore#//DataDictionary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataDictionary.ecore#//DataDictionary/entries"/>
     </genClasses>
