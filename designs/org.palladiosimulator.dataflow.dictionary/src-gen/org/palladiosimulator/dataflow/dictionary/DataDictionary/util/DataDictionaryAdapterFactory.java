@@ -74,6 +74,31 @@ public class DataDictionaryAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseCollectionDataType(CollectionDataType object) {
+			return createCollectionDataTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseCompositeDataType(CompositeDataType object) {
+			return createCompositeDataTypeAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveDataType(PrimitiveDataType object) {
+			return createPrimitiveDataTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseEntry(Entry object) {
+			return createEntryAdapter();
+		}
+
+		@Override
+		public Adapter caseDataType(DataType object) {
+			return createDataTypeAdapter();
+		}
+
+		@Override
 		public Adapter caseIdentifier(Identifier object) {
 			return createIdentifierAdapter();
 		}
@@ -108,6 +133,76 @@ public class DataDictionaryAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataDictionaryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType <em>Collection Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType
+	 * @generated
+	 */
+	public Adapter createCollectionDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType <em>Composite Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType
+	 * @generated
+	 */
+	public Adapter createCompositeDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType <em>Primitive Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType
+	 * @generated
+	 */
+	public Adapter createPrimitiveDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry <em>Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry
+	 * @generated
+	 */
+	public Adapter createEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType
+	 * @generated
+	 */
+	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 

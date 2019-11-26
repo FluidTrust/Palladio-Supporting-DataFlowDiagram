@@ -114,6 +114,167 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExternalActorItemProvider externalActorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExternalActorAdapter() {
+		if (externalActorItemProvider == null) {
+			externalActorItemProvider = new ExternalActorItemProvider(this);
+		}
+
+		return externalActorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StoreItemProvider storeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStoreAdapter() {
+		if (storeItemProvider == null) {
+			storeItemProvider = new StoreItemProvider(this);
+		}
+
+		return storeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProcessItemProvider processItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProcessAdapter() {
+		if (processItemProvider == null) {
+			processItemProvider = new ProcessItemProvider(this);
+		}
+
+		return processItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortItemProvider portItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortAdapter() {
+		if (portItemProvider == null) {
+			portItemProvider = new PortItemProvider(this);
+		}
+
+		return portItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RefiningReferenceItemProvider refiningReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRefiningReferenceAdapter() {
+		if (refiningReferenceItemProvider == null) {
+			refiningReferenceItemProvider = new RefiningReferenceItemProvider(this);
+		}
+
+		return refiningReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataFlowItemProvider dataFlowItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataFlowAdapter() {
+		if (dataFlowItemProvider == null) {
+			dataFlowItemProvider = new DataFlowItemProvider(this);
+		}
+
+		return dataFlowItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataItemProvider dataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataAdapter() {
+		if (dataItemProvider == null) {
+			dataItemProvider = new DataItemProvider(this);
+		}
+
+		return dataItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +402,20 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 	public void dispose() {
 		if (dataFlowDiagramItemProvider != null)
 			dataFlowDiagramItemProvider.dispose();
+		if (externalActorItemProvider != null)
+			externalActorItemProvider.dispose();
+		if (storeItemProvider != null)
+			storeItemProvider.dispose();
+		if (processItemProvider != null)
+			processItemProvider.dispose();
+		if (portItemProvider != null)
+			portItemProvider.dispose();
+		if (refiningReferenceItemProvider != null)
+			refiningReferenceItemProvider.dispose();
+		if (dataFlowItemProvider != null)
+			dataFlowItemProvider.dispose();
+		if (dataItemProvider != null)
+			dataItemProvider.dispose();
 	}
 
 }

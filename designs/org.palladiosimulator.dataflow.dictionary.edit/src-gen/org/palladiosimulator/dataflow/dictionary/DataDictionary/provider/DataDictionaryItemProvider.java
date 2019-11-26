@@ -12,10 +12,14 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryFactory;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary} object.
@@ -47,6 +51,36 @@ public class DataDictionaryItemProvider extends IdentifierItemProvider {
 
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(DataDictionaryPackage.Literals.DATA_DICTIONARY__ENTRIES);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -93,6 +127,12 @@ public class DataDictionaryItemProvider extends IdentifierItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DataDictionary.class)) {
+		case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -106,6 +146,15 @@ public class DataDictionaryItemProvider extends IdentifierItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DataDictionaryPackage.Literals.DATA_DICTIONARY__ENTRIES,
+				DataDictionaryFactory.eINSTANCE.createCollectionDataType()));
+
+		newChildDescriptors.add(createChildParameter(DataDictionaryPackage.Literals.DATA_DICTIONARY__ENTRIES,
+				DataDictionaryFactory.eINSTANCE.createCompositeDataType()));
+
+		newChildDescriptors.add(createChildParameter(DataDictionaryPackage.Literals.DATA_DICTIONARY__ENTRIES,
+				DataDictionaryFactory.eINSTANCE.createPrimitiveDataType()));
 	}
 
 	/**

@@ -6,14 +6,22 @@ import identifier.IdentifierPackage;
 
 import identifier.impl.IdentifierPackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryFactory;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +36,37 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 	 * @generated
 	 */
 	private EClass dataDictionaryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass collectionDataTypeEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeDataTypeEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass primitiveDataTypeEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entryEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -79,6 +118,9 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
 		IdentifierPackageImpl theIdentifierPackage = (IdentifierPackageImpl) (registeredPackage instanceof IdentifierPackageImpl
@@ -115,6 +157,96 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataDictionary_Entries() {
+		return (EReference) dataDictionaryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCollectionDataType() {
+		return collectionDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCompositeDataType() {
+		return compositeDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCompositeDataType_Components() {
+		return (EReference) compositeDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrimitiveDataType() {
+		return primitiveDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntry() {
+		return entryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntry_Type() {
+		return (EReference) entryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntry_Name() {
+		return (EAttribute) entryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDataType() {
+		return dataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_Name() {
+		return (EAttribute) dataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataDictionaryFactory getDataDictionaryFactory() {
 		return (DataDictionaryFactory) getEFactoryInstance();
 	}
@@ -140,6 +272,21 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		// Create classes and their features
 		dataDictionaryEClass = createEClass(DATA_DICTIONARY);
+		createEReference(dataDictionaryEClass, DATA_DICTIONARY__ENTRIES);
+
+		collectionDataTypeEClass = createEClass(COLLECTION_DATA_TYPE);
+
+		compositeDataTypeEClass = createEClass(COMPOSITE_DATA_TYPE);
+		createEReference(compositeDataTypeEClass, COMPOSITE_DATA_TYPE__COMPONENTS);
+
+		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
+
+		entryEClass = createEClass(ENTRY);
+		createEReference(entryEClass, ENTRY__TYPE);
+		createEAttribute(entryEClass, ENTRY__NAME);
+
+		dataTypeEClass = createEClass(DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
 	}
 
 	/**
@@ -169,6 +316,8 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 		// Obtain other dependent packages
 		IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
 				.getEPackage(IdentifierPackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
+				.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -176,10 +325,41 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		// Add supertypes to classes
 		dataDictionaryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		collectionDataTypeEClass.getESuperTypes().add(this.getDataType());
+		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
+		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
+		entryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		dataTypeEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataDictionaryEClass, DataDictionary.class, "DataDictionary", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDataDictionary_Entries(), this.getDataType(), null, "entries", null, 0, -1,
+				DataDictionary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(collectionDataTypeEClass, CollectionDataType.class, "CollectionDataType", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeDataTypeEClass, CompositeDataType.class, "CompositeDataType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompositeDataType_Components(), this.getEntry(), null, "components", null, 2, -1,
+				CompositeDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(entryEClass, Entry.class, "Entry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntry_Type(), this.getDataType(), null, "type", null, 1, 1, Entry.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEntry_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Entry.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataType_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, DataType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

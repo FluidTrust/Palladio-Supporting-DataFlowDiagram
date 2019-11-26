@@ -2,6 +2,8 @@
  */
 package identifier.impl;
 
+import DataDictionary.DataDictionaryPackage;
+import DataDictionary.impl.DataDictionaryPackageImpl;
 import identifier.Identifier;
 import identifier.IdentifierFactory;
 import identifier.IdentifierPackage;
@@ -85,14 +87,20 @@ public class IdentifierPackageImpl extends EPackageImpl implements IdentifierPac
 		DataFlowDiagramPackageImpl theDataFlowDiagramPackage = (DataFlowDiagramPackageImpl) (registeredPackage instanceof DataFlowDiagramPackageImpl
 				? registeredPackage
 				: DataFlowDiagramPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DataDictionaryPackage.eNS_URI);
+		DataDictionaryPackageImpl theDataDictionaryPackage = (DataDictionaryPackageImpl) (registeredPackage instanceof DataDictionaryPackageImpl
+				? registeredPackage
+				: DataDictionaryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theIdentifierPackage.createPackageContents();
 		theDataFlowDiagramPackage.createPackageContents();
+		theDataDictionaryPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theIdentifierPackage.initializePackageContents();
 		theDataFlowDiagramPackage.initializePackageContents();
+		theDataDictionaryPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theIdentifierPackage.freeze();

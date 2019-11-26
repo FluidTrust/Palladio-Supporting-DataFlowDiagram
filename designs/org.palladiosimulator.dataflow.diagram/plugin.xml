@@ -22,4 +22,12 @@
             genModel="model/DataFlowDiagram.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DataFlowDiagram -->
+      <package
+            uri="http://palladiosimulator.org/dataflow/dictionary/1.0"
+            class="DataDictionary.DataDictionaryPackage"
+            genModel="model/DataFlowDiagram.genmodel"/>
+   </extension>
+
 </plugin>

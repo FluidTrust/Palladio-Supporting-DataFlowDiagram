@@ -114,6 +114,98 @@ public class DataDictionaryItemProviderAdapterFactory extends DataDictionaryAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollectionDataTypeItemProvider collectionDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCollectionDataTypeAdapter() {
+		if (collectionDataTypeItemProvider == null) {
+			collectionDataTypeItemProvider = new CollectionDataTypeItemProvider(this);
+		}
+
+		return collectionDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeDataTypeItemProvider compositeDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeDataTypeAdapter() {
+		if (compositeDataTypeItemProvider == null) {
+			compositeDataTypeItemProvider = new CompositeDataTypeItemProvider(this);
+		}
+
+		return compositeDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrimitiveDataTypeItemProvider primitiveDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrimitiveDataTypeAdapter() {
+		if (primitiveDataTypeItemProvider == null) {
+			primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
+		}
+
+		return primitiveDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntryItemProvider entryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntryAdapter() {
+		if (entryItemProvider == null) {
+			entryItemProvider = new EntryItemProvider(this);
+		}
+
+		return entryItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +333,14 @@ public class DataDictionaryItemProviderAdapterFactory extends DataDictionaryAdap
 	public void dispose() {
 		if (dataDictionaryItemProvider != null)
 			dataDictionaryItemProvider.dispose();
+		if (collectionDataTypeItemProvider != null)
+			collectionDataTypeItemProvider.dispose();
+		if (compositeDataTypeItemProvider != null)
+			compositeDataTypeItemProvider.dispose();
+		if (primitiveDataTypeItemProvider != null)
+			primitiveDataTypeItemProvider.dispose();
+		if (entryItemProvider != null)
+			entryItemProvider.dispose();
 	}
 
 }
