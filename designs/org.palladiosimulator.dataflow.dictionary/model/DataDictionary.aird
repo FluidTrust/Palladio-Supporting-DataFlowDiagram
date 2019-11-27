@@ -2,9 +2,11 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_fXdh0BAtEeqddsudLOgyzw" selectedViews="_fY_y4BAtEeqddsudLOgyzw" version="14.1.0.201810161215">
     <semanticResources>DataDictionary.ecore</semanticResources>
-    <semanticResources>DataDictionary.genmodel</semanticResources>
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>DataDictionary.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_fY_y4BAtEeqddsudLOgyzw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_fZapoxAtEeqddsudLOgyzw" name="DataDictionary" repPath="#_fZPDcBAtEeqddsudLOgyzw">
@@ -289,7 +291,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5011MBBREeqgioqVHvVREw" name="[2..*] components" sourceNode="_iZ1jUBBREeqgioqVHvVREw" targetNode="_xlKeABBREeqgioqVHvVREw">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5011MBBREeqgioqVHvVREw" name="[1..*] components" sourceNode="_iZ1jUBBREeqgioqVHvVREw" targetNode="_xlKeABBREeqgioqVHvVREw">
       <target xmi:type="ecore:EReference" href="DataDictionary.ecore#//CompositeDataType/components"/>
       <semanticElements xmi:type="ecore:EReference" href="DataDictionary.ecore#//CompositeDataType/components"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="__f23QxBREeqgioqVHvVREw" description="__f23QBBREeqgioqVHvVREw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">

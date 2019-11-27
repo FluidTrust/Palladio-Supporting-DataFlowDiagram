@@ -6,27 +6,14 @@
 
 <plugin>
 
+
+
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated DataFlowDiagram -->
       <package
             uri="http://palladiosimulator.org/dataflow/diagram/1.0"
             class="org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage"
-            genModel="model/DataFlowDiagram.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated DataFlowDiagram -->
-      <package
-            uri="http://sdq.ipd.uka.de/Identifier/2.1"
-            class="identifier.IdentifierPackage"
-            genModel="model/DataFlowDiagram.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated DataFlowDiagram -->
-      <package
-            uri="http://palladiosimulator.org/dataflow/dictionary/1.0"
-            class="DataDictionary.DataDictionaryPackage"
             genModel="model/DataFlowDiagram.genmodel"/>
    </extension>
 

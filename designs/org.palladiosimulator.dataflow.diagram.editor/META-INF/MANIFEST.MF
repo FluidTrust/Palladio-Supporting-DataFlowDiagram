@@ -10,11 +10,14 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: DataDictionary.presentation,
- org.palladiosimulator.dataflow.diagram.DataFlowDiagram.presentation
+ org.palladiosimulator.dataflow.diagram.DataFlowDiagram.presentation,
+ DataFlowDiagram.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.palladiosimulator.dataflow.diagram.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.palladiosimulator.dataflow.dictionary.edit;visibility:=reexport,
+ de.uka.ipd.sdq.identifier.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

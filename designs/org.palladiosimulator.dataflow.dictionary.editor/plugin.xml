@@ -33,5 +33,4 @@
             contributorClass="org.palladiosimulator.dataflow.dictionary.DataDictionary.presentation.DataDictionaryActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

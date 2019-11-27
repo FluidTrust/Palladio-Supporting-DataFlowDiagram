@@ -13,8 +13,11 @@ Export-Package: identifier,
  identifier.util,
  org.palladiosimulator.dataflow.dictionary.DataDictionary,
  org.palladiosimulator.dataflow.dictionary.DataDictionary.impl,
- org.palladiosimulator.dataflow.dictionary.DataDictionary.util
+ org.palladiosimulator.dataflow.dictionary.DataDictionary.util,
+ DataDictionary,
+ DataDictionary.impl,
+ DataDictionary.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
- de.uka.ipd.sdq.identifier;bundle-version="2.1.0"
+ de.uka.ipd.sdq.identifier;bundle-version="2.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

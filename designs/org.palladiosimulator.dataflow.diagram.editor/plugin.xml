@@ -33,33 +33,4 @@
             contributorClass="org.palladiosimulator.dataflow.diagram.DataFlowDiagram.presentation.DataFlowDiagramActionBarContributor">
       </editor>
    </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated DataFlowDiagram -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="DataDictionary.presentation.DataDictionaryModelWizardID"
-            name="%_UI_DataDictionaryModelWizard_label"
-            class="DataDictionary.presentation.DataDictionaryModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/DataDictionaryModelFile.gif">
-         <description>%_UI_DataDictionaryModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated DataFlowDiagram -->
-      <editor
-            id="DataDictionary.presentation.DataDictionaryEditorID"
-            name="%_UI_DataDictionaryEditor_label"
-            icon="icons/full/obj16/DataDictionaryModelFile.gif"
-            extensions="datadictionary"
-            class="DataDictionary.presentation.DataDictionaryEditor"
-            contributorClass="DataDictionary.presentation.DataDictionaryActionBarContributor">
-      </editor>
-   </extension>
-
 </plugin>

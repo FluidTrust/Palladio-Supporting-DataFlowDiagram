@@ -10,8 +10,11 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: identifier.provider,
- org.palladiosimulator.dataflow.dictionary.DataDictionary.provider
+ org.palladiosimulator.dataflow.dictionary.DataDictionary.provider,
+ DataDictionary.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.dataflow.dictionary;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ de.uka.ipd.sdq.identifier;visibility:=reexport,
+ de.uka.ipd.sdq.identifier.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

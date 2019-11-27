@@ -2,11 +2,13 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_32GQYBAsEeqddsudLOgyzw" selectedViews="_4CkmIBAsEeqddsudLOgyzw" version="14.1.0.201810161215">
     <semanticResources>DataFlowDiagram.ecore</semanticResources>
-    <semanticResources>DataFlowDiagram.genmodel</semanticResources>
     <semanticResources>platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>platform:/resource/org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>DataFlowDiagram.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.palladiosimulator.dataflow.dictionary/model/DataDictionary.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_4CkmIBAsEeqddsudLOgyzw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4GXhABAsEeqddsudLOgyzw" name="DataFlowDiagram" repPath="#_4EGQIBAsEeqddsudLOgyzw">
@@ -297,17 +299,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_dBjFcBBQEeqgioqVHvVREw" type="4001" element="_dBc-2RBQEeqgioqVHvVREw" source="_-Bp7QBBOEeqgioqVHvVREw" target="_FEVJQBBOEeqFbcCRXbO-qA">
           <children xmi:type="notation:Node" xmi:id="_dBjsgBBQEeqgioqVHvVREw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dBjsgRBQEeqgioqVHvVREw" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dBjsgRBQEeqgioqVHvVREw" x="23" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_dBjsghBQEeqgioqVHvVREw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dBjsgxBQEeqgioqVHvVREw" x="-11" y="-33"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dBjsgxBQEeqgioqVHvVREw" x="-9" y="-33"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_dBjshBBQEeqgioqVHvVREw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dBjshRBQEeqgioqVHvVREw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dBjshRBQEeqgioqVHvVREw" x="-76" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_dBjFcRBQEeqgioqVHvVREw" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_dBjFchBQEeqgioqVHvVREw" fontColor="7490599" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dBjFcxBQEeqgioqVHvVREw" points="[-1, 0, -406, 60]$[404, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dBjFcxBQEeqgioqVHvVREw" points="[0, 0, 199, 274]$[0, -156, 199, 118]$[-115, -156, 84, 118]$[-115, -322, 84, -48]$[-141, -322, 58, -48]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dBjshhBQEeqgioqVHvVREw" id="(0.5084745762711864,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dBjshxBQEeqgioqVHvVREw" id="(0.5084745762711864,1.0)"/>
         </edges>

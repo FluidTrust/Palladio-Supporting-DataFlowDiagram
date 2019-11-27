@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/org.palladiosimulator.dataflow.diagram/src-gen"
-    creationIcons="false" editDirectory="/org.palladiosimulator.dataflow.diagram.edit/src-gen"
-    editorDirectory="/org.palladiosimulator.dataflow.diagram.editor/src-gen" modelPluginID="org.palladiosimulator.dataflow.diagram"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.palladiosimulator.dataflow.diagram/src" modelPluginID="org.palladiosimulator.dataflow.diagram"
     modelName="DataFlowDiagram" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.genmodel#//DataDictionary ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>DataFlowDiagram.ecore</foreignModel>
-  <testsDirectory xsi:nil="true"/>
   <genPackages prefix="DataFlowDiagram" basePackage="org.palladiosimulator.dataflow.diagram"
       disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
       ecorePackage="DataFlowDiagram.ecore#/">
@@ -17,7 +14,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagram/refinedBy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagram/refines"/>
     </genClasses>
-    <genClasses ecoreClass="DataFlowDiagram.ecore#//Component">
+    <genClasses image="false" ecoreClass="DataFlowDiagram.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataFlowDiagram.ecore#//Component/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Component/incomingDataFlow"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Component/outgoingDataFlow"/>
@@ -38,30 +35,6 @@
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Data">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Data/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataFlowDiagram.ecore#//Data/name"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Identifier" ecorePackage="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/">
-    <genClasses image="false" ecoreClass="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier/id"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="DataDictionary" ecorePackage="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#/">
-    <genClasses ecoreClass="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataDictionary">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataDictionary/entries"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//CollectionDataType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//CollectionDataType/type"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//CompositeDataType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//CompositeDataType/components"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//PrimitiveDataType"/>
-    <genClasses ecoreClass="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//Entry">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//Entry/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//Entry/name"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
