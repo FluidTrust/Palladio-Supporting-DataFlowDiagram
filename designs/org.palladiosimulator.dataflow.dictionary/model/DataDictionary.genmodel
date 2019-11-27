@@ -14,7 +14,9 @@
     <genClasses ecoreClass="DataDictionary.ecore#//DataDictionary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataDictionary.ecore#//DataDictionary/entries"/>
     </genClasses>
-    <genClasses ecoreClass="DataDictionary.ecore#//CollectionDataType"/>
+    <genClasses ecoreClass="DataDictionary.ecore#//CollectionDataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataDictionary.ecore#//CollectionDataType/type"/>
+    </genClasses>
     <genClasses ecoreClass="DataDictionary.ecore#//CompositeDataType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataDictionary.ecore#//CompositeDataType/components"/>
     </genClasses>
