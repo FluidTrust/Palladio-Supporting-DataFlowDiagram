@@ -1,109 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="DataFlowDiagram"
-    nsURI="http://palladiosimulator.org/dataflow/diagram/1.0"
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="DataFlowDiagram" nsURI="http://palladiosimulator.org/dataflow/diagram/1.0"
     nsPrefix="DataFlowDiagram">
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="DataFlowDiagram"
-      eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="components"
-        upperBound="-1"
-        eType="#//Component"
-        containment="true"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="refinedBy"
-        upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlowDiagram" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedBy" upperBound="-1"
         eType="#//DataFlowDiagram"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="refines"
-        eType="#//RefiningReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//RefiningReference"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="Component"
-      abstract="true"
-      eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-    <eStructuralFeatures
-        xsi:type="ecore:EAttribute"
-        name="name"
-        lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="incomingDataFlow"
-        upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingDataFlow" upperBound="-1"
         eType="#//Component"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="outgoingDataFlow"
-        upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingDataFlow" upperBound="-1"
         eType="#//Component"/>
   </eClassifiers>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="ExternalActor"
-      eSuperTypes="#//Component"/>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="Store"
-      eSuperTypes="#//Component"/>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="Process"
-      eSuperTypes="#//Component"/>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="Port"
-      eSuperTypes="#//Component"/>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="RefiningReference"
-      eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="refinedProcesses"
-        lowerBound="1"
-        upperBound="-1"
-        eType="#//Process"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalActor" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RefiningReference" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedProcesses" lowerBound="1"
+        upperBound="-1" eType="#//Process"/>
   </eClassifiers>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="DataFlow"
-      eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="data"
-        upperBound="-1"
-        eType="#//Data"
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="source"
-        lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Component"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="target"
-        lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="Data">
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="type"
-        lowerBound="1"
-        eType="ecore:EClass ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -179,13 +179,22 @@ public interface DataDictionaryPackage extends EPackage {
 	int COLLECTION_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_DATA_TYPE__TYPE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Collection Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
+	int COLLECTION_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Collection Data Type</em>' class.
@@ -384,6 +393,17 @@ public interface DataDictionaryPackage extends EPackage {
 	EClass getCollectionDataType();
 
 	/**
+	 * Returns the meta object for the reference '{@link DataDictionary.CollectionDataType#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see DataDictionary.CollectionDataType#getType()
+	 * @see #getCollectionDataType()
+	 * @generated
+	 */
+	EReference getCollectionDataType_Type();
+
+	/**
 	 * Returns the meta object for class '{@link DataDictionary.CompositeDataType <em>Composite Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -517,6 +537,14 @@ public interface DataDictionaryPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COLLECTION_DATA_TYPE = eINSTANCE.getCollectionDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLLECTION_DATA_TYPE__TYPE = eINSTANCE.getCollectionDataType_Type();
 
 		/**
 		 * The meta object literal for the '{@link DataDictionary.impl.CompositeDataTypeImpl <em>Composite Data Type</em>}' class.

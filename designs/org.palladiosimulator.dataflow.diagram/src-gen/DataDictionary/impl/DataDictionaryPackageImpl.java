@@ -190,6 +190,15 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCollectionDataType_Type() {
+		return (EReference) collectionDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCompositeDataType() {
 		return compositeDataTypeEClass;
 	}
@@ -290,6 +299,7 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 		createEReference(dataDictionaryEClass, DATA_DICTIONARY__ENTRIES);
 
 		collectionDataTypeEClass = createEClass(COLLECTION_DATA_TYPE);
+		createEReference(collectionDataTypeEClass, COLLECTION_DATA_TYPE__TYPE);
 
 		compositeDataTypeEClass = createEClass(COMPOSITE_DATA_TYPE);
 		createEReference(compositeDataTypeEClass, COMPOSITE_DATA_TYPE__COMPONENTS);
@@ -355,6 +365,9 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		initEClass(collectionDataTypeEClass, CollectionDataType.class, "CollectionDataType", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCollectionDataType_Type(), this.getDataType(), null, "type", null, 1, 1,
+				CollectionDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeDataTypeEClass, CompositeDataType.class, "CompositeDataType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

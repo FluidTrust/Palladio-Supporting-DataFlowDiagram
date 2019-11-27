@@ -20,7 +20,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -42,7 +41,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.util.DataDiction
  * @generated
  */
 public class DataDictionaryItemProviderAdapterFactory extends DataDictionaryAdapterFactory
-		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+		implements ComposeableAdapterFactory, IChangeNotifier, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -322,25 +321,6 @@ public class DataDictionaryItemProviderAdapterFactory extends DataDictionaryAdap
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (dataDictionaryItemProvider != null)
-			dataDictionaryItemProvider.dispose();
-		if (collectionDataTypeItemProvider != null)
-			collectionDataTypeItemProvider.dispose();
-		if (compositeDataTypeItemProvider != null)
-			compositeDataTypeItemProvider.dispose();
-		if (primitiveDataTypeItemProvider != null)
-			primitiveDataTypeItemProvider.dispose();
-		if (entryItemProvider != null)
-			entryItemProvider.dispose();
 	}
 
 }
