@@ -16,10 +16,7 @@ Export-Package: DataDictionary,
  identifier.util,
  org.palladiosimulator.dataflow.diagram.DataFlowDiagram,
  org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl,
- org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util,
- DataFlowDiagram,
- DataFlowDiagram.impl,
- DataFlowDiagram.util
+ org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.palladiosimulator.dataflow.dictionary;visibility:=reexport,
  org.eclipse.core.runtime,
