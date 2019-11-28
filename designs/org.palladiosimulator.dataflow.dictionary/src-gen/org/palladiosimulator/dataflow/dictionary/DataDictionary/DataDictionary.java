@@ -2,8 +2,9 @@
  */
 package org.palladiosimulator.dataflow.dictionary.DataDictionary;
 
-import identifier.Identifier;
+import de.uka.ipd.sdq.identifier.Identifier;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,17 +22,17 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DataDictionary extends Identifier {
+public interface DataDictionary extends EObject, Identifier {
 
 	/**
-	 * Returns the value of the '<em><b>Entries</b></em>' containment reference list.
-	 * The list contents are of type {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Entries</b></em>' containment reference list.
+     * The list contents are of type {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entries</em>' containment reference list.
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getDataDictionary_Entries()
-	 * @model containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Entries</em>' containment reference list.
+     * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getDataDictionary_Entries()
+     * @model containment="true"
+     * @generated
+     */
 	EList<DataType> getEntries();
 } // DataDictionary

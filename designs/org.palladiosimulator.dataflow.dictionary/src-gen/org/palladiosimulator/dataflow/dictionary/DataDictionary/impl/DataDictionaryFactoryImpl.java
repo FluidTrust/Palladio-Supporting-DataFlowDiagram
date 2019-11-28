@@ -20,125 +20,120 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.*;
  */
 public class DataDictionaryFactoryImpl extends EFactoryImpl implements DataDictionaryFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public static DataDictionaryFactory init() {
-		try {
-			DataDictionaryFactory theDataDictionaryFactory = (DataDictionaryFactory) EPackage.Registry.INSTANCE
-					.getEFactory(DataDictionaryPackage.eNS_URI);
-			if (theDataDictionaryFactory != null) {
-				return theDataDictionaryFactory;
-			}
-		} catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new DataDictionaryFactoryImpl();
-	}
+        try {
+            DataDictionaryFactory theDataDictionaryFactory = (DataDictionaryFactory)EPackage.Registry.INSTANCE.getEFactory(DataDictionaryPackage.eNS_URI);
+            if (theDataDictionaryFactory != null) {
+                return theDataDictionaryFactory;
+            }
+        }
+        catch (Exception exception) {
+            EcorePlugin.INSTANCE.log(exception);
+        }
+        return new DataDictionaryFactoryImpl();
+    }
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public DataDictionaryFactoryImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-		case DataDictionaryPackage.DATA_DICTIONARY:
-			return createDataDictionary();
-		case DataDictionaryPackage.COLLECTION_DATA_TYPE:
-			return createCollectionDataType();
-		case DataDictionaryPackage.COMPOSITE_DATA_TYPE:
-			return createCompositeDataType();
-		case DataDictionaryPackage.PRIMITIVE_DATA_TYPE:
-			return createPrimitiveDataType();
-		case DataDictionaryPackage.ENTRY:
-			return createEntry();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+        switch (eClass.getClassifierID()) {
+            case DataDictionaryPackage.DATA_DICTIONARY: return createDataDictionary();
+            case DataDictionaryPackage.COLLECTION_DATA_TYPE: return createCollectionDataType();
+            case DataDictionaryPackage.COMPOSITE_DATA_TYPE: return createCompositeDataType();
+            case DataDictionaryPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
+            case DataDictionaryPackage.ENTRY: return createEntry();
+            default:
+                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        }
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public DataDictionary createDataDictionary() {
-		DataDictionaryImpl dataDictionary = new DataDictionaryImpl();
-		return dataDictionary;
-	}
+        DataDictionaryImpl dataDictionary = new DataDictionaryImpl();
+        return dataDictionary;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public CollectionDataType createCollectionDataType() {
-		CollectionDataTypeImpl collectionDataType = new CollectionDataTypeImpl();
-		return collectionDataType;
-	}
+        CollectionDataTypeImpl collectionDataType = new CollectionDataTypeImpl();
+        return collectionDataType;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public CompositeDataType createCompositeDataType() {
-		CompositeDataTypeImpl compositeDataType = new CompositeDataTypeImpl();
-		return compositeDataType;
-	}
+        CompositeDataTypeImpl compositeDataType = new CompositeDataTypeImpl();
+        return compositeDataType;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public PrimitiveDataType createPrimitiveDataType() {
-		PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
-		return primitiveDataType;
-	}
+        PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
+        return primitiveDataType;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Entry createEntry() {
-		EntryImpl entry = new EntryImpl();
-		return entry;
-	}
+        EntryImpl entry = new EntryImpl();
+        return entry;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public DataDictionaryPackage getDataDictionaryPackage() {
-		return (DataDictionaryPackage) getEPackage();
-	}
+        return (DataDictionaryPackage)getEPackage();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+     * @deprecated
+     * @generated
+     */
 	@Deprecated
 	public static DataDictionaryPackage getPackage() {
-		return DataDictionaryPackage.eINSTANCE;
-	}
+        return DataDictionaryPackage.eINSTANCE;
+    }
 
 } //DataDictionaryFactoryImpl
