@@ -30,118 +30,118 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
  */
 public class DataDictionaryImpl extends IdentifierImpl implements DataDictionary {
 	/**
-     * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getEntries()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEntries()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<DataType> entries;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected DataDictionaryImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return DataDictionaryPackage.Literals.DATA_DICTIONARY;
-    }
+		return DataDictionaryPackage.Literals.DATA_DICTIONARY;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<DataType> getEntries() {
-        if (entries == null) {
-            entries = new EObjectContainmentEList<DataType>(DataType.class, this, DataDictionaryPackage.DATA_DICTIONARY__ENTRIES);
-        }
-        return entries;
-    }
+		if (entries == null) {
+			entries = new EObjectContainmentEList<DataType>(DataType.class, this, DataDictionaryPackage.DATA_DICTIONARY__ENTRIES);
+		}
+		return entries;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
-                return ((InternalEList<?>)getEntries()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
+				return ((InternalEList<?>)getEntries()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
-                return getEntries();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
+				return getEntries();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
-                getEntries().clear();
-                getEntries().addAll((Collection<? extends DataType>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
+				getEntries().clear();
+				getEntries().addAll((Collection<? extends DataType>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
-                getEntries().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
+				getEntries().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
-                return entries != null && !entries.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case DataDictionaryPackage.DATA_DICTIONARY__ENTRIES:
+				return entries != null && !entries.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //DataDictionaryImpl

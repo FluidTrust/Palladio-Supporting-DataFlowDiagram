@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface CompositeDataType extends DataType {
 	/**
-     * Returns the value of the '<em><b>Components</b></em>' containment reference list.
-     * The list contents are of type {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Components</em>' containment reference list.
-     * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getCompositeDataType_Components()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Components</em>' containment reference list.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getCompositeDataType_Components()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
 	EList<Entry> getComponents();
 
 } // CompositeDataType

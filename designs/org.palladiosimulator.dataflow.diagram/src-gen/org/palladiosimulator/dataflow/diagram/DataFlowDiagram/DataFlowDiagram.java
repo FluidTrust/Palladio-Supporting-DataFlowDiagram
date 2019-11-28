@@ -27,48 +27,48 @@ import org.eclipse.emf.ecore.EObject;
 public interface DataFlowDiagram extends EObject, Identifier {
 
 	/**
-     * Returns the value of the '<em><b>Components</b></em>' containment reference list.
-     * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Components</em>' containment reference list.
-     * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_Components()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Components</em>' containment reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_Components()
+	 * @model containment="true"
+	 * @generated
+	 */
 	EList<Component> getComponents();
 
 	/**
-     * Returns the value of the '<em><b>Refined By</b></em>' reference list.
-     * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Refined By</b></em>' reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Refined By</em>' reference list.
-     * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_RefinedBy()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Refined By</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_RefinedBy()
+	 * @model
+	 * @generated
+	 */
 	EList<DataFlowDiagram> getRefinedBy();
 
 	/**
-     * Returns the value of the '<em><b>Refines</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Refines</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Refines</em>' containment reference.
-     * @see #setRefines(RefiningReference)
-     * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_Refines()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Refines</em>' containment reference.
+	 * @see #setRefines(RefiningReference)
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_Refines()
+	 * @model containment="true"
+	 * @generated
+	 */
 	RefiningReference getRefines();
 
 	/**
-     * Sets the value of the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefines <em>Refines</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefines <em>Refines</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refines</em>' containment reference.
-     * @see #getRefines()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Refines</em>' containment reference.
+	 * @see #getRefines()
+	 * @generated
+	 */
 	void setRefines(RefiningReference value);
 } // DataFlowDiagram

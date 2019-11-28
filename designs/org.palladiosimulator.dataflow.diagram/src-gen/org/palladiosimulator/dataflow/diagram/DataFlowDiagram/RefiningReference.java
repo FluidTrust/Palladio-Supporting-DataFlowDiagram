@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface RefiningReference extends EObject, Identifier {
 	/**
-     * Returns the value of the '<em><b>Refined Processes</b></em>' reference list.
-     * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Refined Processes</b></em>' reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Refined Processes</em>' reference list.
-     * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getRefiningReference_RefinedProcesses()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Refined Processes</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getRefiningReference_RefinedProcesses()
+	 * @model required="true"
+	 * @generated
+	 */
 	EList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process> getRefinedProcesses();
 
 } // RefiningReference

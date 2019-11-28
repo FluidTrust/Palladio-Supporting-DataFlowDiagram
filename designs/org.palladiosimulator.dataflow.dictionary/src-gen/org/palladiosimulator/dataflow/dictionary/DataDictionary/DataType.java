@@ -23,25 +23,25 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DataType extends EObject, Identifier {
 	/**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #setName(String)
-     * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getDataType_Name()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getDataType_Name()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+	 * @generated
+	 */
 	String getName();
 
 	/**
-     * Sets the value of the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #getName()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
 	void setName(String value);
 
 } // DataType

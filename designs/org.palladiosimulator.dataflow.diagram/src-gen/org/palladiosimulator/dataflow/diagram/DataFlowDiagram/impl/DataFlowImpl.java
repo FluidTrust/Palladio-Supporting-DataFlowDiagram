@@ -41,303 +41,303 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  */
 public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	/**
-     * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getData()
-     * @generated
-     * @ordered
-     */
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<Data> data;
 
 	/**
-     * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getSource()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
 	protected Component source;
 
 	/**
-     * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getTarget()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
 	protected Component target;
 
 	/**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected DataFlowImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return DataFlowDiagramPackage.Literals.DATA_FLOW;
-    }
+		return DataFlowDiagramPackage.Literals.DATA_FLOW;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<Data> getData() {
-        if (data == null) {
-            data = new EObjectContainmentEList<Data>(Data.class, this, DataFlowDiagramPackage.DATA_FLOW__DATA);
-        }
-        return data;
-    }
+		if (data == null) {
+			data = new EObjectContainmentEList<Data>(Data.class, this, DataFlowDiagramPackage.DATA_FLOW__DATA);
+		}
+		return data;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Component getSource() {
-        if (source != null && source.eIsProxy()) {
-            InternalEObject oldSource = (InternalEObject)source;
-            source = (Component)eResolveProxy(oldSource);
-            if (source != oldSource) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__SOURCE, oldSource, source));
-            }
-        }
-        return source;
-    }
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (Component)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Component basicGetSource() {
-        return source;
-    }
+		return source;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setSource(Component newSource) {
-        Component oldSource = source;
-        source = newSource;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__SOURCE, oldSource, source));
-    }
+		Component oldSource = source;
+		source = newSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__SOURCE, oldSource, source));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Component getTarget() {
-        if (target != null && target.eIsProxy()) {
-            InternalEObject oldTarget = (InternalEObject)target;
-            target = (Component)eResolveProxy(oldTarget);
-            if (target != oldTarget) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__TARGET, oldTarget, target));
-            }
-        }
-        return target;
-    }
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (Component)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__TARGET, oldTarget, target));
+			}
+		}
+		return target;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Component basicGetTarget() {
-        return target;
-    }
+		return target;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setTarget(Component newTarget) {
-        Component oldTarget = target;
-        target = newTarget;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__TARGET, oldTarget, target));
-    }
+		Component oldTarget = target;
+		target = newTarget;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__TARGET, oldTarget, target));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__NAME, oldName, name));
-    }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__NAME, oldName, name));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case DataFlowDiagramPackage.DATA_FLOW__DATA:
-                return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DataFlowDiagramPackage.DATA_FLOW__DATA:
-                return getData();
-            case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-                if (resolve) return getSource();
-                return basicGetSource();
-            case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-                if (resolve) return getTarget();
-                return basicGetTarget();
-            case DataFlowDiagramPackage.DATA_FLOW__NAME:
-                return getName();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				return getData();
+			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
+			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				return getName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DataFlowDiagramPackage.DATA_FLOW__DATA:
-                getData().clear();
-                getData().addAll((Collection<? extends Data>)newValue);
-                return;
-            case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-                setSource((Component)newValue);
-                return;
-            case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-                setTarget((Component)newValue);
-                return;
-            case DataFlowDiagramPackage.DATA_FLOW__NAME:
-                setName((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends Data>)newValue);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
+				setSource((Component)newValue);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
+				setTarget((Component)newValue);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				setName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case DataFlowDiagramPackage.DATA_FLOW__DATA:
-                getData().clear();
-                return;
-            case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-                setSource((Component)null);
-                return;
-            case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-                setTarget((Component)null);
-                return;
-            case DataFlowDiagramPackage.DATA_FLOW__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				getData().clear();
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
+				setSource((Component)null);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
+				setTarget((Component)null);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DataFlowDiagramPackage.DATA_FLOW__DATA:
-                return data != null && !data.isEmpty();
-            case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-                return source != null;
-            case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-                return target != null;
-            case DataFlowDiagramPackage.DATA_FLOW__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				return data != null && !data.isEmpty();
+			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
+				return source != null;
+			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
+				return target != null;
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
 
 } //DataFlowImpl

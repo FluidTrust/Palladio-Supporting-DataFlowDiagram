@@ -16,22 +16,22 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataTyp
  */
 public class PrimitiveDataTypeImpl extends DataTypeImpl implements PrimitiveDataType {
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected PrimitiveDataTypeImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return DataDictionaryPackage.Literals.PRIMITIVE_DATA_TYPE;
-    }
+		return DataDictionaryPackage.Literals.PRIMITIVE_DATA_TYPE;
+	}
 
 } //PrimitiveDataTypeImpl

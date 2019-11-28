@@ -16,22 +16,22 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
  */
 public class StoreImpl extends ComponentImpl implements Store {
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected StoreImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return DataFlowDiagramPackage.Literals.STORE;
-    }
+		return DataFlowDiagramPackage.Literals.STORE;
+	}
 
 } //StoreImpl

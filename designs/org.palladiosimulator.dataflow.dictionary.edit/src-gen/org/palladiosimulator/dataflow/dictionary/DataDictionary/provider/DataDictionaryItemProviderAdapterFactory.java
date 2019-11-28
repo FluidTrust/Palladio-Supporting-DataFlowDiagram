@@ -44,297 +44,297 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.util.DataDiction
 public class DataDictionaryItemProviderAdapterFactory extends DataDictionaryAdapterFactory
 		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
-     * This keeps track of the root adapter factory that delegates to this adapter factory.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
-     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-     * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
-     * This helps manage the child creation extenders.
-     * <!-- begin-user-doc -->
+	 * This helps manage the child creation extenders.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(DataDictionaryEditPlugin.INSTANCE, DataDictionaryPackage.eNS_URI);
 
 	/**
-     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-     * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
-     * This constructs an instance.
-     * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public DataDictionaryItemProviderAdapterFactory() {
-        supportedTypes.add(IEditingDomainItemProvider.class);
-        supportedTypes.add(IStructuredItemContentProvider.class);
-        supportedTypes.add(ITreeItemContentProvider.class);
-        supportedTypes.add(IItemLabelProvider.class);
-        supportedTypes.add(IItemPropertySource.class);
-    }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary} instances.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected DataDictionaryItemProvider dataDictionaryItemProvider;
 
 	/**
-     * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Adapter createDataDictionaryAdapter() {
-        if (dataDictionaryItemProvider == null) {
-            dataDictionaryItemProvider = new DataDictionaryItemProvider(this);
-        }
+		if (dataDictionaryItemProvider == null) {
+			dataDictionaryItemProvider = new DataDictionaryItemProvider(this);
+		}
 
-        return dataDictionaryItemProvider;
-    }
+		return dataDictionaryItemProvider;
+	}
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType} instances.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected CollectionDataTypeItemProvider collectionDataTypeItemProvider;
 
 	/**
-     * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Adapter createCollectionDataTypeAdapter() {
-        if (collectionDataTypeItemProvider == null) {
-            collectionDataTypeItemProvider = new CollectionDataTypeItemProvider(this);
-        }
+		if (collectionDataTypeItemProvider == null) {
+			collectionDataTypeItemProvider = new CollectionDataTypeItemProvider(this);
+		}
 
-        return collectionDataTypeItemProvider;
-    }
+		return collectionDataTypeItemProvider;
+	}
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType} instances.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected CompositeDataTypeItemProvider compositeDataTypeItemProvider;
 
 	/**
-     * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Adapter createCompositeDataTypeAdapter() {
-        if (compositeDataTypeItemProvider == null) {
-            compositeDataTypeItemProvider = new CompositeDataTypeItemProvider(this);
-        }
+		if (compositeDataTypeItemProvider == null) {
+			compositeDataTypeItemProvider = new CompositeDataTypeItemProvider(this);
+		}
 
-        return compositeDataTypeItemProvider;
-    }
+		return compositeDataTypeItemProvider;
+	}
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType} instances.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected PrimitiveDataTypeItemProvider primitiveDataTypeItemProvider;
 
 	/**
-     * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Adapter createPrimitiveDataTypeAdapter() {
-        if (primitiveDataTypeItemProvider == null) {
-            primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
-        }
+		if (primitiveDataTypeItemProvider == null) {
+			primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
+		}
 
-        return primitiveDataTypeItemProvider;
-    }
+		return primitiveDataTypeItemProvider;
+	}
 
 	/**
-     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry} instances.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected EntryItemProvider entryItemProvider;
 
 	/**
-     * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Adapter createEntryAdapter() {
-        if (entryItemProvider == null) {
-            entryItemProvider = new EntryItemProvider(this);
-        }
+		if (entryItemProvider == null) {
+			entryItemProvider = new EntryItemProvider(this);
+		}
 
-        return entryItemProvider;
-    }
+		return entryItemProvider;
+	}
 
 	/**
-     * This returns the root adapter factory that contains this factory.
-     * <!-- begin-user-doc -->
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-    }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
 	/**
-     * This sets the composed adapter factory that contains this factory.
-     * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-        this.parentAdapterFactory = parentAdapterFactory;
-    }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean isFactoryForType(Object type) {
-        return supportedTypes.contains(type) || super.isFactoryForType(type);
-    }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
 	/**
-     * This implementation substitutes the factory itself as the key for the adapter.
-     * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
-        return super.adapt(notifier, this);
-    }
+		return super.adapt(notifier, this);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-        if (isFactoryForType(type)) {
-            Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-                return adapter;
-            }
-        }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
-        return childCreationExtenderManager.getChildCreationExtenders();
-    }
+		return childCreationExtenderManager.getChildCreationExtenders();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-        return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
-    }
+		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public ResourceLocator getResourceLocator() {
-        return childCreationExtenderManager;
-    }
+		return childCreationExtenderManager;
+	}
 
 	/**
-     * This adds a listener.
-     * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
-        changeNotifier.addListener(notifyChangedListener);
-    }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
 	/**
-     * This removes a listener.
-     * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
-        changeNotifier.removeListener(notifyChangedListener);
-    }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
 	/**
-     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-     * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void fireNotifyChanged(Notification notification) {
-        changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-        if (parentAdapterFactory != null) {
-            parentAdapterFactory.fireNotifyChanged(notification);
-        }
-    }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
     /**
-     * This disposes all of the item providers created by this factory. 
-     * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void dispose() {
-        if (dataDictionaryItemProvider != null) dataDictionaryItemProvider.dispose();
-        if (collectionDataTypeItemProvider != null) collectionDataTypeItemProvider.dispose();
-        if (compositeDataTypeItemProvider != null) compositeDataTypeItemProvider.dispose();
-        if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
-        if (entryItemProvider != null) entryItemProvider.dispose();
-    }
+		if (dataDictionaryItemProvider != null) dataDictionaryItemProvider.dispose();
+		if (collectionDataTypeItemProvider != null) collectionDataTypeItemProvider.dispose();
+		if (compositeDataTypeItemProvider != null) compositeDataTypeItemProvider.dispose();
+		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
+		if (entryItemProvider != null) entryItemProvider.dispose();
+	}
 
 }
