@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -73,7 +74,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW_DIAGRAM__ID = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER__ID;
+	int DATA_FLOW_DIAGRAM__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -82,7 +83,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW_DIAGRAM__COMPONENTS = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA_FLOW_DIAGRAM__COMPONENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Refined By</b></em>' reference list.
@@ -91,7 +92,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW_DIAGRAM__REFINED_BY = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+	int DATA_FLOW_DIAGRAM__REFINED_BY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Refines</b></em>' containment reference.
@@ -100,7 +101,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW_DIAGRAM__REFINES = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW_DIAGRAM__REFINES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Data Flow Diagram</em>' class.
@@ -109,16 +110,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
-
-	/**
-     * The number of operations of the '<em>Data Flow Diagram</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DATA_FLOW_DIAGRAM_OPERATION_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
+	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl <em>Component</em>}' class.
@@ -137,7 +129,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPONENT__ID = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER__ID;
+	int COMPONENT__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -146,7 +138,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPONENT__NAME = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+	int COMPONENT__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
@@ -155,7 +147,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPONENT__INCOMING_DATA_FLOW = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+	int COMPONENT__INCOMING_DATA_FLOW = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
@@ -164,7 +156,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPONENT__OUTGOING_DATA_FLOW = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int COMPONENT__OUTGOING_DATA_FLOW = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Component</em>' class.
@@ -173,16 +165,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPONENT_FEATURE_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
-
-	/**
-     * The number of operations of the '<em>Component</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int COMPONENT_OPERATION_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
+	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ExternalActorImpl <em>External Actor</em>}' class.
@@ -240,15 +223,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int EXTERNAL_ACTOR_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
-     * The number of operations of the '<em>External Actor</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int EXTERNAL_ACTOR_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.StoreImpl <em>Store</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -302,15 +276,6 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @ordered
      */
 	int STORE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
-
-	/**
-     * The number of operations of the '<em>Store</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int STORE_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ProcessImpl <em>Process</em>}' class.
@@ -368,15 +333,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int PROCESS_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
-     * The number of operations of the '<em>Process</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int PROCESS_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.PortImpl <em>Port</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -432,15 +388,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int PORT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
-     * The number of operations of the '<em>Port</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int PORT_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.RefiningReferenceImpl <em>Refining Reference</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -457,7 +404,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REFINING_REFERENCE__ID = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER__ID;
+	int REFINING_REFERENCE__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Refined Processes</b></em>' reference list.
@@ -466,7 +413,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REFINING_REFERENCE__REFINED_PROCESSES = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+	int REFINING_REFERENCE__REFINED_PROCESSES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The number of structural features of the '<em>Refining Reference</em>' class.
@@ -475,16 +422,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int REFINING_REFERENCE_FEATURE_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
-
-	/**
-     * The number of operations of the '<em>Refining Reference</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int REFINING_REFERENCE_OPERATION_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
+	int REFINING_REFERENCE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl <em>Data Flow</em>}' class.
@@ -503,7 +441,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW__ID = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER__ID;
+	int DATA_FLOW__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
      * The feature id for the '<em><b>Data</b></em>' containment reference list.
@@ -512,7 +450,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW__DATA = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA_FLOW__DATA = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Source</b></em>' reference.
@@ -521,7 +459,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW__SOURCE = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+	int DATA_FLOW__SOURCE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Target</b></em>' reference.
@@ -530,7 +468,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW__TARGET = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW__TARGET = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -539,7 +477,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_FLOW__NAME = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+    int DATA_FLOW__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Data Flow</em>' class.
@@ -548,16 +486,7 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int DATA_FLOW_FEATURE_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
-
-	/**
-     * The number of operations of the '<em>Data Flow</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DATA_FLOW_OPERATION_COUNT = de.uka.ipd.sdq.identifier.IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
+	int DATA_FLOW_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataImpl <em>Data</em>}' class.
@@ -595,15 +524,6 @@ public interface DataFlowDiagramPackage extends EPackage {
      * @ordered
      */
 	int DATA_FEATURE_COUNT = 2;
-
-	/**
-     * The number of operations of the '<em>Data</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DATA_OPERATION_COUNT = 0;
 
 	/**
      * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram <em>Data Flow Diagram</em>}'.

@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util;
 
+import de.uka.ipd.sdq.identifier.Identifier;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -111,7 +112,7 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
                 return createDataAdapter();
             }
             @Override
-            public Adapter caseIdentifier(de.uka.ipd.sdq.identifier.Identifier object) {
+            public Adapter caseIdentifier(Identifier object) {
                 return createIdentifierAdapter();
             }
             @Override

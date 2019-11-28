@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
      * @generated
      * @ordered
      */
-	protected org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType type;
+	protected DataType type;
 
 	/**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -81,10 +82,10 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
      * @generated
      */
-	public org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType getType() {
+	public DataType getType() {
         if (type != null && type.eIsProxy()) {
             InternalEObject oldType = (InternalEObject)type;
-            type = (org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType)eResolveProxy(oldType);
+            type = (DataType)eResolveProxy(oldType);
             if (type != oldType) {
                 if (eNotificationRequired())
                     eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA__TYPE, oldType, type));
@@ -98,7 +99,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
      * @generated
      */
-	public org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType basicGetType() {
+	public DataType basicGetType() {
         return type;
     }
 
@@ -107,8 +108,8 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setType(org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType newType) {
-        org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType oldType = type;
+    public void setType(DataType newType) {
+        DataType oldType = type;
         type = newType;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA__TYPE, oldType, type));
@@ -161,7 +162,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	public void eSet(int featureID, Object newValue) {
         switch (featureID) {
             case DataFlowDiagramPackage.DATA__TYPE:
-                setType((org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType)newValue);
+                setType((DataType)newValue);
                 return;
             case DataFlowDiagramPackage.DATA__NAME:
                 setName((String)newValue);
@@ -179,7 +180,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	public void eUnset(int featureID) {
         switch (featureID) {
             case DataFlowDiagramPackage.DATA__TYPE:
-                setType((org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType)null);
+                setType((DataType)null);
                 return;
             case DataFlowDiagramPackage.DATA__NAME:
                 setName(NAME_EDEFAULT);

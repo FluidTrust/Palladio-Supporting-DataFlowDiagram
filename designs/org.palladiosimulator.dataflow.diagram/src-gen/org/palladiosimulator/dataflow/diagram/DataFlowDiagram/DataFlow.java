@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
+import de.uka.ipd.sdq.identifier.Identifier;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -24,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DataFlow extends EObject, de.uka.ipd.sdq.identifier.Identifier {
+public interface DataFlow extends EObject, Identifier {
 	/**
      * Returns the value of the '<em><b>Data</b></em>' containment reference list.
      * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data}.

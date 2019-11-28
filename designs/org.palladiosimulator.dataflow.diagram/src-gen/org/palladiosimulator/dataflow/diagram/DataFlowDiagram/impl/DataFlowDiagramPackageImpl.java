@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -20,6 +21,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,8 +134,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
         isInited = true;
 
         // Initialize simple dependencies
-        org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage.eINSTANCE.eClass();
-        de.uka.ipd.sdq.identifier.IdentifierPackage.eINSTANCE.eClass();
+        DataDictionaryPackage.eINSTANCE.eClass();
+        IdentifierPackage.eINSTANCE.eClass();
         XMLTypePackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
@@ -432,9 +434,9 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        de.uka.ipd.sdq.identifier.IdentifierPackage theIdentifierPackage = (de.uka.ipd.sdq.identifier.IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(de.uka.ipd.sdq.identifier.IdentifierPackage.eNS_URI);
+        IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
         XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
-        org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage theDataDictionaryPackage = (org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage)EPackage.Registry.INSTANCE.getEPackage(org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage.eNS_URI);
+        DataDictionaryPackage theDataDictionaryPackage = (DataDictionaryPackage)EPackage.Registry.INSTANCE.getEPackage(DataDictionaryPackage.eNS_URI);
 
         // Create type parameters
 
@@ -450,7 +452,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
         refiningReferenceEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         dataFlowEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
-        // Initialize classes, features, and operations; add parameters
+        // Initialize classes and features; add operations and parameters
         initEClass(dataFlowDiagramEClass, DataFlowDiagram.class, "DataFlowDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getDataFlowDiagram_Components(), this.getComponent(), null, "components", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getDataFlowDiagram_RefinedBy(), this.getDataFlowDiagram(), null, "refinedBy", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

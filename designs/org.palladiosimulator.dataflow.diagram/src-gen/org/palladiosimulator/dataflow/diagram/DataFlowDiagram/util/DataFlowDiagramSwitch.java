@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util;
 
+import de.uka.ipd.sdq.identifier.Identifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -290,7 +291,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifier(de.uka.ipd.sdq.identifier.Identifier object) {
+    public T caseIdentifier(Identifier object) {
         return null;
     }
 

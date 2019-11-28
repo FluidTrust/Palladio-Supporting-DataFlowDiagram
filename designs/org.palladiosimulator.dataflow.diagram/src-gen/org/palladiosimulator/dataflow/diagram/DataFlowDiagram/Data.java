@@ -3,6 +3,7 @@
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,12 +28,12 @@ public interface Data extends EObject {
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @return the value of the '<em>Type</em>' reference.
-     * @see #setType(org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType)
+     * @see #setType(DataType)
      * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getData_Type()
      * @model required="true"
      * @generated
      */
-	org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType getType();
+	DataType getType();
 
 	/**
      * Sets the value of the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data#getType <em>Type</em>}' reference.
@@ -42,7 +43,7 @@ public interface Data extends EObject {
      * @see #getType()
      * @generated
      */
-    void setType(org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType value);
+    void setType(DataType value);
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.

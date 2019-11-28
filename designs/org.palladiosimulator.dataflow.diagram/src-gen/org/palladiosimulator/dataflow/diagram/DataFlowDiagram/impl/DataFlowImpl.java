@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +39,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  *
  * @generated
  */
-public class DataFlowImpl extends de.uka.ipd.sdq.identifier.impl.IdentifierImpl implements DataFlow {
+public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	/**
      * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
      * <!-- begin-user-doc -->

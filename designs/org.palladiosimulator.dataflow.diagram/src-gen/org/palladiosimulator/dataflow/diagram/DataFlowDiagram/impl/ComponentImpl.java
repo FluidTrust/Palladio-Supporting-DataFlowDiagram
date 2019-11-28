@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,7 +33,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  *
  * @generated
  */
-public abstract class ComponentImpl extends de.uka.ipd.sdq.identifier.impl.IdentifierImpl implements Component {
+public abstract class ComponentImpl extends IdentifierImpl implements Component {
 	/**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->

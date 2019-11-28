@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.provider;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -23,7 +24,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentItemProvider extends de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider {
+public class ComponentItemProvider extends IdentifierItemProvider {
 	/**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->

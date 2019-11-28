@@ -154,7 +154,9 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.provider.DataFlowDiagramItemProviderAdapterFactory;
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.provider.DataDictionaryItemProviderAdapterFactory;
 
 /**
  * This is an example of a DataFlowDiagram model editor.
@@ -693,8 +695,8 @@ public class DataFlowDiagramEditor extends MultiPageEditorPart
 
         adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new DataFlowDiagramItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new org.palladiosimulator.dataflow.dictionary.DataDictionary.provider.DataDictionaryItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new DataDictionaryItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
         // Create the command stack that will notify this editor as commands are executed.

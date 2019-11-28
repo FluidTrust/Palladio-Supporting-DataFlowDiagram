@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -26,7 +27,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
  *
  * @generated
  */
-public class RefiningReferenceImpl extends de.uka.ipd.sdq.identifier.impl.IdentifierImpl implements RefiningReference {
+public class RefiningReferenceImpl extends IdentifierImpl implements RefiningReference {
 	/**
      * The cached value of the '{@link #getRefinedProcesses() <em>Refined Processes</em>}' reference list.
      * <!-- begin-user-doc -->
