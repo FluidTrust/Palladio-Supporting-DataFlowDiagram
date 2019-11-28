@@ -16,22 +16,22 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
  */
 public class ExternalActorImpl extends ComponentImpl implements ExternalActor {
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ExternalActorImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.EXTERNAL_ACTOR;
-	}
+        return DataFlowDiagramPackage.Literals.EXTERNAL_ACTOR;
+    }
 
 } //ExternalActorImpl

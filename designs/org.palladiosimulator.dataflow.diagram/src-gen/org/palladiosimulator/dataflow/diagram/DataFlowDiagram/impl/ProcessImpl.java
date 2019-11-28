@@ -16,22 +16,22 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
 public class ProcessImpl extends ComponentImpl
 		implements org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process {
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ProcessImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.PROCESS;
-	}
+        return DataFlowDiagramPackage.Literals.PROCESS;
+    }
 
 } //ProcessImpl

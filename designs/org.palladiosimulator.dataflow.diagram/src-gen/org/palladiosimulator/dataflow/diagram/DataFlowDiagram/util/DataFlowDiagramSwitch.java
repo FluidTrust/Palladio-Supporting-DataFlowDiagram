@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util;
 
-import identifier.Identifier;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -34,304 +32,282 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
  */
 public class DataFlowDiagramSwitch<T> extends Switch<T> {
 	/**
-	 * The cached model package
-	 * <!-- begin-user-doc -->
+     * The cached model package
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected static DataFlowDiagramPackage modelPackage;
 
 	/**
-	 * Creates an instance of the switch.
-	 * <!-- begin-user-doc -->
+     * Creates an instance of the switch.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public DataFlowDiagramSwitch() {
-		if (modelPackage == null) {
-			modelPackage = DataFlowDiagramPackage.eINSTANCE;
-		}
-	}
+        if (modelPackage == null) {
+            modelPackage = DataFlowDiagramPackage.eINSTANCE;
+        }
+    }
 
 	/**
-	 * Checks whether this is a switch for the given package.
-	 * <!-- begin-user-doc -->
+     * Checks whether this is a switch for the given package.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param ePackage the package in question.
-	 * @return whether this is a switch for the given package.
-	 * @generated
-	 */
+     * @param ePackage the package in question.
+     * @return whether this is a switch for the given package.
+     * @generated
+     */
 	@Override
 	protected boolean isSwitchFor(EPackage ePackage) {
-		return ePackage == modelPackage;
-	}
+        return ePackage == modelPackage;
+    }
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
+     * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+     * @return the first non-null result returned by a <code>caseXXX</code> call.
+     * @generated
+     */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-		case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM: {
-			DataFlowDiagram dataFlowDiagram = (DataFlowDiagram) theEObject;
-			T result = caseDataFlowDiagram(dataFlowDiagram);
-			if (result == null)
-				result = caseIdentifier(dataFlowDiagram);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.COMPONENT: {
-			Component component = (Component) theEObject;
-			T result = caseComponent(component);
-			if (result == null)
-				result = caseIdentifier(component);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.EXTERNAL_ACTOR: {
-			ExternalActor externalActor = (ExternalActor) theEObject;
-			T result = caseExternalActor(externalActor);
-			if (result == null)
-				result = caseComponent(externalActor);
-			if (result == null)
-				result = caseIdentifier(externalActor);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.STORE: {
-			Store store = (Store) theEObject;
-			T result = caseStore(store);
-			if (result == null)
-				result = caseComponent(store);
-			if (result == null)
-				result = caseIdentifier(store);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.PROCESS: {
-			org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process process = (org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process) theEObject;
-			T result = caseProcess(process);
-			if (result == null)
-				result = caseComponent(process);
-			if (result == null)
-				result = caseIdentifier(process);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.PORT: {
-			Port port = (Port) theEObject;
-			T result = casePort(port);
-			if (result == null)
-				result = caseComponent(port);
-			if (result == null)
-				result = caseIdentifier(port);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.REFINING_REFERENCE: {
-			RefiningReference refiningReference = (RefiningReference) theEObject;
-			T result = caseRefiningReference(refiningReference);
-			if (result == null)
-				result = caseIdentifier(refiningReference);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.DATA_FLOW: {
-			DataFlow dataFlow = (DataFlow) theEObject;
-			T result = caseDataFlow(dataFlow);
-			if (result == null)
-				result = caseIdentifier(dataFlow);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DataFlowDiagramPackage.DATA: {
-			Data data = (Data) theEObject;
-			T result = caseData(data);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
-		}
-	}
+        switch (classifierID) {
+            case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM: {
+                DataFlowDiagram dataFlowDiagram = (DataFlowDiagram)theEObject;
+                T result = caseDataFlowDiagram(dataFlowDiagram);
+                if (result == null) result = caseIdentifier(dataFlowDiagram);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.COMPONENT: {
+                Component component = (Component)theEObject;
+                T result = caseComponent(component);
+                if (result == null) result = caseIdentifier(component);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.EXTERNAL_ACTOR: {
+                ExternalActor externalActor = (ExternalActor)theEObject;
+                T result = caseExternalActor(externalActor);
+                if (result == null) result = caseComponent(externalActor);
+                if (result == null) result = caseIdentifier(externalActor);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.STORE: {
+                Store store = (Store)theEObject;
+                T result = caseStore(store);
+                if (result == null) result = caseComponent(store);
+                if (result == null) result = caseIdentifier(store);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.PROCESS: {
+                org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process process = (org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process)theEObject;
+                T result = caseProcess(process);
+                if (result == null) result = caseComponent(process);
+                if (result == null) result = caseIdentifier(process);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.PORT: {
+                Port port = (Port)theEObject;
+                T result = casePort(port);
+                if (result == null) result = caseComponent(port);
+                if (result == null) result = caseIdentifier(port);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.REFINING_REFERENCE: {
+                RefiningReference refiningReference = (RefiningReference)theEObject;
+                T result = caseRefiningReference(refiningReference);
+                if (result == null) result = caseIdentifier(refiningReference);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.DATA_FLOW: {
+                DataFlow dataFlow = (DataFlow)theEObject;
+                T result = caseDataFlow(dataFlow);
+                if (result == null) result = caseIdentifier(dataFlow);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DataFlowDiagramPackage.DATA: {
+                Data data = (Data)theEObject;
+                T result = caseData(data);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            default: return defaultCase(theEObject);
+        }
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Flow Diagram</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Data Flow Diagram</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Flow Diagram</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Data Flow Diagram</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseDataFlowDiagram(DataFlowDiagram object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseComponent(Component object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>External Actor</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>External Actor</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>External Actor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>External Actor</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseExternalActor(ExternalActor object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Store</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Store</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Store</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Store</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseStore(Store object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Process</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Process</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseProcess(org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Port</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Port</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T casePort(Port object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Refining Reference</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Refining Reference</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Refining Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Refining Reference</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseRefiningReference(RefiningReference object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Flow</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Data Flow</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Flow</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Data Flow</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseDataFlow(DataFlow object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
+     * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Data</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
 	public T caseData(Data object) {
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIdentifier(Identifier object) {
-		return null;
-	}
+     * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseIdentifier(de.uka.ipd.sdq.identifier.Identifier object) {
+        return null;
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-	 * <!-- begin-user-doc -->
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+     * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-	 * @generated
-	 */
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+     * @generated
+     */
 	@Override
 	public T defaultCase(EObject object) {
-		return null;
-	}
+        return null;
+    }
 
 } //DataFlowDiagramSwitch

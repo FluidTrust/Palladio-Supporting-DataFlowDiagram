@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
-import identifier.impl.IdentifierImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -28,109 +26,106 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
  *
  * @generated
  */
-public class RefiningReferenceImpl extends IdentifierImpl implements RefiningReference {
+public class RefiningReferenceImpl extends de.uka.ipd.sdq.identifier.impl.IdentifierImpl implements RefiningReference {
 	/**
-	 * The cached value of the '{@link #getRefinedProcesses() <em>Refined Processes</em>}' reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getRefinedProcesses() <em>Refined Processes</em>}' reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRefinedProcesses()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getRefinedProcesses()
+     * @generated
+     * @ordered
+     */
 	protected EList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process> refinedProcesses;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected RefiningReferenceImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.REFINING_REFERENCE;
-	}
+        return DataFlowDiagramPackage.Literals.REFINING_REFERENCE;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process> getRefinedProcesses() {
-		if (refinedProcesses == null) {
-			refinedProcesses = new EObjectResolvingEList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process>(
-					org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process.class, this,
-					DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES);
-		}
-		return refinedProcesses;
-	}
+        if (refinedProcesses == null) {
+            refinedProcesses = new EObjectResolvingEList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process>(org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process.class, this, DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES);
+        }
+        return refinedProcesses;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
-			return getRefinedProcesses();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
+                return getRefinedProcesses();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
-			getRefinedProcesses().clear();
-			getRefinedProcesses().addAll(
-					(Collection<? extends org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process>) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
+                getRefinedProcesses().clear();
+                getRefinedProcesses().addAll((Collection<? extends org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
-			getRefinedProcesses().clear();
-			return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
+                getRefinedProcesses().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
-			return refinedProcesses != null && !refinedProcesses.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.REFINING_REFERENCE__REFINED_PROCESSES:
+                return refinedProcesses != null && !refinedProcesses.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //RefiningReferenceImpl

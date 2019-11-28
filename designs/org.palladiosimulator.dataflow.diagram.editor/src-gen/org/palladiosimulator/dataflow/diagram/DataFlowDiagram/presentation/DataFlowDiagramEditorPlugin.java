@@ -2,11 +2,13 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.presentation;
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.provider.DataDictionaryEditPlugin;
 
 /**
  * This is the central singleton for the DataFlowDiagram editor plugin.
@@ -16,74 +18,78 @@ import org.eclipse.emf.common.util.ResourceLocator;
  */
 public final class DataFlowDiagramEditorPlugin extends EMFPlugin {
 	/**
-	 * Keep track of the singleton.
-	 * <!-- begin-user-doc -->
+     * Keep track of the singleton.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public static final DataFlowDiagramEditorPlugin INSTANCE = new DataFlowDiagramEditorPlugin();
 
 	/**
-	 * Keep track of the singleton.
-	 * <!-- begin-user-doc -->
+     * Keep track of the singleton.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	private static Implementation plugin;
 
 	/**
-	 * Create the instance.
-	 * <!-- begin-user-doc -->
+     * Create the instance.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public DataFlowDiagramEditorPlugin() {
-		super(new ResourceLocator[] {});
-	}
+        super
+            (new ResourceLocator [] {
+                DataDictionaryEditPlugin.INSTANCE,
+                IdentifierEditPlugin.INSTANCE,
+            });
+    }
 
 	/**
-	 * Returns the singleton instance of the Eclipse plugin.
-	 * <!-- begin-user-doc -->
+     * Returns the singleton instance of the Eclipse plugin.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the singleton instance.
-	 * @generated
-	 */
+     * @return the singleton instance.
+     * @generated
+     */
 	@Override
 	public ResourceLocator getPluginResourceLocator() {
-		return plugin;
-	}
+        return plugin;
+    }
 
 	/**
-	 * Returns the singleton instance of the Eclipse plugin.
-	 * <!-- begin-user-doc -->
+     * Returns the singleton instance of the Eclipse plugin.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the singleton instance.
-	 * @generated
-	 */
+     * @return the singleton instance.
+     * @generated
+     */
 	public static Implementation getPlugin() {
-		return plugin;
-	}
+        return plugin;
+    }
 
 	/**
-	 * The actual implementation of the Eclipse <b>Plugin</b>.
-	 * <!-- begin-user-doc -->
+     * The actual implementation of the Eclipse <b>Plugin</b>.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public static class Implementation extends EclipseUIPlugin {
 		/**
-		 * Creates an instance.
-		 * <!-- begin-user-doc -->
+         * Creates an instance.
+         * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+         * @generated
+         */
 		public Implementation() {
-			super();
-
-			// Remember the static instance.
-			//
-			plugin = this;
-		}
+            super();
+    
+            // Remember the static instance.
+            //
+            plugin = this;
+        }
 	}
 
 }

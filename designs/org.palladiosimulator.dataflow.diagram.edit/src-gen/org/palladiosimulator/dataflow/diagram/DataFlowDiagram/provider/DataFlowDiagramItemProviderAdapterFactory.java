@@ -44,378 +44,369 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util.DataFlowDiagr
 public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAdapterFactory
 		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the root adapter factory that delegates to this adapter factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
+     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
-	 * This helps manage the child creation extenders.
-	 * <!-- begin-user-doc -->
+     * This helps manage the child creation extenders.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
-			DataFlowDiagramEditPlugin.INSTANCE, DataFlowDiagramPackage.eNS_URI);
+     * @generated
+     */
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(DataFlowDiagramEditPlugin.INSTANCE, DataFlowDiagramPackage.eNS_URI);
 
 	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
+     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
+     * This constructs an instance.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public DataFlowDiagramItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+        supportedTypes.add(IEditingDomainItemProvider.class);
+        supportedTypes.add(IStructuredItemContentProvider.class);
+        supportedTypes.add(ITreeItemContentProvider.class);
+        supportedTypes.add(IItemLabelProvider.class);
+        supportedTypes.add(IItemPropertySource.class);
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected DataFlowDiagramItemProvider dataFlowDiagramItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createDataFlowDiagramAdapter() {
-		if (dataFlowDiagramItemProvider == null) {
-			dataFlowDiagramItemProvider = new DataFlowDiagramItemProvider(this);
-		}
+        if (dataFlowDiagramItemProvider == null) {
+            dataFlowDiagramItemProvider = new DataFlowDiagramItemProvider(this);
+        }
 
-		return dataFlowDiagramItemProvider;
-	}
+        return dataFlowDiagramItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ExternalActorItemProvider externalActorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createExternalActorAdapter() {
-		if (externalActorItemProvider == null) {
-			externalActorItemProvider = new ExternalActorItemProvider(this);
-		}
+        if (externalActorItemProvider == null) {
+            externalActorItemProvider = new ExternalActorItemProvider(this);
+        }
 
-		return externalActorItemProvider;
-	}
+        return externalActorItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected StoreItemProvider storeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createStoreAdapter() {
-		if (storeItemProvider == null) {
-			storeItemProvider = new StoreItemProvider(this);
-		}
+        if (storeItemProvider == null) {
+            storeItemProvider = new StoreItemProvider(this);
+        }
 
-		return storeItemProvider;
-	}
+        return storeItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ProcessItemProvider processItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createProcessAdapter() {
-		if (processItemProvider == null) {
-			processItemProvider = new ProcessItemProvider(this);
-		}
+        if (processItemProvider == null) {
+            processItemProvider = new ProcessItemProvider(this);
+        }
 
-		return processItemProvider;
-	}
+        return processItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected PortItemProvider portItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
-			portItemProvider = new PortItemProvider(this);
-		}
+        if (portItemProvider == null) {
+            portItemProvider = new PortItemProvider(this);
+        }
 
-		return portItemProvider;
-	}
+        return portItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected RefiningReferenceItemProvider refiningReferenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createRefiningReferenceAdapter() {
-		if (refiningReferenceItemProvider == null) {
-			refiningReferenceItemProvider = new RefiningReferenceItemProvider(this);
-		}
+        if (refiningReferenceItemProvider == null) {
+            refiningReferenceItemProvider = new RefiningReferenceItemProvider(this);
+        }
 
-		return refiningReferenceItemProvider;
-	}
+        return refiningReferenceItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected DataFlowItemProvider dataFlowItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createDataFlowAdapter() {
-		if (dataFlowItemProvider == null) {
-			dataFlowItemProvider = new DataFlowItemProvider(this);
-		}
+        if (dataFlowItemProvider == null) {
+            dataFlowItemProvider = new DataFlowItemProvider(this);
+        }
 
-		return dataFlowItemProvider;
-	}
+        return dataFlowItemProvider;
+    }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data} instances.
-	 * <!-- begin-user-doc -->
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data} instances.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected DataItemProvider dataItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data}.
-	 * <!-- begin-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter createDataAdapter() {
-		if (dataItemProvider == null) {
-			dataItemProvider = new DataItemProvider(this);
-		}
+        if (dataItemProvider == null) {
+            dataItemProvider = new DataItemProvider(this);
+        }
 
-		return dataItemProvider;
-	}
+        return dataItemProvider;
+    }
 
 	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
+     * This returns the root adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-	}
+        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+    }
 
 	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
+     * This sets the composed adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+        this.parentAdapterFactory = parentAdapterFactory;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    }
 
 	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
+     * This implementation substitutes the factory itself as the key for the adapter.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+        return super.adapt(notifier, this);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+        if (isFactoryForType(type)) {
+            Object adapter = super.adapt(object, type);
+            if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+                return adapter;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
-		return childCreationExtenderManager.getChildCreationExtenders();
-	}
+        return childCreationExtenderManager.getChildCreationExtenders();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
-	}
+        return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ResourceLocator getResourceLocator() {
-		return childCreationExtenderManager;
-	}
+        return childCreationExtenderManager;
+    }
 
 	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
+     * This adds a listener.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+        changeNotifier.addListener(notifyChangedListener);
+    }
 
 	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
+     * This removes a listener.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+        changeNotifier.removeListener(notifyChangedListener);
+    }
 
 	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
+     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+        changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+        if (parentAdapterFactory != null) {
+            parentAdapterFactory.fireNotifyChanged(notification);
+        }
+    }
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
+     * This disposes all of the item providers created by this factory. 
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void dispose() {
-		if (dataFlowDiagramItemProvider != null)
-			dataFlowDiagramItemProvider.dispose();
-		if (externalActorItemProvider != null)
-			externalActorItemProvider.dispose();
-		if (storeItemProvider != null)
-			storeItemProvider.dispose();
-		if (processItemProvider != null)
-			processItemProvider.dispose();
-		if (portItemProvider != null)
-			portItemProvider.dispose();
-		if (refiningReferenceItemProvider != null)
-			refiningReferenceItemProvider.dispose();
-		if (dataFlowItemProvider != null)
-			dataFlowItemProvider.dispose();
-		if (dataItemProvider != null)
-			dataItemProvider.dispose();
-	}
+        if (dataFlowDiagramItemProvider != null) dataFlowDiagramItemProvider.dispose();
+        if (externalActorItemProvider != null) externalActorItemProvider.dispose();
+        if (storeItemProvider != null) storeItemProvider.dispose();
+        if (processItemProvider != null) processItemProvider.dispose();
+        if (portItemProvider != null) portItemProvider.dispose();
+        if (refiningReferenceItemProvider != null) refiningReferenceItemProvider.dispose();
+        if (dataFlowItemProvider != null) dataFlowItemProvider.dispose();
+        if (dataItemProvider != null) dataItemProvider.dispose();
+    }
 
 }

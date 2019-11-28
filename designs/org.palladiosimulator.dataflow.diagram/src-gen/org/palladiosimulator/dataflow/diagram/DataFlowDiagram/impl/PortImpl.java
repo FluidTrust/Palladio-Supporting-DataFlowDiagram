@@ -16,22 +16,22 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port;
  */
 public class PortImpl extends ComponentImpl implements Port {
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected PortImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.PORT;
-	}
+        return DataFlowDiagramPackage.Literals.PORT;
+    }
 
 } //PortImpl

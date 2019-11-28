@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
-import identifier.impl.IdentifierImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,210 +32,206 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  *
  * @generated
  */
-public abstract class ComponentImpl extends IdentifierImpl implements Component {
+public abstract class ComponentImpl extends de.uka.ipd.sdq.identifier.impl.IdentifierImpl implements Component {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIncomingDataFlow() <em>Incoming Data Flow</em>}' reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getIncomingDataFlow() <em>Incoming Data Flow</em>}' reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIncomingDataFlow()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getIncomingDataFlow()
+     * @generated
+     * @ordered
+     */
 	protected EList<Component> incomingDataFlow;
 
 	/**
-	 * The cached value of the '{@link #getOutgoingDataFlow() <em>Outgoing Data Flow</em>}' reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getOutgoingDataFlow() <em>Outgoing Data Flow</em>}' reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutgoingDataFlow()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getOutgoingDataFlow()
+     * @generated
+     * @ordered
+     */
 	protected EList<Component> outgoingDataFlow;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ComponentImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.COMPONENT;
-	}
+        return DataFlowDiagramPackage.Literals.COMPONENT;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String getName() {
-		return name;
-	}
+        return name;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.COMPONENT__NAME, oldName,
-					name));
-	}
+        String oldName = name;
+        name = newName;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.COMPONENT__NAME, oldName, name));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Component> getIncomingDataFlow() {
-		if (incomingDataFlow == null) {
-			incomingDataFlow = new EObjectResolvingEList<Component>(Component.class, this,
-					DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW);
-		}
-		return incomingDataFlow;
-	}
+        if (incomingDataFlow == null) {
+            incomingDataFlow = new EObjectResolvingEList<Component>(Component.class, this, DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW);
+        }
+        return incomingDataFlow;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Component> getOutgoingDataFlow() {
-		if (outgoingDataFlow == null) {
-			outgoingDataFlow = new EObjectResolvingEList<Component>(Component.class, this,
-					DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW);
-		}
-		return outgoingDataFlow;
-	}
+        if (outgoingDataFlow == null) {
+            outgoingDataFlow = new EObjectResolvingEList<Component>(Component.class, this, DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW);
+        }
+        return outgoingDataFlow;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.COMPONENT__NAME:
-			return getName();
-		case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
-			return getIncomingDataFlow();
-		case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
-			return getOutgoingDataFlow();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.COMPONENT__NAME:
+                return getName();
+            case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
+                return getIncomingDataFlow();
+            case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
+                return getOutgoingDataFlow();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.COMPONENT__NAME:
-			setName((String) newValue);
-			return;
-		case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
-			getIncomingDataFlow().clear();
-			getIncomingDataFlow().addAll((Collection<? extends Component>) newValue);
-			return;
-		case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
-			getOutgoingDataFlow().clear();
-			getOutgoingDataFlow().addAll((Collection<? extends Component>) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.COMPONENT__NAME:
+                setName((String)newValue);
+                return;
+            case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
+                getIncomingDataFlow().clear();
+                getIncomingDataFlow().addAll((Collection<? extends Component>)newValue);
+                return;
+            case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
+                getOutgoingDataFlow().clear();
+                getOutgoingDataFlow().addAll((Collection<? extends Component>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.COMPONENT__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
-			getIncomingDataFlow().clear();
-			return;
-		case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
-			getOutgoingDataFlow().clear();
-			return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.COMPONENT__NAME:
+                setName(NAME_EDEFAULT);
+                return;
+            case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
+                getIncomingDataFlow().clear();
+                return;
+            case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
+                getOutgoingDataFlow().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case DataFlowDiagramPackage.COMPONENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
-			return incomingDataFlow != null && !incomingDataFlow.isEmpty();
-		case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
-			return outgoingDataFlow != null && !outgoingDataFlow.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case DataFlowDiagramPackage.COMPONENT__NAME:
+                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+            case DataFlowDiagramPackage.COMPONENT__INCOMING_DATA_FLOW:
+                return incomingDataFlow != null && !incomingDataFlow.isEmpty();
+            case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
+                return outgoingDataFlow != null && !outgoingDataFlow.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuilder result = new StringBuilder(super.toString());
+        result.append(" (name: ");
+        result.append(name);
+        result.append(')');
+        return result.toString();
+    }
 
 } //ComponentImpl
