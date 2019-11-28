@@ -6,7 +6,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/org.palladiosimulator.dataflow.dictionary.tests/src-gen"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     usedGenPackages="../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier"
-    operationReflection="true" importOrganizing="true">
+    importOrganizing="true">
   <foreignModel>DataDictionary.ecore</foreignModel>
   <genPackages prefix="DataDictionary" basePackage="org.palladiosimulator.dataflow.dictionary"
       disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"

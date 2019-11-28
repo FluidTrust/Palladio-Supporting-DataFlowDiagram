@@ -95,15 +95,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int DATA_DICTIONARY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
-     * The number of operations of the '<em>Data Dictionary</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DATA_DICTIONARY_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataTypeImpl <em>Data Type</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,15 +130,6 @@ public interface DataDictionaryPackage extends EPackage {
      * @ordered
      */
 	int DATA_TYPE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
-
-	/**
-     * The number of operations of the '<em>Data Type</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int DATA_TYPE_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.CollectionDataTypeImpl <em>Collection Data Type</em>}' class.
@@ -196,15 +178,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int COLLECTION_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-     * The number of operations of the '<em>Collection Data Type</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int COLLECTION_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.CompositeDataTypeImpl <em>Composite Data Type</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,15 +224,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int COMPOSITE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-     * The number of operations of the '<em>Composite Data Type</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int COMPOSITE_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
-
-	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,15 +259,6 @@ public interface DataDictionaryPackage extends EPackage {
      * @ordered
      */
 	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
-     * The number of operations of the '<em>Primitive Data Type</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int PRIMITIVE_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntryImpl <em>Entry</em>}' class.
@@ -350,15 +305,6 @@ public interface DataDictionaryPackage extends EPackage {
      * @ordered
      */
 	int ENTRY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
-
-	/**
-     * The number of operations of the '<em>Entry</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int ENTRY_OPERATION_COUNT = IdentifierPackage.IDENTIFIER_OPERATION_COUNT + 0;
 
 	/**
      * Returns the meta object for class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary <em>Data Dictionary</em>}'.
