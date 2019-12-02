@@ -1,4 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_shXO0BHDEeqyJ8uK88pYJw" version="14.1.0.201810161215">
-  <semanticResources>sample.datadictionary</semanticResources>
-</viewpoint:DAnalysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_shXO0BHDEeqyJ8uK88pYJw" selectedViews="_HWZvABUvEeqMr9tZzr-_Iw" version="14.1.0.201810161215">
+    <semanticResources>sample.datadictionary</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_HWZvABUvEeqMr9tZzr-_Iw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_H9MpQBUvEeqMr9tZzr-_Iw" name="new Dictionary Editor" repPath="#_H8WUsBUvEeqMr9tZzr-_Iw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']"/>
+        <target xmi:type="DataDictionary:DataDictionary" href="sample.datadictionary#_0vxasBHDEeqyJ8uK88pYJw"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_H8WUsBUvEeqMr9tZzr-_Iw" name="new Dictionary Editor">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_H9I-4BUvEeqMr9tZzr-_Iw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_H9Jl8BUvEeqMr9tZzr-_Iw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_H9pVMBUvEeqMr9tZzr-_Iw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_H9pVMRUvEeqMr9tZzr-_Iw" type="Sirius" element="_H8WUsBUvEeqMr9tZzr-_Iw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_H92JgBUvEeqMr9tZzr-_Iw" type="2001" element="_H87jgBUvEeqMr9tZzr-_Iw">
+          <children xmi:type="notation:Node" xmi:id="_H99eQBUvEeqMr9tZzr-_Iw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_H99eQRUvEeqMr9tZzr-_Iw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IDmzQBUvEeqMr9tZzr-_Iw" type="3005" element="_H9AcABUvEeqMr9tZzr-_Iw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IDmzQRUvEeqMr9tZzr-_Iw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IDmzQhUvEeqMr9tZzr-_Iw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_H92JgRUvEeqMr9tZzr-_Iw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H92JghUvEeqMr9tZzr-_Iw" x="192" y="112" width="161" height="108"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_OvlGkBUwEeqdRtp9sharTg" type="2001" element="_Ovdx0RUwEeqdRtp9sharTg">
+          <children xmi:type="notation:Node" xmi:id="_Ovp_EBUwEeqdRtp9sharTg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Ovp_ERUwEeqdRtp9sharTg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_O9dxkBUwEeqdRtp9sharTg" type="3005" element="_OveY4BUwEeqdRtp9sharTg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_O9dxkRUwEeqdRtp9sharTg" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O9dxkhUwEeqdRtp9sharTg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_OvlGkRUwEeqdRtp9sharTg" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OvlGkhUwEeqdRtp9sharTg" width="113" height="65"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_O9SycBUwEeqdRtp9sharTg" type="2001" element="_OvfnABUwEeqdRtp9sharTg">
+          <children xmi:type="notation:Node" xmi:id="_O9TZgBUwEeqdRtp9sharTg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_O9TZgRUwEeqdRtp9sharTg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_O9eYoBUwEeqdRtp9sharTg" type="3005" element="_OvfnARUwEeqdRtp9sharTg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_O9eYoRUwEeqdRtp9sharTg" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O9eYohUwEeqdRtp9sharTg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_O9SycRUwEeqdRtp9sharTg" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O9SychUwEeqdRtp9sharTg" x="468" y="80" width="117" height="81"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_H9pVMhUvEeqMr9tZzr-_Iw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_H87jgBUvEeqMr9tZzr-_Iw" name="One" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="DataDictionary:PrimitiveDataType" href="sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
+      <semanticElements xmi:type="DataDictionary:PrimitiveDataType" href="sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_H9AcABUvEeqMr9tZzr-_Iw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Primitive.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Ovdx0RUwEeqdRtp9sharTg" name="Two" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="DataDictionary:CompositeDataType" href="sample.datadictionary#_D8btERUwEeqdRtp9sharTg"/>
+      <semanticElements xmi:type="DataDictionary:CompositeDataType" href="sample.datadictionary#_D8btERUwEeqdRtp9sharTg"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_OveY4BUwEeqdRtp9sharTg" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Composite.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_OvfnABUwEeqdRtp9sharTg" name="OneList" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="DataDictionary:CollectionDataType" href="sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
+      <semanticElements xmi:type="DataDictionary:CollectionDataType" href="sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_OvfnARUwEeqdRtp9sharTg" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Collection.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_H8h64BUvEeqMr9tZzr-_Iw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer"/>
+    <target xmi:type="DataDictionary:DataDictionary" href="sample.datadictionary#_0vxasBHDEeqyJ8uK88pYJw"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
