@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataDictionary:DataDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" id="_0vxasBHDEeqyJ8uK88pYJw">
   <entries xsi:type="DataDictionary:PrimitiveDataType" id="_1QGgkBHDEeqyJ8uK88pYJw" name="One"/>
-  <entries xsi:type="DataDictionary:CollectionDataType" id="_-r3yYBUvEeqdRtp9sharTg" name="OneList" type="_1QGgkBHDEeqyJ8uK88pYJw"/>
+  <entries xsi:type="DataDictionary:CollectionDataType" id="_-r3yYBUvEeqdRtp9sharTg" name="OneList" type="_D8btERUwEeqdRtp9sharTg"/>
   <entries xsi:type="DataDictionary:CompositeDataType" id="_D8btERUwEeqdRtp9sharTg" name="Two"/>
+  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_7keq0Bd4EeqmI7JLCCCR2w" name="new Primitive"/>
+  <entries xsi:type="DataDictionary:CollectionDataType" id="_EAnUMBd6EeqmI7JLCCCR2w" name="List2" type="_7keq0Bd4EeqmI7JLCCCR2w"/>
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_Efj6ABd6EeqmI7JLCCCR2w" name="new Primitive"/>
 </DataDictionary:DataDictionary>

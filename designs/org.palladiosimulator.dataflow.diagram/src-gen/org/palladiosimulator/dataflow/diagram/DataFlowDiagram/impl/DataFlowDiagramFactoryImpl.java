@@ -16,7 +16,6 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 
@@ -68,7 +67,6 @@ public class DataFlowDiagramFactoryImpl extends EFactoryImpl implements DataFlow
 			case DataFlowDiagramPackage.EXTERNAL_ACTOR: return createExternalActor();
 			case DataFlowDiagramPackage.STORE: return createStore();
 			case DataFlowDiagramPackage.PROCESS: return createProcess();
-			case DataFlowDiagramPackage.PORT: return createPort();
 			case DataFlowDiagramPackage.REFINING_REFERENCE: return createRefiningReference();
 			case DataFlowDiagramPackage.DATA_FLOW: return createDataFlow();
 			case DataFlowDiagramPackage.DATA: return createData();
@@ -115,16 +113,6 @@ public class DataFlowDiagramFactoryImpl extends EFactoryImpl implements DataFlow
 	public org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process createProcess() {
 		ProcessImpl process = new ProcessImpl();
 		return process;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Port createPort() {
-		PortImpl port = new PortImpl();
-		return port;
 	}
 
 	/**

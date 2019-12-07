@@ -178,11 +178,6 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
-				 DataFlowDiagramFactory.eINSTANCE.createPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINES,
 				 DataFlowDiagramFactory.eINSTANCE.createRefiningReference()));
 	}

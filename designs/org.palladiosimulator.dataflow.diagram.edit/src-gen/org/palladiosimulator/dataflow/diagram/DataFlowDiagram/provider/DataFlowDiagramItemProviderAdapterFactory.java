@@ -182,29 +182,6 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortItemProvider portItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
-			portItemProvider = new PortItemProvider(this);
-		}
-
-		return portItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -403,7 +380,6 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 		if (externalActorItemProvider != null) externalActorItemProvider.dispose();
 		if (storeItemProvider != null) storeItemProvider.dispose();
 		if (processItemProvider != null) processItemProvider.dispose();
-		if (portItemProvider != null) portItemProvider.dispose();
 		if (refiningReferenceItemProvider != null) refiningReferenceItemProvider.dispose();
 		if (dataFlowItemProvider != null) dataFlowItemProvider.dispose();
 		if (dataItemProvider != null) dataItemProvider.dispose();

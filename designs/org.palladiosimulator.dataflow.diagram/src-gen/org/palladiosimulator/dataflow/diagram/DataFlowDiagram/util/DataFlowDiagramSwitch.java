@@ -14,7 +14,6 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 
@@ -110,14 +109,6 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				T result = caseProcess(process);
 				if (result == null) result = caseComponent(process);
 				if (result == null) result = caseIdentifier(process);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DataFlowDiagramPackage.PORT: {
-				Port port = (Port)theEObject;
-				T result = casePort(port);
-				if (result == null) result = caseComponent(port);
-				if (result == null) result = caseIdentifier(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -217,21 +208,6 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProcess(org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePort(Port object) {
 		return null;
 	}
 

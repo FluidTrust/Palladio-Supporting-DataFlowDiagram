@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
-  <components xsi:type="DataFlowDiagram:Process" id="_VsIuERHEEeqyJ8uK88pYJw" name="One"/>
+  <components xsi:type="DataFlowDiagram:Process" id="_VsIuERHEEeqyJ8uK88pYJw" name="P_1"/>
+  <components xsi:type="DataFlowDiagram:ExternalActor" id="_gA8LYBd6EeqmI7JLCCCR2w" name="A_1"/>
+  <components xsi:type="DataFlowDiagram:Store" id="_i7-ZIRd6EeqmI7JLCCCR2w" name="S_1"/>
+  <components xsi:type="DataFlowDiagram:Process" id="_NNo9wBjVEeqn-J_xJnYQrg"/>
+  <components xsi:type="DataFlowDiagram:Store" id="_Np2_sBjVEeqn-J_xJnYQrg"/>
+  <components xsi:type="DataFlowDiagram:ExternalActor" id="_N_ppgBjVEeqn-J_xJnYQrg"/>
 </DataFlowDiagram:DataFlowDiagram>

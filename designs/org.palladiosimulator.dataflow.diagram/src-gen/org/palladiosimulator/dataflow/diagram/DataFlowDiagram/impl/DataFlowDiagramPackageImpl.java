@@ -18,7 +18,6 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
@@ -61,12 +60,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * @generated
 	 */
 	private EClass processEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass portEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +222,15 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComponent_Equals() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExternalActor() {
 		return externalActorEClass;
 	}
@@ -249,15 +251,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 */
 	public EClass getProcess() {
 		return processEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPort() {
-		return portEClass;
 	}
 
 	/**
@@ -387,14 +380,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		createEAttribute(componentEClass, COMPONENT__NAME);
 		createEReference(componentEClass, COMPONENT__INCOMING_DATA_FLOW);
 		createEReference(componentEClass, COMPONENT__OUTGOING_DATA_FLOW);
+		createEReference(componentEClass, COMPONENT__EQUALS);
 
 		externalActorEClass = createEClass(EXTERNAL_ACTOR);
 
 		storeEClass = createEClass(STORE);
 
 		processEClass = createEClass(PROCESS);
-
-		portEClass = createEClass(PORT);
 
 		refiningReferenceEClass = createEClass(REFINING_REFERENCE);
 		createEReference(refiningReferenceEClass, REFINING_REFERENCE__REFINED_PROCESSES);
@@ -448,7 +440,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		externalActorEClass.getESuperTypes().add(this.getComponent());
 		storeEClass.getESuperTypes().add(this.getComponent());
 		processEClass.getESuperTypes().add(this.getComponent());
-		portEClass.getESuperTypes().add(this.getComponent());
 		refiningReferenceEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		dataFlowEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
@@ -462,14 +453,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEAttribute(getComponent_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_IncomingDataFlow(), this.getComponent(), null, "incomingDataFlow", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_OutgoingDataFlow(), this.getComponent(), null, "outgoingDataFlow", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Equals(), this.getComponent(), null, "equals", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalActorEClass, ExternalActor.class, "ExternalActor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(processEClass, org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(refiningReferenceEClass, RefiningReference.class, "RefiningReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRefiningReference_RefinedProcesses(), this.getProcess(), null, "refinedProcesses", null, 1, -1, RefiningReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

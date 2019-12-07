@@ -159,13 +159,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int COMPONENT__OUTGOING_DATA_FLOW = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__EQUALS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ExternalActorImpl <em>External Actor</em>}' class.
@@ -212,6 +221,15 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_ACTOR__OUTGOING_DATA_FLOW = COMPONENT__OUTGOING_DATA_FLOW;
+
+	/**
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ACTOR__EQUALS = COMPONENT__EQUALS;
 
 	/**
 	 * The number of structural features of the '<em>External Actor</em>' class.
@@ -269,6 +287,15 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int STORE__OUTGOING_DATA_FLOW = COMPONENT__OUTGOING_DATA_FLOW;
 
 	/**
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORE__EQUALS = COMPONENT__EQUALS;
+
+	/**
 	 * The number of structural features of the '<em>Store</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,6 +351,15 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int PROCESS__OUTGOING_DATA_FLOW = COMPONENT__OUTGOING_DATA_FLOW;
 
 	/**
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__EQUALS = COMPONENT__EQUALS;
+
+	/**
 	 * The number of structural features of the '<em>Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -333,61 +369,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int PROCESS_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.PortImpl <em>Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.PortImpl
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getPort()
-	 * @generated
-	 */
-	int PORT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__NAME = COMPONENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__INCOMING_DATA_FLOW = COMPONENT__INCOMING_DATA_FLOW;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__OUTGOING_DATA_FLOW = COMPONENT__OUTGOING_DATA_FLOW;
-
-	/**
-	 * The number of structural features of the '<em>Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.RefiningReferenceImpl <em>Refining Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,7 +376,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getRefiningReference()
 	 * @generated
 	 */
-	int REFINING_REFERENCE = 6;
+	int REFINING_REFERENCE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -432,7 +413,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getDataFlow()
 	 * @generated
 	 */
-	int DATA_FLOW = 7;
+	int DATA_FLOW = 6;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -496,7 +477,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getData()
 	 * @generated
 	 */
-	int DATA = 8;
+	int DATA = 7;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -612,6 +593,17 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getComponent_OutgoingDataFlow();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getEquals <em>Equals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Equals</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getEquals()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Equals();
+
+	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor <em>External Actor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -640,16 +632,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProcess();
-
-	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Port
-	 * @generated
-	 */
-	EClass getPort();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference <em>Refining Reference</em>}'.
@@ -842,6 +824,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference COMPONENT__OUTGOING_DATA_FLOW = eINSTANCE.getComponent_OutgoingDataFlow();
 		/**
+		 * The meta object literal for the '<em><b>Equals</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__EQUALS = eINSTANCE.getComponent_Equals();
+		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ExternalActorImpl <em>External Actor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -868,15 +857,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROCESS = eINSTANCE.getProcess();
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.PortImpl <em>Port</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.PortImpl
-		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getPort()
-		 * @generated
-		 */
-		EClass PORT = eINSTANCE.getPort();
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.RefiningReferenceImpl <em>Refining Reference</em>}' class.
 		 * <!-- begin-user-doc -->

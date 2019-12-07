@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -29,6 +30,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl#getIncomingDataFlow <em>Incoming Data Flow</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl#getOutgoingDataFlow <em>Outgoing Data Flow</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl#getEquals <em>Equals</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,6 +75,16 @@ public abstract class ComponentImpl extends IdentifierImpl implements Component 
 	 * @ordered
 	 */
 	protected EList<Component> outgoingDataFlow;
+
+	/**
+	 * The cached value of the '{@link #getEquals() <em>Equals</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEquals()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component equals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +155,44 @@ public abstract class ComponentImpl extends IdentifierImpl implements Component 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Component getEquals() {
+		if (equals != null && equals.eIsProxy()) {
+			InternalEObject oldEquals = (InternalEObject)equals;
+			equals = (Component)eResolveProxy(oldEquals);
+			if (equals != oldEquals) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.COMPONENT__EQUALS, oldEquals, equals));
+			}
+		}
+		return equals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetEquals() {
+		return equals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEquals(Component newEquals) {
+		Component oldEquals = equals;
+		equals = newEquals;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.COMPONENT__EQUALS, oldEquals, equals));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -152,6 +202,9 @@ public abstract class ComponentImpl extends IdentifierImpl implements Component 
 				return getIncomingDataFlow();
 			case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
 				return getOutgoingDataFlow();
+			case DataFlowDiagramPackage.COMPONENT__EQUALS:
+				if (resolve) return getEquals();
+				return basicGetEquals();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,6 +229,9 @@ public abstract class ComponentImpl extends IdentifierImpl implements Component 
 				getOutgoingDataFlow().clear();
 				getOutgoingDataFlow().addAll((Collection<? extends Component>)newValue);
 				return;
+			case DataFlowDiagramPackage.COMPONENT__EQUALS:
+				setEquals((Component)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -197,6 +253,9 @@ public abstract class ComponentImpl extends IdentifierImpl implements Component 
 			case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
 				getOutgoingDataFlow().clear();
 				return;
+			case DataFlowDiagramPackage.COMPONENT__EQUALS:
+				setEquals((Component)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,6 +274,8 @@ public abstract class ComponentImpl extends IdentifierImpl implements Component 
 				return incomingDataFlow != null && !incomingDataFlow.isEmpty();
 			case DataFlowDiagramPackage.COMPONENT__OUTGOING_DATA_FLOW:
 				return outgoingDataFlow != null && !outgoingDataFlow.isEmpty();
+			case DataFlowDiagramPackage.COMPONENT__EQUALS:
+				return equals != null;
 		}
 		return super.eIsSet(featureID);
 	}

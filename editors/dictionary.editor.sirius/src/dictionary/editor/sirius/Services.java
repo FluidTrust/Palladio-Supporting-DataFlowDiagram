@@ -1,6 +1,7 @@
 package dictionary.editor.sirius;
 
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 
 /**
  * The services class used by VSM.
@@ -14,4 +15,10 @@ public class Services {
        // TODO Auto-generated code
       return self;
     }
+    
+
+    
+    
+    
+    
 }
