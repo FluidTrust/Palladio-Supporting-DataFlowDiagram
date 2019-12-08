@@ -2,36 +2,33 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.provider;
 
-import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentItemProvider extends IdentifierItemProvider {
+public class NodeItemProvider extends ComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentItemProvider(AdapterFactory adapterFactory) {
+	public NodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,54 +43,65 @@ public class ComponentItemProvider extends IdentifierItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addEqualsPropertyDescriptor(object);
+			addOutgoingDataFlowPropertyDescriptor(object);
+			addIncomingDataFlowPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Outgoing Data Flow feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addOutgoingDataFlowPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Component_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_name_feature", "_UI_Component_type"),
-				 DataFlowDiagramPackage.Literals.COMPONENT__NAME,
+				 getString("_UI_Node_outgoingDataFlow_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_outgoingDataFlow_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__OUTGOING_DATA_FLOW,
 				 true,
 				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Data Flow feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncomingDataFlowPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Node_incomingDataFlow_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_incomingDataFlow_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__INCOMING_DATA_FLOW,
+				 true,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Equals feature.
+	 * This returns Node.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEqualsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_equals_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_equals_feature", "_UI_Component_type"),
-				 DataFlowDiagramPackage.Literals.COMPONENT__EQUALS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Node"));
 	}
 
 	/**
@@ -104,11 +112,12 @@ public class ComponentItemProvider extends IdentifierItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Component)object).getName();
+		String label = ((Node)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Component_type") :
-			getString("_UI_Component_type") + " " + label;
+			getString("_UI_Node_type") :
+			getString("_UI_Node_type") + " " + label;
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -120,12 +129,6 @@ public class ComponentItemProvider extends IdentifierItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Component.class)) {
-			case DataFlowDiagramPackage.COMPONENT__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -139,17 +142,6 @@ public class ComponentItemProvider extends IdentifierItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

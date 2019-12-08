@@ -18,7 +18,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoreItemProvider extends ComponentItemProvider {
+public class StoreItemProvider extends NodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

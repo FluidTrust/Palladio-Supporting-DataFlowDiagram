@@ -5,22 +5,22 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>External Actor</b></em>'.
+ * An implementation of the model object '<em><b>Edge</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ExternalActorImpl extends NodeImpl implements ExternalActor {
+public abstract class EdgeImpl extends ComponentImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalActorImpl() {
+	protected EdgeImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class ExternalActorImpl extends NodeImpl implements ExternalActor {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.EXTERNAL_ACTOR;
+		return DataFlowDiagramPackage.Literals.EDGE;
 	}
 
-} //ExternalActorImpl
+} //EdgeImpl

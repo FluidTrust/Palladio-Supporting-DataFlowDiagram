@@ -13,7 +13,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoreTest extends ComponentTest {
+public class StoreTest extends NodeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

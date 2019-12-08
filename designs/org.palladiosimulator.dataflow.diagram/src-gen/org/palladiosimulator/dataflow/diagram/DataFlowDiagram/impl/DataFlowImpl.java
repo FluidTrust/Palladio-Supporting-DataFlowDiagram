@@ -22,6 +22,8 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,45 +33,16 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getEquals <em>Equals</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getData <em>Data</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DataFlowImpl extends IdentifierImpl implements DataFlow {
-	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getData()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Data> data;
-
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component source;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component target;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,6 +64,46 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
     protected String name = NAME_EDEFAULT;
 
     /**
+	 * The cached value of the '{@link #getEquals() <em>Equals</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEquals()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component equals;
+
+				/**
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+				 * <!-- end-user-doc -->
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
+				protected EList<Data> data;
+
+				/**
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+				 * <!-- end-user-doc -->
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
+				protected Node source;
+
+				/**
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+				 * <!-- end-user-doc -->
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
+				protected Node target;
+
+				/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,10 +139,10 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getSource() {
+	public Node getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject)source;
-			source = (Component)eResolveProxy(oldSource);
+			source = (Node)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__SOURCE, oldSource, source));
@@ -143,7 +156,7 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetSource() {
+	public Node basicGetSource() {
 		return source;
 	}
 
@@ -152,8 +165,8 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(Component newSource) {
-		Component oldSource = source;
+	public void setSource(Node newSource) {
+		Node oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__SOURCE, oldSource, source));
@@ -164,10 +177,10 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getTarget() {
+	public Node getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Component)eResolveProxy(oldTarget);
+			target = (Node)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__TARGET, oldTarget, target));
@@ -181,7 +194,7 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetTarget() {
+	public Node basicGetTarget() {
 		return target;
 	}
 
@@ -190,8 +203,8 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Component newTarget) {
-		Component oldTarget = target;
+	public void setTarget(Node newTarget) {
+		Node oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__TARGET, oldTarget, target));
@@ -223,6 +236,44 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Component getEquals() {
+		if (equals != null && equals.eIsProxy()) {
+			InternalEObject oldEquals = (InternalEObject)equals;
+			equals = (Component)eResolveProxy(oldEquals);
+			if (equals != oldEquals) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__EQUALS, oldEquals, equals));
+			}
+		}
+		return equals;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetEquals() {
+		return equals;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEquals(Component newEquals) {
+		Component oldEquals = equals;
+		equals = newEquals;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__EQUALS, oldEquals, equals));
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -240,6 +291,11 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				return getName();
+			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
+				if (resolve) return getEquals();
+				return basicGetEquals();
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				return getData();
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
@@ -248,8 +304,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case DataFlowDiagramPackage.DATA_FLOW__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,18 +317,21 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				setName((String)newValue);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
+				setEquals((Component)newValue);
+				return;
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				getData().clear();
 				getData().addAll((Collection<? extends Data>)newValue);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-				setSource((Component)newValue);
+				setSource((Node)newValue);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-				setTarget((Component)newValue);
-				return;
-			case DataFlowDiagramPackage.DATA_FLOW__NAME:
-				setName((String)newValue);
+				setTarget((Node)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,17 +345,20 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
+				setEquals((Component)null);
+				return;
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				getData().clear();
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-				setSource((Component)null);
+				setSource((Node)null);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-				setTarget((Component)null);
-				return;
-			case DataFlowDiagramPackage.DATA_FLOW__NAME:
-				setName(NAME_EDEFAULT);
+				setTarget((Node)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -312,19 +372,65 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
+				return equals != null;
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				return data != null && !data.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
 				return source != null;
 			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
 				return target != null;
-			case DataFlowDiagramPackage.DATA_FLOW__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
 
     /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Component.class) {
+			switch (derivedFeatureID) {
+				case DataFlowDiagramPackage.DATA_FLOW__NAME: return DataFlowDiagramPackage.COMPONENT__NAME;
+				case DataFlowDiagramPackage.DATA_FLOW__EQUALS: return DataFlowDiagramPackage.COMPONENT__EQUALS;
+				default: return -1;
+			}
+		}
+		if (baseClass == Edge.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Component.class) {
+			switch (baseFeatureID) {
+				case DataFlowDiagramPackage.COMPONENT__NAME: return DataFlowDiagramPackage.DATA_FLOW__NAME;
+				case DataFlowDiagramPackage.COMPONENT__EQUALS: return DataFlowDiagramPackage.DATA_FLOW__EQUALS;
+				default: return -1;
+			}
+		}
+		if (baseClass == Edge.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+				/**
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated

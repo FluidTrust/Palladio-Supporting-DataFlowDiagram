@@ -12,5 +12,5 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
  * @model
  * @generated
  */
-public interface ExternalActor extends Component {
+public interface ExternalActor extends Node {
 } // ExternalActor

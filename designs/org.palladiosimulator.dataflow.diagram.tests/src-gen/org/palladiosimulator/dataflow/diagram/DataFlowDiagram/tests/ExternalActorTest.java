@@ -13,7 +13,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExternalActorTest extends ComponentTest {
+public class ExternalActorTest extends NodeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

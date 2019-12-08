@@ -12,7 +12,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProcessTest extends ComponentTest {
+public class ProcessTest extends NodeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

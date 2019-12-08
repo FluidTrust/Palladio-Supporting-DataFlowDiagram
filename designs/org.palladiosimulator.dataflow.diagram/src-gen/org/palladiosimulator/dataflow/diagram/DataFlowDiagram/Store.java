@@ -12,5 +12,5 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
  * @model
  * @generated
  */
-public interface Store extends Component {
+public interface Store extends Node {
 } // Store

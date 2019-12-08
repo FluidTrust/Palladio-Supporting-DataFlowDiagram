@@ -12,5 +12,5 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
  * @model
  * @generated
  */
-public interface Process extends Component {
+public interface Process extends Node {
 } // Process

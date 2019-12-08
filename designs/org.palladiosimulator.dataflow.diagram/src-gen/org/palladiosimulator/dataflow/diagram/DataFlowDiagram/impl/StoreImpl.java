@@ -14,7 +14,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
  *
  * @generated
  */
-public class StoreImpl extends ComponentImpl implements Store {
+public class StoreImpl extends NodeImpl implements Store {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

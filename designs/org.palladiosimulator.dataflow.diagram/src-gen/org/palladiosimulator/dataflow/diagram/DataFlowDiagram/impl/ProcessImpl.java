@@ -13,7 +13,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  *
  * @generated
  */
-public class ProcessImpl extends ComponentImpl
+public class ProcessImpl extends NodeImpl
 		implements org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process {
 	/**
 	 * <!-- begin-user-doc -->

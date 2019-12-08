@@ -49,9 +49,10 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
+			addEqualsPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,9 +112,9 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlow_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_name_feature", "_UI_DataFlow_type"),
-				 DataFlowDiagramPackage.Literals.DATA_FLOW__NAME,
+				 getString("_UI_Component_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_name_feature", "_UI_Component_type"),
+				 DataFlowDiagramPackage.Literals.COMPONENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -123,6 +124,28 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 	}
 
     /**
+	 * This adds a property descriptor for the Equals feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEqualsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_equals_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_equals_feature", "_UI_Component_type"),
+				 DataFlowDiagramPackage.Literals.COMPONENT__EQUALS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+				/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.

@@ -3,7 +3,6 @@
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
 import de.uka.ipd.sdq.identifier.Identifier;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getIncomingDataFlow <em>Incoming Data Flow</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getOutgoingDataFlow <em>Outgoing Data Flow</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getEquals <em>Equals</em>}</li>
  * </ul>
  *
@@ -47,30 +44,6 @@ public interface Component extends EObject, Identifier {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Incoming Data Flow</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Data Flow</em>' reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getComponent_IncomingDataFlow()
-	 * @model
-	 * @generated
-	 */
-	EList<Component> getIncomingDataFlow();
-
-	/**
-	 * Returns the value of the '<em><b>Outgoing Data Flow</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing Data Flow</em>' reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getComponent_OutgoingDataFlow()
-	 * @model
-	 * @generated
-	 */
-	EList<Component> getOutgoingDataFlow();
 
 	/**
 	 * Returns the value of the '<em><b>Equals</b></em>' reference.
