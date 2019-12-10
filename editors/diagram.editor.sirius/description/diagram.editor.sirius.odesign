@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="diagram.editor.sirius" version="12.0.0.2017041100">
   <ownedViewpoints name="MyViewpoint">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DFD Editor" domainClass="DataFlowDiagram::DataFlowDiagram" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DFD Editor" initialisation="true" domainClass="DataFlowDiagram::DataFlowDiagram" enablePopupBars="true">
       <metamodel href="http://palladiosimulator.org/dataflow/diagram/1.0#/"/>
       <layout xsi:type="description_1:CompositeLayout"/>
       <defaultLayer name="Default">
-        <nodeMappings name="ProcessNode" domainClass="DataFlowDiagram::Process">
+        <nodeMappings name="ProcessNode" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="DataFlowDiagram::Process">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/diagram.editor.sirius/icons/process.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -66,7 +66,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='refinedDiagram']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='refinedDiagram'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>

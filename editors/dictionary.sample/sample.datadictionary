@@ -6,6 +6,6 @@
     <components id="_LwyFgBmWEeqMMNhJz4JE2Q" type="_1QGgkBHDEeqyJ8uK88pYJw" name="a"/>
   </entries>
   <entries xsi:type="DataDictionary:PrimitiveDataType" id="_7keq0Bd4EeqmI7JLCCCR2w" name="new Primitive"/>
-  <entries xsi:type="DataDictionary:CollectionDataType" id="_EAnUMBd6EeqmI7JLCCCR2w" name="TwoList" type="_7keq0Bd4EeqmI7JLCCCR2w"/>
+  <entries xsi:type="DataDictionary:CollectionDataType" id="_EAnUMBd6EeqmI7JLCCCR2w" name="TwoList" type="_Efj6ABd6EeqmI7JLCCCR2w"/>
   <entries xsi:type="DataDictionary:CompositeDataType" id="_Efj6ABd6EeqmI7JLCCCR2w" name="new Composite"/>
 </DataDictionary:DataDictionary>
