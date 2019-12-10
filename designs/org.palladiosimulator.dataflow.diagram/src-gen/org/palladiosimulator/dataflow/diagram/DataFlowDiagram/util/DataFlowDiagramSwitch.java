@@ -79,6 +79,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM: {
 				DataFlowDiagram dataFlowDiagram = (DataFlowDiagram)theEObject;
 				T result = caseDataFlowDiagram(dataFlowDiagram);
+				if (result == null) result = caseComponent(dataFlowDiagram);
 				if (result == null) result = caseIdentifier(dataFlowDiagram);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

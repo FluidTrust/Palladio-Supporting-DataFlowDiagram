@@ -3,6 +3,7 @@
   <ownedViewpoints name="MyViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DFD Editor" domainClass="DataFlowDiagram::DataFlowDiagram" enablePopupBars="true">
       <metamodel href="http://palladiosimulator.org/dataflow/diagram/1.0#/"/>
+      <layout xsi:type="description_1:CompositeLayout"/>
       <defaultLayer name="Default">
         <nodeMappings name="ProcessNode" domainClass="DataFlowDiagram::Process">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/diagram.editor.sirius/icons/process.svg">
@@ -30,8 +31,9 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <containerMappings name="refinedDiagram" semanticCandidatesExpression="feature:components" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="DataFlowDiagram::DataFlowDiagram" reusedContainerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='refinedDiagram']"/>
         <toolSections>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="createProcess" label="new Process" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createProcess" label="new Process" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']" extraMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -62,6 +64,13 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new External Actor"/>
                 </subModelOperations>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='refinedDiagram']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

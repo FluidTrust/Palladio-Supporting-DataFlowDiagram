@@ -368,7 +368,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI7FMRjlEeqy57Joi-SgTQ" name="List2" outgoingEdges="_oI7sQBjlEeqy57Joi-SgTQ" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI7FMRjlEeqy57Joi-SgTQ" name="TwoList" outgoingEdges="_oI7sQBjlEeqy57Joi-SgTQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="DataDictionary:CollectionDataType" href="sample.datadictionary#_EAnUMBd6EeqmI7JLCCCR2w"/>
       <semanticElements xmi:type="DataDictionary:CollectionDataType" href="sample.datadictionary#_EAnUMBd6EeqmI7JLCCCR2w"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_oI7FMhjlEeqy57Joi-SgTQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Collection.svg">

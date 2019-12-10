@@ -27,6 +27,8 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getEquals <em>Equals</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getRefinedBy <em>Refined By</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getRefines <em>Refines</em>}</li>
@@ -35,6 +37,33 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
  * @generated
  */
 public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagram {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getEquals() <em>Equals</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEquals()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component equals;
 	/**
 	 * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -80,6 +109,65 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	@Override
 	protected EClass eStaticClass() {
 		return DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getEquals() {
+		if (equals != null && equals.eIsProxy()) {
+			InternalEObject oldEquals = (InternalEObject)equals;
+			equals = (Component)eResolveProxy(oldEquals);
+			if (equals != oldEquals) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS, oldEquals, equals));
+			}
+		}
+		return equals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetEquals() {
+		return equals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEquals(Component newEquals) {
+		Component oldEquals = equals;
+		equals = newEquals;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS, oldEquals, equals));
 	}
 
 	/**
@@ -173,6 +261,11 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME:
+				return getName();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS:
+				if (resolve) return getEquals();
+				return basicGetEquals();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				return getComponents();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
@@ -192,6 +285,12 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME:
+				setName((String)newValue);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS:
+				setEquals((Component)newValue);
+				return;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				getComponents().clear();
 				getComponents().addAll((Collection<? extends Component>)newValue);
@@ -215,6 +314,12 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS:
+				setEquals((Component)null);
+				return;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				getComponents().clear();
 				return;
@@ -236,6 +341,10 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS:
+				return equals != null;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				return components != null && !components.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
@@ -244,6 +353,56 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 				return refines != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Component.class) {
+			switch (derivedFeatureID) {
+				case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME: return DataFlowDiagramPackage.COMPONENT__NAME;
+				case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS: return DataFlowDiagramPackage.COMPONENT__EQUALS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Component.class) {
+			switch (baseFeatureID) {
+				case DataFlowDiagramPackage.COMPONENT__NAME: return DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME;
+				case DataFlowDiagramPackage.COMPONENT__EQUALS: return DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EQUALS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataFlowDiagramImpl

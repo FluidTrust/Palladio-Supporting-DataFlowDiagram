@@ -464,6 +464,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 
 		// Add supertypes to classes
 		dataFlowDiagramEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		dataFlowDiagramEClass.getESuperTypes().add(this.getComponent());
 		componentEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		externalActorEClass.getESuperTypes().add(this.getNode());
 		storeEClass.getESuperTypes().add(this.getNode());
