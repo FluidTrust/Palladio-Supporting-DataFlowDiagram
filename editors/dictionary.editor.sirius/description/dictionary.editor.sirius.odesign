@@ -22,7 +22,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="typeEdge" sourceMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode']" targetMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']" targetFinderExpression="feature:type">
+        <edgeMappings name="typeEdge" sourceMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode']" targetMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']" targetFinderExpression="feature:type" reconnections="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='typeReconnection']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -30,7 +30,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="entryEdge" sourceMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode']" targetMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']" targetFinderExpression="feature:type" sourceFinderExpression="aql:self.eContainer()" domainClass="DataDictionary::Entry" useDomainElement="true">
+        <edgeMappings name="entryEdge" sourceMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode']" targetMapping="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CollectionDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode'] //@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']" targetFinderExpression="feature:type" sourceFinderExpression="aql:self.eContainer()" domainClass="DataDictionary::Entry" useDomainElement="true" reconnections="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='entryReconnection']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12" labelExpression="feature:name">
@@ -72,7 +72,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createTypeEdge" label="set type" edgeMappings="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='typeEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createTypeEdge" label="set type" edgeMappings="//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='typeEdge']" iconPath="/dictionary.editor.sirius/icons/DataType.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -95,6 +95,32 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" referenceName="DataDictionary::Entry"/>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="entryReconnection">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="typeReconnection">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
@@ -120,10 +146,22 @@
                   <initialOperation/>
                 </buttons>
                 <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
-                  <initialOperation/>
+                  <initialOperation>
+                    <firstModelOperations xsi:type="tool_1:ChangeContext">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" referenceName="DataDictionary::Entry">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name"/>
+                      </subModelOperations>
+                    </firstModelOperations>
+                  </initialOperation>
                 </buttons>
                 <page name="Default Page" labelExpression="Page" domainClass="DataDictionary::CompositeDataType" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@groups.0"/>
-                <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:TextDescription" name="EntryName">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool_1:Let"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
               </firstModelOperations>
             </initialOperation>
           </actions>

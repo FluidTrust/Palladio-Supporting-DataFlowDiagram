@@ -365,7 +365,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kHschRs3EeqkY6qbnduu9A"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_kHnkARs3EeqkY6qbnduu9A" fontName=".AppleSystemUIFont" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kHnkAhs3EeqkY6qbnduu9A" width="151" height="151"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kHnkAhs3EeqkY6qbnduu9A" x="456" y="180" width="151" height="151"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_kHpZMBs3EeqkY6qbnduu9A" type="2001" element="_kHg2Vhs3EeqkY6qbnduu9A">
           <children xmi:type="notation:Node" xmi:id="_kHpZMxs3EeqkY6qbnduu9A" type="5002">
@@ -427,9 +427,12 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kHg2Uxs3EeqkY6qbnduu9A" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kHg2Uxs3EeqkY6qbnduu9A" name="P_2" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_NNo9wBjVEeqn-J_xJnYQrg"/>
       <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_NNo9wBjVEeqn-J_xJnYQrg"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_kHg2VBs3EeqkY6qbnduu9A" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@style"/>
       </ownedStyle>

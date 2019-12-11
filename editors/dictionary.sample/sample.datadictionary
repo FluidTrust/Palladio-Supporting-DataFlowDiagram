@@ -3,9 +3,11 @@
   <entries xsi:type="DataDictionary:PrimitiveDataType" id="_1QGgkBHDEeqyJ8uK88pYJw" name="One"/>
   <entries xsi:type="DataDictionary:CollectionDataType" id="_-r3yYBUvEeqdRtp9sharTg" name="OneList" type="_D8btERUwEeqdRtp9sharTg"/>
   <entries xsi:type="DataDictionary:CompositeDataType" id="_D8btERUwEeqdRtp9sharTg" name="Two">
-    <components id="_LwyFgBmWEeqMMNhJz4JE2Q" type="_1QGgkBHDEeqyJ8uK88pYJw" name="a"/>
+    <components id="_LwyFgBmWEeqMMNhJz4JE2Q" type="_7keq0Bd4EeqmI7JLCCCR2w" name="a"/>
   </entries>
   <entries xsi:type="DataDictionary:PrimitiveDataType" id="_7keq0Bd4EeqmI7JLCCCR2w" name="new Primitive"/>
-  <entries xsi:type="DataDictionary:CollectionDataType" id="_EAnUMBd6EeqmI7JLCCCR2w" name="TwoList" type="_Efj6ABd6EeqmI7JLCCCR2w"/>
+  <entries xsi:type="DataDictionary:CollectionDataType" id="_EAnUMBd6EeqmI7JLCCCR2w" name="TwoList" type="_D8btERUwEeqdRtp9sharTg"/>
   <entries xsi:type="DataDictionary:CompositeDataType" id="_Efj6ABd6EeqmI7JLCCCR2w" name="new Composite"/>
+  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_n4h74BweEeqkzqskNeypDg" name="new Primitive"/>
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_zDy6cBweEeqkzqskNeypDg" name="new Composite"/>
 </DataDictionary:DataDictionary>
