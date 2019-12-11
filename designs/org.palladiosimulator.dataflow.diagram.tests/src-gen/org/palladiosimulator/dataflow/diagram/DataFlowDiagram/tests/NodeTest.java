@@ -10,7 +10,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class NodeTest extends ComponentTest {
+public abstract class NodeTest extends NamedComponentTest {
 
 	/**
 	 * Constructs a new Node test case with the given name.

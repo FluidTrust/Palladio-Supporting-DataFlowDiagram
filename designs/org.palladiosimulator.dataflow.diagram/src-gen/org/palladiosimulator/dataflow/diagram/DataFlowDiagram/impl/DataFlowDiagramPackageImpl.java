@@ -19,6 +19,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFac
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
@@ -87,6 +88,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,24 +212,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 */
 	public EClass getComponent() {
 		return componentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getComponent_Name() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComponent_Equals() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -347,7 +337,34 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * @generated
 	 */
 	public EReference getNode_OutgoingDataFlow() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
+		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNode_Equals() {
+		return (EReference)nodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNamedComponent() {
+		return namedComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamedComponent_Name() {
+		return (EAttribute)namedComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -356,7 +373,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * @generated
 	 */
 	public EReference getNode_IncomingDataFlow() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -402,8 +419,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__REFINES);
 
 		componentEClass = createEClass(COMPONENT);
-		createEAttribute(componentEClass, COMPONENT__NAME);
-		createEReference(componentEClass, COMPONENT__EQUALS);
 
 		externalActorEClass = createEClass(EXTERNAL_ACTOR);
 
@@ -423,11 +438,15 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		createEReference(dataEClass, DATA__TYPE);
 		createEAttribute(dataEClass, DATA__NAME);
 
-		nodeEClass = createEClass(NODE);
-		createEReference(nodeEClass, NODE__OUTGOING_DATA_FLOW);
-		createEReference(nodeEClass, NODE__INCOMING_DATA_FLOW);
-
 		edgeEClass = createEClass(EDGE);
+
+		nodeEClass = createEClass(NODE);
+		createEReference(nodeEClass, NODE__INCOMING_DATA_FLOW);
+		createEReference(nodeEClass, NODE__OUTGOING_DATA_FLOW);
+		createEReference(nodeEClass, NODE__EQUALS);
+
+		namedComponentEClass = createEClass(NAMED_COMPONENT);
+		createEAttribute(namedComponentEClass, NAMED_COMPONENT__NAME);
 	}
 
 	/**
@@ -455,8 +474,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 
 		// Obtain other dependent packages
 		IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 		DataDictionaryPackage theDataDictionaryPackage = (DataDictionaryPackage)EPackage.Registry.INSTANCE.getEPackage(DataDictionaryPackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -464,16 +483,17 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 
 		// Add supertypes to classes
 		dataFlowDiagramEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
-		dataFlowDiagramEClass.getESuperTypes().add(this.getComponent());
 		componentEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		externalActorEClass.getESuperTypes().add(this.getNode());
 		storeEClass.getESuperTypes().add(this.getNode());
 		processEClass.getESuperTypes().add(this.getNode());
 		refiningReferenceEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		refiningReferenceEClass.getESuperTypes().add(this.getComponent());
 		dataFlowEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		dataFlowEClass.getESuperTypes().add(this.getEdge());
-		nodeEClass.getESuperTypes().add(this.getComponent());
-		edgeEClass.getESuperTypes().add(this.getComponent());
+		edgeEClass.getESuperTypes().add(this.getNamedComponent());
+		nodeEClass.getESuperTypes().add(this.getNamedComponent());
+		namedComponentEClass.getESuperTypes().add(this.getComponent());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataFlowDiagramEClass, DataFlowDiagram.class, "DataFlowDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -482,8 +502,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEReference(getDataFlowDiagram_Refines(), this.getRefiningReference(), null, "refines", null, 0, 1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Equals(), this.getComponent(), null, "equals", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalActorEClass, ExternalActor.class, "ExternalActor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -503,11 +521,15 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEReference(getData_Type(), theDataDictionaryPackage.getDataType(), null, "type", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getData_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNode_OutgoingDataFlow(), this.getNode(), null, "outgoingDataFlow", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNode_IncomingDataFlow(), this.getNode(), null, "incomingDataFlow", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(edgeEClass, Edge.class, "Edge", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNode_IncomingDataFlow(), this.getNode(), null, "incomingDataFlow", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_OutgoingDataFlow(), this.getNode(), null, "outgoingDataFlow", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Equals(), this.getNode(), null, "equals", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(namedComponentEClass, NamedComponent.class, "NamedComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedComponent_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamedComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

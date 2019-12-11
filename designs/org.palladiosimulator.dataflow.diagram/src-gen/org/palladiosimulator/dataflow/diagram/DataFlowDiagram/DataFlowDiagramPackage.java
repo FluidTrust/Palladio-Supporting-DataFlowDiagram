@@ -77,31 +77,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW_DIAGRAM__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW_DIAGRAM__EQUALS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__COMPONENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW_DIAGRAM__COMPONENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Refined By</b></em>' reference list.
@@ -110,7 +92,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__REFINED_BY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+	int DATA_FLOW_DIAGRAM__REFINED_BY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' containment reference.
@@ -119,7 +101,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM__REFINES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+	int DATA_FLOW_DIAGRAM__REFINES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Flow Diagram</em>' class.
@@ -128,7 +110,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
+	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl <em>Component</em>}' class.
@@ -150,31 +132,50 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int COMPONENT__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__EQUALS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl <em>Named Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNamedComponent()
+	 * @generated
+	 */
+	int NAMED_COMPONENT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_COMPONENT__ID = COMPONENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_COMPONENT__NAME = COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ExternalActorImpl <em>External Actor</em>}' class.
@@ -244,7 +245,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 8;
+	int NODE = 9;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -253,7 +254,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__ID = COMPONENT__ID;
+	int NODE__ID = NAMED_COMPONENT__ID;
 
 				/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -262,25 +263,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = COMPONENT__NAME;
-
-				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__EQUALS = COMPONENT__EQUALS;
-
-				/**
-	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__OUTGOING_DATA_FLOW = COMPONENT_FEATURE_COUNT + 0;
+	int NODE__NAME = NAMED_COMPONENT__NAME;
 
 				/**
 	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
@@ -289,7 +272,25 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__INCOMING_DATA_FLOW = COMPONENT_FEATURE_COUNT + 1;
+	int NODE__INCOMING_DATA_FLOW = NAMED_COMPONENT_FEATURE_COUNT + 0;
+
+				/**
+	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__OUTGOING_DATA_FLOW = NAMED_COMPONENT_FEATURE_COUNT + 1;
+
+				/**
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__EQUALS = NAMED_COMPONENT_FEATURE_COUNT + 2;
 
 				/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -298,7 +299,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
+	int NODE_FEATURE_COUNT = NAMED_COMPONENT_FEATURE_COUNT + 3;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -319,13 +320,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int EXTERNAL_ACTOR__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
 	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int EXTERNAL_ACTOR__EQUALS = NODE__EQUALS;
+	int EXTERNAL_ACTOR__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
 
 				/**
 	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
@@ -337,13 +338,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int EXTERNAL_ACTOR__OUTGOING_DATA_FLOW = NODE__OUTGOING_DATA_FLOW;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+				 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACTOR__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
+				int EXTERNAL_ACTOR__EQUALS = NODE__EQUALS;
 
 				/**
 	 * The number of structural features of the '<em>External Actor</em>' class.
@@ -373,13 +374,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int STORE__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
 	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int STORE__EQUALS = NODE__EQUALS;
+	int STORE__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
 
 				/**
 	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
@@ -391,13 +392,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int STORE__OUTGOING_DATA_FLOW = NODE__OUTGOING_DATA_FLOW;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+				 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORE__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
+				int STORE__EQUALS = NODE__EQUALS;
 
 				/**
 	 * The number of structural features of the '<em>Store</em>' class.
@@ -427,13 +428,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int PROCESS__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
 	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int PROCESS__EQUALS = NODE__EQUALS;
+	int PROCESS__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
 
 				/**
 	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
@@ -445,13 +446,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int PROCESS__OUTGOING_DATA_FLOW = NODE__OUTGOING_DATA_FLOW;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Equals</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+				 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
+				int PROCESS__EQUALS = NODE__EQUALS;
 
 				/**
 	 * The number of structural features of the '<em>Process</em>' class.
@@ -508,22 +509,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 				   int DATA_FLOW__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW__EQUALS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
-
-				/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int DATA_FLOW__DATA = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+				int DATA_FLOW__DATA = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 				/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -532,7 +524,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-				int DATA_FLOW__SOURCE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+				int DATA_FLOW__SOURCE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 				/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -541,7 +533,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-				int DATA_FLOW__TARGET = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+				int DATA_FLOW__TARGET = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 				/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
@@ -550,7 +542,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
+	int DATA_FLOW_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 				/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -587,7 +579,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getEdge()
 	 * @generated
 	 */
-	int EDGE = 9;
+	int EDGE = 8;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -596,7 +588,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__ID = COMPONENT__ID;
+	int EDGE__ID = NAMED_COMPONENT__ID;
 
 				/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -605,16 +597,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__NAME = COMPONENT__NAME;
-
-				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE__EQUALS = COMPONENT__EQUALS;
+	int EDGE__NAME = NAMED_COMPONENT__NAME;
 
 				/**
 	 * The number of structural features of the '<em>Edge</em>' class.
@@ -623,7 +606,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+	int EDGE_FEATURE_COUNT = NAMED_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram <em>Data Flow Diagram</em>}'.
@@ -677,28 +660,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getName()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EAttribute getComponent_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getEquals <em>Equals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Equals</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component#getEquals()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_Equals();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor <em>External Actor</em>}'.
@@ -848,6 +809,38 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getNode_OutgoingDataFlow();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Equals</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_Equals();
+
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent <em>Named Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Component</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent
+	 * @generated
+	 */
+	EClass getNamedComponent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent#getName()
+	 * @see #getNamedComponent()
+	 * @generated
+	 */
+	EAttribute getNamedComponent_Name();
+
+	/**
 	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getIncomingDataFlow <em>Incoming Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -930,20 +923,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT = eINSTANCE.getComponent();
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT__NAME = eINSTANCE.getComponent_Name();
-		/**
-		 * The meta object literal for the '<em><b>Equals</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__EQUALS = eINSTANCE.getComponent_Equals();
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ExternalActorImpl <em>External Actor</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1056,6 +1035,29 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NODE__OUTGOING_DATA_FLOW = eINSTANCE.getNode_OutgoingDataFlow();
+								/**
+		 * The meta object literal for the '<em><b>Equals</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__EQUALS = eINSTANCE.getNode_Equals();
+								/**
+		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl <em>Named Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNamedComponent()
+		 * @generated
+		 */
+		EClass NAMED_COMPONENT = eINSTANCE.getNamedComponent();
+								/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_COMPONENT__NAME = eINSTANCE.getNamedComponent_Name();
 								/**
 		 * The meta object literal for the '<em><b>Incoming Data Flow</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->

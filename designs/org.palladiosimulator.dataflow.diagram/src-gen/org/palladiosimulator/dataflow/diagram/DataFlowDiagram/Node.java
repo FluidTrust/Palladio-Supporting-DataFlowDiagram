@@ -13,15 +13,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getOutgoingDataFlow <em>Outgoing Data Flow</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getIncomingDataFlow <em>Incoming Data Flow</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getOutgoingDataFlow <em>Outgoing Data Flow</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode()
  * @model abstract="true"
  * @generated
  */
-public interface Node extends Component {
+public interface Node extends NamedComponent {
 	/**
 	 * Returns the value of the '<em><b>Outgoing Data Flow</b></em>' reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
@@ -33,6 +34,28 @@ public interface Node extends Component {
 	 * @generated
 	 */
 	EList<Node> getOutgoingDataFlow();
+
+	/**
+	 * Returns the value of the '<em><b>Equals</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Equals</em>' reference.
+	 * @see #setEquals(Node)
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_Equals()
+	 * @model
+	 * @generated
+	 */
+	Node getEquals();
+
+	/**
+	 * Sets the value of the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Equals</em>' reference.
+	 * @see #getEquals()
+	 * @generated
+	 */
+	void setEquals(Node value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Data Flow</b></em>' reference list.

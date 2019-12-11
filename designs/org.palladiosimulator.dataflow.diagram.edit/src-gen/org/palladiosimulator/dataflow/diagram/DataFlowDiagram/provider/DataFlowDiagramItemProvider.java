@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
@@ -48,55 +46,9 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addEqualsPropertyDescriptor(object);
 			addRefinedByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_name_feature", "_UI_Component_type"),
-				 DataFlowDiagramPackage.Literals.COMPONENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Equals feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEqualsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_equals_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_equals_feature", "_UI_Component_type"),
-				 DataFlowDiagramPackage.Literals.COMPONENT__EQUALS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -171,7 +123,7 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataFlowDiagram)object).getName();
+		String label = ((DataFlowDiagram)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DataFlowDiagram_type") :
 			getString("_UI_DataFlowDiagram_type") + " " + label;
@@ -189,9 +141,6 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataFlowDiagram.class)) {
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -214,11 +163,6 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
-				 DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
 				 DataFlowDiagramFactory.eINSTANCE.createExternalActor()));
 
 		newChildDescriptors.add
@@ -234,12 +178,40 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
+				 DataFlowDiagramFactory.eINSTANCE.createRefiningReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
 				 DataFlowDiagramFactory.eINSTANCE.createDataFlow()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINES,
 				 DataFlowDiagramFactory.eINSTANCE.createRefiningReference()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS ||
+			childFeature == DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINES;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

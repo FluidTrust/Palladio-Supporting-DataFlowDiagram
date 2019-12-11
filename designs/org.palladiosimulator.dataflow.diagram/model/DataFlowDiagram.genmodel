@@ -16,10 +16,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagram/refinedBy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagram/refines"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="DataFlowDiagram.ecore#//Component">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataFlowDiagram.ecore#//Component/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Component/equals"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="DataFlowDiagram.ecore#//Component"/>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//ExternalActor"/>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Store"/>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Process"/>
@@ -35,10 +32,14 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Data/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataFlowDiagram.ecore#//Data/name"/>
     </genClasses>
-    <genClasses ecoreClass="DataFlowDiagram.ecore#//Node">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/outgoingDataFlow"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/incomingDataFlow"/>
-    </genClasses>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Edge"/>
+    <genClasses ecoreClass="DataFlowDiagram.ecore#//Node">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/incomingDataFlow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/outgoingDataFlow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/equals"/>
+    </genClasses>
+    <genClasses ecoreClass="DataFlowDiagram.ecore#//NamedComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataFlowDiagram.ecore#//NamedComponent/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -17,6 +17,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
@@ -109,12 +110,16 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createDataAdapter();
 			}
 			@Override
+			public Adapter caseEdge(Edge object) {
+				return createEdgeAdapter();
+			}
+			@Override
 			public Adapter caseNode(Node object) {
 				return createNodeAdapter();
 			}
 			@Override
-			public Adapter caseEdge(Edge object) {
-				return createEdgeAdapter();
+			public Adapter caseNamedComponent(NamedComponent object) {
+				return createNamedComponentAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -262,6 +267,20 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent <em>Named Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent
+	 * @generated
+	 */
+	public Adapter createNamedComponentAdapter() {
 		return null;
 	}
 

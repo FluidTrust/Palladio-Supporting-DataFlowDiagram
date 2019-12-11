@@ -21,7 +21,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NodeItemProvider extends ComponentItemProvider {
+public class NodeItemProvider extends NamedComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -43,8 +43,9 @@ public class NodeItemProvider extends ComponentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOutgoingDataFlowPropertyDescriptor(object);
 			addIncomingDataFlowPropertyDescriptor(object);
+			addOutgoingDataFlowPropertyDescriptor(object);
+			addEqualsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,6 +64,28 @@ public class NodeItemProvider extends ComponentItemProvider {
 				 getString("_UI_Node_outgoingDataFlow_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Node_outgoingDataFlow_feature", "_UI_Node_type"),
 				 DataFlowDiagramPackage.Literals.NODE__OUTGOING_DATA_FLOW,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Equals feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEqualsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Node_equals_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_equals_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__EQUALS,
 				 true,
 				 false,
 				 true,

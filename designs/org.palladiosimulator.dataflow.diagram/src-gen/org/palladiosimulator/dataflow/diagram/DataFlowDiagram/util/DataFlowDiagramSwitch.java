@@ -15,6 +15,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
@@ -79,7 +80,6 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM: {
 				DataFlowDiagram dataFlowDiagram = (DataFlowDiagram)theEObject;
 				T result = caseDataFlowDiagram(dataFlowDiagram);
-				if (result == null) result = caseComponent(dataFlowDiagram);
 				if (result == null) result = caseIdentifier(dataFlowDiagram);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -95,6 +95,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				ExternalActor externalActor = (ExternalActor)theEObject;
 				T result = caseExternalActor(externalActor);
 				if (result == null) result = caseNode(externalActor);
+				if (result == null) result = caseNamedComponent(externalActor);
 				if (result == null) result = caseComponent(externalActor);
 				if (result == null) result = caseIdentifier(externalActor);
 				if (result == null) result = defaultCase(theEObject);
@@ -104,6 +105,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				Store store = (Store)theEObject;
 				T result = caseStore(store);
 				if (result == null) result = caseNode(store);
+				if (result == null) result = caseNamedComponent(store);
 				if (result == null) result = caseComponent(store);
 				if (result == null) result = caseIdentifier(store);
 				if (result == null) result = defaultCase(theEObject);
@@ -113,6 +115,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process process = (org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process)theEObject;
 				T result = caseProcess(process);
 				if (result == null) result = caseNode(process);
+				if (result == null) result = caseNamedComponent(process);
 				if (result == null) result = caseComponent(process);
 				if (result == null) result = caseIdentifier(process);
 				if (result == null) result = defaultCase(theEObject);
@@ -121,6 +124,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 			case DataFlowDiagramPackage.REFINING_REFERENCE: {
 				RefiningReference refiningReference = (RefiningReference)theEObject;
 				T result = caseRefiningReference(refiningReference);
+				if (result == null) result = caseComponent(refiningReference);
 				if (result == null) result = caseIdentifier(refiningReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -129,6 +133,7 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				DataFlow dataFlow = (DataFlow)theEObject;
 				T result = caseDataFlow(dataFlow);
 				if (result == null) result = caseEdge(dataFlow);
+				if (result == null) result = caseNamedComponent(dataFlow);
 				if (result == null) result = caseComponent(dataFlow);
 				if (result == null) result = caseIdentifier(dataFlow);
 				if (result == null) result = defaultCase(theEObject);
@@ -140,19 +145,29 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DataFlowDiagramPackage.EDGE: {
+				Edge edge = (Edge)theEObject;
+				T result = caseEdge(edge);
+				if (result == null) result = caseNamedComponent(edge);
+				if (result == null) result = caseComponent(edge);
+				if (result == null) result = caseIdentifier(edge);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DataFlowDiagramPackage.NODE: {
 				Node node = (Node)theEObject;
 				T result = caseNode(node);
+				if (result == null) result = caseNamedComponent(node);
 				if (result == null) result = caseComponent(node);
 				if (result == null) result = caseIdentifier(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataFlowDiagramPackage.EDGE: {
-				Edge edge = (Edge)theEObject;
-				T result = caseEdge(edge);
-				if (result == null) result = caseComponent(edge);
-				if (result == null) result = caseIdentifier(edge);
+			case DataFlowDiagramPackage.NAMED_COMPONENT: {
+				NamedComponent namedComponent = (NamedComponent)theEObject;
+				T result = caseNamedComponent(namedComponent);
+				if (result == null) result = caseComponent(namedComponent);
+				if (result == null) result = caseIdentifier(namedComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -292,6 +307,21 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNode(Node object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedComponent(NamedComponent object) {
 		return null;
 	}
 

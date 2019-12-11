@@ -23,6 +23,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 
 /**
@@ -34,7 +35,6 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getEquals <em>Equals</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getData <em>Data</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
@@ -64,16 +64,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
     protected String name = NAME_EDEFAULT;
 
     /**
-	 * The cached value of the '{@link #getEquals() <em>Equals</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEquals()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component equals;
-
-				/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
@@ -236,44 +226,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getEquals() {
-		if (equals != null && equals.eIsProxy()) {
-			InternalEObject oldEquals = (InternalEObject)equals;
-			equals = (Component)eResolveProxy(oldEquals);
-			if (equals != oldEquals) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW__EQUALS, oldEquals, equals));
-			}
-		}
-		return equals;
-	}
-
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Component basicGetEquals() {
-		return equals;
-	}
-
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEquals(Component newEquals) {
-		Component oldEquals = equals;
-		equals = newEquals;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW__EQUALS, oldEquals, equals));
-	}
-
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -293,9 +245,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				return getName();
-			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
-				if (resolve) return getEquals();
-				return basicGetEquals();
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				return getData();
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
@@ -319,9 +268,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				setName((String)newValue);
-				return;
-			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
-				setEquals((Component)newValue);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				getData().clear();
@@ -348,9 +294,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
-				setEquals((Component)null);
-				return;
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				getData().clear();
 				return;
@@ -374,8 +317,6 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DataFlowDiagramPackage.DATA_FLOW__EQUALS:
-				return equals != null;
 			case DataFlowDiagramPackage.DATA_FLOW__DATA:
 				return data != null && !data.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
@@ -395,8 +336,12 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Component.class) {
 			switch (derivedFeatureID) {
-				case DataFlowDiagramPackage.DATA_FLOW__NAME: return DataFlowDiagramPackage.COMPONENT__NAME;
-				case DataFlowDiagramPackage.DATA_FLOW__EQUALS: return DataFlowDiagramPackage.COMPONENT__EQUALS;
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedComponent.class) {
+			switch (derivedFeatureID) {
+				case DataFlowDiagramPackage.DATA_FLOW__NAME: return DataFlowDiagramPackage.NAMED_COMPONENT__NAME;
 				default: return -1;
 			}
 		}
@@ -417,8 +362,12 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Component.class) {
 			switch (baseFeatureID) {
-				case DataFlowDiagramPackage.COMPONENT__NAME: return DataFlowDiagramPackage.DATA_FLOW__NAME;
-				case DataFlowDiagramPackage.COMPONENT__EQUALS: return DataFlowDiagramPackage.DATA_FLOW__EQUALS;
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedComponent.class) {
+			switch (baseFeatureID) {
+				case DataFlowDiagramPackage.NAMED_COMPONENT__NAME: return DataFlowDiagramPackage.DATA_FLOW__NAME;
 				default: return -1;
 			}
 		}

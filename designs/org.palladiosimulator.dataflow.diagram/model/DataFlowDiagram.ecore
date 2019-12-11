@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="DataFlowDiagram" nsURI="http://palladiosimulator.org/dataflow/diagram/1.0"
     nsPrefix="DataFlowDiagram">
-  <eClassifiers xsi:type="ecore:EClass" name="DataFlowDiagram" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlowDiagram" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refinedBy" upperBound="-1"
@@ -10,14 +10,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//RefiningReference"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="equals" eType="#//Component"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalActor" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Node"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RefiningReference" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+  <eClassifiers xsi:type="ecore:EClass" name="RefiningReference" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refinedProcesses" lowerBound="1"
         upperBound="-1" eType="#//Process"/>
   </eClassifiers>
@@ -33,11 +30,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingDataFlow" upperBound="-1"
-        eType="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true" eSuperTypes="#//NamedComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//NamedComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingDataFlow" upperBound="-1"
         eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingDataFlow" upperBound="-1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equals" eType="#//Node"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedComponent" abstract="true" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
 </ecore:EPackage>

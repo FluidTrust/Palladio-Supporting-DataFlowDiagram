@@ -14,7 +14,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
  *
  * @generated
  */
-public abstract class EdgeImpl extends ComponentImpl implements Edge {
+public abstract class EdgeImpl extends NamedComponentImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
