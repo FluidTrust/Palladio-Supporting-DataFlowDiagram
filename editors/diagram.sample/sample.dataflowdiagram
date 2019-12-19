@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
-  <components xsi:type="DataFlowDiagram:Process" id="_VsIuERHEEeqyJ8uK88pYJw" name="P_1"/>
-  <components xsi:type="DataFlowDiagram:ExternalActor" id="_gA8LYBd6EeqmI7JLCCCR2w" name="A_1"/>
-  <components xsi:type="DataFlowDiagram:Store" id="_i7-ZIRd6EeqmI7JLCCCR2w" name="S_1"/>
-  <components xsi:type="DataFlowDiagram:Process" id="_NNo9wBjVEeqn-J_xJnYQrg" name="P_2"/>
-  <components xsi:type="DataFlowDiagram:ExternalActor" id="_N_ppgBjVEeqn-J_xJnYQrg"/>
-  <components xsi:type="DataFlowDiagram:DataFlow" id="_GTFhMBmrEeqfloLCSNSTeg" name="DF_1" source="_gA8LYBd6EeqmI7JLCCCR2w" target="_VsIuERHEEeqyJ8uK88pYJw">
-    <data/>
-  </components>
-  <components xsi:type="DataFlowDiagram:RefiningReference" id="_OVyuMBwuEeqzSo2Ixy1OqA"/>
+  <components xsi:type="DataFlowDiagram:Store" id="_-OxEUSKQEeqoE6gUB2vIeA" name="S1"/>
 </DataFlowDiagram:DataFlowDiagram>
