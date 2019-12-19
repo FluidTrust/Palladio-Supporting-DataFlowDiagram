@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.dictionary.DataDictionary.tests;
 
-import junit.framework.TestCase;
-
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 
 /**
@@ -12,15 +10,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class DataTypeTest extends TestCase {
-
-	/**
-	 * The fixture for this Data Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataType fixture = null;
+public abstract class DataTypeTest extends EntityTest {
 
 	/**
 	 * Constructs a new Data Type test case with the given name.
@@ -33,23 +23,14 @@ public abstract class DataTypeTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Data Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(DataType fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Data Type test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected DataType getFixture() {
-		return fixture;
+		return (DataType)fixture;
 	}
 
 } //DataTypeTest

@@ -2,30 +2,31 @@
  */
 package org.palladiosimulator.dataflow.dictionary.DataDictionary.provider;
 
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
+
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entity;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entity} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntryItemProvider extends EntityItemProvider {
+public class EntityItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryItemProvider(AdapterFactory adapterFactory) {
+	public EntityItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -40,42 +41,19 @@ public class EntryItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entry_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entry_type_feature", "_UI_Entry_type"),
-				 DataDictionaryPackage.Literals.ENTRY__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Entry.gif.
+	 * This returns Entity.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Entry"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Entity"));
 	}
 
 	/**
@@ -96,11 +74,12 @@ public class EntryItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Entry)object).getName();
+		String label = ((Entity)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Entry_type") :
-			getString("_UI_Entry_type") + " " + label;
+			getString("_UI_Entity_type") :
+			getString("_UI_Entity_type") + " " + label;
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

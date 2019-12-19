@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.dictionary.DataDictionary.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryFactory;
@@ -15,15 +13,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntryTest extends TestCase {
-
-	/**
-	 * The fixture for this Entry test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Entry fixture = null;
+public class EntryTest extends EntityTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class EntryTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Entry test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Entry fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Entry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Entry getFixture() {
-		return fixture;
+		return (Entry)fixture;
 	}
 
 	/**

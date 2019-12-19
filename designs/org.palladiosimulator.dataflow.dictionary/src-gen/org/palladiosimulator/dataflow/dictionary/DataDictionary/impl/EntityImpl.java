@@ -3,23 +3,24 @@
 package org.palladiosimulator.dataflow.dictionary.DataDictionary.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Type</b></em>'.
+ * An implementation of the model object '<em><b>Entity</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class DataTypeImpl extends EntityImpl implements DataType {
+public abstract class EntityImpl extends NamedElementImpl implements Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataTypeImpl() {
+	protected EntityImpl() {
 		super();
 	}
 
@@ -30,7 +31,7 @@ public abstract class DataTypeImpl extends EntityImpl implements DataType {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataDictionaryPackage.Literals.DATA_TYPE;
+		return DataDictionaryPackage.Literals.ENTITY;
 	}
 
-} //DataTypeImpl
+} //EntityImpl
