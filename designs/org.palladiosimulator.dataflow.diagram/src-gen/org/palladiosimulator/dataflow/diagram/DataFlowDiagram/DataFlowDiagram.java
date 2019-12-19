@@ -45,7 +45,7 @@ public interface DataFlowDiagram extends EObject, Identifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Refined By</em>' reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_RefinedBy()
-	 * @model
+	 * @model transient="true" volatile="true"
 	 * @generated
 	 */
 	EList<DataFlowDiagram> getRefinedBy();

@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getIncomingDataFlow <em>Incoming Data Flow</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getOutgoingDataFlow <em>Outgoing Data Flow</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses <em>Requiring Processes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses <em>Providing Processes</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}</li>
  * </ul>
  *
@@ -24,49 +24,39 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Node extends NamedComponent {
 	/**
-	 * Returns the value of the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * Returns the value of the '<em><b>Requiring Processes</b></em>' reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing Data Flow</em>' reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_OutgoingDataFlow()
-	 * @model
+	 * @return the value of the '<em>Requiring Processes</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_RequiringProcesses()
+	 * @model transient="true" volatile="true"
 	 * @generated
 	 */
-	EList<Node> getOutgoingDataFlow();
+	EList<Node> getRequiringProcesses();
 
 	/**
-	 * Returns the value of the '<em><b>Equals</b></em>' reference.
+	 * Returns the value of the '<em><b>Providing Processes</b></em>' reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Equals</em>' reference.
-	 * @see #setEquals(Node)
+	 * @return the value of the '<em>Providing Processes</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_ProvidingProcesses()
+	 * @model transient="true" volatile="true"
+	 * @generated
+	 */
+	EList<Node> getProvidingProcesses();
+
+	/**
+	 * Returns the value of the '<em><b>Equals</b></em>' reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Equals</em>' reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_Equals()
 	 * @model
 	 * @generated
 	 */
-	Node getEquals();
-
-	/**
-	 * Sets the value of the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Equals</em>' reference.
-	 * @see #getEquals()
-	 * @generated
-	 */
-	void setEquals(Node value);
-
-	/**
-	 * Returns the value of the '<em><b>Incoming Data Flow</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Data Flow</em>' reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_IncomingDataFlow()
-	 * @model
-	 * @generated
-	 */
-	EList<Node> getIncomingDataFlow();
+	EList<Node> getEquals();
 
 } // Node

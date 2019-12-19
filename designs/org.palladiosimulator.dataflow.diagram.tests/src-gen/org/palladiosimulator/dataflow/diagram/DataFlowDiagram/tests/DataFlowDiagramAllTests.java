@@ -31,6 +31,7 @@ public class DataFlowDiagramAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new DataFlowDiagramAllTests("DataFlowDiagram Tests");
+		suite.addTest(DataFlowDiagramTests.suite());
 		return suite;
 	}
 

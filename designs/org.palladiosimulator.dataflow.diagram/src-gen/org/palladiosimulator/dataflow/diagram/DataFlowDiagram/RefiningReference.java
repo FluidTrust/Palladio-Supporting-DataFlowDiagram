@@ -4,6 +4,7 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface RefiningReference extends Identifier, Component {
+public interface RefiningReference extends EObject, Identifier {
 	/**
 	 * Returns the value of the '<em><b>Refined Processes</b></em>' reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process}.

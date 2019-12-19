@@ -124,7 +124,6 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 			case DataFlowDiagramPackage.REFINING_REFERENCE: {
 				RefiningReference refiningReference = (RefiningReference)theEObject;
 				T result = caseRefiningReference(refiningReference);
-				if (result == null) result = caseComponent(refiningReference);
 				if (result == null) result = caseIdentifier(refiningReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

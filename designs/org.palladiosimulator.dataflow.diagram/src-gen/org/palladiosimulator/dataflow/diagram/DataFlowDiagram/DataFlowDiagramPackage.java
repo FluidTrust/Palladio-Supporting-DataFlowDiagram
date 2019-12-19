@@ -266,25 +266,25 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int NODE__NAME = NAMED_COMPONENT__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__INCOMING_DATA_FLOW = NAMED_COMPONENT_FEATURE_COUNT + 0;
+	int NODE__REQUIRING_PROCESSES = NAMED_COMPONENT_FEATURE_COUNT + 0;
 
 				/**
-	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__OUTGOING_DATA_FLOW = NAMED_COMPONENT_FEATURE_COUNT + 1;
+	int NODE__PROVIDING_PROCESSES = NAMED_COMPONENT_FEATURE_COUNT + 1;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Equals</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -320,25 +320,25 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int EXTERNAL_ACTOR__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACTOR__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
+	int EXTERNAL_ACTOR__REQUIRING_PROCESSES = NODE__REQUIRING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACTOR__OUTGOING_DATA_FLOW = NODE__OUTGOING_DATA_FLOW;
+	int EXTERNAL_ACTOR__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Equals</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
 	 * @generated
@@ -374,25 +374,25 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int STORE__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORE__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
+	int STORE__REQUIRING_PROCESSES = NODE__REQUIRING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORE__OUTGOING_DATA_FLOW = NODE__OUTGOING_DATA_FLOW;
+	int STORE__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Equals</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
 	 * @generated
@@ -428,25 +428,25 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int PROCESS__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Incoming Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__INCOMING_DATA_FLOW = NODE__INCOMING_DATA_FLOW;
+	int PROCESS__REQUIRING_PROCESSES = NODE__REQUIRING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Outgoing Data Flow</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__OUTGOING_DATA_FLOW = NODE__OUTGOING_DATA_FLOW;
+	int PROCESS__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference.
+	 * The feature id for the '<em><b>Equals</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
 	 * @generated
@@ -798,21 +798,32 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EClass getNode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getOutgoingDataFlow <em>Outgoing Data Flow</em>}'.
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses <em>Requiring Processes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outgoing Data Flow</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getOutgoingDataFlow()
+	 * @return the meta object for the reference list '<em>Requiring Processes</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EReference getNode_OutgoingDataFlow();
+	EReference getNode_RequiringProcesses();
 
-	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}'.
+				/**
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses <em>Providing Processes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Equals</em>'.
+	 * @return the meta object for the reference list '<em>Providing Processes</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_ProvidingProcesses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Equals</em>'.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals()
 	 * @see #getNode()
 	 * @generated
@@ -839,17 +850,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedComponent_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getIncomingDataFlow <em>Incoming Data Flow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Incoming Data Flow</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getIncomingDataFlow()
-	 * @see #getNode()
-	 * @generated
-	 */
-	EReference getNode_IncomingDataFlow();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge <em>Edge</em>}'.
@@ -1029,14 +1029,21 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EClass NODE = eINSTANCE.getNode();
 								/**
-		 * The meta object literal for the '<em><b>Outgoing Data Flow</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Requiring Processes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NODE__OUTGOING_DATA_FLOW = eINSTANCE.getNode_OutgoingDataFlow();
+		EReference NODE__REQUIRING_PROCESSES = eINSTANCE.getNode_RequiringProcesses();
 								/**
-		 * The meta object literal for the '<em><b>Equals</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Providing Processes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__PROVIDING_PROCESSES = eINSTANCE.getNode_ProvidingProcesses();
+								/**
+		 * The meta object literal for the '<em><b>Equals</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1058,13 +1065,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_COMPONENT__NAME = eINSTANCE.getNamedComponent_Name();
-								/**
-		 * The meta object literal for the '<em><b>Incoming Data Flow</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NODE__INCOMING_DATA_FLOW = eINSTANCE.getNode_IncomingDataFlow();
 								/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc -->

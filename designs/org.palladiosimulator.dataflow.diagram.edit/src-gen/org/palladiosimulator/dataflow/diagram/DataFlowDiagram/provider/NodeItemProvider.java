@@ -43,27 +43,49 @@ public class NodeItemProvider extends NamedComponentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIncomingDataFlowPropertyDescriptor(object);
-			addOutgoingDataFlowPropertyDescriptor(object);
+			addRequiringProcessesPropertyDescriptor(object);
+			addProvidingProcessesPropertyDescriptor(object);
 			addEqualsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Outgoing Data Flow feature.
+	 * This adds a property descriptor for the Requiring Processes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutgoingDataFlowPropertyDescriptor(Object object) {
+	protected void addRequiringProcessesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Node_outgoingDataFlow_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Node_outgoingDataFlow_feature", "_UI_Node_type"),
-				 DataFlowDiagramPackage.Literals.NODE__OUTGOING_DATA_FLOW,
+				 getString("_UI_Node_requiringProcesses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_requiringProcesses_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__REQUIRING_PROCESSES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Providing Processes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProvidingProcessesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Node_providingProcesses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_providingProcesses_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__PROVIDING_PROCESSES,
 				 true,
 				 false,
 				 true,
@@ -86,28 +108,6 @@ public class NodeItemProvider extends NamedComponentItemProvider {
 				 getString("_UI_Node_equals_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Node_equals_feature", "_UI_Node_type"),
 				 DataFlowDiagramPackage.Literals.NODE__EQUALS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Incoming Data Flow feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncomingDataFlowPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Node_incomingDataFlow_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Node_incomingDataFlow_feature", "_UI_Node_type"),
-				 DataFlowDiagramPackage.Literals.NODE__INCOMING_DATA_FLOW,
 				 true,
 				 false,
 				 true,

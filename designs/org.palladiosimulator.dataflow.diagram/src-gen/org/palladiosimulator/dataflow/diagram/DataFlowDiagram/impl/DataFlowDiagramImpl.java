@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
@@ -44,15 +43,6 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	 * @ordered
 	 */
 	protected EList<Component> components;
-	/**
-	 * The cached value of the '{@link #getRefinedBy() <em>Refined By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefinedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataFlowDiagram> refinedBy;
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -100,10 +90,11 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	 * @generated
 	 */
 	public EList<DataFlowDiagram> getRefinedBy() {
-		if (refinedBy == null) {
-			refinedBy = new EObjectResolvingEList<DataFlowDiagram>(DataFlowDiagram.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY);
-		}
-		return refinedBy;
+		// TODO: implement this method to return the 'Refined By' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -239,7 +230,7 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				return components != null && !components.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
-				return refinedBy != null && !refinedBy.isEmpty();
+				return !getRefinedBy().isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINES:
 				return refines != null;
 		}

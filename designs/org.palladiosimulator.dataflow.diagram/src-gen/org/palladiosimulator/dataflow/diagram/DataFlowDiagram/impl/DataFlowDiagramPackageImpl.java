@@ -336,7 +336,16 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNode_OutgoingDataFlow() {
+	public EReference getNode_RequiringProcesses() {
+		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNode_ProvidingProcesses() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -365,15 +374,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 */
 	public EAttribute getNamedComponent_Name() {
 		return (EAttribute)namedComponentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getNode_IncomingDataFlow() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -441,8 +441,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		edgeEClass = createEClass(EDGE);
 
 		nodeEClass = createEClass(NODE);
-		createEReference(nodeEClass, NODE__INCOMING_DATA_FLOW);
-		createEReference(nodeEClass, NODE__OUTGOING_DATA_FLOW);
+		createEReference(nodeEClass, NODE__REQUIRING_PROCESSES);
+		createEReference(nodeEClass, NODE__PROVIDING_PROCESSES);
 		createEReference(nodeEClass, NODE__EQUALS);
 
 		namedComponentEClass = createEClass(NAMED_COMPONENT);
@@ -488,7 +488,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		storeEClass.getESuperTypes().add(this.getNode());
 		processEClass.getESuperTypes().add(this.getNode());
 		refiningReferenceEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
-		refiningReferenceEClass.getESuperTypes().add(this.getComponent());
 		dataFlowEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		dataFlowEClass.getESuperTypes().add(this.getEdge());
 		edgeEClass.getESuperTypes().add(this.getNamedComponent());
@@ -498,7 +497,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataFlowDiagramEClass, DataFlowDiagram.class, "DataFlowDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlowDiagram_Components(), this.getComponent(), null, "components", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlowDiagram_RefinedBy(), this.getDataFlowDiagram(), null, "refinedBy", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlowDiagram_RefinedBy(), this.getDataFlowDiagram(), null, "refinedBy", null, 0, -1, DataFlowDiagram.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlowDiagram_Refines(), this.getRefiningReference(), null, "refines", null, 0, 1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -524,9 +523,9 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEClass(edgeEClass, Edge.class, "Edge", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNode_IncomingDataFlow(), this.getNode(), null, "incomingDataFlow", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNode_OutgoingDataFlow(), this.getNode(), null, "outgoingDataFlow", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNode_Equals(), this.getNode(), null, "equals", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_RequiringProcesses(), this.getNode(), null, "requiringProcesses", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_ProvidingProcesses(), this.getNode(), null, "providingProcesses", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Equals(), this.getNode(), null, "equals", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedComponentEClass, NamedComponent.class, "NamedComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedComponent_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamedComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

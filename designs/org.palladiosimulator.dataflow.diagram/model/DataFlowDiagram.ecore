@@ -6,7 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refinedBy" upperBound="-1"
-        eType="#//DataFlowDiagram"/>
+        eType="#//DataFlowDiagram" volatile="true" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//RefiningReference"
         containment="true"/>
   </eClassifiers>
@@ -14,7 +14,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalActor" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Node"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RefiningReference" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="RefiningReference" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refinedProcesses" lowerBound="1"
         upperBound="-1" eType="#//Process"/>
   </eClassifiers>
@@ -32,11 +32,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true" eSuperTypes="#//NamedComponent"/>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//NamedComponent">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingDataFlow" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiringProcesses" upperBound="-1"
+        eType="#//Node" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providingProcesses" upperBound="-1"
+        eType="#//Node" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equals" upperBound="-1"
         eType="#//Node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingDataFlow" upperBound="-1"
-        eType="#//Node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="equals" eType="#//Node"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedComponent" abstract="true" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
