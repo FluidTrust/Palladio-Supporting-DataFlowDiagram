@@ -23,7 +23,8 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 
 /**
@@ -334,14 +335,19 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Component.class) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case DataFlowDiagramPackage.DATA_FLOW__NAME: return DataFlowDiagramPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == Entity.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
 		}
-		if (baseClass == NamedComponent.class) {
+		if (baseClass == Component.class) {
 			switch (derivedFeatureID) {
-				case DataFlowDiagramPackage.DATA_FLOW__NAME: return DataFlowDiagramPackage.NAMED_COMPONENT__NAME;
 				default: return -1;
 			}
 		}
@@ -360,14 +366,19 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Component.class) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case DataFlowDiagramPackage.NAMED_ELEMENT__NAME: return DataFlowDiagramPackage.DATA_FLOW__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == Entity.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
-		if (baseClass == NamedComponent.class) {
+		if (baseClass == Component.class) {
 			switch (baseFeatureID) {
-				case DataFlowDiagramPackage.NAMED_COMPONENT__NAME: return DataFlowDiagramPackage.DATA_FLOW__NAME;
 				default: return -1;
 			}
 		}

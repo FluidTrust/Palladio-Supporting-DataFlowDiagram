@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.tests;
 
-import junit.framework.TestCase;
-
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 
 /**
@@ -12,15 +10,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class ComponentTest extends TestCase {
-
-	/**
-	 * The fixture for this Component test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Component fixture = null;
+public abstract class ComponentTest extends EntityTest {
 
 	/**
 	 * Constructs a new Component test case with the given name.
@@ -33,23 +23,14 @@ public abstract class ComponentTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Component test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Component fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Component test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Component getFixture() {
-		return fixture;
+		return (Component)fixture;
 	}
 
 } //ComponentTest

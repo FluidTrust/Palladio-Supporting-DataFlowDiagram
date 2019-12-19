@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface Node extends NamedComponent {
+public interface Node extends Component {
 	/**
 	 * Returns the value of the '<em><b>Requiring Processes</b></em>' reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.

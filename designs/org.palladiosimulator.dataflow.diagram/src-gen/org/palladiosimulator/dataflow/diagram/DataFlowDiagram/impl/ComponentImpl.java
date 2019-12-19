@@ -2,7 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
-import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
@@ -14,7 +13,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPac
  *
  * @generated
  */
-public abstract class ComponentImpl extends IdentifierImpl implements Component {
+public abstract class ComponentImpl extends EntityImpl implements Component {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

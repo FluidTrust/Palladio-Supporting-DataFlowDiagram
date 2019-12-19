@@ -2,14 +2,11 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.provider;
 
-import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 
@@ -19,7 +16,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentItemProvider extends IdentifierItemProvider {
+public class ComponentItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,7 +50,7 @@ public class ComponentItemProvider extends IdentifierItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Component)object).getId();
+		String label = ((Component)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Component_type") :
 			getString("_UI_Component_type") + " " + label;
@@ -82,17 +79,6 @@ public class ComponentItemProvider extends IdentifierItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

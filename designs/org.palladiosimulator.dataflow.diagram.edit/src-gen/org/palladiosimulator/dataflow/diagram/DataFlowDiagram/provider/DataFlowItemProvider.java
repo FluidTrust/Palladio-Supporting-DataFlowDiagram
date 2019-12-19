@@ -111,9 +111,9 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedComponent_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedComponent_name_feature", "_UI_NamedComponent_type"),
-				 DataFlowDiagramPackage.Literals.NAMED_COMPONENT__NAME,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 DataFlowDiagramPackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,

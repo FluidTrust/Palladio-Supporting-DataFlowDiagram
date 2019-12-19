@@ -19,7 +19,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EdgeItemProvider extends NamedComponentItemProvider {
+public class EdgeItemProvider extends ComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

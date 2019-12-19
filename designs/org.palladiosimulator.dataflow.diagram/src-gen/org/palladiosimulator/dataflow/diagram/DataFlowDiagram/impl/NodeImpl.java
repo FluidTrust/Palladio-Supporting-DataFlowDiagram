@@ -26,7 +26,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  *
  * @generated
  */
-public abstract class NodeImpl extends NamedComponentImpl implements Node {
+public abstract class NodeImpl extends ComponentImpl implements Node {
 	/**
 	 * The cached value of the '{@link #getEquals() <em>Equals</em>}' reference list.
 	 * <!-- begin-user-doc -->

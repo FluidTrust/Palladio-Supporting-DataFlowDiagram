@@ -7,24 +7,25 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Named Component</b></em>'.
+ * An implementation of the model object '<em><b>Named Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class NamedComponentImpl extends ComponentImpl implements NamedComponent {
+public abstract class NamedElementImpl extends MinimalEObjectImpl.Container implements NamedElement {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NamedComponentImpl() {
+	protected NamedElementImpl() {
 		super();
 	}
 
@@ -61,7 +62,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataFlowDiagramPackage.Literals.NAMED_COMPONENT;
+		return DataFlowDiagramPackage.Literals.NAMED_ELEMENT;
 	}
 
 	/**
@@ -82,7 +83,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.NAMED_COMPONENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.NAMED_ELEMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -93,7 +94,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NAMED_COMPONENT__NAME:
+			case DataFlowDiagramPackage.NAMED_ELEMENT__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +108,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NAMED_COMPONENT__NAME:
+			case DataFlowDiagramPackage.NAMED_ELEMENT__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -122,7 +123,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NAMED_COMPONENT__NAME:
+			case DataFlowDiagramPackage.NAMED_ELEMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -137,7 +138,7 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NAMED_COMPONENT__NAME:
+			case DataFlowDiagramPackage.NAMED_ELEMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -159,4 +160,4 @@ public abstract class NamedComponentImpl extends ComponentImpl implements NamedC
 		return result.toString();
 	}
 
-} //NamedComponentImpl
+} //NamedElementImpl

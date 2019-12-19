@@ -3,34 +3,39 @@
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.provider;
 
 
+import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class NamedComponentItemProvider extends ComponentItemProvider {
+public class EntityItemProvider extends IdentifierItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NamedComponentItemProvider(AdapterFactory adapterFactory) {
+	public EntityItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,9 +66,9 @@ public class NamedComponentItemProvider extends ComponentItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedComponent_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedComponent_name_feature", "_UI_NamedComponent_type"),
-				 DataFlowDiagramPackage.Literals.NAMED_COMPONENT__NAME,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 DataFlowDiagramPackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -73,14 +78,14 @@ public class NamedComponentItemProvider extends ComponentItemProvider {
 	}
 
 	/**
-	 * This returns NamedComponent.gif.
+	 * This returns Entity.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/NamedComponent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Entity"));
 	}
 
 	/**
@@ -91,10 +96,10 @@ public class NamedComponentItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((NamedComponent)object).getName();
+		String label = ((Entity)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_NamedComponent_type") :
-			getString("_UI_NamedComponent_type") + " " + label;
+			getString("_UI_Entity_type") :
+			getString("_UI_Entity_type") + " " + label;
 	}
 
 
@@ -109,8 +114,8 @@ public class NamedComponentItemProvider extends ComponentItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(NamedComponent.class)) {
-			case DataFlowDiagramPackage.NAMED_COMPONENT__NAME:
+		switch (notification.getFeatureID(Entity.class)) {
+			case DataFlowDiagramPackage.ENTITY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -127,6 +132,17 @@ public class NamedComponentItemProvider extends ComponentItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

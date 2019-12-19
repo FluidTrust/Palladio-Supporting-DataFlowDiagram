@@ -13,5 +13,5 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
  * @model abstract="true"
  * @generated
  */
-public interface Edge extends NamedComponent {
+public interface Edge extends Component {
 } // Edge

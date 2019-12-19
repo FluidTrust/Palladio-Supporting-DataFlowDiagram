@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
@@ -15,15 +13,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataTest extends TestCase {
-
-	/**
-	 * The fixture for this Data test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Data fixture = null;
+public class DataTest extends EntityTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class DataTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Data test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Data fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Data test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Data getFixture() {
-		return fixture;
+		return (Data)fixture;
 	}
 
 	/**

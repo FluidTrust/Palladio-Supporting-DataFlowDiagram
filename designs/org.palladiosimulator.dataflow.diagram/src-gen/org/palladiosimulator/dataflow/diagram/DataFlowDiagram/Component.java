@@ -2,9 +2,6 @@
  */
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
-import de.uka.ipd.sdq.identifier.Identifier;
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component</b></em>'.
@@ -15,6 +12,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Component extends EObject, Identifier {
+public interface Component extends Entity {
 
 } // Component

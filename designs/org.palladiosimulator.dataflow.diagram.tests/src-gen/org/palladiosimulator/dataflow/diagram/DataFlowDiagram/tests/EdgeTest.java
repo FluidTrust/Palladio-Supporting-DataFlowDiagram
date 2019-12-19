@@ -10,7 +10,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class EdgeTest extends NamedComponentTest {
+public abstract class EdgeTest extends ComponentTest {
 
 	/**
 	 * Constructs a new Edge test case with the given name.

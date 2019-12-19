@@ -8,8 +8,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
@@ -23,12 +21,11 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DataImpl extends MinimalEObjectImpl.Container implements Data {
+public class DataImpl extends EntityImpl implements Data {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -40,25 +37,6 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	protected DataType type;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-    protected static final String NAME_EDEFAULT = null;
-    /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-    protected String name = NAME_EDEFAULT;
-
-    /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -117,27 +95,6 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 
     /**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @generated
-	 */
-    public String getName() {
-		return name;
-	}
-
-    /**
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @generated
-	 */
-    public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA__NAME, oldName, name));
-	}
-
-    /**
-	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -147,8 +104,6 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 			case DataFlowDiagramPackage.DATA__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case DataFlowDiagramPackage.DATA__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,9 +118,6 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA__TYPE:
 				setType((DataType)newValue);
-				return;
-			case DataFlowDiagramPackage.DATA__NAME:
-				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,9 +134,6 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 			case DataFlowDiagramPackage.DATA__TYPE:
 				setType((DataType)null);
 				return;
-			case DataFlowDiagramPackage.DATA__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,26 +148,8 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA__TYPE:
 				return type != null;
-			case DataFlowDiagramPackage.DATA__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-    /**
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @generated
-	 */
-    @Override
-    public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DataImpl

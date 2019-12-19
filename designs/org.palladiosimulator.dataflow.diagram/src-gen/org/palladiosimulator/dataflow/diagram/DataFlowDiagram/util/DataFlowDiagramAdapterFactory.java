@@ -16,8 +16,9 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
@@ -118,8 +119,12 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createNodeAdapter();
 			}
 			@Override
-			public Adapter caseNamedComponent(NamedComponent object) {
-				return createNamedComponentAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -271,16 +276,30 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent <em>Named Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement
 	 * @generated
 	 */
-	public Adapter createNamedComponentAdapter() {
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
 		return null;
 	}
 

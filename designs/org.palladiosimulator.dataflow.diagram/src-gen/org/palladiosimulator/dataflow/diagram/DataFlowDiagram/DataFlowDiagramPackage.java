@@ -113,6 +113,43 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EntityImpl <em>Entity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EntityImpl
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getEntity()
+	 * @generated
+	 */
+	int ENTITY = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ID = IdentifierPackage.IDENTIFIER__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,35 +166,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ID = IdentifierPackage.IDENTIFIER__ID;
-
-	/**
-	 * The number of structural features of the '<em>Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl <em>Named Component</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNamedComponent()
-	 * @generated
-	 */
-	int NAMED_COMPONENT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_COMPONENT__ID = COMPONENT__ID;
+	int COMPONENT__ID = ENTITY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,16 +175,16 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_COMPONENT__NAME = COMPONENT_FEATURE_COUNT + 0;
+	int COMPONENT__NAME = ENTITY__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Named Component</em>' class.
+	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+	int COMPONENT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ExternalActorImpl <em>External Actor</em>}' class.
@@ -254,7 +263,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__ID = NAMED_COMPONENT__ID;
+	int NODE__ID = COMPONENT__ID;
 
 				/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -263,7 +272,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = NAMED_COMPONENT__NAME;
+	int NODE__NAME = COMPONENT__NAME;
 
 				/**
 	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
@@ -272,7 +281,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__REQUIRING_PROCESSES = NAMED_COMPONENT_FEATURE_COUNT + 0;
+	int NODE__REQUIRING_PROCESSES = COMPONENT_FEATURE_COUNT + 0;
 
 				/**
 	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
@@ -281,7 +290,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__PROVIDING_PROCESSES = NAMED_COMPONENT_FEATURE_COUNT + 1;
+	int NODE__PROVIDING_PROCESSES = COMPONENT_FEATURE_COUNT + 1;
 
 				/**
 	 * The feature id for the '<em><b>Equals</b></em>' reference list.
@@ -290,7 +299,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__EQUALS = NAMED_COMPONENT_FEATURE_COUNT + 2;
+	int NODE__EQUALS = COMPONENT_FEATURE_COUNT + 2;
 
 				/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -299,7 +308,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = NAMED_COMPONENT_FEATURE_COUNT + 3;
+	int NODE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -545,13 +554,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 				/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int DATA__TYPE = 0;
+	int DATA__ID = ENTITY__ID;
 
 				/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -560,7 +569,16 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-				   int DATA__NAME = 1;
+				   int DATA__NAME = ENTITY__NAME;
+
+				/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+				 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+				int DATA__TYPE = ENTITY_FEATURE_COUNT + 0;
 
 				/**
 	 * The number of structural features of the '<em>Data</em>' class.
@@ -569,7 +587,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FEATURE_COUNT = 2;
+	int DATA_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
 
 				/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeImpl <em>Edge</em>}' class.
@@ -588,7 +606,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__ID = NAMED_COMPONENT__ID;
+	int EDGE__ID = COMPONENT__ID;
 
 				/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -597,7 +615,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__NAME = NAMED_COMPONENT__NAME;
+	int EDGE__NAME = COMPONENT__NAME;
 
 				/**
 	 * The number of structural features of the '<em>Edge</em>' class.
@@ -606,7 +624,35 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = NAMED_COMPONENT_FEATURE_COUNT + 0;
+	int EDGE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 10;
+
+				/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+				/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram <em>Data Flow Diagram</em>}'.
@@ -777,17 +823,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getData_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data#getName()
-	 * @see #getData()
-	 * @generated
-	 */
-    EAttribute getData_Name();
-
-    /**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -831,25 +866,35 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getNode_Equals();
 
 	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent <em>Named Component</em>}'.
+	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Component</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement
 	 * @generated
 	 */
-	EClass getNamedComponent();
+	EClass getNamedElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedComponent#getName()
-	 * @see #getNamedComponent()
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement#getName()
+	 * @see #getNamedElement()
 	 * @generated
 	 */
-	EAttribute getNamedComponent_Name();
+	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entity</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity
+	 * @generated
+	 */
+	EClass getEntity();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge <em>Edge</em>}'.
@@ -1013,13 +1058,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference DATA__TYPE = eINSTANCE.getData_Type();
         /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-		 * @generated
-		 */
-        EAttribute DATA__NAME = eINSTANCE.getData_Name();
-								/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NodeImpl <em>Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1050,21 +1088,30 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference NODE__EQUALS = eINSTANCE.getNode_Equals();
 								/**
-		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl <em>Named Component</em>}' class.
+		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedComponentImpl
-		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNamedComponent()
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getNamedElement()
 		 * @generated
 		 */
-		EClass NAMED_COMPONENT = eINSTANCE.getNamedComponent();
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
 								/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NAMED_COMPONENT__NAME = eINSTANCE.getNamedComponent_Name();
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+								/**
+		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EntityImpl <em>Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EntityImpl
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getEntity()
+		 * @generated
+		 */
+		EClass ENTITY = eINSTANCE.getEntity();
 								/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc -->
