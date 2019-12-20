@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -43,6 +42,15 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	 * @ordered
 	 */
 	protected EList<Component> components;
+	/**
+	 * The cached value of the '{@link #getRefinedBy() <em>Refined By</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefinedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DataFlowDiagram> refinedBy;
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -89,12 +97,12 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<DataFlowDiagram> getRefinedBy() {
-		// TODO: implement this method to return the 'Refined By' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (refinedBy == null) {
+			refinedBy = new EObjectContainmentEList<DataFlowDiagram>(DataFlowDiagram.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY);
+		}
+		return refinedBy;
 	}
 
 	/**
@@ -150,6 +158,8 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
+				return ((InternalEList<?>)getRefinedBy()).basicRemove(otherEnd, msgs);
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINES:
 				return basicSetRefines(null, msgs);
 		}
@@ -230,7 +240,7 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
 				return components != null && !components.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
-				return !getRefinedBy().isEmpty();
+				return refinedBy != null && !refinedBy.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINES:
 				return refines != null;
 		}

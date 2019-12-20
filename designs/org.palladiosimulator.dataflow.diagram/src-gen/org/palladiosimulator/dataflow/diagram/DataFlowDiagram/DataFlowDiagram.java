@@ -39,13 +39,13 @@ public interface DataFlowDiagram extends EObject, Identifier {
 	EList<Component> getComponents();
 
 	/**
-	 * Returns the value of the '<em><b>Refined By</b></em>' reference list.
+	 * Returns the value of the '<em><b>Refined By</b></em>' containment reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Refined By</em>' reference list.
+	 * @return the value of the '<em>Refined By</em>' containment reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_RefinedBy()
-	 * @model transient="true" volatile="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<DataFlowDiagram> getRefinedBy();

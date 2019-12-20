@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface DataFlowDiagramPackage extends EPackage {
@@ -86,7 +87,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM__COMPONENTS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Refined By</b></em>' reference list.
+	 * The feature id for the '<em><b>Refined By</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -676,10 +677,10 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlowDiagram_Components();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy <em>Refined By</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy <em>Refined By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Refined By</em>'.
+	 * @return the meta object for the containment reference list '<em>Refined By</em>'.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy()
 	 * @see #getDataFlowDiagram()
 	 * @generated
@@ -946,7 +947,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference DATA_FLOW_DIAGRAM__COMPONENTS = eINSTANCE.getDataFlowDiagram_Components();
 		/**
-		 * The meta object literal for the '<em><b>Refined By</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Refined By</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

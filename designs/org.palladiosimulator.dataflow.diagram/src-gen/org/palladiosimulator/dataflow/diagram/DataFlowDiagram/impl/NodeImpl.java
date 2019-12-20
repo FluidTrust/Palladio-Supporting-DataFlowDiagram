@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
@@ -27,6 +28,24 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * @generated
  */
 public abstract class NodeImpl extends ComponentImpl implements Node {
+	/**
+	 * The cached setting delegate for the '{@link #getRequiringProcesses() <em>Requiring Processes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiringProcesses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate REQUIRING_PROCESSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.NODE__REQUIRING_PROCESSES).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getProvidingProcesses() <em>Providing Processes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidingProcesses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PROVIDING_PROCESSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.NODE__PROVIDING_PROCESSES).getSettingDelegate();
 	/**
 	 * The cached value of the '{@link #getEquals() <em>Equals</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -61,12 +80,9 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<Node> getRequiringProcesses() {
-		// TODO: implement this method to return the 'Requiring Processes' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<Node>)REQUIRING_PROCESSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -74,12 +90,9 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<Node> getProvidingProcesses() {
-		// TODO: implement this method to return the 'Providing Processes' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<Node>)PROVIDING_PROCESSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -121,14 +134,6 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NODE__REQUIRING_PROCESSES:
-				getRequiringProcesses().clear();
-				getRequiringProcesses().addAll((Collection<? extends Node>)newValue);
-				return;
-			case DataFlowDiagramPackage.NODE__PROVIDING_PROCESSES:
-				getProvidingProcesses().clear();
-				getProvidingProcesses().addAll((Collection<? extends Node>)newValue);
-				return;
 			case DataFlowDiagramPackage.NODE__EQUALS:
 				getEquals().clear();
 				getEquals().addAll((Collection<? extends Node>)newValue);
@@ -145,12 +150,6 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NODE__REQUIRING_PROCESSES:
-				getRequiringProcesses().clear();
-				return;
-			case DataFlowDiagramPackage.NODE__PROVIDING_PROCESSES:
-				getProvidingProcesses().clear();
-				return;
 			case DataFlowDiagramPackage.NODE__EQUALS:
 				getEquals().clear();
 				return;
@@ -167,9 +166,9 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DataFlowDiagramPackage.NODE__REQUIRING_PROCESSES:
-				return !getRequiringProcesses().isEmpty();
+				return REQUIRING_PROCESSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case DataFlowDiagramPackage.NODE__PROVIDING_PROCESSES:
-				return !getProvidingProcesses().isEmpty();
+				return PROVIDING_PROCESSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case DataFlowDiagramPackage.NODE__EQUALS:
 				return equals != null && !equals.isEmpty();
 		}
