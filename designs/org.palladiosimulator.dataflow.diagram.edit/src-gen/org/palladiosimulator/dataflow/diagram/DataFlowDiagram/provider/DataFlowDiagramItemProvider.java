@@ -85,8 +85,9 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS);
-			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINES);
+			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINED_BY);
+			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__NODES);
+			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__EDGES);
 		}
 		return childrenFeatures;
 	}
@@ -141,8 +142,9 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataFlowDiagram.class)) {
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__COMPONENTS:
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINES:
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NODES:
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EDGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,28 +164,28 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINED_BY,
+				 DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagramRefinement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__NODES,
 				 DataFlowDiagramFactory.eINSTANCE.createExternalActor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__NODES,
 				 DataFlowDiagramFactory.eINSTANCE.createStore()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__NODES,
 				 DataFlowDiagramFactory.eINSTANCE.createProcess()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__COMPONENTS,
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__EDGES,
 				 DataFlowDiagramFactory.eINSTANCE.createDataFlow()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINES,
-				 DataFlowDiagramFactory.eINSTANCE.createRefiningReference()));
 	}
 
 	/**

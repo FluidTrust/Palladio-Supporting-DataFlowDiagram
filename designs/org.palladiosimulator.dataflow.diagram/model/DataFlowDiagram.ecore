@@ -39,13 +39,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiringProcesses" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).components->selectByKind(DataFlow)->select(df | df.source = self).target->asOrderedSet()"/>
+        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).target->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providingProcesses" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).components->selectByKind(DataFlow)->select(df | df.target = self).source->asOrderedSet()"/>
+        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.target = self).source->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="equals" upperBound="-1"

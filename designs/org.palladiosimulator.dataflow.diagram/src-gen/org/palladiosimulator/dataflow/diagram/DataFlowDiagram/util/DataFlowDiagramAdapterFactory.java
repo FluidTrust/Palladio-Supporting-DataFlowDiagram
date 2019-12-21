@@ -15,12 +15,12 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 
 /**
@@ -99,8 +99,8 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createProcessAdapter();
 			}
 			@Override
-			public Adapter caseRefiningReference(RefiningReference object) {
-				return createRefiningReferenceAdapter();
+			public Adapter caseDataFlowDiagramRefinement(DataFlowDiagramRefinement object) {
+				return createDataFlowDiagramRefinementAdapter();
 			}
 			@Override
 			public Adapter caseDataFlow(DataFlow object) {
@@ -220,16 +220,16 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference <em>Refining Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement <em>Refinement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement
 	 * @generated
 	 */
-	public Adapter createRefiningReferenceAdapter() {
+	public Adapter createDataFlowDiagramRefinementAdapter() {
 		return null;
 	}
 

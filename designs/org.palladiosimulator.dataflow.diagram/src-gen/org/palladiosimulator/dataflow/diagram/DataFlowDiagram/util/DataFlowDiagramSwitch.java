@@ -13,12 +13,12 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 
 /**
@@ -127,10 +127,10 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataFlowDiagramPackage.REFINING_REFERENCE: {
-				RefiningReference refiningReference = (RefiningReference)theEObject;
-				T result = caseRefiningReference(refiningReference);
-				if (result == null) result = caseIdentifier(refiningReference);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT: {
+				DataFlowDiagramRefinement dataFlowDiagramRefinement = (DataFlowDiagramRefinement)theEObject;
+				T result = caseDataFlowDiagramRefinement(dataFlowDiagramRefinement);
+				if (result == null) result = caseIdentifier(dataFlowDiagramRefinement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -268,17 +268,17 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Refining Reference</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Refinement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Refining Reference</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Refinement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRefiningReference(RefiningReference object) {
+	public T caseDataFlowDiagramRefinement(DataFlowDiagramRefinement object) {
 		return null;
 	}
 

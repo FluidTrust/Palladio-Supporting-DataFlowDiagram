@@ -182,26 +182,26 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference} instances.
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RefiningReferenceItemProvider refiningReferenceItemProvider;
+	protected DataFlowDiagramRefinementItemProvider dataFlowDiagramRefinementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference}.
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRefiningReferenceAdapter() {
-		if (refiningReferenceItemProvider == null) {
-			refiningReferenceItemProvider = new RefiningReferenceItemProvider(this);
+	public Adapter createDataFlowDiagramRefinementAdapter() {
+		if (dataFlowDiagramRefinementItemProvider == null) {
+			dataFlowDiagramRefinementItemProvider = new DataFlowDiagramRefinementItemProvider(this);
 		}
 
-		return refiningReferenceItemProvider;
+		return dataFlowDiagramRefinementItemProvider;
 	}
 
 	/**
@@ -380,7 +380,7 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 		if (externalActorItemProvider != null) externalActorItemProvider.dispose();
 		if (storeItemProvider != null) storeItemProvider.dispose();
 		if (processItemProvider != null) processItemProvider.dispose();
-		if (refiningReferenceItemProvider != null) refiningReferenceItemProvider.dispose();
+		if (dataFlowDiagramRefinementItemProvider != null) dataFlowDiagramRefinementItemProvider.dispose();
 		if (dataFlowItemProvider != null) dataFlowItemProvider.dispose();
 		if (dataItemProvider != null) dataItemProvider.dispose();
 	}

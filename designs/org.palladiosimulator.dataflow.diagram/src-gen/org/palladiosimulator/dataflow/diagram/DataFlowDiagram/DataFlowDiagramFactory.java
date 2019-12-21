@@ -58,13 +58,13 @@ public interface DataFlowDiagramFactory extends EFactory {
 	Process createProcess();
 
 	/**
-	 * Returns a new object of class '<em>Refining Reference</em>'.
+	 * Returns a new object of class '<em>Refinement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Refining Reference</em>'.
+	 * @return a new object of class '<em>Refinement</em>'.
 	 * @generated
 	 */
-	RefiningReference createRefiningReference();
+	DataFlowDiagramRefinement createDataFlowDiagramRefinement();
 
 	/**
 	 * Returns a new object of class '<em>Data Flow</em>'.

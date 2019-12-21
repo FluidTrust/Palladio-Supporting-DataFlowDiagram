@@ -15,8 +15,8 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.RefiningReference;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 
 /**
@@ -67,7 +67,7 @@ public class DataFlowDiagramFactoryImpl extends EFactoryImpl implements DataFlow
 			case DataFlowDiagramPackage.EXTERNAL_ACTOR: return createExternalActor();
 			case DataFlowDiagramPackage.STORE: return createStore();
 			case DataFlowDiagramPackage.PROCESS: return createProcess();
-			case DataFlowDiagramPackage.REFINING_REFERENCE: return createRefiningReference();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT: return createDataFlowDiagramRefinement();
 			case DataFlowDiagramPackage.DATA_FLOW: return createDataFlow();
 			case DataFlowDiagramPackage.DATA: return createData();
 			default:
@@ -120,9 +120,9 @@ public class DataFlowDiagramFactoryImpl extends EFactoryImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RefiningReference createRefiningReference() {
-		RefiningReferenceImpl refiningReference = new RefiningReferenceImpl();
-		return refiningReference;
+	public DataFlowDiagramRefinement createDataFlowDiagramRefinement() {
+		DataFlowDiagramRefinementImpl dataFlowDiagramRefinement = new DataFlowDiagramRefinementImpl();
+		return dataFlowDiagramRefinement;
 	}
 
 	/**

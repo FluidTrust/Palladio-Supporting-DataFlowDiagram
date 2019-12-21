@@ -13,12 +13,6 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFac
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Data Flow Diagram</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy() <em>Refined By</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class DataFlowDiagramTest extends TestCase {
@@ -90,19 +84,6 @@ public class DataFlowDiagramTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy() <em>Refined By</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy()
-	 * @generated
-	 */
-	public void testGetRefinedBy() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //DataFlowDiagramTest
