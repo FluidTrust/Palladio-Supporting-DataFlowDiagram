@@ -598,7 +598,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		  (getNode_ProvidingProcesses(),
 		   source,
 		   new String[] {
-			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).components->selectByKind(DataFlow)->select(df | df.target = self).source->asOrderedSet()"
+			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).source->asOrderedSet()"
 		   });
 	}
 

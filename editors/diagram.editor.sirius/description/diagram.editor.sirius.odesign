@@ -6,19 +6,19 @@
       <layout xsi:type="description_1:CompositeLayout"/>
       <defaultLayer name="Default">
         <nodeMappings name="ProcessNode" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="DataFlowDiagram::Process">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/diagram.editor.sirius/icons/process.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="StoreNode" domainClass="DataFlowDiagram::Store">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/diagram.editor.sirius/icons/store.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="ExternalActorNode" domainClass="DataFlowDiagram::ExternalActor">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/diagram.editor.sirius/icons/externalactor.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -31,14 +31,19 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="RefiningContainer" domainClass="DataFlowDiagram::RefiningReference"/>
+        <containerMappings name="RefiningContainer" domainClass="DataFlowDiagram::DataFlowDiagramRefinement" dropDescriptions="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/diagram.editor.sirius/icons/reference.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
         <toolSections>
           <ownedTools xsi:type="tool:NodeCreationDescription" name="createProcess" label="new Process" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']" extraMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Process" referenceName="components">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Process" referenceName="nodes">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Process"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -49,7 +54,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Store" referenceName="components">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Store" referenceName="nodes">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Store"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -60,7 +65,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::ExternalActor" referenceName="components">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::ExternalActor" referenceName="nodes">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new External Actor"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -71,20 +76,21 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::RefiningReference" referenceName="components"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagramRefinement" referenceName="refinedBy"/>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation/>
           </ownedTools>
           <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <element name="element"/>
             <elementView name="elementView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::RefiningReference" referenceName="components">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="refinedProcesses" valueExpression="aql:self.refinedProcesses->including(self.eContainer())"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
+            <initialOperation/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
