@@ -148,6 +148,7 @@
             </initialOperation>
           </actions>
         </controls>
+        <controls xsi:type="properties:CustomDescription" name="org.palladiosimulator.ui.table"/>
         <validationSet>
           <propertyValidationRules name="CompositeNameValidation" level="WARNING" message="The name should not be empty" targets="//@extensions.0/@categories.0/@groups.0/@controls.0">
             <audits auditExpression="aql:self.name.size() > 0"/>
@@ -203,6 +204,10 @@
               <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:newValue"/>
             </firstModelOperations>
           </initialOperation>
+        </controls>
+        <controls xsi:type="properties:CustomDescription" name="com.example.awesomeproject.sirius.properties.ext.widgets.table">
+          <customExpressions name="valueExpression" customExpression="aql:self"/>
+          <customExpressions name="onClickExpression" customExpression="aql:self"/>
         </controls>
       </groups>
     </categories>
