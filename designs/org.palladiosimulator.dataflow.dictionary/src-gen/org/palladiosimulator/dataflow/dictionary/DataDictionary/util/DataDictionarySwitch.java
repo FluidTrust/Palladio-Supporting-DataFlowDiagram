@@ -80,6 +80,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataType(collectionDataType);
 				if (result == null) result = caseEntity(collectionDataType);
 				if (result == null) result = caseNamedElement(collectionDataType);
+				if (result == null) result = caseIdentifier(collectionDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -89,6 +90,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataType(compositeDataType);
 				if (result == null) result = caseEntity(compositeDataType);
 				if (result == null) result = caseNamedElement(compositeDataType);
+				if (result == null) result = caseIdentifier(compositeDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,6 +100,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataType(primitiveDataType);
 				if (result == null) result = caseEntity(primitiveDataType);
 				if (result == null) result = caseNamedElement(primitiveDataType);
+				if (result == null) result = caseIdentifier(primitiveDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,6 +109,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				T result = caseEntry(entry);
 				if (result == null) result = caseEntity(entry);
 				if (result == null) result = caseNamedElement(entry);
+				if (result == null) result = caseIdentifier(entry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,6 +118,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				T result = caseDataType(dataType);
 				if (result == null) result = caseEntity(dataType);
 				if (result == null) result = caseNamedElement(dataType);
+				if (result == null) result = caseIdentifier(dataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +132,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
 				if (result == null) result = caseNamedElement(entity);
+				if (result == null) result = caseIdentifier(entity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

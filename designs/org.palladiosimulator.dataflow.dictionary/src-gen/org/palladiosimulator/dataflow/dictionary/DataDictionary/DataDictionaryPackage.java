@@ -142,13 +142,22 @@ public interface DataDictionaryPackage extends EPackage {
 	int ENTITY__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ID = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ENTITY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -168,6 +177,15 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE__NAME = ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__ID = ENTITY__ID;
 
 	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
@@ -196,6 +214,15 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_DATA_TYPE__ID = DATA_TYPE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -235,6 +262,15 @@ public interface DataDictionaryPackage extends EPackage {
 	int COMPOSITE_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__ID = DATA_TYPE__ID;
+
+	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -272,6 +308,15 @@ public interface DataDictionaryPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA_TYPE__ID = DATA_TYPE__ID;
+
+	/**
 	 * The number of structural features of the '<em>Primitive Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -298,6 +343,15 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY__NAME = ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__ID = ENTITY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.

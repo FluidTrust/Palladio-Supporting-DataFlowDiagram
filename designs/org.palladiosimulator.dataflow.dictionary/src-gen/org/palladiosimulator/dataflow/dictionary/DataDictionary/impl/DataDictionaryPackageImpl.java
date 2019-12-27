@@ -352,6 +352,7 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 		entryEClass.getESuperTypes().add(this.getEntity());
 		dataTypeEClass.getESuperTypes().add(this.getEntity());
 		entityEClass.getESuperTypes().add(this.getNamedElement());
+		entityEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataDictionaryEClass, DataDictionary.class, "DataDictionary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

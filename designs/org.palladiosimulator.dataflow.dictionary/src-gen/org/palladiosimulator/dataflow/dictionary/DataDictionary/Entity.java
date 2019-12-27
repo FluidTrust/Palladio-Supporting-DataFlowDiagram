@@ -2,6 +2,8 @@
  */
 package org.palladiosimulator.dataflow.dictionary.DataDictionary;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +15,5 @@ package org.palladiosimulator.dataflow.dictionary.DataDictionary;
  * @model abstract="true"
  * @generated
  */
-public interface Entity extends NamedElement {
+public interface Entity extends NamedElement, Identifier {
 } // Entity
