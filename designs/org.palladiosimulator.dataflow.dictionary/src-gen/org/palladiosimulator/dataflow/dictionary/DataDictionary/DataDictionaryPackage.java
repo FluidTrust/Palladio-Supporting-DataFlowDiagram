@@ -95,71 +95,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int DATA_DICTIONARY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.NamedElementImpl <em>Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.NamedElementImpl
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataDictionaryPackageImpl#getNamedElement()
-	 * @generated
-	 */
-	int NAMED_ELEMENT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntityImpl <em>Entity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntityImpl
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataDictionaryPackageImpl#getEntity()
-	 * @generated
-	 */
-	int ENTITY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__ID = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Entity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataTypeImpl <em>Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,22 +105,22 @@ public interface DataDictionaryPackage extends EPackage {
 	int DATA_TYPE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__NAME = ENTITY__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__ID = ENTITY__ID;
+	int DATA_TYPE__ID = IdentifierPackage.IDENTIFIER__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
@@ -194,7 +129,7 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+	int DATA_TYPE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.CollectionDataTypeImpl <em>Collection Data Type</em>}' class.
@@ -207,15 +142,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int COLLECTION_DATA_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_DATA_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -223,6 +149,15 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_DATA_TYPE__ID = DATA_TYPE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -253,15 +188,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int COMPOSITE_DATA_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DATA_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +195,15 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_DATA_TYPE__ID = DATA_TYPE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -299,15 +234,6 @@ public interface DataDictionaryPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_DATA_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -315,6 +241,15 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_DATA_TYPE__ID = DATA_TYPE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Primitive Data Type</em>' class.
@@ -336,22 +271,13 @@ public interface DataDictionaryPackage extends EPackage {
 	int ENTRY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY__NAME = ENTITY__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__ID = ENTITY__ID;
+	int ENTRY__ID = IdentifierPackage.IDENTIFIER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -360,7 +286,16 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__TYPE = ENTITY_FEATURE_COUNT + 0;
+	int ENTRY__TYPE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Entry</em>' class.
@@ -369,7 +304,7 @@ public interface DataDictionaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+	int ENTRY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary <em>Data Dictionary</em>}'.
@@ -466,6 +401,17 @@ public interface DataDictionaryPackage extends EPackage {
 	EReference getEntry_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry#getName()
+	 * @see #getEntry()
+	 * @generated
+	 */
+	EAttribute getEntry_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,35 +422,15 @@ public interface DataDictionaryPackage extends EPackage {
 	EClass getDataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.NamedElement
-	 * @generated
-	 */
-	EClass getNamedElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.NamedElement#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.NamedElement#getName()
-	 * @see #getNamedElement()
+	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType#getName()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.Entity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity</em>'.
-	 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.Entity
-	 * @generated
-	 */
-	EClass getEntity();
+	EAttribute getDataType_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -603,6 +529,13 @@ public interface DataDictionaryPackage extends EPackage {
 		 */
 		EReference ENTRY__TYPE = eINSTANCE.getEntry_Type();
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY__NAME = eINSTANCE.getEntry_Name();
+		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataTypeImpl <em>Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -612,30 +545,12 @@ public interface DataDictionaryPackage extends EPackage {
 		 */
 		EClass DATA_TYPE = eINSTANCE.getDataType();
 		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.NamedElementImpl <em>Named Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.NamedElementImpl
-		 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataDictionaryPackageImpl#getNamedElement()
-		 * @generated
-		 */
-		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntityImpl <em>Entity</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntityImpl
-		 * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.DataDictionaryPackageImpl#getEntity()
-		 * @generated
-		 */
-		EClass ENTITY = eINSTANCE.getEntity();
+		EAttribute DATA_TYPE__NAME = eINSTANCE.getDataType_Name();
 
 	}
 

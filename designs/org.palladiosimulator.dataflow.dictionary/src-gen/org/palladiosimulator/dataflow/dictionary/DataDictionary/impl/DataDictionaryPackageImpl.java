@@ -17,9 +17,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryFactory;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entity;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.NamedElement;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType;
 
 /**
@@ -66,20 +64,6 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 	 * @generated
 	 */
 	private EClass dataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -232,6 +216,15 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEntry_Name() {
+		return (EAttribute)entryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataType() {
 		return dataTypeEClass;
 	}
@@ -241,26 +234,8 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNamedElement() {
-		return namedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEntity() {
-		return entityEClass;
+	public EAttribute getDataType_Name() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -304,13 +279,10 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		entryEClass = createEClass(ENTRY);
 		createEReference(entryEClass, ENTRY__TYPE);
+		createEAttribute(entryEClass, ENTRY__NAME);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
-
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-
-		entityEClass = createEClass(ENTITY);
+		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
 	}
 
 	/**
@@ -349,10 +321,8 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 		collectionDataTypeEClass.getESuperTypes().add(this.getDataType());
 		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
-		entryEClass.getESuperTypes().add(this.getEntity());
-		dataTypeEClass.getESuperTypes().add(this.getEntity());
-		entityEClass.getESuperTypes().add(this.getNamedElement());
-		entityEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		entryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		dataTypeEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataDictionaryEClass, DataDictionary.class, "DataDictionary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -368,13 +338,10 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		initEClass(entryEClass, Entry.class, "Entry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntry_Type(), this.getDataType(), null, "type", null, 1, 1, Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntry_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataType_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

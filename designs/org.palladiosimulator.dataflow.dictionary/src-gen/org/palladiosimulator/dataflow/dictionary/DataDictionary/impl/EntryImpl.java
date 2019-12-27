@@ -2,6 +2,7 @@
  */
 package org.palladiosimulator.dataflow.dictionary.DataDictionary.impl;
 
+import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,11 +23,12 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntryImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.dictionary.DataDictionary.impl.EntryImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EntryImpl extends EntityImpl implements Entry {
+public class EntryImpl extends IdentifierImpl implements Entry {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -36,6 +38,26 @@ public class EntryImpl extends EntityImpl implements Entry {
 	 * @ordered
 	 */
 	protected DataType type;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +121,35 @@ public class EntryImpl extends EntityImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataDictionaryPackage.ENTRY__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DataDictionaryPackage.ENTRY__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
+			case DataDictionaryPackage.ENTRY__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +164,9 @@ public class EntryImpl extends EntityImpl implements Entry {
 		switch (featureID) {
 			case DataDictionaryPackage.ENTRY__TYPE:
 				setType((DataType)newValue);
+				return;
+			case DataDictionaryPackage.ENTRY__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +183,9 @@ public class EntryImpl extends EntityImpl implements Entry {
 			case DataDictionaryPackage.ENTRY__TYPE:
 				setType((DataType)null);
 				return;
+			case DataDictionaryPackage.ENTRY__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,8 +200,26 @@ public class EntryImpl extends EntityImpl implements Entry {
 		switch (featureID) {
 			case DataDictionaryPackage.ENTRY__TYPE:
 				return type != null;
+			case DataDictionaryPackage.ENTRY__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntryImpl

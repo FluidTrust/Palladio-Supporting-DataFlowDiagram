@@ -78,8 +78,6 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				CollectionDataType collectionDataType = (CollectionDataType)theEObject;
 				T result = caseCollectionDataType(collectionDataType);
 				if (result == null) result = caseDataType(collectionDataType);
-				if (result == null) result = caseEntity(collectionDataType);
-				if (result == null) result = caseNamedElement(collectionDataType);
 				if (result == null) result = caseIdentifier(collectionDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -88,8 +86,6 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				CompositeDataType compositeDataType = (CompositeDataType)theEObject;
 				T result = caseCompositeDataType(compositeDataType);
 				if (result == null) result = caseDataType(compositeDataType);
-				if (result == null) result = caseEntity(compositeDataType);
-				if (result == null) result = caseNamedElement(compositeDataType);
 				if (result == null) result = caseIdentifier(compositeDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -98,8 +94,6 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
 				T result = casePrimitiveDataType(primitiveDataType);
 				if (result == null) result = caseDataType(primitiveDataType);
-				if (result == null) result = caseEntity(primitiveDataType);
-				if (result == null) result = caseNamedElement(primitiveDataType);
 				if (result == null) result = caseIdentifier(primitiveDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -107,8 +101,6 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 			case DataDictionaryPackage.ENTRY: {
 				Entry entry = (Entry)theEObject;
 				T result = caseEntry(entry);
-				if (result == null) result = caseEntity(entry);
-				if (result == null) result = caseNamedElement(entry);
 				if (result == null) result = caseIdentifier(entry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -116,23 +108,7 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 			case DataDictionaryPackage.DATA_TYPE: {
 				DataType dataType = (DataType)theEObject;
 				T result = caseDataType(dataType);
-				if (result == null) result = caseEntity(dataType);
-				if (result == null) result = caseNamedElement(dataType);
 				if (result == null) result = caseIdentifier(dataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DataDictionaryPackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DataDictionaryPackage.ENTITY: {
-				Entity entity = (Entity)theEObject;
-				T result = caseEntity(entity);
-				if (result == null) result = caseNamedElement(entity);
-				if (result == null) result = caseIdentifier(entity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -227,36 +203,6 @@ public class DataDictionarySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntity(Entity object) {
 		return null;
 	}
 

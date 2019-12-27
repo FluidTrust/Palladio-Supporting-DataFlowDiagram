@@ -140,30 +140,7 @@
         </controls>
         <controls xsi:type="properties:ListDescription" name="entries" labelExpression="Entries" valueExpression="feature:components" displayExpression="aql:value.name">
           <actions labelExpression="Add entry">
-            <initialOperation>
-              <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
-                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                  <initialOperation/>
-                </buttons>
-                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
-                  <initialOperation>
-                    <firstModelOperations xsi:type="tool_1:ChangeContext">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" referenceName="DataDictionary::Entry">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name"/>
-                      </subModelOperations>
-                    </firstModelOperations>
-                  </initialOperation>
-                </buttons>
-                <page name="Default Page" labelExpression="Page" domainClass="DataDictionary::CompositeDataType" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@groups.0"/>
-                <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
-                  <controls xsi:type="properties:TextDescription" name="EntryName">
-                    <initialOperation>
-                      <firstModelOperations xsi:type="tool_1:Let"/>
-                    </initialOperation>
-                  </controls>
-                </groups>
-              </firstModelOperations>
-            </initialOperation>
+            <initialOperation/>
           </actions>
           <actions labelExpression="Remove selected entries">
             <initialOperation>
