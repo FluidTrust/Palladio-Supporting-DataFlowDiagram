@@ -138,7 +138,7 @@
             </firstModelOperations>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:ListDescription" name="entries" labelExpression="Entries" valueExpression="feature:components" displayExpression="aql:value.name">
+        <controls xsi:type="properties:ListDescription" name="entries" labelExpression="Entries" valueExpression="feature:components" displayExpression="aql:value.name + ' : ' + value.type.name">
           <actions labelExpression="Add entry">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
@@ -174,7 +174,11 @@
           </actions>
           <actions labelExpression="Remove selected entries">
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection">
+                  <subModelOperations xsi:type="tool_1:Unset" featureName="components"/>
+                </subModelOperations>
+              </firstModelOperations>
             </initialOperation>
           </actions>
         </controls>

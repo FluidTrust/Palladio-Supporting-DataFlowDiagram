@@ -38,7 +38,7 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
     private TableController controller;
 
-    private Consumer<Object> newValueConsumer;
+    //private Consumer<Object> newValueConsumer;
     
     public TableLifeCycleManager(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
             EditingContextAdapter contextAdapter) {
@@ -48,6 +48,8 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
     @Override
     protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
+    
+    	
         Table table = formContainer.getWidgetFactory().createTable(parent,
                 SWT.READ_ONLY | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.SINGLE);
         this.tableViewer = new TableViewer(table);
@@ -63,8 +65,9 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
     @Override
     public void aboutToBeShown() {
         super.aboutToBeShown();
-
+        /*
         this.newValueConsumer = (newValue) -> this.tableViewer.setInput(newValue);
+        
         this.controller.onNewValue(this.newValueConsumer);
 
         this.onClickListener = new SelectionListener() {
@@ -81,6 +84,7 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
             }
         };
         this.tableViewer.getTable().addSelectionListener(this.onClickListener);
+        */
     }
 
     @Override
@@ -93,8 +97,8 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
     @Override
     public void aboutToBeHidden() {
         super.aboutToBeHidden();
-        this.controller.removeValueConsumer();
-        this.newValueConsumer = null;
+        //this.controller.removeValueConsumer();
+        //this.newValueConsumer = null;
 
         this.tableViewer.getTable().removeSelectionListener(this.onClickListener);
         this.onClickListener = null;
