@@ -1,4 +1,4 @@
-package org.palladiosimulator.ui.table;
+package org.palladiosimulator.dataflow.ui.table;
 
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFCustomWidgetDescription;
@@ -8,13 +8,16 @@ import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
-
-
 public class TableLifeCycleManagerProvider implements IEEFLifecycleManagerProvider {
+	/**
+	 * The identifier of the control description supported.
+	 */
+	private static final String SUPPORTED_ID = "org.palladiosimulator.dataflow.ui.table"; //$NON-NLS-1$
 
 	@Override
-	public boolean canHandle(EEFControlDescription arg0) {
-		return false;
+	public boolean canHandle(EEFControlDescription controlDescription) {
+		// only support custom widgets with the proper identifier
+		return SUPPORTED_ID.equals(controlDescription.getIdentifier()) && controlDescription instanceof EEFCustomWidgetDescription;
 	}
 
 	@Override
@@ -25,5 +28,4 @@ public class TableLifeCycleManagerProvider implements IEEFLifecycleManagerProvid
 		}
 		throw new IllegalArgumentException();
 	}
-
 }

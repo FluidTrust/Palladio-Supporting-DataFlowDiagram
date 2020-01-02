@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UI
+Bundle-SymbolicName: org.palladiosimulator.dataflow.ui.table;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.palladiosimulator.dataflow.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.eef.core,
+ org.eclipse.eef,
+ org.eclipse.sirius.common.interpreter,
+ org.eclipse.jface,
+ org.eclipse.eef.ide.ui,
+ org.eclipse.eef.common.ui,
+ org.eclipse.emf.edit,
+ org.eclipse.emf.edit.ui
+Import-Package: org.eclipse.core.runtime
+Export-Package: org.palladiosimulator.dataflow.ui.table
