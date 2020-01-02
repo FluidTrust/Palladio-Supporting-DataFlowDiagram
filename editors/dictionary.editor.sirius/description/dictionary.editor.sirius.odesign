@@ -140,7 +140,37 @@
         </controls>
         <controls xsi:type="properties:ListDescription" name="entries" labelExpression="Entries" valueExpression="feature:components" displayExpression="aql:value.name">
           <actions labelExpression="Add entry">
-            <initialOperation/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataDictionary::Entry" referenceName="components">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add a new entry">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="New Entry" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Enter data" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="name" labelExpression="Name" valueExpression="aql:entry.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:SelectDescription" name="EntryTypeSelection" labelExpression="Type" valueExpression="feature:type" candidatesExpression="aql:self.eContainer().eContainer().eContents(DataDictionary::DataType)" candidateDisplayExpression="aql:candidate.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
           </actions>
           <actions labelExpression="Remove selected entries">
             <initialOperation>

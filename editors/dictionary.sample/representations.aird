@@ -348,9 +348,41 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qSOXIBweEeqkzqskNeypDg" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qSOXIRweEeqkzqskNeypDg" id="(0.2484472049689441,0.9074074074074074)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_87oxMC1UEeqeIOxAhycx2g" type="4001" element="_87lt5C1UEeqeIOxAhycx2g" source="_oJQcYBjlEeqy57Joi-SgTQ" target="_oJH5gBjlEeqy57Joi-SgTQ">
+          <children xmi:type="notation:Node" xmi:id="_87oxNC1UEeqeIOxAhycx2g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_87oxNS1UEeqeIOxAhycx2g" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_87pYQC1UEeqeIOxAhycx2g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_87pYQS1UEeqeIOxAhycx2g" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_87pYQi1UEeqeIOxAhycx2g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_87pYQy1UEeqeIOxAhycx2g" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_87oxMS1UEeqeIOxAhycx2g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_87oxMi1UEeqeIOxAhycx2g" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_87oxMy1UEeqeIOxAhycx2g" points="[0, -54, 0, 114]$[0, -168, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_87pYRC1UEeqeIOxAhycx2g" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_87pYRS1UEeqeIOxAhycx2g" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_n-2_0C1VEeqeIOxAhycx2g" type="4001" element="_n-1Ksy1VEeqeIOxAhycx2g" source="_oJQcYBjlEeqy57Joi-SgTQ" target="_oJSRkBjlEeqy57Joi-SgTQ">
+          <children xmi:type="notation:Node" xmi:id="_n-2_1C1VEeqeIOxAhycx2g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n-2_1S1VEeqeIOxAhycx2g" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_n-2_1i1VEeqeIOxAhycx2g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n-2_1y1VEeqeIOxAhycx2g" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_n-2_2C1VEeqeIOxAhycx2g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n-2_2S1VEeqeIOxAhycx2g" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_n-2_0S1VEeqeIOxAhycx2g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_n-2_0i1VEeqeIOxAhycx2g" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_n-2_0y1VEeqeIOxAhycx2g" points="[0, 0, 192, 168]$[-192, -168, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_n-2_2i1VEeqeIOxAhycx2g" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_n-3m4C1VEeqeIOxAhycx2g" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI4o8BjlEeqy57Joi-SgTQ" name="One" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI4o8BjlEeqy57Joi-SgTQ" name="One" incomingEdges="_87lt5C1UEeqeIOxAhycx2g" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="DataDictionary:PrimitiveDataType" href="sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
       <semanticElements xmi:type="DataDictionary:PrimitiveDataType" href="sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_oI5QABjlEeqy57Joi-SgTQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Primitive.svg">
@@ -374,7 +406,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='PrimitiveDTNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI6eIhjlEeqy57Joi-SgTQ" name="Two" outgoingEdges="_ibkJcBwJEeqpAMr-irg4zw" incomingEdges="_oI7FNBjlEeqy57Joi-SgTQ _pqpZxBweEeqkzqskNeypDg" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI6eIhjlEeqy57Joi-SgTQ" name="Composite" outgoingEdges="_ibkJcBwJEeqpAMr-irg4zw _87lt5C1UEeqeIOxAhycx2g _n-1Ksy1VEeqeIOxAhycx2g" incomingEdges="_oI7FNBjlEeqy57Joi-SgTQ _pqpZxBweEeqkzqskNeypDg" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="DataDictionary:CompositeDataType" href="sample.datadictionary#_D8btERUwEeqdRtp9sharTg"/>
       <semanticElements xmi:type="DataDictionary:CompositeDataType" href="sample.datadictionary#_D8btERUwEeqdRtp9sharTg"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_oI6eIxjlEeqy57Joi-SgTQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Composite.svg">
@@ -382,7 +414,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@nodeMappings[name='CompositeDTNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI6eJRjlEeqy57Joi-SgTQ" name="new Composite" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_oI6eJRjlEeqy57Joi-SgTQ" name="new Composite" incomingEdges="_n-1Ksy1VEeqeIOxAhycx2g" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="DataDictionary:CompositeDataType" href="sample.datadictionary#_Efj6ABd6EeqmI7JLCCCR2w"/>
       <semanticElements xmi:type="DataDictionary:CompositeDataType" href="sample.datadictionary#_Efj6ABd6EeqmI7JLCCCR2w"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_oI6eJhjlEeqy57Joi-SgTQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/dictionary.editor.sirius/icons/Composite.svg">
@@ -438,6 +470,24 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_pqqA0RweEeqkzqskNeypDg" labelSize="12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='typeEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_87lt5C1UEeqeIOxAhycx2g" name="B" sourceNode="_oI6eIhjlEeqy57Joi-SgTQ" targetNode="_oI4o8BjlEeqy57Joi-SgTQ">
+      <target xmi:type="DataDictionary:Entry" href="sample.datadictionary#_l93N4C1UEeqeIOxAhycx2g"/>
+      <semanticElements xmi:type="DataDictionary:Entry" href="sample.datadictionary#_l93N4C1UEeqeIOxAhycx2g"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_87lt5S1UEeqeIOxAhycx2g" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='entryEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_87lt5i1UEeqeIOxAhycx2g" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='entryEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_n-1Ksy1VEeqeIOxAhycx2g" name="T" sourceNode="_oI6eIhjlEeqy57Joi-SgTQ" targetNode="_oI6eJRjlEeqy57Joi-SgTQ">
+      <target xmi:type="DataDictionary:Entry" href="sample.datadictionary#_mgb6AC1VEeqeIOxAhycx2g"/>
+      <semanticElements xmi:type="DataDictionary:Entry" href="sample.datadictionary#_mgb6AC1VEeqeIOxAhycx2g"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_n-1xsC1VEeqeIOxAhycx2g" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='entryEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_n-1xsS1VEeqeIOxAhycx2g" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']/@defaultLayer/@edgeMappings[name='entryEdge']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dictionary.editor.sirius/description/dictionary.editor.sirius.odesign#//@ownedViewpoints[name='default']/@ownedRepresentations[name='Dictionary%20Editor']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_oI3a0BjlEeqy57Joi-SgTQ"/>
