@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="diagram.editor.sirius" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="diagram.editor.sirius" version="12.0.0.2017041100">
   <ownedViewpoints name="MyViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DFD Editor" initialisation="true" domainClass="DataFlowDiagram::DataFlowDiagram" enablePopupBars="true">
       <metamodel href="http://palladiosimulator.org/dataflow/diagram/1.0#/"/>
       <layout xsi:type="description_1:CompositeLayout"/>
       <diagramInitialisation>
-        <firstModelOperations xsi:type="tool:ExternalJavaActionCall" name="LoadResources"/>
+        <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Load Data Dictionary">
+          <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+            <initialOperation/>
+          </buttons>
+          <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+            <initialOperation/>
+          </buttons>
+          <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@diagramInitialisation/@firstModelOperations/@groups.0"/>
+          <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+        </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
         <nodeMappings name="ProcessNode" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="DataFlowDiagram::Process">
@@ -34,63 +43,56 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="RefiningContainer" domainClass="DataFlowDiagram::DataFlowDiagramRefinement" dropDescriptions="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']">
+        <containerMappings name="RefiningContainer" domainClass="DataFlowDiagram::DataFlowDiagramRefinement">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/diagram.editor.sirius/icons/reference.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </containerMappings>
         <toolSections>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="createProcess" label="new Process" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']" extraMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createProcess" label="new Process" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']" extraMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="DataFlowDiagram::Process" referenceName="nodes">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="new Process"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Process" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Process"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="createStore" label="new Store" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createStore" label="new Store" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="DataFlowDiagram::Store" referenceName="nodes">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="new Store"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Store" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Store"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="createExternalActor" label="new External Actor" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createExternalActor" label="new External Actor" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="DataFlowDiagram::ExternalActor" referenceName="nodes">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="new External Actor"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::ExternalActor" referenceName="nodes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new External Actor"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="refineProcesses" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="refineProcesses" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagramRefinement" referenceName="refinedBy"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagramRefinement" referenceName="refinedBy"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerDropDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
-            <oldContainer name="oldSemanticContainer"/>
-            <newContainer name="newSemanticContainer"/>
-            <element name="element"/>
-            <newViewContainer name="newContainerView"/>
-            <initialOperation/>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation/>

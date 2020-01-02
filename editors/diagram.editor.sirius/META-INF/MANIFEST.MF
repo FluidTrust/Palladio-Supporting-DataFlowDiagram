@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
  org.palladiosimulator.dataflow.diagram;bundle-version="0.1.0",
- org.palladiosimulator.dataflow.util;bundle-version="1.0.0"
+ org.palladiosimulator.dataflow.util;bundle-version="1.0.0",
+ org.eclipse.emf.common.ui;bundle-version="2.18.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName

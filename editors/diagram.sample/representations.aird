@@ -56,7 +56,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_AwI4liY5Eeq4iJW0hk9GWg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_AwI4kSY5Eeq4iJW0hk9GWg" fontName=".AppleSystemUIFont"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AwI4kiY5Eeq4iJW0hk9GWg" x="-72" y="-72"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AwI4kiY5Eeq4iJW0hk9GWg" x="296" y="-39"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_EfopICY5Eeq4iJW0hk9GWg" type="2002" element="_EfoCESY5Eeq4iJW0hk9GWg">
           <children xmi:type="notation:Node" xmi:id="_EfpQMCY5Eeq4iJW0hk9GWg" type="5006"/>
@@ -103,6 +103,9 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_AwHqdCY5Eeq4iJW0hk9GWg" name="Invalid feature as name">
       <target xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_AwGcUCY5Eeq4iJW0hk9GWg"/>
       <semanticElements xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_AwGcUCY5Eeq4iJW0hk9GWg"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_fyVv4CY6Eeq4iJW0hk9GWg" labelSize="12" showIcon="false" workspacePath="/diagram.editor.sirius/icons/reference.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']/@style"/>
       </ownedStyle>
