@@ -1,6 +1,7 @@
 package diagram.editor.sirius;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
@@ -18,7 +19,7 @@ import org.eclipse.sirius.business.api.session.SessionManager;
 public class Services {
 
 	
-	public void refineProcess(Process p) {
+	public void refineProcess(EObject p) {
 		System.out.println("REFINE");
 		System.out.println(p);
 	}

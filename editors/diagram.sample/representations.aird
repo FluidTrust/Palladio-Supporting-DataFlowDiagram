@@ -57,7 +57,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_QFGEYi4QEeqFLaBrE4aNqA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_QFBy8S4QEeqFLaBrE4aNqA" fontName=".AppleSystemUIFont" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QFBy8i4QEeqFLaBrE4aNqA" x="552" y="130"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QFBy8i4QEeqFLaBrE4aNqA" x="493" y="70"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_fpnaAC5DEeqanrx-VUcwcQ" type="2001" element="_fpe3IC5DEeqanrx-VUcwcQ">
           <children xmi:type="notation:Node" xmi:id="_fprrcC5DEeqanrx-VUcwcQ" type="5002">
@@ -73,7 +73,7 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_yd-SohjTEeqn-J_xJnYQrg"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_TV4jUCPWEeqMHZm4xBp56w" name="S3" width="-1" height="-1">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_TV4jUCPWEeqMHZm4xBp56w" name="S1" width="-1" height="-1">
       <target xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
       <semanticElements xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -120,6 +120,9 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_QE4B8C4QEeqFLaBrE4aNqA" childrenPresentation="HorizontalStack">
       <target xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_QE2MwC4QEeqFLaBrE4aNqA"/>
       <semanticElements xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_QE2MwC4QEeqFLaBrE4aNqA"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_QE4B8S4QEeqFLaBrE4aNqA" labelSize="12" showIcon="false" workspacePath="/diagram.editor.sirius/icons/reference.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']/@style"/>
       </ownedStyle>
