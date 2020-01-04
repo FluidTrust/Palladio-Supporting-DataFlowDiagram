@@ -17,6 +17,11 @@ import org.eclipse.sirius.business.api.session.SessionManager;
  * The services class used by VSM.
  */
 public class Services {
+	
+	
+	public void createDF(EObject e) {
+		System.out.println(e.eContainer());
+	}
 
 	
 	public void refineProcess(EObject p) {

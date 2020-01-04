@@ -5,4 +5,7 @@
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_fpdB8C5DEeqanrx-VUcwcQ" name="new Process"/>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_bH440C7TEeqyYbofd9wuMg" name="DF1" source="_psCWsSYrEeqwleBNcLMfgQ" target="_UVls0yPWEeqMHZm4xBp56w"/>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_9LwxYC7UEeqyYbofd9wuMg"/>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_V3rRgC7VEeqyYbofd9wuMg" name="new Data Flow" source="_UVls0yPWEeqMHZm4xBp56w" target="_fpdB8C5DEeqanrx-VUcwcQ"/>
 </DataFlowDiagram:DataFlowDiagram>
