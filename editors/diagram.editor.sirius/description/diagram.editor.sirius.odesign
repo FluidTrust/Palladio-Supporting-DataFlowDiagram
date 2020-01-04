@@ -71,7 +71,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="refineProcesses" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newRefinement" label="new Refinement" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -84,7 +84,9 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess()"/>
+              <firstModelOperations xsi:type="tool_1:Let" variableName="dfd" valueExpression="aql:self.eContainer().target">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(dfd)"/>
+              </firstModelOperations>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:EdgeCreationDescription" name="createDF" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">
