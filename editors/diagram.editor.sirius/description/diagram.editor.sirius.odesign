@@ -85,7 +85,9 @@
             <elementView name="elementView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:Let" variableName="dfd" valueExpression="aql:self.eContainer().target">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(dfd)"/>
+                <subModelOperations xsi:type="tool_1:Let" variableName="p" valueExpression="aql:self.target">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(p,dfd)"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
