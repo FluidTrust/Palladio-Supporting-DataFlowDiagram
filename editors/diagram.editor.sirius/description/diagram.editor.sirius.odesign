@@ -165,6 +165,41 @@
             </firstModelOperations>
           </initialOperation>
         </controls>
+        <controls xsi:type="properties:ListDescription" name="Data" labelExpression="Data" valueExpression="feature:data" displayExpression="aql:value.name + ' : ' + value.type.name">
+          <actions labelExpression="Add Entry">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::Data" referenceName="data">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add Piece Of Data">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="New Piece of Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Enter data" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="Name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:SelectDescription" name="DataType" labelExpression="Data Type" valueExpression="feature:type" candidatesExpression="service:listDataTypes()" candidateDisplayExpression="aql:candidate.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+        </controls>
       </groups>
     </categories>
   </extensions>

@@ -39,6 +39,11 @@ public class Services {
 		Session session = SessionManager.INSTANCE.getSession(df);
 		DFDUtil.refineDT(session, df);
 	}
+	
+	public List<EObject> listDataTypes(EObject self) {
+		Session session = SessionManager.INSTANCE.getSession(self);
+		return DFDUtil.getDataTypes(session);
+	}
 
 	public void refineProcess(EObject self, EObject p, DataFlowDiagram dfd) {
 		List<Edge> edges = dfd.getEdges();
