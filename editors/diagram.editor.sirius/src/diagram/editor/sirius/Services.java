@@ -33,6 +33,12 @@ public class Services {
 		return EcoreUtil.equals(e1, e2);
 
 	}
+	
+	public void refineDF(EObject self, DataFlow df) {
+		System.out.println(df);
+		Session session = SessionManager.INSTANCE.getSession(df);
+		DFDUtil.refineDT(session, df);
+	}
 
 	public void refineProcess(EObject self, EObject p, DataFlowDiagram dfd) {
 		List<Edge> edges = dfd.getEdges();
@@ -60,9 +66,10 @@ public class Services {
 		System.out.println(out);
 		System.out.println(p);
 		Session session = SessionManager.INSTANCE.getSession(p);
-		DRepresentation representation = SiriusCustomUtil.createRepresentation(session, "test", null, p, new NullProgressMonitor());
+		DRepresentation representation = SiriusCustomUtil.createRepresentation(session, "test", null, p,
+				new NullProgressMonitor());
 		DialectUIManager.INSTANCE.openEditor(session, representation, new NullProgressMonitor());
-		
+
 	}
 
 	public EObject findSubProcesses(EObject self) {
@@ -70,6 +77,9 @@ public class Services {
 		System.out.println(dfd.getRefinedBy());
 		return self;
 	}
+	
+	
+
 	public void loadResources(EObject self) {
 		ResourceDialog r = new ResourceDialog(Display.getCurrent().getActiveShell(), "Load Data Dictionary",
 				SWT.SINGLE);
@@ -81,7 +91,7 @@ public class Services {
 				session.addSemanticResource(uri, new NullProgressMonitor());
 
 		}
-		System.out.println(session.getSemanticResources());
+
 
 	}
 }
