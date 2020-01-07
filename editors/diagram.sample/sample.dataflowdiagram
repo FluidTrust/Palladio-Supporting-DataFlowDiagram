@@ -4,10 +4,15 @@
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_fpdB8C5DEeqanrx-VUcwcQ" name="new Process"/>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_bH440C7TEeqyYbofd9wuMg" name="DF1" source="_psCWsSYrEeqwleBNcLMfgQ" target="_UVls0yPWEeqMHZm4xBp56w">
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_bH440C7TEeqyYbofd9wuMg" name="DF1" source="_psCWsSYrEeqwleBNcLMfgQ" target="_OPjisiPWEeqMHZm4xBp56w">
     <data id="_U_PYUC-_Eeqjluo36T3rSg" name="Data3">
       <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
     </data>
   </edges>
   <edges xsi:type="DataFlowDiagram:DataFlow" id="_V3rRgC7VEeqyYbofd9wuMg" name="new Data Flow" source="_UVls0yPWEeqMHZm4xBp56w" target="_fpdB8C5DEeqanrx-VUcwcQ"/>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_fkzVwDFUEeqtN9LfzvEOIw" name="new Data Flow" source="_OPjisiPWEeqMHZm4xBp56w" target="_OPjisiPWEeqMHZm4xBp56w">
+    <data id="_gsHjIDFUEeqtN9LfzvEOIw" name="A">
+      <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
+    </data>
+  </edges>
 </DataFlowDiagram:DataFlowDiagram>

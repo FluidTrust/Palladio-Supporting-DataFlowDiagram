@@ -23,13 +23,29 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="DataFlowEdge" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true">
+        <edgeMappings name="DataFlowEdge" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFTarget'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFSource']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.data->isEmpty()">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.target = self.source">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+              <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
         </edgeMappings>
         <containerMappings name="RefiningContainer" domainClass="DataFlowDiagram::DataFlowDiagramRefinement" childrenPresentation="HorizontalStack">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/diagram.editor.sirius/icons/reference.svg">
@@ -91,7 +107,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createDF" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createDF" precondition="aql:not preTarget.oclIsKindOf(DataFlowDiagram::ExternalActor)" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -115,6 +131,32 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="changeDFTarget">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="changeDFSource" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
@@ -124,31 +166,46 @@
     <categories name="Default Category">
       <pages name="Default Page" labelExpression="Edit" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
       <groups name="Store" labelExpression="Properties" domainClass="DataFlowDiagram::Store" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="NameText" labelExpression="Name" valueExpression="aql:self.name">
+        <controls xsi:type="properties:TextDescription" name="StoreName" labelExpression="Name" valueExpression="aql:self.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
             </firstModelOperations>
           </initialOperation>
         </controls>
+        <validationSet>
+          <propertyValidationRules name="StoreNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.0/@controls.0">
+            <audits auditExpression="aql:self.name.size() > 0"/>
+          </propertyValidationRules>
+        </validationSet>
       </groups>
       <groups name="Process" labelExpression="Properties" domainClass="DataFlowDiagram::Process" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="NameText" labelExpression="Name" valueExpression="aql:self.name">
+        <controls xsi:type="properties:TextDescription" name="ProcessName" labelExpression="Name" valueExpression="aql:self.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
             </firstModelOperations>
           </initialOperation>
         </controls>
+        <validationSet>
+          <propertyValidationRules name="ProcessNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.1/@controls.0">
+            <audits auditExpression="aql:self.name.size() > 0"/>
+          </propertyValidationRules>
+        </validationSet>
       </groups>
       <groups name="ExternalActor" labelExpression="Properties" domainClass="DataFlowDiagram::ExternalActor" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="NameText" labelExpression="Name" valueExpression="aql:self.name">
+        <controls xsi:type="properties:TextDescription" name="ExternalActorName" labelExpression="Name" valueExpression="aql:self.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
             </firstModelOperations>
           </initialOperation>
         </controls>
+        <validationSet>
+          <propertyValidationRules name="ExternalActorNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.2/@controls.0">
+            <audits auditExpression="aql:self.name.size() > 0"/>
+          </propertyValidationRules>
+        </validationSet>
       </groups>
       <groups name="DFD" labelExpression="Actions" domainClass="DataFlowDiagram::DataFlowDiagram" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ButtonDescription" name="openDialog" labelExpression="Load DD" buttonLabelExpression="open">
@@ -158,7 +215,7 @@
         </controls>
       </groups>
       <groups name="DF" labelExpression="Properties" domainClass="DataFlowDiagram::DataFlow" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="NameText" labelExpression="Name" valueExpression="aql:self.name">
+        <controls xsi:type="properties:TextDescription" name="DataFlowName" labelExpression="Name" valueExpression="aql:self.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
@@ -200,6 +257,11 @@
             </initialOperation>
           </actions>
         </controls>
+        <validationSet>
+          <propertyValidationRules name="DataFlowNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.4/@controls.0">
+            <audits auditExpression="aql:self.name.size() > 0"/>
+          </propertyValidationRules>
+        </validationSet>
       </groups>
     </categories>
   </extensions>
