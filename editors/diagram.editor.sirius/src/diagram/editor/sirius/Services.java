@@ -34,6 +34,10 @@ public class Services {
 
 	}
 	
+	public void refineProcesses(EObject self) {
+		System.out.println("refine multiple");
+	}
+	
 	public void refineDF(EObject self, DataFlow df) {
 		System.out.println(df);
 		Session session = SessionManager.INSTANCE.getSession(df);

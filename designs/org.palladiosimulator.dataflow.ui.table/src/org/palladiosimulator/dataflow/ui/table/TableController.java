@@ -29,10 +29,17 @@ public class TableController extends AbstractEEFCustomWidgetController {
 	protected EEFCustomWidgetDescription getDescription() {
 		return this.description;
 	}
+	
+	
 
 	@Override
 	public void refresh() {
 		super.refresh();
+	}
+
+	public void handleClick(Object selection) {
+		System.out.println("Click");
+		
 	}
 	
 }

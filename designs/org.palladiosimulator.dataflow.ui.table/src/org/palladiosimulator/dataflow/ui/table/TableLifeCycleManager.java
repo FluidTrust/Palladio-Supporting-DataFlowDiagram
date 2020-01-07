@@ -65,11 +65,12 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
     @Override
     public void aboutToBeShown() {
         super.aboutToBeShown();
+        System.out.println("About to be shown");
         /*
         this.newValueConsumer = (newValue) -> this.tableViewer.setInput(newValue);
         
         this.controller.onNewValue(this.newValueConsumer);
-
+	*/
         this.onClickListener = new SelectionListener() {
             @Override
             public void widgetSelected(SelectionEvent event) {
@@ -84,7 +85,7 @@ public class TableLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
             }
         };
         this.tableViewer.getTable().addSelectionListener(this.onClickListener);
-        */
+        
     }
 
     @Override
