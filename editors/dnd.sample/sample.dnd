@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dnd:DnD xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dnd="http://www.example.org/dnd">
+  <components xsi:type="dnd:Parent" name="P1"/>
+  <components xsi:type="dnd:Child" name="C1"/>
+</dnd:DnD>

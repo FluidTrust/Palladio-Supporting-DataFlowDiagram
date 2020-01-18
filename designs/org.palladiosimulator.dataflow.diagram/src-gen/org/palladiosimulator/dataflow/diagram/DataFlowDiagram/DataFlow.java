@@ -31,7 +31,7 @@ public interface DataFlow extends Identifier, Edge {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data</em>' containment reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlow_Data()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Data> getData();

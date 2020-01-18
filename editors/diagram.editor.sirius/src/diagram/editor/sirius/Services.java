@@ -4,25 +4,35 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PlatformUI;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
+import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationCommand;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
 /**
  * The services class used by VSM.
@@ -66,18 +76,47 @@ public class Services {
 
 			}
 		}
-		createLeveledDF(incoming, outgoing, (Process) p);
+		createLeveledDFD(incoming, outgoing, (Process) p);
 	}
 
-	public void createLeveledDF(List<DataFlow> inc, List<DataFlow> out, Process p) {
-		System.out.println("CREATE LEVEL");
-		System.out.println(inc);
-		System.out.println(out);
-		System.out.println(p);
+	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p) {
+		System.out.println("Create leveled dfd.");
+		Viewpoint viewpoint = null;
+		Set<Viewpoint> registry = ViewpointRegistry.getInstance().getViewpoints();
+		for (Viewpoint vp: registry) {
+			if(vp.getName().equals("Dataflows")) {
+				viewpoint = vp;
+			}
+		}
 		Session session = SessionManager.INSTANCE.getSession(p);
-		DRepresentation representation = SiriusCustomUtil.createRepresentation(session, "test", null, p,
-				new NullProgressMonitor());
+		System.out.println("Viewpoint: " + viewpoint);
+		RepresentationDescription description = null;
+		for (RepresentationDescription rd : viewpoint.getOwnedRepresentations()) {
+			if(rd.getName().equals("DFD Editor")) {
+				description = rd;
+			}
+			
+		}
+		
+		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
+		System.out.println(domain);
+		//DRepresentation representation = DialectManager.INSTANCE.createRepresentation(arg0, arg1, description, session, new NullProgressMonitor())
+		CreateRepresentationCommand crc = new CreateRepresentationCommand(session, description, p, "DFD Editor", new NullProgressMonitor()); // Error here ?
+		System.out.println(crc);
+		domain.getCommandStack().execute(crc);
+	    DRepresentation representation = crc.getCreatedRepresentation();
+	    System.out.println(representation);
 		DialectUIManager.INSTANCE.openEditor(session, representation, new NullProgressMonitor());
+		/*
+		IWorkbenchPart workbenchPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		IFile file = (IFile) workbenchPart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);					
+		URI diagramURI = URI.createURI("/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toOSString());
+		System.out.println(diagramURI);
+		Session session = SessionManager.INSTANCE.getSession(p);
+		System.out.println(session);
+		*/
+		
+
 
 	}
 
