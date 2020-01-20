@@ -22,13 +22,13 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Parent extends Component {
 	/**
-	 * Returns the value of the '<em><b>Children</b></em>' reference list.
+	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
 	 * The list contents are of type {@link test.dnd.Child}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Children</em>' reference list.
+	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see test.dnd.DndPackage#getParent_Children()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Child> getChildren();

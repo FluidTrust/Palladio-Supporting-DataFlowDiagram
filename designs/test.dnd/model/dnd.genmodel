@@ -10,7 +10,7 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Dnd" basePackage="test" disposableProviderFactory="true" ecorePackage="dnd.ecore#/">
     <genClasses ecoreClass="dnd.ecore#//Parent">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dnd.ecore#//Parent/children"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dnd.ecore#//Parent/children"/>
     </genClasses>
     <genClasses ecoreClass="dnd.ecore#//Child"/>
     <genClasses ecoreClass="dnd.ecore#//DnD">

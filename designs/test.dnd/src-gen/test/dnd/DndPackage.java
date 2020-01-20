@@ -113,7 +113,7 @@ public interface DndPackage extends EPackage {
 	int PARENT__NAME = COMPONENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -224,10 +224,10 @@ public interface DndPackage extends EPackage {
 	EClass getParent();
 
 	/**
-	 * Returns the meta object for the reference list '{@link test.dnd.Parent#getChildren <em>Children</em>}'.
+	 * Returns the meta object for the containment reference list '{@link test.dnd.Parent#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Children</em>'.
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
 	 * @see test.dnd.Parent#getChildren()
 	 * @see #getParent()
 	 * @generated
@@ -320,7 +320,7 @@ public interface DndPackage extends EPackage {
 		EClass PARENT = eINSTANCE.getParent();
 
 		/**
-		 * The meta object literal for the '<em><b>Children</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
