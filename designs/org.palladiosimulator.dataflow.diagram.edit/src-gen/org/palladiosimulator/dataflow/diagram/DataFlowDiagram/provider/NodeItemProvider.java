@@ -45,7 +45,6 @@ public class NodeItemProvider extends ComponentItemProvider {
 
 			addRequiringProcessesPropertyDescriptor(object);
 			addProvidingProcessesPropertyDescriptor(object);
-			addEqualsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,28 +85,6 @@ public class NodeItemProvider extends ComponentItemProvider {
 				 getString("_UI_Node_providingProcesses_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Node_providingProcesses_feature", "_UI_Node_type"),
 				 DataFlowDiagramPackage.Literals.NODE__PROVIDING_PROCESSES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Equals feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEqualsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Node_equals_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Node_equals_feature", "_UI_Node_type"),
-				 DataFlowDiagramPackage.Literals.NODE__EQUALS,
 				 true,
 				 false,
 				 true,

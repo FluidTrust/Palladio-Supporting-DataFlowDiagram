@@ -18,8 +18,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataFlowDiagramRefinement" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedProcesses" lowerBound="1"
-        upperBound="-1" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedProcess" lowerBound="1"
+        eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refiningDiagram" lowerBound="1"
         eType="#//DataFlowDiagram" containment="true"/>
   </eClassifiers>
@@ -48,8 +48,6 @@
         <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).source->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="equals" upperBound="-1"
-        eType="#//Node"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>

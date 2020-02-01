@@ -52,25 +52,25 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRefinedProcessesPropertyDescriptor(object);
+			addRefinedProcessPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Refined Processes feature.
+	 * This adds a property descriptor for the Refined Process feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRefinedProcessesPropertyDescriptor(Object object) {
+	protected void addRefinedProcessPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlowDiagramRefinement_refinedProcesses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_refinedProcesses_feature", "_UI_DataFlowDiagramRefinement_type"),
-				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES,
+				 getString("_UI_DataFlowDiagramRefinement_refinedProcess_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_refinedProcess_feature", "_UI_DataFlowDiagramRefinement_type"),
+				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS,
 				 true,
 				 false,
 				 true,

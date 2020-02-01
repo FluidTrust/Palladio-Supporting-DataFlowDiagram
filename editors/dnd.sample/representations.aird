@@ -34,7 +34,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Uaw8jtzEeqzT4vwLUvglA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_9UYUsTtzEeqzT4vwLUvglA" fontName=".AppleSystemUIFont" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UYUsjtzEeqzT4vwLUvglA" x="536" y="216" width="30" height="30"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UYUsjtzEeqzT4vwLUvglA" x="504" y="196" width="30" height="30"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_DtKmQDt1Eeq_8NnJnVleqQ" type="2001" element="_DtFtwDt1Eeq_8NnJnVleqQ">
           <children xmi:type="notation:Node" xmi:id="_DtO3sDt1Eeq_8NnJnVleqQ" type="5002">

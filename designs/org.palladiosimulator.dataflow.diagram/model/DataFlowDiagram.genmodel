@@ -21,7 +21,7 @@
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Store"/>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Process"/>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//DataFlowDiagramRefinement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/refinedProcesses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/refinedProcess"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/refiningDiagram"/>
     </genClasses>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//DataFlow">
@@ -36,7 +36,6 @@
     <genClasses ecoreClass="DataFlowDiagram.ecore#//Node">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/requiringProcesses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/providingProcesses"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//Node/equals"/>
     </genClasses>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DataFlowDiagram.ecore#//NamedElement/name"/>

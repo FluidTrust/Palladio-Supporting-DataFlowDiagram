@@ -8,6 +8,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
@@ -48,6 +50,11 @@ public class Services {
 		System.out.println("refine multiple");
 	}
 	
+	public void look(EObject self) {
+		System.out.println(self);
+		System.out.println(self.eContents());
+	}
+	
 	public void refineDF(EObject self, DataFlow df) {
 		System.out.println(df);
 		Session session = SessionManager.INSTANCE.getSession(df);
@@ -76,10 +83,39 @@ public class Services {
 
 			}
 		}
-		createLeveledDFD(incoming, outgoing, (Process) p);
+		createLeveledDFD(incoming, outgoing, (Process) p,dfd);
 	}
 
-	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p) {
+	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram dfd) {
+		Session session = SessionManager.INSTANCE.getSession(p);
+		
+		/*
+		DataFlowDiagram newDFD = DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram();
+		Viewpoint viewpoint = null;
+		Set<Viewpoint> registry = ViewpointRegistry.getInstance().getViewpoints();
+		for (Viewpoint vp: registry) {
+			if(vp.getName().equals("Dataflows")) {
+				viewpoint = vp;
+			}
+		}
+		Session session = SessionManager.INSTANCE.getSession(p);
+		RepresentationDescription description = null;
+		for (RepresentationDescription rd : viewpoint.getOwnedRepresentations()) {
+			if(rd.getName().equals("DFD Editor")) {
+				description = rd;
+			}	
+		}
+		System.out.println(session);
+		System.out.println(description);
+		System.out.println(newDFD);
+		DRepresentation representation = DialectManager.INSTANCE.createRepresentation("", newDFD, description, session, new NullProgressMonitor());
+		System.out.println(representation);
+		*/
+		/*
+		DataFlowDiagramRefinement dfdRefinement = DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagramRefinement();
+		dfdRefinement.setRefinedProcess(p);
+		DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram();
+		dfd.getRefinedBy().add(dfdRefinement);
 		System.out.println("Create leveled dfd.");
 		Viewpoint viewpoint = null;
 		Set<Viewpoint> registry = ViewpointRegistry.getInstance().getViewpoints();
@@ -101,19 +137,21 @@ public class Services {
 		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 		System.out.println(domain);
 		//DRepresentation representation = DialectManager.INSTANCE.createRepresentation(arg0, arg1, description, session, new NullProgressMonitor())
-		CreateRepresentationCommand crc = new CreateRepresentationCommand(session, description, p, "DFD Editor", new NullProgressMonitor()); // Error here ?
+		//new dfd
+		CreateRepresentationCommand crc = new CreateRepresentationCommand(session, description, dfd, "DFD Editor", new NullProgressMonitor()); // Error here ?
 		System.out.println(crc);
 		domain.getCommandStack().execute(crc);
 	    DRepresentation representation = crc.getCreatedRepresentation();
 	    System.out.println(representation);
 		DialectUIManager.INSTANCE.openEditor(session, representation, new NullProgressMonitor());
-		/*
+
 		IWorkbenchPart workbenchPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		IFile file = (IFile) workbenchPart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);					
 		URI diagramURI = URI.createURI("/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toOSString());
 		System.out.println(diagramURI);
 		Session session = SessionManager.INSTANCE.getSession(p);
 		System.out.println(session);
+
 		*/
 		
 

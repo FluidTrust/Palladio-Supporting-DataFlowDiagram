@@ -284,22 +284,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int NODE__PROVIDING_PROCESSES = COMPONENT_FEATURE_COUNT + 1;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__EQUALS = COMPONENT_FEATURE_COUNT + 2;
-
-				/**
 	 * The number of structural features of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
+	int NODE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -336,15 +327,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_ACTOR__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
-
-				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-				int EXTERNAL_ACTOR__EQUALS = NODE__EQUALS;
 
 				/**
 	 * The number of structural features of the '<em>External Actor</em>' class.
@@ -392,15 +374,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int STORE__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-				int STORE__EQUALS = NODE__EQUALS;
-
-				/**
 	 * The number of structural features of the '<em>Store</em>' class.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
@@ -446,15 +419,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int PROCESS__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
 
 				/**
-	 * The feature id for the '<em><b>Equals</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-				 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-				int PROCESS__EQUALS = NODE__EQUALS;
-
-				/**
 	 * The number of structural features of the '<em>Process</em>' class.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
@@ -483,13 +447,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM_REFINEMENT__ID = IdentifierPackage.IDENTIFIER__ID;
 
 				/**
-	 * The feature id for the '<em><b>Refined Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Refined Process</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 				/**
 	 * The feature id for the '<em><b>Refining Diagram</b></em>' containment reference.
@@ -758,15 +722,15 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EClass getDataFlowDiagramRefinement();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedProcesses <em>Refined Processes</em>}'.
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedProcess <em>Refined Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Refined Processes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedProcesses()
+	 * @return the meta object for the reference '<em>Refined Process</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedProcess()
 	 * @see #getDataFlowDiagramRefinement()
 	 * @generated
 	 */
-	EReference getDataFlowDiagramRefinement_RefinedProcesses();
+	EReference getDataFlowDiagramRefinement_RefinedProcess();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefiningDiagram <em>Refining Diagram</em>}'.
@@ -874,17 +838,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNode_ProvidingProcesses();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals <em>Equals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Equals</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getEquals()
-	 * @see #getNode()
-	 * @generated
-	 */
-	EReference getNode_Equals();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement <em>Named Element</em>}'.
@@ -1026,12 +979,12 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EClass DATA_FLOW_DIAGRAM_REFINEMENT = eINSTANCE.getDataFlowDiagramRefinement();
 		/**
-		 * The meta object literal for the '<em><b>Refined Processes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Refined Process</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES = eINSTANCE.getDataFlowDiagramRefinement_RefinedProcesses();
+		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS = eINSTANCE.getDataFlowDiagramRefinement_RefinedProcess();
 		/**
 		 * The meta object literal for the '<em><b>Refining Diagram</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
@@ -1108,13 +1061,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NODE__PROVIDING_PROCESSES = eINSTANCE.getNode_ProvidingProcesses();
-								/**
-		 * The meta object literal for the '<em><b>Equals</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NODE__EQUALS = eINSTANCE.getNode_Equals();
 								/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->

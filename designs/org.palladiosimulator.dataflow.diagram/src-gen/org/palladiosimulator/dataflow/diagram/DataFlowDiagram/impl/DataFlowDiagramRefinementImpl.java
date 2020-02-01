@@ -3,21 +3,12 @@
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
@@ -30,7 +21,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRef
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefinedProcesses <em>Refined Processes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefinedProcess <em>Refined Process</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefiningDiagram <em>Refining Diagram</em>}</li>
  * </ul>
  *
@@ -38,14 +29,14 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRef
  */
 public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements DataFlowDiagramRefinement {
 	/**
-	 * The cached value of the '{@link #getRefinedProcesses() <em>Refined Processes</em>}' reference list.
+	 * The cached value of the '{@link #getRefinedProcess() <em>Refined Process</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRefinedProcesses()
+	 * @see #getRefinedProcess()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process> refinedProcesses;
+	protected org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process refinedProcess;
 
 	/**
 	 * The cached value of the '{@link #getRefiningDiagram() <em>Refining Diagram</em>}' containment reference.
@@ -81,11 +72,37 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process> getRefinedProcesses() {
-		if (refinedProcesses == null) {
-			refinedProcesses = new EObjectResolvingEList<org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process>(org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES);
+	public org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process getRefinedProcess() {
+		if (refinedProcess != null && refinedProcess.eIsProxy()) {
+			InternalEObject oldRefinedProcess = (InternalEObject)refinedProcess;
+			refinedProcess = (org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process)eResolveProxy(oldRefinedProcess);
+			if (refinedProcess != oldRefinedProcess) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS, oldRefinedProcess, refinedProcess));
+			}
 		}
-		return refinedProcesses;
+		return refinedProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process basicGetRefinedProcess() {
+		return refinedProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRefinedProcess(org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process newRefinedProcess) {
+		org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process oldRefinedProcess = refinedProcess;
+		refinedProcess = newRefinedProcess;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS, oldRefinedProcess, refinedProcess));
 	}
 
 	/**
@@ -153,8 +170,9 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES:
-				return getRefinedProcesses();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS:
+				if (resolve) return getRefinedProcess();
+				return basicGetRefinedProcess();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return getRefiningDiagram();
 		}
@@ -170,9 +188,8 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES:
-				getRefinedProcesses().clear();
-				getRefinedProcesses().addAll((Collection<? extends org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process>)newValue);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS:
+				setRefinedProcess((org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process)newValue);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				setRefiningDiagram((DataFlowDiagram)newValue);
@@ -189,8 +206,8 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES:
-				getRefinedProcesses().clear();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS:
+				setRefinedProcess((org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process)null);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				setRefiningDiagram((DataFlowDiagram)null);
@@ -207,8 +224,8 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESSES:
-				return refinedProcesses != null && !refinedProcesses.isEmpty();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS:
+				return refinedProcess != null;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return refiningDiagram != null;
 		}
