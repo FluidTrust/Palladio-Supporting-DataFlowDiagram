@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
-  <refinedBy id="_CAtn8DFjEeqgVdsHrr9R0Q"/>
-  <refinedBy id="_dKLVIETWEeqxksURxErR5g">
-    <refiningDiagram id="_dKLVIUTWEeqxksURxErR5g">
-      <nodes xsi:type="DataFlowDiagram:Process" id="_eB5AQETWEeqxksURxErR5g" name="new Process"/>
-    </refiningDiagram>
-  </refinedBy>
   <nodes xsi:type="DataFlowDiagram:Store" id="_OPjisiPWEeqMHZm4xBp56w" name="S1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>

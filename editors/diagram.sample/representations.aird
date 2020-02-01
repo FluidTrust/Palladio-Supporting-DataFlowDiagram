@@ -180,9 +180,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CAvdIDFjEeqgVdsHrr9R0Q" childrenPresentation="VerticalStack">
-      <target xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_CAtn8DFjEeqgVdsHrr9R0Q"/>
-      <semanticElements xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_CAtn8DFjEeqgVdsHrr9R0Q"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CAvdIDFjEeqgVdsHrr9R0Q" target="_CAtn8DFjEeqgVdsHrr9R0Q" semanticElements="_CAtn8DFjEeqgVdsHrr9R0Q" childrenPresentation="VerticalStack">
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -272,24 +270,6 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_1XGf8ToREeqi_Nx9vL7c4Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XGf8joREeqi_Nx9vL7c4Q" x="624" y="56" width="205" height="84"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_1XKxYDoREeqi_Nx9vL7c4Q" type="2002" element="_1WYuQDoREeqi_Nx9vL7c4Q">
-          <children xmi:type="notation:Node" xmi:id="_1XLYcDoREeqi_Nx9vL7c4Q" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_1XL_gDoREeqi_Nx9vL7c4Q" type="7001">
-            <styles xmi:type="notation:SortingStyle" xmi:id="_1XL_gToREeqi_Nx9vL7c4Q"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_1XL_gjoREeqi_Nx9vL7c4Q"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_1XKxYToREeqi_Nx9vL7c4Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XKxYjoREeqi_Nx9vL7c4Q" x="24" y="288" width="141" height="141"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_dbP3AETWEeqxksURxErR5g" type="2002" element="_dbMzukTWEeqxksURxErR5g">
-          <children xmi:type="notation:Node" xmi:id="_dbP3A0TWEeqxksURxErR5g" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_dbQeEETWEeqxksURxErR5g" type="7001">
-            <styles xmi:type="notation:SortingStyle" xmi:id="_dbQeEUTWEeqxksURxErR5g"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_dbQeEkTWEeqxksURxErR5g"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_dbP3AUTWEeqxksURxErR5g" fontName=".AppleSystemUIFont" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dbP3AkTWEeqxksURxErR5g" x="-64" y="-32"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_1W4dgjoREeqi_Nx9vL7c4Q"/>
         <edges xmi:type="notation:Edge" xmi:id="_1XQ4ADoREeqi_Nx9vL7c4Q" type="4001" element="_1Wc_sDoREeqi_Nx9vL7c4Q" source="_1XGf8DoREeqi_Nx9vL7c4Q" target="_1W5roDoREeqi_Nx9vL7c4Q">
@@ -383,17 +363,6 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_1WYuQDoREeqi_Nx9vL7c4Q">
-      <target xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_CAtn8DFjEeqgVdsHrr9R0Q"/>
-      <semanticElements xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_CAtn8DFjEeqgVdsHrr9R0Q"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_1WYuQToREeqi_Nx9vL7c4Q" labelSize="12" showIcon="false" workspacePath="/diagram.editor.sirius/icons/reference.svg">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']"/>
-    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_1Wc_sDoREeqi_Nx9vL7c4Q" name="DF1" sourceNode="_1WYHMDoREeqi_Nx9vL7c4Q" targetNode="_1WSAkDoREeqi_Nx9vL7c4Q">
       <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_bH440C7TEeqyYbofd9wuMg"/>
       <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_bH440C7TEeqyYbofd9wuMg"/>
@@ -420,14 +389,6 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_1WsQRDoREeqi_Nx9vL7c4Q" labelSize="12" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_dbMzukTWEeqxksURxErR5g">
-      <target xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_dKLVIETWEeqxksURxErR5g"/>
-      <semanticElements xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_dKLVIETWEeqxksURxErR5g"/>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_dbNawETWEeqxksURxErR5g" labelSize="12" showIcon="false" workspacePath="/diagram.editor.sirius/icons/reference.svg">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_1WATwDoREeqi_Nx9vL7c4Q"/>
@@ -585,9 +546,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_DNyL-kTTEeqlBLyoBU2f5A">
-      <target xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_CAtn8DFjEeqgVdsHrr9R0Q"/>
-      <semanticElements xmi:type="DataFlowDiagram:DataFlowDiagramRefinement" href="sample.dataflowdiagram#_CAtn8DFjEeqgVdsHrr9R0Q"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_DNyL-kTTEeqlBLyoBU2f5A" target="_CAtn8DFjEeqgVdsHrr9R0Q" semanticElements="_CAtn8DFjEeqgVdsHrr9R0Q">
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_DNyL-0TTEeqlBLyoBU2f5A" labelSize="12" showIcon="false" workspacePath="/diagram.editor.sirius/icons/reference.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@containerMappings[name='RefiningContainer']/@style"/>
       </ownedStyle>

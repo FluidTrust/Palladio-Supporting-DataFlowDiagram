@@ -46,15 +46,6 @@ public class Services {
 
 	}
 	
-	public void refineProcesses(EObject self) {
-		System.out.println("refine multiple");
-	}
-	
-	public void look(EObject self) {
-		System.out.println(self);
-		System.out.println(self.eContents());
-	}
-	
 	public void refineDF(EObject self, DataFlow df) {
 		System.out.println(df);
 		Session session = SessionManager.INSTANCE.getSession(df);
@@ -66,8 +57,8 @@ public class Services {
 		return DFDUtil.getDataTypes(session);
 	}
 
-	public void refineProcess(EObject self, EObject p, DataFlowDiagram dfd) {
-		List<Edge> edges = dfd.getEdges();
+	public void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD) {
+		List<Edge> edges = oldDFD.getEdges();
 		List<DataFlow> incoming = new ArrayList<DataFlow>();
 		List<DataFlow> outgoing = new ArrayList<DataFlow>();
 		for (Edge e : edges) {
@@ -83,12 +74,15 @@ public class Services {
 
 			}
 		}
-		createLeveledDFD(incoming, outgoing, (Process) p,dfd);
+		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD);
 	}
 
-	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram dfd) {
-		Session session = SessionManager.INSTANCE.getSession(p);
-		
+	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD, DataFlowDiagram newDFD) {
+		System.out.println(inc);
+		System.out.println(out);
+		Process np = DataFlowDiagramFactory.eINSTANCE.createProcess();
+		np.setName("P.1");
+		newDFD.getNodes().add(np);
 		/*
 		DataFlowDiagram newDFD = DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram();
 		Viewpoint viewpoint = null;
@@ -158,11 +152,7 @@ public class Services {
 
 	}
 
-	public EObject findSubProcesses(EObject self) {
-		DataFlowDiagram dfd = (DataFlowDiagram) self;
-		System.out.println(dfd.getRefinedBy());
-		return self;
-	}
+
 	
 	
 
