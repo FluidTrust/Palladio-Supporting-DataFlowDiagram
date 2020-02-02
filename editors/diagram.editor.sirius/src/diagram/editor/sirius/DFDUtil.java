@@ -42,7 +42,6 @@ public class DFDUtil {
 
 		for (Resource r : resources) {
 			for (EObject typeDefinition : r.getContents()) {
-				//System.out.println(typeDefinition.eContents());
 				for (EObject datatype : typeDefinition.eContents()) {
 					types.add((DataType) datatype);
 
@@ -55,21 +54,5 @@ public class DFDUtil {
 	}
 
 	
-	public static List<EObject> getDataTypes(Session session) {
-		List<EObject> types = new ArrayList<EObject>();
-		List<Resource> resources = session.getSemanticResources().stream()
-				.filter(r -> r.getURI().fileExtension().equals(DD_EXTENSTION)).collect(Collectors.toList());
 
-		for (Resource r : resources) {
-			for (EObject typeDefinition : r.getContents()) {
-				//System.out.println(typeDefinition.eContents());
-				for (EObject datatype : typeDefinition.eContents()) {
-					types.add(datatype);
-
-				}
-			}
-
-		}
-		return types;
-	}
 }

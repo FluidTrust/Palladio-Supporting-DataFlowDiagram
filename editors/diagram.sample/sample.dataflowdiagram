@@ -8,8 +8,15 @@
     <data id="_U_PYUC-_Eeqjluo36T3rSg" name="Data3">
       <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
     </data>
+    <data id="_XTsxQEWXEeqdXuVkQHm7qg" name="data5">
+      <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_Efj6ABd6EeqmI7JLCCCR2w"/>
+    </data>
   </edges>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_V3rRgC7VEeqyYbofd9wuMg" name="new Data Flow" source="_UVls0yPWEeqMHZm4xBp56w" target="_fpdB8C5DEeqanrx-VUcwcQ"/>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_V3rRgC7VEeqyYbofd9wuMg" name="new Data Flow" source="_UVls0yPWEeqMHZm4xBp56w" target="_fpdB8C5DEeqanrx-VUcwcQ">
+    <data id="_SEpScEWXEeqdXuVkQHm7qg" name="data4">
+      <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_EAnUMBd6EeqmI7JLCCCR2w"/>
+    </data>
+  </edges>
   <edges xsi:type="DataFlowDiagram:DataFlow" id="_fkzVwDFUEeqtN9LfzvEOIw" name="new Data Flow" source="_OPjisiPWEeqMHZm4xBp56w" target="_OPjisiPWEeqMHZm4xBp56w">
     <data id="_gsHjIDFUEeqtN9LfzvEOIw" name="A">
       <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>

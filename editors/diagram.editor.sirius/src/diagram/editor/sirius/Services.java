@@ -6,12 +6,16 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -22,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -45,16 +50,19 @@ public class Services {
 		return EcoreUtil.equals(e1, e2);
 
 	}
-	
+
 	public void refineDF(EObject self, DataFlow df) {
 		System.out.println(df);
 		Session session = SessionManager.INSTANCE.getSession(df);
 		DFDUtil.refineDT(session, df);
 	}
+
+
 	
-	public List<EObject> listDataTypes(EObject self) {
-		Session session = SessionManager.INSTANCE.getSession(self);
-		return DFDUtil.getDataTypes(session);
+	private List<Data> getData(DataFlow df){
+		Session session = SessionManager.INSTANCE.getSession(df);
+		DFDUtil.refineDT(session, df);
+		return new ArrayList<Data>();
 	}
 
 	public void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD) {
@@ -77,84 +85,72 @@ public class Services {
 		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD);
 	}
 
-	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD, DataFlowDiagram newDFD) {
+	private Node copyNode(Node n) { // simulated polymorphism! What about ID? Naming schemes?
+		String name = n.getName();
+		Node copy = null;
+		if (n instanceof Process) {
+			Process p = DataFlowDiagramFactory.eINSTANCE.createProcess();
+			p.setName(name);
+			copy = p;
+			// TODO make unmodifiable
+		} else if (n instanceof ExternalActor) {
+			ExternalActor ea = DataFlowDiagramFactory.eINSTANCE.createExternalActor();
+			ea.setName(name);
+			copy = ea;
+		} else if (n instanceof Store) {
+			Store s = DataFlowDiagramFactory.eINSTANCE.createStore();
+			s.setName(name);
+			copy = s;
+		}
+
+		return copy;
+	}
+
+	
+	private DataFlow copyDataFlow(DataFlow df) {
+		DataFlow ndf = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
+		ndf.setName(df.getName());
+		return ndf;
+	}
+	
+	private Data copyData(Data data) {
+		Data nData = DataFlowDiagramFactory.eINSTANCE.createData();
+		nData.setName(data.getName());
+		return nData;
+	}
+	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD,
+			DataFlowDiagram newDFD) {
 		System.out.println(inc);
 		System.out.println(out);
-		Process np = DataFlowDiagramFactory.eINSTANCE.createProcess();
-		np.setName("P.1");
-		newDFD.getNodes().add(np);
-		/*
-		DataFlowDiagram newDFD = DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram();
-		Viewpoint viewpoint = null;
-		Set<Viewpoint> registry = ViewpointRegistry.getInstance().getViewpoints();
-		for (Viewpoint vp: registry) {
-			if(vp.getName().equals("Dataflows")) {
-				viewpoint = vp;
-			}
-		}
-		Session session = SessionManager.INSTANCE.getSession(p);
-		RepresentationDescription description = null;
-		for (RepresentationDescription rd : viewpoint.getOwnedRepresentations()) {
-			if(rd.getName().equals("DFD Editor")) {
-				description = rd;
-			}	
-		}
-		System.out.println(session);
-		System.out.println(description);
-		System.out.println(newDFD);
-		DRepresentation representation = DialectManager.INSTANCE.createRepresentation("", newDFD, description, session, new NullProgressMonitor());
-		System.out.println(representation);
-		*/
-		/*
-		DataFlowDiagramRefinement dfdRefinement = DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagramRefinement();
-		dfdRefinement.setRefinedProcess(p);
-		DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram();
-		dfd.getRefinedBy().add(dfdRefinement);
-		System.out.println("Create leveled dfd.");
-		Viewpoint viewpoint = null;
-		Set<Viewpoint> registry = ViewpointRegistry.getInstance().getViewpoints();
-		for (Viewpoint vp: registry) {
-			if(vp.getName().equals("Dataflows")) {
-				viewpoint = vp;
-			}
-		}
-		Session session = SessionManager.INSTANCE.getSession(p);
-		System.out.println("Viewpoint: " + viewpoint);
-		RepresentationDescription description = null;
-		for (RepresentationDescription rd : viewpoint.getOwnedRepresentations()) {
-			if(rd.getName().equals("DFD Editor")) {
-				description = rd;
+		Node refinedProcess = copyNode(p);
+		newDFD.getNodes().add(refinedProcess);
+		
+		for (DataFlow df : inc) {		
+			Node source = copyNode(df.getSource());
+			newDFD.getNodes().add(source);	
+			for (Data data : df.getData()) {
+				DataFlow ndf = copyDataFlow(df);
+				ndf.getData().add(copyData(data));
+				ndf.setSource(source);
+				ndf.setTarget(refinedProcess);
+				newDFD.getEdges().add(ndf);
 			}
 			
 		}
 		
-		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-		System.out.println(domain);
-		//DRepresentation representation = DialectManager.INSTANCE.createRepresentation(arg0, arg1, description, session, new NullProgressMonitor())
-		//new dfd
-		CreateRepresentationCommand crc = new CreateRepresentationCommand(session, description, dfd, "DFD Editor", new NullProgressMonitor()); // Error here ?
-		System.out.println(crc);
-		domain.getCommandStack().execute(crc);
-	    DRepresentation representation = crc.getCreatedRepresentation();
-	    System.out.println(representation);
-		DialectUIManager.INSTANCE.openEditor(session, representation, new NullProgressMonitor());
-
-		IWorkbenchPart workbenchPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
-		IFile file = (IFile) workbenchPart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);					
-		URI diagramURI = URI.createURI("/" + file.getProject().getName() + "/" + file.getProjectRelativePath().toOSString());
-		System.out.println(diagramURI);
-		Session session = SessionManager.INSTANCE.getSession(p);
-		System.out.println(session);
-
-		*/
-		
-
-
+		for (DataFlow df : out) {		
+			Node target = copyNode(df.getTarget());
+			newDFD.getNodes().add(target);	
+			for (Data data : df.getData()) {
+				DataFlow ndf = copyDataFlow(df);
+				ndf.getData().add(copyData(data));
+				ndf.setSource(refinedProcess);
+				ndf.setTarget(target);
+				newDFD.getEdges().add(ndf);
+			}
+			
+		}
 	}
-
-
-	
-	
 
 	public void loadResources(EObject self) {
 		ResourceDialog r = new ResourceDialog(Display.getCurrent().getActiveShell(), "Load Data Dictionary",
@@ -167,7 +163,6 @@ public class Services {
 				session.addSemanticResource(uri, new NullProgressMonitor());
 
 		}
-
 
 	}
 }

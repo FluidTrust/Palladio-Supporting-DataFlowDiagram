@@ -13,5 +13,7 @@
   <entries xsi:type="DataDictionary:CollectionDataType" id="_EAnUMBd6EeqmI7JLCCCR2w" name="TwoList" type="_D8btERUwEeqdRtp9sharTg"/>
   <entries xsi:type="DataDictionary:CompositeDataType" id="_Efj6ABd6EeqmI7JLCCCR2w" name="new Composite"/>
   <entries xsi:type="DataDictionary:PrimitiveDataType" id="_n4h74BweEeqkzqskNeypDg" name="new Primitive"/>
-  <entries xsi:type="DataDictionary:CompositeDataType" id="_zDy6cBweEeqkzqskNeypDg" name="new Composite"/>
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_zDy6cBweEeqkzqskNeypDg" name="new Composite">
+    <components id="_toaMoEWbEeqdXuVkQHm7qg" type="_7keq0Bd4EeqmI7JLCCCR2w" name="e1"/>
+  </entries>
 </DataDictionary:DataDictionary>
