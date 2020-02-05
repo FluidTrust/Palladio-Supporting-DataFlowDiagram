@@ -14,7 +14,9 @@ Require-Bundle: org.eclipse.ui,
  org.palladiosimulator.dataflow.util;bundle-version="1.0.0",
  org.eclipse.emf.common.ui;bundle-version="2.18.0",
  org.eclipse.sirius.ui;bundle-version="6.2.3",
- org.eclipse.emf.transaction;bundle-version="1.9.1"
+ org.eclipse.emf.transaction;bundle-version="1.9.1",
+ org.eclipse.gmf.runtime.common.ui;bundle-version="1.8.1",
+ org.eclipse.sirius.diagram.ui;bundle-version="6.2.3"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
