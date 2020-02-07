@@ -53,6 +53,8 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 			super.getPropertyDescriptors(object);
 
 			addRefinedProcessPropertyDescriptor(object);
+			addProvidingProcessesPropertyDescriptor(object);
+			addRequiringProcessesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +76,50 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Providing Processes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProvidingProcessesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataFlowDiagramRefinement_providingProcesses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_providingProcesses_feature", "_UI_DataFlowDiagramRefinement_type"),
+				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requiring Processes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiringProcessesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataFlowDiagramRefinement_requiringProcesses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_requiringProcesses_feature", "_UI_DataFlowDiagramRefinement_type"),
+				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

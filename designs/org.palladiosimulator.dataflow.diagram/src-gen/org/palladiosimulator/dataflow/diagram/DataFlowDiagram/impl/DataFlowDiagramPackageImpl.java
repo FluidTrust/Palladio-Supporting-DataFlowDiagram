@@ -282,6 +282,24 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataFlowDiagramRefinement_ProvidingProcesses() {
+		return (EReference)dataFlowDiagramRefinementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataFlowDiagramRefinement_RequiringProcesses() {
+		return (EReference)dataFlowDiagramRefinementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataFlow() {
 		return dataFlowEClass;
 	}
@@ -438,6 +456,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		dataFlowDiagramRefinementEClass = createEClass(DATA_FLOW_DIAGRAM_REFINEMENT);
 		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS);
 		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM);
+		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES);
+		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__DATA);
@@ -523,6 +543,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEClass(dataFlowDiagramRefinementEClass, DataFlowDiagramRefinement.class, "DataFlowDiagramRefinement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlowDiagramRefinement_RefinedProcess(), this.getProcess(), null, "refinedProcess", null, 1, 1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlowDiagramRefinement_RefiningDiagram(), this.getDataFlowDiagram(), null, "refiningDiagram", null, 1, 1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlowDiagramRefinement_ProvidingProcesses(), this.getNode(), null, "providingProcesses", null, 0, -1, DataFlowDiagramRefinement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlowDiagramRefinement_RequiringProcesses(), this.getNode(), null, "requiringProcesses", null, 0, -1, DataFlowDiagramRefinement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlow_Data(), this.getData(), null, "data", null, 1, -1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -577,6 +599,18 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (getDataFlowDiagramRefinement_ProvidingProcesses(),
+		   source,
+		   new String[] {
+			   "derivation", "self.refinedProcess.providingProcesses"
+		   });
+		addAnnotation
+		  (getDataFlowDiagramRefinement_RequiringProcesses(),
+		   source,
+		   new String[] {
+			   "derivation", "self.refinedProcess.requiringProcesses"
+		   });
 		addAnnotation
 		  (getNode_RequiringProcesses(),
 		   source,

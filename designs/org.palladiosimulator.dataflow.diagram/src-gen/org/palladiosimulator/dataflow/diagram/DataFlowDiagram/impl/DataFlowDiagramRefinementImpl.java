@@ -5,13 +5,16 @@ package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +26,8 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRef
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefinedProcess <em>Refined Process</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefiningDiagram <em>Refining Diagram</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getProvidingProcesses <em>Providing Processes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRequiringProcesses <em>Requiring Processes</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +52,26 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	 * @ordered
 	 */
 	protected DataFlowDiagram refiningDiagram;
+
+	/**
+	 * The cached setting delegate for the '{@link #getProvidingProcesses() <em>Providing Processes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidingProcesses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PROVIDING_PROCESSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getRequiringProcesses() <em>Requiring Processes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiringProcesses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate REQUIRING_PROCESSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,6 +178,26 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<Node> getProvidingProcesses() {
+		return (EList<Node>)PROVIDING_PROCESSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Node> getRequiringProcesses() {
+		return (EList<Node>)REQUIRING_PROCESSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -175,6 +220,10 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 				return basicGetRefinedProcess();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return getRefiningDiagram();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES:
+				return getProvidingProcesses();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES:
+				return getRequiringProcesses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,6 +277,10 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 				return refinedProcess != null;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return refiningDiagram != null;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES:
+				return PROVIDING_PROCESSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES:
+				return REQUIRING_PROCESSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
