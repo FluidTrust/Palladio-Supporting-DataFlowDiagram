@@ -126,6 +126,11 @@ public class Services {
 
 	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD,
 			DataFlowDiagram newDFD) {
+		
+		System.out.println(newDFD.getNodes());
+		
+		
+		/*
 		final String name = p.getName();
 		Map<DataFlow, List<Data>> incomingData = new HashMap<DataFlow, List<Data>>();
 		Map<DataFlow, List<Data>> outgoingData = new HashMap<DataFlow, List<Data>>();
@@ -182,6 +187,7 @@ public class Services {
 				k++;
 			}
 		}
+		*/
 
 	}
 
