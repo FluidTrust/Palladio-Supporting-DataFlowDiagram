@@ -318,24 +318,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlow_Source() {
-		return (EReference)dataFlowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataFlow_Target() {
-		return (EReference)dataFlowEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getData() {
 		return dataEClass;
 	}
@@ -417,6 +399,24 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEdge_Target() {
+		return (EReference)edgeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEdge_Source() {
+		return (EReference)edgeEClass.getEStructuralFeatures().get(1);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataFlowDiagramFactory getDataFlowDiagramFactory() {
 		return (DataFlowDiagramFactory)getEFactoryInstance();
 	}
@@ -461,13 +461,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__DATA);
-		createEReference(dataFlowEClass, DATA_FLOW__SOURCE);
-		createEReference(dataFlowEClass, DATA_FLOW__TARGET);
 
 		dataEClass = createEClass(DATA);
 		createEReference(dataEClass, DATA__TYPE);
 
 		edgeEClass = createEClass(EDGE);
+		createEReference(edgeEClass, EDGE__TARGET);
+		createEReference(edgeEClass, EDGE__SOURCE);
 
 		nodeEClass = createEClass(NODE);
 		createEReference(nodeEClass, NODE__REQUIRING_PROCESSES);
@@ -548,13 +548,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlow_Data(), this.getData(), null, "data", null, 1, -1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlow_Source(), this.getNode(), null, "source", null, 1, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlow_Target(), this.getNode(), null, "target", null, 1, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getData_Type(), theDataDictionaryPackage.getDataType(), null, "type", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEdge_Target(), this.getNode(), null, "target", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdge_Source(), this.getNode(), null, "source", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNode_RequiringProcesses(), this.getNode(), null, "requiringProcesses", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -615,13 +615,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		  (getNode_RequiringProcesses(),
 		   source,
 		   new String[] {
-			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).target->asOrderedSet()"
+			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).target->asOrderedSet()"
 		   });
 		addAnnotation
 		  (getNode_ProvidingProcesses(),
 		   source,
 		   new String[] {
-			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).source->asOrderedSet()"
+			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).source->asOrderedSet()"
 		   });
 	}
 

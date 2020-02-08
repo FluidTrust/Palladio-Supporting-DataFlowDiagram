@@ -36,9 +36,9 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getData <em>Data</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl#getData <em>Data</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,14 +65,14 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
     protected String name = NAME_EDEFAULT;
 
     /**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
-	 * @see #getData()
+	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-				protected EList<Data> data;
+				protected Node target;
 
 				/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
@@ -85,14 +85,14 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 				protected Node source;
 
 				/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
-	 * @see #getTarget()
+	 * @see #getData()
 	 * @generated
 	 * @ordered
 	 */
-				protected Node target;
+				protected EList<Data> data;
 
 				/**
 	 * <!-- begin-user-doc -->
@@ -246,14 +246,14 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				return getName();
-			case DataFlowDiagramPackage.DATA_FLOW__DATA:
-				return getData();
-			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
 			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
+			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -270,15 +270,15 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				setName((String)newValue);
 				return;
-			case DataFlowDiagramPackage.DATA_FLOW__DATA:
-				getData().clear();
-				getData().addAll((Collection<? extends Data>)newValue);
+			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
+				setTarget((Node)newValue);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
 				setSource((Node)newValue);
 				return;
-			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-				setTarget((Node)newValue);
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				getData().clear();
+				getData().addAll((Collection<? extends Data>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,14 +295,14 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DataFlowDiagramPackage.DATA_FLOW__DATA:
-				getData().clear();
+			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
+				setTarget((Node)null);
 				return;
 			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
 				setSource((Node)null);
 				return;
-			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
-				setTarget((Node)null);
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				getData().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -318,12 +318,12 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DataFlowDiagramPackage.DATA_FLOW__DATA:
-				return data != null && !data.isEmpty();
-			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
-				return source != null;
 			case DataFlowDiagramPackage.DATA_FLOW__TARGET:
 				return target != null;
+			case DataFlowDiagramPackage.DATA_FLOW__SOURCE:
+				return source != null;
+			case DataFlowDiagramPackage.DATA_FLOW__DATA:
+				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -353,6 +353,8 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		}
 		if (baseClass == Edge.class) {
 			switch (derivedFeatureID) {
+				case DataFlowDiagramPackage.DATA_FLOW__TARGET: return DataFlowDiagramPackage.EDGE__TARGET;
+				case DataFlowDiagramPackage.DATA_FLOW__SOURCE: return DataFlowDiagramPackage.EDGE__SOURCE;
 				default: return -1;
 			}
 		}
@@ -384,6 +386,8 @@ public class DataFlowImpl extends IdentifierImpl implements DataFlow {
 		}
 		if (baseClass == Edge.class) {
 			switch (baseFeatureID) {
+				case DataFlowDiagramPackage.EDGE__TARGET: return DataFlowDiagramPackage.DATA_FLOW__TARGET;
+				case DataFlowDiagramPackage.EDGE__SOURCE: return DataFlowDiagramPackage.DATA_FLOW__SOURCE;
 				default: return -1;
 			}
 		}

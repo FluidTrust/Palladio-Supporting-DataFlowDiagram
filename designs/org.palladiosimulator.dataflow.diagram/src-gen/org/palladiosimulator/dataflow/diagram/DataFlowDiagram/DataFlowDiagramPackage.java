@@ -510,13 +510,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 				   int DATA_FLOW__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 				/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int DATA_FLOW__DATA = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+				int DATA_FLOW__TARGET = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 				/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -528,13 +528,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int DATA_FLOW__SOURCE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 				/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 				 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-				int DATA_FLOW__TARGET = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+				int DATA_FLOW__DATA = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 				/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
@@ -610,13 +610,31 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int EDGE__NAME = COMPONENT__NAME;
 
 				/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__TARGET = COMPONENT_FEATURE_COUNT + 0;
+
+				/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__SOURCE = COMPONENT_FEATURE_COUNT + 1;
+
+				/**
 	 * The number of structural features of the '<em>Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+	int EDGE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -805,28 +823,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlow_Data();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow#getSource()
-	 * @see #getDataFlow()
-	 * @generated
-	 */
-	EReference getDataFlow_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow#getTarget()
-	 * @see #getDataFlow()
-	 * @generated
-	 */
-	EReference getDataFlow_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -919,6 +915,28 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEdge();
+
+				/**
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge#getTarget()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EReference getEdge_Target();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge#getSource()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EReference getEdge_Source();
 
 				/**
 	 * Returns the factory that creates the instances of the model.
@@ -1063,20 +1081,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference DATA_FLOW__DATA = eINSTANCE.getDataFlow_Data();
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_FLOW__SOURCE = eINSTANCE.getDataFlow_Source();
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_FLOW__TARGET = eINSTANCE.getDataFlow_Target();
-		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataImpl <em>Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1149,6 +1153,20 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDGE = eINSTANCE.getEdge();
+								/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE__TARGET = eINSTANCE.getEdge_Target();
+								/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE__SOURCE = eINSTANCE.getEdge_Source();
 
 	}
 

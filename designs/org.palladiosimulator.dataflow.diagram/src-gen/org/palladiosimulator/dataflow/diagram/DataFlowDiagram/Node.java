@@ -30,7 +30,7 @@ public interface Node extends Component {
 	 * @return the value of the '<em>Requiring Processes</em>' reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_RequiringProcesses()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges-&gt;selectByKind(DataFlow)-&gt;select(df | df.source = self).target-&gt;asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges-&gt;select(e | e.source = self).target-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Node> getRequiringProcesses();
@@ -43,7 +43,7 @@ public interface Node extends Component {
 	 * @return the value of the '<em>Providing Processes</em>' reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getNode_ProvidingProcesses()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges-&gt;selectByKind(DataFlow)-&gt;select(df | df.source = self).source-&gt;asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges-&gt;select(e | e.source = self).source-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Node> getProvidingProcesses();

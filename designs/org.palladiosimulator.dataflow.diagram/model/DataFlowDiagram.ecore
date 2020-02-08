@@ -38,26 +38,27 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Edge">
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" upperBound="-1"
         eType="#//Data" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="#//Node"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Node"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiringProcesses" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).target->asOrderedSet()"/>
+        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).target->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providingProcesses" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->selectByKind(DataFlow)->select(df | df.source = self).source->asOrderedSet()"/>
+        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).source->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

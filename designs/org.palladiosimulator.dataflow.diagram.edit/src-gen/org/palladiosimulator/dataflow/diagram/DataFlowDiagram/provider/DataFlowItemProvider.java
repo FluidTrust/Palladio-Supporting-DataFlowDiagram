@@ -50,8 +50,8 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -67,9 +67,9 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlow_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_source_feature", "_UI_DataFlow_type"),
-				 DataFlowDiagramPackage.Literals.DATA_FLOW__SOURCE,
+				 getString("_UI_Edge_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edge_source_feature", "_UI_Edge_type"),
+				 DataFlowDiagramPackage.Literals.EDGE__SOURCE,
 				 true,
 				 false,
 				 true,
@@ -89,9 +89,9 @@ public class DataFlowItemProvider extends IdentifierItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlow_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlow_target_feature", "_UI_DataFlow_type"),
-				 DataFlowDiagramPackage.Literals.DATA_FLOW__TARGET,
+				 getString("_UI_Edge_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edge_target_feature", "_UI_Edge_type"),
+				 DataFlowDiagramPackage.Literals.EDGE__TARGET,
 				 true,
 				 false,
 				 true,
