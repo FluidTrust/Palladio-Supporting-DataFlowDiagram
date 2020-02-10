@@ -266,22 +266,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int NODE__NAME = COMPONENT__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__REQUIRING_PROCESSES = COMPONENT_FEATURE_COUNT + 0;
+	int NODE__REQUIRING_NODES = COMPONENT_FEATURE_COUNT + 0;
 
 				/**
-	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__PROVIDING_PROCESSES = COMPONENT_FEATURE_COUNT + 1;
+	int NODE__PROVIDING_NODES = COMPONENT_FEATURE_COUNT + 1;
 
 				/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -311,22 +311,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int EXTERNAL_ACTOR__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACTOR__REQUIRING_PROCESSES = NODE__REQUIRING_PROCESSES;
+	int EXTERNAL_ACTOR__REQUIRING_NODES = NODE__REQUIRING_NODES;
 
 				/**
-	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACTOR__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
+	int EXTERNAL_ACTOR__PROVIDING_NODES = NODE__PROVIDING_NODES;
 
 				/**
 	 * The number of structural features of the '<em>External Actor</em>' class.
@@ -356,22 +356,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int STORE__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORE__REQUIRING_PROCESSES = NODE__REQUIRING_PROCESSES;
+	int STORE__REQUIRING_NODES = NODE__REQUIRING_NODES;
 
 				/**
-	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORE__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
+	int STORE__PROVIDING_NODES = NODE__PROVIDING_NODES;
 
 				/**
 	 * The number of structural features of the '<em>Store</em>' class.
@@ -401,22 +401,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 				int PROCESS__NAME = NODE__NAME;
 
 				/**
-	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__REQUIRING_PROCESSES = NODE__REQUIRING_PROCESSES;
+	int PROCESS__REQUIRING_NODES = NODE__REQUIRING_NODES;
 
 				/**
-	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__PROVIDING_PROCESSES = NODE__PROVIDING_PROCESSES;
+	int PROCESS__PROVIDING_NODES = NODE__PROVIDING_NODES;
 
 				/**
 	 * The number of structural features of the '<em>Process</em>' class.
@@ -465,22 +465,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 				/**
-	 * The feature id for the '<em><b>Providing Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Providing Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_NODES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 				/**
-	 * The feature id for the '<em><b>Requiring Processes</b></em>' reference list.
+	 * The feature id for the '<em><b>Requiring Nodes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+	int DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_NODES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 				/**
 	 * The number of structural features of the '<em>Refinement</em>' class.
@@ -780,26 +780,26 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlowDiagramRefinement_RefiningDiagram();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingProcesses <em>Providing Processes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes <em>Providing Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Providing Processes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingProcesses()
+	 * @return the meta object for the reference list '<em>Providing Nodes</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes()
 	 * @see #getDataFlowDiagramRefinement()
 	 * @generated
 	 */
-	EReference getDataFlowDiagramRefinement_ProvidingProcesses();
+	EReference getDataFlowDiagramRefinement_ProvidingNodes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringProcesses <em>Requiring Processes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes <em>Requiring Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Requiring Processes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringProcesses()
+	 * @return the meta object for the reference list '<em>Requiring Nodes</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes()
 	 * @see #getDataFlowDiagramRefinement()
 	 * @generated
 	 */
-	EReference getDataFlowDiagramRefinement_RequiringProcesses();
+	EReference getDataFlowDiagramRefinement_RequiringNodes();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow <em>Data Flow</em>}'.
@@ -854,26 +854,26 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EClass getNode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses <em>Requiring Processes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringNodes <em>Requiring Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Requiring Processes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses()
+	 * @return the meta object for the reference list '<em>Requiring Nodes</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringNodes()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EReference getNode_RequiringProcesses();
+	EReference getNode_RequiringNodes();
 
-				/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses <em>Providing Processes</em>}'.
+	/**
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingNodes <em>Providing Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Providing Processes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses()
+	 * @return the meta object for the reference list '<em>Providing Nodes</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingNodes()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EReference getNode_ProvidingProcesses();
+	EReference getNode_ProvidingNodes();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement <em>Named Element</em>}'.
@@ -1051,19 +1051,19 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = eINSTANCE.getDataFlowDiagramRefinement_RefiningDiagram();
 		/**
-		 * The meta object literal for the '<em><b>Providing Processes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Providing Nodes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES = eINSTANCE.getDataFlowDiagramRefinement_ProvidingProcesses();
+		EReference DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_NODES = eINSTANCE.getDataFlowDiagramRefinement_ProvidingNodes();
 		/**
-		 * The meta object literal for the '<em><b>Requiring Processes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Requiring Nodes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES = eINSTANCE.getDataFlowDiagramRefinement_RequiringProcesses();
+		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_NODES = eINSTANCE.getDataFlowDiagramRefinement_RequiringNodes();
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl <em>Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1106,19 +1106,19 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EClass NODE = eINSTANCE.getNode();
 								/**
-		 * The meta object literal for the '<em><b>Requiring Processes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Requiring Nodes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NODE__REQUIRING_PROCESSES = eINSTANCE.getNode_RequiringProcesses();
+		EReference NODE__REQUIRING_NODES = eINSTANCE.getNode_RequiringNodes();
 								/**
-		 * The meta object literal for the '<em><b>Providing Processes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Providing Nodes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NODE__PROVIDING_PROCESSES = eINSTANCE.getNode_ProvidingProcesses();
+		EReference NODE__PROVIDING_NODES = eINSTANCE.getNode_ProvidingNodes();
 								/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->

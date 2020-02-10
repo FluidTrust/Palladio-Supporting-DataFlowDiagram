@@ -22,16 +22,16 @@
         eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refiningDiagram" lowerBound="1"
         eType="#//DataFlowDiagram" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providingProcesses" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providingNodes" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.refinedProcess.providingProcesses"/>
+        <details key="derivation" value="self.refinedProcess.providingNodes"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiringProcesses" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiringNodes" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.refinedProcess.requiringProcesses"/>
+        <details key="derivation" value="self.refinedProcess.requiringNodes"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -49,16 +49,16 @@
         eType="#//Node"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiringProcesses" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiringNodes" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).target->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providingProcesses" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providingNodes" upperBound="-1"
         eType="#//Node" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).source->asOrderedSet()"/>
+        <details key="derivation" value="self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.target = self).source->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

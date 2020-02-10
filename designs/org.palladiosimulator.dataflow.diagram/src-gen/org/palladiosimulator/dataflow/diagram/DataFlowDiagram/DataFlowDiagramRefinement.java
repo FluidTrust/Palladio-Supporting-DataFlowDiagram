@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedProcess <em>Refined Process</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefiningDiagram <em>Refining Diagram</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingProcesses <em>Providing Processes</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringProcesses <em>Requiring Processes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes <em>Providing Nodes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes <em>Requiring Nodes</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement()
@@ -71,29 +71,29 @@ public interface DataFlowDiagramRefinement extends EObject, Identifier {
 	void setRefiningDiagram(DataFlowDiagram value);
 
 	/**
-	 * Returns the value of the '<em><b>Providing Processes</b></em>' reference list.
+	 * Returns the value of the '<em><b>Providing Nodes</b></em>' reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Providing Processes</em>' reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement_ProvidingProcesses()
+	 * @return the value of the '<em>Providing Nodes</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement_ProvidingNodes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refinedProcess.providingProcesses'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refinedProcess.providingNodes'"
 	 * @generated
 	 */
-	EList<Node> getProvidingProcesses();
+	EList<Node> getProvidingNodes();
 
 	/**
-	 * Returns the value of the '<em><b>Requiring Processes</b></em>' reference list.
+	 * Returns the value of the '<em><b>Requiring Nodes</b></em>' reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requiring Processes</em>' reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement_RequiringProcesses()
+	 * @return the value of the '<em>Requiring Nodes</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement_RequiringNodes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refinedProcess.requiringProcesses'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refinedProcess.requiringNodes'"
 	 * @generated
 	 */
-	EList<Node> getRequiringProcesses();
+	EList<Node> getRequiringNodes();
 
 } // DataFlowDiagramRefinement

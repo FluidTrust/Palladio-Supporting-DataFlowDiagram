@@ -11,8 +11,8 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses() <em>Requiring Processes</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses() <em>Providing Processes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringNodes() <em>Requiring Nodes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingNodes() <em>Providing Nodes</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -41,26 +41,26 @@ public abstract class NodeTest extends ComponentTest {
 	}
 
 	/**
-	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses() <em>Requiring Processes</em>}' feature getter.
+	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringNodes() <em>Requiring Nodes</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringProcesses()
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getRequiringNodes()
 	 * @generated
 	 */
-	public void testGetRequiringProcesses() {
+	public void testGetRequiringNodes() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses() <em>Providing Processes</em>}' feature getter.
+	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingNodes() <em>Providing Nodes</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingProcesses()
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node#getProvidingNodes()
 	 * @generated
 	 */
-	public void testGetProvidingProcesses() {
+	public void testGetProvidingNodes() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

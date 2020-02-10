@@ -282,7 +282,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlowDiagramRefinement_ProvidingProcesses() {
+	public EReference getDataFlowDiagramRefinement_ProvidingNodes() {
 		return (EReference)dataFlowDiagramRefinementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -291,7 +291,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlowDiagramRefinement_RequiringProcesses() {
+	public EReference getDataFlowDiagramRefinement_RequiringNodes() {
 		return (EReference)dataFlowDiagramRefinementEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -345,16 +345,16 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNode_RequiringProcesses() {
+	public EReference getNode_RequiringNodes() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNode_ProvidingProcesses() {
+	public EReference getNode_ProvidingNodes() {
 		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -456,8 +456,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		dataFlowDiagramRefinementEClass = createEClass(DATA_FLOW_DIAGRAM_REFINEMENT);
 		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS);
 		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM);
-		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES);
-		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES);
+		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_NODES);
+		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_NODES);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__DATA);
@@ -470,8 +470,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		createEReference(edgeEClass, EDGE__SOURCE);
 
 		nodeEClass = createEClass(NODE);
-		createEReference(nodeEClass, NODE__REQUIRING_PROCESSES);
-		createEReference(nodeEClass, NODE__PROVIDING_PROCESSES);
+		createEReference(nodeEClass, NODE__REQUIRING_NODES);
+		createEReference(nodeEClass, NODE__PROVIDING_NODES);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -543,8 +543,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEClass(dataFlowDiagramRefinementEClass, DataFlowDiagramRefinement.class, "DataFlowDiagramRefinement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlowDiagramRefinement_RefinedProcess(), this.getProcess(), null, "refinedProcess", null, 1, 1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlowDiagramRefinement_RefiningDiagram(), this.getDataFlowDiagram(), null, "refiningDiagram", null, 1, 1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlowDiagramRefinement_ProvidingProcesses(), this.getNode(), null, "providingProcesses", null, 0, -1, DataFlowDiagramRefinement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlowDiagramRefinement_RequiringProcesses(), this.getNode(), null, "requiringProcesses", null, 0, -1, DataFlowDiagramRefinement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlowDiagramRefinement_ProvidingNodes(), this.getNode(), null, "providingNodes", null, 0, -1, DataFlowDiagramRefinement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlowDiagramRefinement_RequiringNodes(), this.getNode(), null, "requiringNodes", null, 0, -1, DataFlowDiagramRefinement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlow_Data(), this.getData(), null, "data", null, 1, -1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -557,8 +557,8 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEReference(getEdge_Source(), this.getNode(), null, "source", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNode_RequiringProcesses(), this.getNode(), null, "requiringProcesses", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getNode_ProvidingProcesses(), this.getNode(), null, "providingProcesses", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_RequiringNodes(), this.getNode(), null, "requiringNodes", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_ProvidingNodes(), this.getNode(), null, "providingNodes", null, 0, -1, Node.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -600,28 +600,28 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (getDataFlowDiagramRefinement_ProvidingProcesses(),
+		  (getDataFlowDiagramRefinement_ProvidingNodes(),
 		   source,
 		   new String[] {
-			   "derivation", "self.refinedProcess.providingProcesses"
+			   "derivation", "self.refinedProcess.providingNodes"
 		   });
 		addAnnotation
-		  (getDataFlowDiagramRefinement_RequiringProcesses(),
+		  (getDataFlowDiagramRefinement_RequiringNodes(),
 		   source,
 		   new String[] {
-			   "derivation", "self.refinedProcess.requiringProcesses"
+			   "derivation", "self.refinedProcess.requiringNodes"
 		   });
 		addAnnotation
-		  (getNode_RequiringProcesses(),
+		  (getNode_RequiringNodes(),
 		   source,
 		   new String[] {
 			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).target->asOrderedSet()"
 		   });
 		addAnnotation
-		  (getNode_ProvidingProcesses(),
+		  (getNode_ProvidingNodes(),
 		   source,
 		   new String[] {
-			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.source = self).source->asOrderedSet()"
+			   "derivation", "self.oclAsType(ecore::EObject).eContainer().oclAsType(DataFlowDiagram).edges->select(e | e.target = self).source->asOrderedSet()"
 		   });
 	}
 

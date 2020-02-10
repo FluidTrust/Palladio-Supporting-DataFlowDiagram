@@ -43,26 +43,26 @@ public class NodeItemProvider extends ComponentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRequiringProcessesPropertyDescriptor(object);
-			addProvidingProcessesPropertyDescriptor(object);
+			addRequiringNodesPropertyDescriptor(object);
+			addProvidingNodesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Requiring Processes feature.
+	 * This adds a property descriptor for the Requiring Nodes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiringProcessesPropertyDescriptor(Object object) {
+	protected void addRequiringNodesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Node_requiringProcesses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Node_requiringProcesses_feature", "_UI_Node_type"),
-				 DataFlowDiagramPackage.Literals.NODE__REQUIRING_PROCESSES,
+				 getString("_UI_Node_requiringNodes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_requiringNodes_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__REQUIRING_NODES,
 				 true,
 				 false,
 				 true,
@@ -72,19 +72,19 @@ public class NodeItemProvider extends ComponentItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Providing Processes feature.
+	 * This adds a property descriptor for the Providing Nodes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidingProcessesPropertyDescriptor(Object object) {
+	protected void addProvidingNodesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Node_providingProcesses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Node_providingProcesses_feature", "_UI_Node_type"),
-				 DataFlowDiagramPackage.Literals.NODE__PROVIDING_PROCESSES,
+				 getString("_UI_Node_providingNodes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_providingNodes_feature", "_UI_Node_type"),
+				 DataFlowDiagramPackage.Literals.NODE__PROVIDING_NODES,
 				 true,
 				 false,
 				 true,

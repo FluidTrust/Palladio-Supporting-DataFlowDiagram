@@ -53,8 +53,8 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 			super.getPropertyDescriptors(object);
 
 			addRefinedProcessPropertyDescriptor(object);
-			addProvidingProcessesPropertyDescriptor(object);
-			addRequiringProcessesPropertyDescriptor(object);
+			addProvidingNodesPropertyDescriptor(object);
+			addRequiringNodesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,19 +82,19 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 	}
 
 	/**
-	 * This adds a property descriptor for the Providing Processes feature.
+	 * This adds a property descriptor for the Providing Nodes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidingProcessesPropertyDescriptor(Object object) {
+	protected void addProvidingNodesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlowDiagramRefinement_providingProcesses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_providingProcesses_feature", "_UI_DataFlowDiagramRefinement_type"),
-				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_PROCESSES,
+				 getString("_UI_DataFlowDiagramRefinement_providingNodes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_providingNodes_feature", "_UI_DataFlowDiagramRefinement_type"),
+				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_NODES,
 				 false,
 				 false,
 				 false,
@@ -104,19 +104,19 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 	}
 
 	/**
-	 * This adds a property descriptor for the Requiring Processes feature.
+	 * This adds a property descriptor for the Requiring Nodes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiringProcessesPropertyDescriptor(Object object) {
+	protected void addRequiringNodesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataFlowDiagramRefinement_requiringProcesses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_requiringProcesses_feature", "_UI_DataFlowDiagramRefinement_type"),
-				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_PROCESSES,
+				 getString("_UI_DataFlowDiagramRefinement_requiringNodes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_requiringNodes_feature", "_UI_DataFlowDiagramRefinement_type"),
+				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_NODES,
 				 false,
 				 false,
 				 false,

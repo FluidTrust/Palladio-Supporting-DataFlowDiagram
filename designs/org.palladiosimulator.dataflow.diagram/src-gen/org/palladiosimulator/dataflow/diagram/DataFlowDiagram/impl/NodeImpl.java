@@ -17,31 +17,31 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NodeImpl#getRequiringProcesses <em>Requiring Processes</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NodeImpl#getProvidingProcesses <em>Providing Processes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NodeImpl#getRequiringNodes <em>Requiring Nodes</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.NodeImpl#getProvidingNodes <em>Providing Nodes</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class NodeImpl extends ComponentImpl implements Node {
 	/**
-	 * The cached setting delegate for the '{@link #getRequiringProcesses() <em>Requiring Processes</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getRequiringNodes() <em>Requiring Nodes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequiringProcesses()
+	 * @see #getRequiringNodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate REQUIRING_PROCESSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.NODE__REQUIRING_PROCESSES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate REQUIRING_NODES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.NODE__REQUIRING_NODES).getSettingDelegate();
 	/**
-	 * The cached setting delegate for the '{@link #getProvidingProcesses() <em>Providing Processes</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getProvidingNodes() <em>Providing Nodes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidingProcesses()
+	 * @see #getProvidingNodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate PROVIDING_PROCESSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.NODE__PROVIDING_PROCESSES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate PROVIDING_NODES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DataFlowDiagramPackage.Literals.NODE__PROVIDING_NODES).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,8 +67,8 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Node> getRequiringProcesses() {
-		return (EList<Node>)REQUIRING_PROCESSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<Node> getRequiringNodes() {
+		return (EList<Node>)REQUIRING_NODES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Node> getProvidingProcesses() {
-		return (EList<Node>)PROVIDING_PROCESSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<Node> getProvidingNodes() {
+		return (EList<Node>)PROVIDING_NODES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -89,10 +89,10 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NODE__REQUIRING_PROCESSES:
-				return getRequiringProcesses();
-			case DataFlowDiagramPackage.NODE__PROVIDING_PROCESSES:
-				return getProvidingProcesses();
+			case DataFlowDiagramPackage.NODE__REQUIRING_NODES:
+				return getRequiringNodes();
+			case DataFlowDiagramPackage.NODE__PROVIDING_NODES:
+				return getProvidingNodes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,10 +105,10 @@ public abstract class NodeImpl extends ComponentImpl implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataFlowDiagramPackage.NODE__REQUIRING_PROCESSES:
-				return REQUIRING_PROCESSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case DataFlowDiagramPackage.NODE__PROVIDING_PROCESSES:
-				return PROVIDING_PROCESSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case DataFlowDiagramPackage.NODE__REQUIRING_NODES:
+				return REQUIRING_NODES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case DataFlowDiagramPackage.NODE__PROVIDING_NODES:
+				return PROVIDING_NODES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
