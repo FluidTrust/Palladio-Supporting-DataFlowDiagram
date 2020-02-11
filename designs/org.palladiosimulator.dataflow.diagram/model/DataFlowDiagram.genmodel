@@ -23,8 +23,6 @@
     <genClasses ecoreClass="DataFlowDiagram.ecore#//DataFlowDiagramRefinement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/refinedProcess"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/refiningDiagram"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/providingNodes"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlowDiagramRefinement/requiringNodes"/>
     </genClasses>
     <genClasses ecoreClass="DataFlowDiagram.ecore#//DataFlow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DataFlowDiagram.ecore#//DataFlow/data"/>

@@ -13,13 +13,6 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRef
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Refinement</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes() <em>Providing Nodes</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes() <em>Requiring Nodes</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class DataFlowDiagramRefinementTest extends TestCase {
@@ -91,32 +84,6 @@ public class DataFlowDiagramRefinementTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes() <em>Providing Nodes</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes()
-	 * @generated
-	 */
-	public void testGetProvidingNodes() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes() <em>Requiring Nodes</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes()
-	 * @generated
-	 */
-	public void testGetRequiringNodes() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //DataFlowDiagramRefinementTest

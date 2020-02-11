@@ -465,31 +465,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 				/**
-	 * The feature id for the '<em><b>Providing Nodes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_NODES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
-
-				/**
-	 * The feature id for the '<em><b>Requiring Nodes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_NODES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
-
-				/**
 	 * The number of structural features of the '<em>Refinement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+	int DATA_FLOW_DIAGRAM_REFINEMENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -780,28 +762,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlowDiagramRefinement_RefiningDiagram();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes <em>Providing Nodes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Providing Nodes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getProvidingNodes()
-	 * @see #getDataFlowDiagramRefinement()
-	 * @generated
-	 */
-	EReference getDataFlowDiagramRefinement_ProvidingNodes();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes <em>Requiring Nodes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Requiring Nodes</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRequiringNodes()
-	 * @see #getDataFlowDiagramRefinement()
-	 * @generated
-	 */
-	EReference getDataFlowDiagramRefinement_RequiringNodes();
-
-	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1050,20 +1010,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = eINSTANCE.getDataFlowDiagramRefinement_RefiningDiagram();
-		/**
-		 * The meta object literal for the '<em><b>Providing Nodes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_FLOW_DIAGRAM_REFINEMENT__PROVIDING_NODES = eINSTANCE.getDataFlowDiagramRefinement_ProvidingNodes();
-		/**
-		 * The meta object literal for the '<em><b>Requiring Nodes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REQUIRING_NODES = eINSTANCE.getDataFlowDiagramRefinement_RequiringNodes();
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl <em>Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->

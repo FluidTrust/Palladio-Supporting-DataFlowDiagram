@@ -56,8 +56,8 @@ public class DFDUtil {
 
 		}
 
-		System.out.println("TYPES");
-		System.out.println(types); // TODO map ?
+		//System.out.println("TYPES");
+		//System.out.println(types); // TODO map ?
 	}
 
 	/**

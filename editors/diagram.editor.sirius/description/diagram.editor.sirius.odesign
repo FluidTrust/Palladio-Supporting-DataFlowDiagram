@@ -31,19 +31,19 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ReadOnlyProcessNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').providingNodes->union(self.eInverse('refiningDiagram').requiringNodes)" domainClass="DataFlowDiagram::Process">
+        <nodeMappings name="ReadOnlyProcessNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" domainClass="DataFlowDiagram::Process">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ReadOnlyExternalActorNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').providingNodes->union(self.eInverse('refiningDiagram').requiringNodes)" domainClass="DataFlowDiagram::ExternalActor">
+        <nodeMappings name="ReadOnlyExternalActorNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" domainClass="DataFlowDiagram::ExternalActor">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ReadOnlyStoreNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').providingNodes->union(self.eInverse('refiningDiagram').requiringNodes)" domainClass="DataFlowDiagram::Store">
+        <nodeMappings name="ReadOnlyStoreNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" domainClass="DataFlowDiagram::Store">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
