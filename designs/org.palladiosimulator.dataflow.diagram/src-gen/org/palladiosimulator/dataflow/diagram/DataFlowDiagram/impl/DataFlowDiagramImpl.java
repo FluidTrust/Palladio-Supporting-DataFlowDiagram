@@ -27,6 +27,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getRefinedBy <em>Refined By</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getEdges <em>Edges</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramImpl#getRefiningEdges <em>Refining Edges</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +60,15 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	 * @ordered
 	 */
 	protected EList<Edge> edges;
+	/**
+	 * The cached value of the '{@link #getRefiningEdges() <em>Refining Edges</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefiningEdges()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Edge> refiningEdges;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,6 +130,18 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Edge> getRefiningEdges() {
+		if (refiningEdges == null) {
+			refiningEdges = new EObjectContainmentEList<Edge>(Edge.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES);
+		}
+		return refiningEdges;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -129,6 +151,8 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EDGES:
 				return ((InternalEList<?>)getEdges()).basicRemove(otherEnd, msgs);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES:
+				return ((InternalEList<?>)getRefiningEdges()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -147,6 +171,8 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 				return getNodes();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EDGES:
 				return getEdges();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES:
+				return getRefiningEdges();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,6 +198,10 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 				getEdges().clear();
 				getEdges().addAll((Collection<? extends Edge>)newValue);
 				return;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES:
+				getRefiningEdges().clear();
+				getRefiningEdges().addAll((Collection<? extends Edge>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -193,6 +223,9 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EDGES:
 				getEdges().clear();
 				return;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES:
+				getRefiningEdges().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -211,6 +244,8 @@ public class DataFlowDiagramImpl extends IdentifierImpl implements DataFlowDiagr
 				return nodes != null && !nodes.isEmpty();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EDGES:
 				return edges != null && !edges.isEmpty();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES:
+				return refiningEdges != null && !refiningEdges.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
