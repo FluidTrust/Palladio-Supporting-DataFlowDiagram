@@ -146,8 +146,9 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:Let" variableName="df" valueExpression="aql:self.target">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineDF(df)"/>
+              <firstModelOperations xsi:type="tool_1:Let" variableName="dfd" valueExpression="aql:self.eContainer().target">
+                <subModelOperations xsi:type="tool_1:Let" variableName="df" valueExpression="aql:self.target"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineDF(df, dfd)"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

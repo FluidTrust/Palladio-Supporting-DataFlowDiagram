@@ -105,22 +105,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM__EDGES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Refining Edges</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FLOW_DIAGRAM__REFINING_EDGES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Data Flow Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+	int DATA_FLOW_DIAGRAM_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EntityImpl <em>Entity</em>}' class.
@@ -699,17 +690,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlowDiagram_Edges();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefiningEdges <em>Refining Edges</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Refining Edges</em>'.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefiningEdges()
-	 * @see #getDataFlowDiagram()
-	 * @generated
-	 */
-	EReference getDataFlowDiagram_RefiningEdges();
-
-	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -971,13 +951,6 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_FLOW_DIAGRAM__EDGES = eINSTANCE.getDataFlowDiagram_Edges();
-		/**
-		 * The meta object literal for the '<em><b>Refining Edges</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_FLOW_DIAGRAM__REFINING_EDGES = eINSTANCE.getDataFlowDiagram_RefiningEdges();
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->

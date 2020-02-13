@@ -219,15 +219,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataFlowDiagram_RefiningEdges() {
-		return (EReference)dataFlowDiagramEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getComponent() {
 		return componentEClass;
 	}
@@ -435,7 +426,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__REFINED_BY);
 		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__NODES);
 		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__EDGES);
-		createEReference(dataFlowDiagramEClass, DATA_FLOW_DIAGRAM__REFINING_EDGES);
 
 		componentEClass = createEClass(COMPONENT);
 
@@ -521,7 +511,6 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEReference(getDataFlowDiagram_RefinedBy(), this.getDataFlowDiagramRefinement(), null, "refinedBy", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlowDiagram_Nodes(), this.getNode(), null, "nodes", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlowDiagram_Edges(), this.getEdge(), null, "edges", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlowDiagram_RefiningEdges(), this.getEdge(), null, "refiningEdges", null, 0, -1, DataFlowDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

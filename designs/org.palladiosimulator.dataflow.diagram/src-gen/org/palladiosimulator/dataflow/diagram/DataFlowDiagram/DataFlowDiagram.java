@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefinedBy <em>Refined By</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getEdges <em>Edges</em>}</li>
- *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram#getRefiningEdges <em>Refining Edges</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram()
@@ -62,16 +61,4 @@ public interface DataFlowDiagram extends EObject, Identifier {
 	 * @generated
 	 */
 	EList<Edge> getEdges();
-
-	/**
-	 * Returns the value of the '<em><b>Refining Edges</b></em>' containment reference list.
-	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Refining Edges</em>' containment reference list.
-	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagram_RefiningEdges()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Edge> getRefiningEdges();
 } // DataFlowDiagram

@@ -88,7 +88,6 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINED_BY);
 			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__NODES);
 			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__EDGES);
-			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINING_EDGES);
 		}
 		return childrenFeatures;
 	}
@@ -156,7 +155,6 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINED_BY:
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__NODES:
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__EDGES:
-			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM__REFINING_EDGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -198,34 +196,6 @@ public class DataFlowDiagramItemProvider extends IdentifierItemProvider {
 			(createChildParameter
 				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__EDGES,
 				 DataFlowDiagramFactory.eINSTANCE.createDataFlow()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINING_EDGES,
-				 DataFlowDiagramFactory.eINSTANCE.createDataFlow()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__EDGES ||
-			childFeature == DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM__REFINING_EDGES;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

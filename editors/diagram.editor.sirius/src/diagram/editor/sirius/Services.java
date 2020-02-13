@@ -17,7 +17,10 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util.DataFlowDiagramSwitch;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -56,16 +59,49 @@ public class Services {
 
 	}
 
-	public void refineDF(EObject self, DataFlow df) {
-		System.out.println(df);
+	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
 		Session session = SessionManager.INSTANCE.getSession(df);
-		DFDUtil.refineDT(session, df);
+
+		if (df.getData().isEmpty()) { // TODO check centrally?
+			return;
+		}
+		if (df.getData().size() > 1) {
+			// one df per data
+			for (Data d : df.getData()) {
+				dfd.getEdges().add(makeSingleDataFlow(d, df));
+
+			}
+			dfd.getEdges().remove(df);
+
+		} else {
+			// one df per type
+			Data origin = df.getData().get(0);
+			DataType type = origin.getType();
+			String name = origin.getName() + ".";
+			int suffix = 1;
+			List<DataFlow> dfs = new ArrayList<DataFlow>();
+			if (type instanceof CompositeDataType) {
+				List<Entry> entries = DFDUtil.refineDT(type, session);
+				for (Entry e : entries) {
+					Data data = makeData(e);
+					DataFlow ndf = makeSingleDataFlow(data, df);
+					ndf.setName(name + suffix++);
+					dfs.add(ndf);
+
+				}
+				dfd.getEdges().remove(df);
+				dfd.getEdges().addAll(dfs);
+			}
+
+		}
+
 	}
 
-	private List<Data> getData(DataFlow df) {
-		Session session = SessionManager.INSTANCE.getSession(df);
-		DFDUtil.refineDT(session, df);
-		return new ArrayList<Data>();
+	private Data makeData(Entry e) {
+		Data d = DataFlowDiagramFactory.eINSTANCE.createData();
+		d.setName(e.getName());
+		d.setType(e.getType());
+		return d;
 	}
 
 	public void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD) {
@@ -85,8 +121,6 @@ public class Services {
 
 			}
 		}
-		Session session = SessionManager.INSTANCE.getSession(oldDFD);
-		DFDUtil.refineDT(session, null); // TODO
 		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD);
 	}
 
@@ -98,7 +132,6 @@ public class Services {
 			Process p = DataFlowDiagramFactory.eINSTANCE.createProcess();
 			p.setName(name);
 			copy = p;
-			// TODO make unmodifiable
 		} else if (n instanceof ExternalActor) {
 			ExternalActor ea = DataFlowDiagramFactory.eINSTANCE.createExternalActor();
 			ea.setName(name);
@@ -112,13 +145,26 @@ public class Services {
 		return copy;
 	}
 
+	private DataFlow makeSingleDataFlow(Data data, DataFlow df) {
+		DataFlow ndf = copyDataFlow(df);
+		ndf.setName(data.getName());
+		ndf.getData().clear();
+		ndf.getData().add(copyData(data));
+		return ndf;
+	}
+
+	private Data copyData(Data d) {
+		Data nd = DataFlowDiagramFactory.eINSTANCE.createData();
+		nd.setName(d.getName());
+		nd.setType(d.getType());
+		return nd;
+	}
+
 	private DataFlow copyDataFlow(DataFlow df) {
 		DataFlow ndf = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
 		ndf.setName(df.getName());
 		for (Data d : df.getData()) {
-			Data nd = DataFlowDiagramFactory.eINSTANCE.createData();
-			nd.setName(d.getName());
-			nd.setType(d.getType());
+			Data nd = copyData(d);
 			ndf.getData().add(nd);
 		}
 		ndf.setSource(df.getSource());
@@ -143,43 +189,6 @@ public class Services {
 			ndf.setSource(newProcess);
 			newDFD.getEdges().add(ndf);
 		}
-
-		/*
-		 * final String name = p.getName(); Map<DataFlow, List<Data>> incomingData = new
-		 * HashMap<DataFlow, List<Data>>(); Map<DataFlow, List<Data>> outgoingData = new
-		 * HashMap<DataFlow, List<Data>>(); Map<Node, Node> sources = new HashMap<Node,
-		 * Node>(); Map<Node, Node> targets = new HashMap<Node, Node>();
-		 * 
-		 * int i = 0; int j = 0;
-		 * 
-		 * for (DataFlow df : inc) { incomingData.put(df, df.getData());
-		 * sources.putIfAbsent(df.getSource(), copyNode(df.getSource())); i +=
-		 * df.getData().size(); } for (DataFlow df : out) { outgoingData.put(df,
-		 * df.getData()); targets.putIfAbsent(df.getTarget(), copyNode(df.getTarget()));
-		 * j += df.getData().size(); }
-		 * 
-		 * int max = Math.max(i, j);
-		 * 
-		 * List<Node> subProcesses = new ArrayList<Node>();
-		 * 
-		 * for (int k = 1; k <= max; k++) { Node subProcess = copyNode(p);
-		 * subProcess.setName(name + "." + k); subProcesses.add(subProcess); }
-		 * newDFD.getNodes().addAll(subProcesses);
-		 * newDFD.getNodes().addAll(sources.values());
-		 * newDFD.getNodes().addAll(targets.values()); int k = 0; for (DataFlow df :
-		 * incomingData.keySet()) { Node source = sources.get(df.getSource()); for (Data
-		 * d : incomingData.get(df)) { DataFlow ndf =
-		 * DataFlowDiagramFactory.eINSTANCE.createDataFlow(); ndf.setName(d.getName());
-		 * // TODO type, composite, entries ndf.setTarget(subProcesses.get(k));
-		 * ndf.setSource(source); newDFD.getEdges().add(ndf); k++; } } k = 0; for
-		 * (DataFlow df : outgoingData.keySet()) { Node target =
-		 * targets.get(df.getTarget()); for (Data d : outgoingData.get(df)) { DataFlow
-		 * ndf = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
-		 * ndf.setName(d.getName()); // TODO type, composite, entries
-		 * ndf.setSource(subProcesses.get(k)); ndf.setTarget(target);
-		 * newDFD.getEdges().add(ndf); k++; } }
-		 */
-
 	}
 
 	public void loadResources(EObject self) {
