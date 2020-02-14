@@ -189,6 +189,8 @@ public class Services {
 			ndf.setSource(newProcess);
 			newDFD.getEdges().add(ndf);
 		}
+		
+		DFDUtil.validateDiagram(newDFD); //TODO: not working
 	}
 
 	public void loadResources(EObject self) {

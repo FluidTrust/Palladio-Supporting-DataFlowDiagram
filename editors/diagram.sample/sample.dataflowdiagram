@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
+  <refinedBy id="_7UrBkE8NEeqN9MS0xVY6Hg" refinedProcess="_UVls0yPWEeqMHZm4xBp56w"/>
   <nodes xsi:type="DataFlowDiagram:Store" id="_OPjisiPWEeqMHZm4xBp56w" name="S1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>

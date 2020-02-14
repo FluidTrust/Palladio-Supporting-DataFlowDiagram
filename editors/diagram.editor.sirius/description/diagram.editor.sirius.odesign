@@ -65,7 +65,13 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <containerMappings name="RefiningContainer" semanticCandidatesExpression="feature:refinedBy" domainClass="DataFlowDiagram::DataFlowDiagramRefinement">
+        <containerMappings name="RefiningContainer" semanticCandidatesExpression="aql:self.refinedBy" domainClass="DataFlowDiagram::DataFlowDiagramRefinement" childrenPresentation="HorizontalStack">
+          <subNodeMappings name="refinedProcess" semanticCandidatesExpression="aql:self.refinedProcess" domainClass="DataFlowDiagram::Process">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/diagram.editor.sirius/icons/process.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" sizeComputationExpression="100" workspacePath="/diagram.editor.sirius/icons/reference.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -127,7 +133,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createDF" edgeMappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createDF" label="new Data Flow" edgeMappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>

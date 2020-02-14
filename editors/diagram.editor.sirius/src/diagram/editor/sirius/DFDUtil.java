@@ -11,14 +11,18 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.common.ui.util.WorkbenchPartDescriptor;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.ui.part.ValidateAction;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.eclipse.ui.IEditorPart;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
@@ -91,12 +95,26 @@ public class DFDUtil {
 	 * @param diagram
 	 */
 
-	public static void validateDiagram(Session session, DRepresentation diagram) {
+	public static void validateDiagram(DataFlowDiagram dfd) {
+		Session session = SessionManager.INSTANCE.getSession(dfd);
+		DRepresentation diagram = getRepresentation(session, dfd);
 		IEditorPart editorPart = DialectUIManager.INSTANCE.openEditor(session, diagram, new NullProgressMonitor());
 		WorkbenchPartDescriptor workbenchPartDescriptor = new WorkbenchPartDescriptor(editorPart.getSite().getId(),
 				editorPart.getClass(), editorPart.getSite().getPage());
 		ValidateAction va = new ValidateAction(workbenchPartDescriptor);
 		va.run();
+	}
+
+	private static DRepresentation getRepresentation(Session session, DataFlowDiagram dfd) { // TODO
+		/*
+		for (DRepresentation r : DialectManager.INSTANCE.getAllRepresentations(session)) {
+			System.out.println(r);
+			System.out.println(r.eContents());
+			
+		}
+		*/
+		return null;
+		
 	}
 
 }
