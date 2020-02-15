@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -42,6 +43,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationCommand;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
@@ -189,8 +191,8 @@ public class Services {
 			ndf.setSource(newProcess);
 			newDFD.getEdges().add(ndf);
 		}
-		
-		DFDUtil.validateDiagram(newDFD); //TODO: not working
+
+		DFDUtil.validateDiagram(newDFD); // TODO: not working
 	}
 
 	public void loadResources(EObject self) {
@@ -206,4 +208,82 @@ public class Services {
 		}
 
 	}
+
+	/*
+	 * Semantic Validation Rules
+	 */
+
+	public boolean leveledInOutCorrect(EObject self) {
+		Process refinedProcess = getRefinedProcess(self); // may not (i.e., no longer) be part of current dfd
+		if (refinedProcess == null) {
+			return true;
+		}
+		Map<Node, Set<Data>> requiredInput = getInput(refinedProcess);
+		Map<Node, Set<Data>> requiredOutput = getOutput(refinedProcess);
+		System.out.println(requiredInput);
+		System.out.println(requiredOutput);
+
+		/*
+		 * DataFlowDiagram dfd = (DataFlowDiagram) self; Map<Node, Set<Data>> input =
+		 * new HashMap<Node, Set<Data>>(); Map<Node, Set<Data>> output = new
+		 * HashMap<Node, Set<Data>>(); List<Node> ownedNodes = dfd.getNodes(); for (Edge
+		 * e : dfd.getEdges()) { DataFlow df = (DataFlow) e;
+		 * 
+		 * }
+		 */
+		return true;
+
+	}
+
+	private Process getRefinedProcess(EObject dfd) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
+		if (refs.isEmpty()) {
+			return null;
+		}
+		DataFlowDiagramRefinement ref = (DataFlowDiagramRefinement) refs.get(0);
+		return ref.getRefinedProcess();
+
+	}
+
+	private Map<Node, Set<Data>> getInput(Process p) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(p).getInverseReferences("target")).stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
+		Map<Node, Set<Data>> input = new HashMap<Node, Set<Data>>();
+
+		for (EObject ref : refs) {
+			DataFlow df = (DataFlow) ref;
+			Node source = df.getSource();
+
+			input.computeIfPresent(source,
+					(k, v) -> Stream.concat(v.stream(), df.getData().stream()).collect(Collectors.toSet()));
+
+			input.putIfAbsent(source, new HashSet<Data>(df.getData()));
+
+		}
+
+		return input;
+
+	}
+	
+	private Map<Node, Set<Data>> getOutput(Process p) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(p).getInverseReferences("source")).stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
+		Map<Node, Set<Data>> input = new HashMap<Node, Set<Data>>();
+
+		for (EObject ref : refs) {
+			DataFlow df = (DataFlow) ref;
+			Node target = df.getTarget();
+			System.out.println(df);
+
+			input.computeIfPresent(target,
+					(k, v) -> Stream.concat(v.stream(), df.getData().stream()).collect(Collectors.toSet()));
+
+			input.putIfAbsent(target, new HashSet<Data>(df.getData()));
+
+		}
+
+		return input;
+
+	}
+
 }
