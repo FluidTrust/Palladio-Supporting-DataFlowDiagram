@@ -10,8 +10,61 @@
 %%
 %% Version 1.0, 2018-04-16
 
-\section{Problemstellung}
-Diese ... 
+\section{Introduction}
 \label{ch:Introduction}
 
-%A reference: The SDQ logo is displayed in \autoref{fig:sdqlogo}. 
+%% -------------------
+%% | Example content |
+%% -------------------
+
+This is the SDQ seminar template.
+For more information on the formatting of theses at SDQ, please refer to
+\url{https://sdqweb.ipd.kit.edu/wiki/Ausarbeitungshinweise} or to your advisor.
+
+\subsection{Example: Citation}
+\label{sec:Introduction:Citation}
+A citation: \cite{becker2008a} For referencing, see \autoref{sec:Introduction:Figures}
+
+\subsection{Example: Figures}
+\label{sec:Introduction:Figures}
+\begin{figure}
+\centering
+\includegraphics[width=4cm]{images/sdqlogo}
+\caption{SDQ logo}
+\label{fig:sdqlogo}
+\end{figure}
+
+A reference: The SDQ logo is displayed in \autoref{fig:sdqlogo}. 
+(Use \code{\textbackslash autoref\{\}} for easy referencing.) 
+
+\subsection{Example: Tables}
+\label{sec:Introduction:Tables}
+\begin{table}
+\centering
+\begin{tabular}{r l}
+\toprule
+abc & def\\
+ghi & jkl\\
+\midrule
+123 & 456\\
+789 & 0AB\\
+\bottomrule
+\end{tabular}
+\caption{A table}
+\label{tab:atable}
+\end{table}
+
+\subsection{Example: Todo-Note}
+Meaningless text.
+
+\subsection{Example: Formula}
+One of the nice things about the Linux Libertine font is that it comes with
+a math mode package.
+\begin{displaymath}
+f(x)=\Omega(g(x))\ (x\rightarrow\infty)\;\Leftrightarrow\;
+\limsup_{x \to \infty} \left|\frac{f(x)}{g(x)}\right|> 0
+\end{displaymath}
+
+%% --------------------
+%% | /Example content |
+%% --------------------

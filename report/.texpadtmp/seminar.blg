@@ -1,9 +1,0 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is '/Users/simonschwarz/Desktop/DFD/report/.texpadtmp/seminar.blg'
-[33] biber-darwin:313> INFO - === Wed Nov 20, 2019, 13:26:18
-[51] Biber.pm:371> INFO - Reading '/Users/simonschwarz/Desktop/DFD/report/.texpadtmp/seminar.bcf'
-[131] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
-[136] Utils.pm:193> WARN - The file '/Users/simonschwarz/Desktop/DFD/report/.texpadtmp/seminar.bcf' does not contain any citations!
-[142] bbl.pm:617> INFO - Writing '/Users/simonschwarz/Desktop/DFD/report/.texpadtmp/seminar.bbl' with encoding 'UTF-8'
-[142] bbl.pm:720> INFO - Output to /Users/simonschwarz/Desktop/DFD/report/.texpadtmp/seminar.bbl
-[142] Biber.pm:110> INFO - WARNINGS: 1
