@@ -287,6 +287,11 @@ public class Services {
 		
 	}
 	
+	public List<EObject> listDataTypes(EObject self) {
+		Session session = SessionManager.INSTANCE.getSession(self);
+		return DFDUtil.getDataTypes(session);
+	}
+
 	public boolean isRefined(EObject self) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
 		return !refs.isEmpty();
