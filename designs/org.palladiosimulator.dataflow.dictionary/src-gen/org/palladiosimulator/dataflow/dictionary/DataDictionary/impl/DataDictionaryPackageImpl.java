@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
@@ -19,6 +20,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPa
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType;
+import org.palladiosimulator.dataflow.dictionary.DataDictionary.util.DataDictionaryValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,6 +123,15 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		// Initialize created meta-data
 		theDataDictionaryPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theDataDictionaryPackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return DataDictionaryValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theDataDictionaryPackage.freeze();
@@ -345,6 +356,44 @@ public class DataDictionaryPackageImpl extends EPackageImpl implements DataDicti
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		//  http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b> http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = " http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (compositeDataTypeEClass,
+		   source,
+		   new String[] {
+			   "uniqueEntryNames", "self.entries->isUnique(name)"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (compositeDataTypeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "uniqueEntryNames"
+		   });
 	}
 
 } //DataDictionaryPackageImpl

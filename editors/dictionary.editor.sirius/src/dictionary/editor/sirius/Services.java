@@ -31,10 +31,6 @@ public class Services {
 		return list;
 	}
     
-    public void addComponent(DataType self) {
-    	System.out.println(self);
-    }
-    
     
 
     

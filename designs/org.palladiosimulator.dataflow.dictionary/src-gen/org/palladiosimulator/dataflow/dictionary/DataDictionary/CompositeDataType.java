@@ -17,7 +17,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionaryPackage#getCompositeDataType()
- * @model
+ * @model annotation="\040http://www.eclipse.org/emf/2002/Ecore/OCL uniqueEntryNames='self.entries-&gt;isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='uniqueEntryNames'"
  * @generated
  */
 public interface CompositeDataType extends DataType {
