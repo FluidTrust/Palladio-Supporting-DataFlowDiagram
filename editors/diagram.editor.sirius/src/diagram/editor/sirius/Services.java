@@ -286,6 +286,11 @@ public class Services {
 		return true;
 		
 	}
+	
+	public boolean isRefined(EObject self) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
+		return !refs.isEmpty();
+	}
 	private Process getRefinedProcess(EObject dfd) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
 		if (refs.isEmpty()) {

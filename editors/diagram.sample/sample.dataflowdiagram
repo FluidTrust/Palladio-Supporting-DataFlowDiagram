@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
-  <refinedBy id="_V-NrIFACEeqEKLXNMYDsZQ" refinedProcess="_UVls0yPWEeqMHZm4xBp56w">
-    <refiningDiagram id="_V-O5QFACEeqEKLXNMYDsZQ">
-      <nodes xsi:type="DataFlowDiagram:Process" id="_V-WOAFACEeqEKLXNMYDsZQ" name="P1"/>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_V-WOAVACEeqEKLXNMYDsZQ" name="DF1" target="_V-WOAFACEeqEKLXNMYDsZQ" source="_psCWsSYrEeqwleBNcLMfgQ">
-        <data id="_V-W1EFACEeqEKLXNMYDsZQ" name="data5">
-          <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_zDy6cBweEeqkzqskNeypDg"/>
-        </data>
-      </edges>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_V-W1EVACEeqEKLXNMYDsZQ" name="new Data Flow" target="_V-WOAFACEeqEKLXNMYDsZQ" source="_OPjisiPWEeqMHZm4xBp56w">
-        <data id="_V-W1ElACEeqEKLXNMYDsZQ" name="A">
-          <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
-        </data>
-      </edges>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_V-W1E1ACEeqEKLXNMYDsZQ" name="new Data Flow" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_V-WOAFACEeqEKLXNMYDsZQ">
-        <data id="_V-W1FFACEeqEKLXNMYDsZQ" name="data4">
-          <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_EAnUMBd6EeqmI7JLCCCR2w"/>
-        </data>
-        <data id="_V-W1FVACEeqEKLXNMYDsZQ" name="Data3">
-          <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
-        </data>
-      </edges>
-    </refiningDiagram>
-  </refinedBy>
   <nodes xsi:type="DataFlowDiagram:Store" id="_OPjisiPWEeqMHZm4xBp56w" name="S1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>
