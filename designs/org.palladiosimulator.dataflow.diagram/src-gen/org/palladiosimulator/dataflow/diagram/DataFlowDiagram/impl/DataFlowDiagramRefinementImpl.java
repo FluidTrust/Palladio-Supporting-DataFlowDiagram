@@ -3,15 +3,19 @@
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl;
 
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +27,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRef
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefinedProcess <em>Refined Process</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefiningDiagram <em>Refining Diagram</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramRefinementImpl#getRefinedEdges <em>Refined Edges</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +52,16 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	 * @ordered
 	 */
 	protected DataFlowDiagram refiningDiagram;
+
+	/**
+	 * The cached value of the '{@link #getRefinedEdges() <em>Refined Edges</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefinedEdges()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EdgeRefinement> refinedEdges;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,6 +168,18 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EdgeRefinement> getRefinedEdges() {
+		if (refinedEdges == null) {
+			refinedEdges = new EObjectResolvingEList<EdgeRefinement>(EdgeRefinement.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES);
+		}
+		return refinedEdges;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -175,6 +202,8 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 				return basicGetRefinedProcess();
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return getRefiningDiagram();
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES:
+				return getRefinedEdges();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,6 +223,10 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				setRefiningDiagram((DataFlowDiagram)newValue);
 				return;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES:
+				getRefinedEdges().clear();
+				getRefinedEdges().addAll((Collection<? extends EdgeRefinement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -212,6 +245,9 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				setRefiningDiagram((DataFlowDiagram)null);
 				return;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES:
+				getRefinedEdges().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -228,6 +264,8 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 				return refinedProcess != null;
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return refiningDiagram != null;
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES:
+				return refinedEdges != null && !refinedEdges.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

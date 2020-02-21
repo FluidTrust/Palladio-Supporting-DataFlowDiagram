@@ -15,6 +15,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
@@ -188,6 +189,13 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DataFlowDiagramPackage.EDGE_REFINEMENT: {
+				EdgeRefinement edgeRefinement = (EdgeRefinement)theEObject;
+				T result = caseEdgeRefinement(edgeRefinement);
+				if (result == null) result = caseIdentifier(edgeRefinement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -354,6 +362,21 @@ public class DataFlowDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Edge Refinement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Edge Refinement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEdgeRefinement(EdgeRefinement object) {
 		return null;
 	}
 

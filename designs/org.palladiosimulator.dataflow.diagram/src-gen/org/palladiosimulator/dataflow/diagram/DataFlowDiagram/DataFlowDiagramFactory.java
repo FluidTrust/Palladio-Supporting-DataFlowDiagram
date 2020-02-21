@@ -85,6 +85,15 @@ public interface DataFlowDiagramFactory extends EFactory {
 	Data createData();
 
 	/**
+	 * Returns a new object of class '<em>Edge Refinement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Edge Refinement</em>'.
+	 * @generated
+	 */
+	EdgeRefinement createEdgeRefinement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

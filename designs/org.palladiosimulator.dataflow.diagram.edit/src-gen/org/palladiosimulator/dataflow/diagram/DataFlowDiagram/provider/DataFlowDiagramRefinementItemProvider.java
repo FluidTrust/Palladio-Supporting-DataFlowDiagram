@@ -53,6 +53,7 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 			super.getPropertyDescriptors(object);
 
 			addRefinedProcessPropertyDescriptor(object);
+			addRefinedEdgesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,6 +72,28 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 				 getString("_UI_DataFlowDiagramRefinement_refinedProcess_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_refinedProcess_feature", "_UI_DataFlowDiagramRefinement_type"),
 				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Refined Edges feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinedEdgesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataFlowDiagramRefinement_refinedEdges_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataFlowDiagramRefinement_refinedEdges_feature", "_UI_DataFlowDiagramRefinement_type"),
+				 DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES,
 				 true,
 				 false,
 				 true,

@@ -22,6 +22,8 @@
         eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refiningDiagram" lowerBound="1"
         eType="#//DataFlowDiagram" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedEdges" upperBound="-1"
+        eType="#//EdgeRefinement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Edge">
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" upperBound="-1"
@@ -54,4 +56,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeRefinement" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedEdge" lowerBound="1"
+        eType="#//Edge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refiningEdges" upperBound="-1"
+        eType="#//Edge"/>
+  </eClassifiers>
 </ecore:EPackage>

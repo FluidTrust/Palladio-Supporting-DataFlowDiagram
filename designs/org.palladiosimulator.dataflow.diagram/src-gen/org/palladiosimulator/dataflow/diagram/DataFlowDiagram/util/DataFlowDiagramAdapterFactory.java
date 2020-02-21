@@ -17,6 +17,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
@@ -125,6 +126,10 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
+			}
+			@Override
+			public Adapter caseEdgeRefinement(EdgeRefinement object) {
+				return createEdgeRefinementAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -300,6 +305,20 @@ public class DataFlowDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement <em>Edge Refinement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement
+	 * @generated
+	 */
+	public Adapter createEdgeRefinementAdapter() {
 		return null;
 	}
 

@@ -3,6 +3,7 @@
 package org.palladiosimulator.dataflow.diagram.DataFlowDiagram;
 
 import de.uka.ipd.sdq.identifier.Identifier;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedProcess <em>Refined Process</em>}</li>
  *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefiningDiagram <em>Refining Diagram</em>}</li>
+ *   <li>{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedEdges <em>Refined Edges</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement()
@@ -66,5 +68,17 @@ public interface DataFlowDiagramRefinement extends EObject, Identifier {
 	 * @generated
 	 */
 	void setRefiningDiagram(DataFlowDiagram value);
+
+	/**
+	 * Returns the value of the '<em><b>Refined Edges</b></em>' reference list.
+	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Refined Edges</em>' reference list.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement_RefinedEdges()
+	 * @model
+	 * @generated
+	 */
+	EList<EdgeRefinement> getRefinedEdges();
 
 } // DataFlowDiagramRefinement

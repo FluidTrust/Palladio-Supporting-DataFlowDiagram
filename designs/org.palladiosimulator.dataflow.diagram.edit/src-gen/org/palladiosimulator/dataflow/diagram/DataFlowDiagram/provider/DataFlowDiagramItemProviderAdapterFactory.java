@@ -251,6 +251,29 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EdgeRefinementItemProvider edgeRefinementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEdgeRefinementAdapter() {
+		if (edgeRefinementItemProvider == null) {
+			edgeRefinementItemProvider = new EdgeRefinementItemProvider(this);
+		}
+
+		return edgeRefinementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -383,6 +406,7 @@ public class DataFlowDiagramItemProviderAdapterFactory extends DataFlowDiagramAd
 		if (dataFlowDiagramRefinementItemProvider != null) dataFlowDiagramRefinementItemProvider.dispose();
 		if (dataFlowItemProvider != null) dataFlowItemProvider.dispose();
 		if (dataItemProvider != null) dataItemProvider.dispose();
+		if (edgeRefinementItemProvider != null) edgeRefinementItemProvider.dispose();
 	}
 
 }

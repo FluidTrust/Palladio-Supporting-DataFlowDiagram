@@ -19,6 +19,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFac
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.NamedElement;
@@ -104,6 +105,13 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * @generated
 	 */
 	private EClass entityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass edgeRefinementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,6 +290,15 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataFlowDiagramRefinement_RefinedEdges() {
+		return (EReference)dataFlowDiagramRefinementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataFlow() {
 		return dataFlowEClass;
 	}
@@ -372,6 +389,33 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEdgeRefinement() {
+		return edgeRefinementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEdgeRefinement_RefinedEdge() {
+		return (EReference)edgeRefinementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEdgeRefinement_RefiningEdges() {
+		return (EReference)edgeRefinementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEdge() {
 		return edgeEClass;
 	}
@@ -438,6 +482,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		dataFlowDiagramRefinementEClass = createEClass(DATA_FLOW_DIAGRAM_REFINEMENT);
 		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_PROCESS);
 		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM);
+		createEReference(dataFlowDiagramRefinementEClass, DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEReference(dataFlowEClass, DATA_FLOW__DATA);
@@ -457,6 +502,10 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		entityEClass = createEClass(ENTITY);
+
+		edgeRefinementEClass = createEClass(EDGE_REFINEMENT);
+		createEReference(edgeRefinementEClass, EDGE_REFINEMENT__REFINED_EDGE);
+		createEReference(edgeRefinementEClass, EDGE_REFINEMENT__REFINING_EDGES);
 	}
 
 	/**
@@ -505,6 +554,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		nodeEClass.getESuperTypes().add(this.getComponent());
 		entityEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		entityEClass.getESuperTypes().add(this.getNamedElement());
+		edgeRefinementEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataFlowDiagramEClass, DataFlowDiagram.class, "DataFlowDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -523,6 +573,7 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEClass(dataFlowDiagramRefinementEClass, DataFlowDiagramRefinement.class, "DataFlowDiagramRefinement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlowDiagramRefinement_RefinedProcess(), this.getProcess(), null, "refinedProcess", null, 1, 1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataFlowDiagramRefinement_RefiningDiagram(), this.getDataFlowDiagram(), null, "refiningDiagram", null, 1, 1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlowDiagramRefinement_RefinedEdges(), this.getEdgeRefinement(), null, "refinedEdges", null, 0, -1, DataFlowDiagramRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataFlow_Data(), this.getData(), null, "data", null, 1, -1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -542,6 +593,10 @@ public class DataFlowDiagramPackageImpl extends EPackageImpl implements DataFlow
 		initEAttribute(getNamedElement_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(edgeRefinementEClass, EdgeRefinement.class, "EdgeRefinement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEdgeRefinement_RefinedEdge(), this.getEdge(), null, "refinedEdge", null, 1, 1, EdgeRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdgeRefinement_RefiningEdges(), this.getEdge(), null, "refiningEdges", null, 0, -1, EdgeRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

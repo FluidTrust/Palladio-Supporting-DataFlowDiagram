@@ -465,13 +465,22 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 				/**
+	 * The feature id for the '<em><b>Refined Edges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+
+				/**
 	 * The number of structural features of the '<em>Refinement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_DIAGRAM_REFINEMENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	int DATA_FLOW_DIAGRAM_REFINEMENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 				/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -647,6 +656,52 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int NAMED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeRefinementImpl <em>Edge Refinement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeRefinementImpl
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getEdgeRefinement()
+	 * @generated
+	 */
+	int EDGE_REFINEMENT = 12;
+
+				/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_REFINEMENT__ID = IdentifierPackage.IDENTIFIER__ID;
+
+				/**
+	 * The feature id for the '<em><b>Refined Edge</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_REFINEMENT__REFINED_EDGE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+
+				/**
+	 * The feature id for the '<em><b>Refining Edges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_REFINEMENT__REFINING_EDGES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+
+				/**
+	 * The number of structural features of the '<em>Edge Refinement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_REFINEMENT_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+
+	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram <em>Data Flow Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -762,6 +817,17 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlowDiagramRefinement_RefiningDiagram();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedEdges <em>Refined Edges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Refined Edges</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedEdges()
+	 * @see #getDataFlowDiagramRefinement()
+	 * @generated
+	 */
+	EReference getDataFlowDiagramRefinement_RefinedEdges();
+
+	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -865,6 +931,38 @@ public interface DataFlowDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
+
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement <em>Edge Refinement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Edge Refinement</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement
+	 * @generated
+	 */
+	EClass getEdgeRefinement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement#getRefinedEdge <em>Refined Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Refined Edge</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement#getRefinedEdge()
+	 * @see #getEdgeRefinement()
+	 * @generated
+	 */
+	EReference getEdgeRefinement_RefinedEdge();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement#getRefiningEdges <em>Refining Edges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Refining Edges</em>'.
+	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement#getRefiningEdges()
+	 * @see #getEdgeRefinement()
+	 * @generated
+	 */
+	EReference getEdgeRefinement_RefiningEdges();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge <em>Edge</em>}'.
@@ -1011,6 +1109,13 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = eINSTANCE.getDataFlowDiagramRefinement_RefiningDiagram();
 		/**
+		 * The meta object literal for the '<em><b>Refined Edges</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES = eINSTANCE.getDataFlowDiagramRefinement_RefinedEdges();
+		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowImpl <em>Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1090,6 +1195,29 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
+								/**
+		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeRefinementImpl <em>Edge Refinement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeRefinementImpl
+		 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.DataFlowDiagramPackageImpl#getEdgeRefinement()
+		 * @generated
+		 */
+		EClass EDGE_REFINEMENT = eINSTANCE.getEdgeRefinement();
+								/**
+		 * The meta object literal for the '<em><b>Refined Edge</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE_REFINEMENT__REFINED_EDGE = eINSTANCE.getEdgeRefinement_RefinedEdge();
+								/**
+		 * The meta object literal for the '<em><b>Refining Edges</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE_REFINEMENT__REFINING_EDGES = eINSTANCE.getEdgeRefinement_RefiningEdges();
 								/**
 		 * The meta object literal for the '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc -->

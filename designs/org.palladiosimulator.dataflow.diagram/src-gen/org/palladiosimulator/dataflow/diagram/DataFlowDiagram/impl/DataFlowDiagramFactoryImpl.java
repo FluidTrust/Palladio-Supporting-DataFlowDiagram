@@ -16,6 +16,7 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 
@@ -70,6 +71,7 @@ public class DataFlowDiagramFactoryImpl extends EFactoryImpl implements DataFlow
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT: return createDataFlowDiagramRefinement();
 			case DataFlowDiagramPackage.DATA_FLOW: return createDataFlow();
 			case DataFlowDiagramPackage.DATA: return createData();
+			case DataFlowDiagramPackage.EDGE_REFINEMENT: return createEdgeRefinement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -143,6 +145,16 @@ public class DataFlowDiagramFactoryImpl extends EFactoryImpl implements DataFlow
 	public Data createData() {
 		DataImpl data = new DataImpl();
 		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EdgeRefinement createEdgeRefinement() {
+		EdgeRefinementImpl edgeRefinement = new EdgeRefinementImpl();
+		return edgeRefinement;
 	}
 
 	/**
