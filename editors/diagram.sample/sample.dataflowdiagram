@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
+  <refinedBy id="_Ev1f8FSqEeqv093PyvZMSA" refinedProcess="_UVls0yPWEeqMHZm4xBp56w" refinedEdges="_Ev3VIVSqEeqv093PyvZMSA _Ev38MlSqEeqv093PyvZMSA _Ev38NlSqEeqv093PyvZMSA">
+    <refiningDiagram id="_Ev2HAFSqEeqv093PyvZMSA">
+      <nodes xsi:type="DataFlowDiagram:Process" id="_Ev2uEFSqEeqv093PyvZMSA" name="P1"/>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_Ev2uEVSqEeqv093PyvZMSA" name="DF1" target="_Ev2uEFSqEeqv093PyvZMSA" source="_psCWsSYrEeqwleBNcLMfgQ">
+        <data id="_Ev3VIFSqEeqv093PyvZMSA" name="data5">
+          <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_zDy6cBweEeqkzqskNeypDg"/>
+        </data>
+      </edges>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_Ev38MFSqEeqv093PyvZMSA" name="new Data Flow" target="_Ev2uEFSqEeqv093PyvZMSA" source="_OPjisiPWEeqMHZm4xBp56w">
+        <data id="_Ev38MVSqEeqv093PyvZMSA" name="A">
+          <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
+        </data>
+      </edges>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_Ev38M1SqEeqv093PyvZMSA" name="new Data Flow" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_Ev2uEFSqEeqv093PyvZMSA">
+        <data id="_Ev38NFSqEeqv093PyvZMSA" name="data4">
+          <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_EAnUMBd6EeqmI7JLCCCR2w"/>
+        </data>
+        <data id="_Ev38NVSqEeqv093PyvZMSA" name="Data3">
+          <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
+        </data>
+      </edges>
+    </refiningDiagram>
+  </refinedBy>
   <nodes xsi:type="DataFlowDiagram:Store" id="_OPjisiPWEeqMHZm4xBp56w" name="S1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>

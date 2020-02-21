@@ -62,6 +62,16 @@ public class Services {
 
 	}
 
+	public List<EObject> listDataTypes(EObject self) {
+		Session session = SessionManager.INSTANCE.getSession(self);
+		return DFDUtil.getDataTypes(session);
+	}
+
+	public boolean isRefined(EObject self) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
+		return !refs.isEmpty();
+	}
+
 	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
 		Session session = SessionManager.INSTANCE.getSession(df);
 
@@ -107,7 +117,7 @@ public class Services {
 		return d;
 	}
 
-	public void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD) {
+	public void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD, DataFlowDiagramRefinement ref) {
 		List<Edge> edges = oldDFD.getEdges();
 		List<DataFlow> incoming = new ArrayList<DataFlow>();
 		List<DataFlow> outgoing = new ArrayList<DataFlow>();
@@ -124,7 +134,7 @@ public class Services {
 
 			}
 		}
-		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD);
+		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD, ref);
 	}
 
 	private Node copyNode(Node n) { // simulated polymorphism! Naming schemes?
@@ -176,7 +186,7 @@ public class Services {
 	}
 
 	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD,
-			DataFlowDiagram newDFD) {
+			DataFlowDiagram newDFD, DataFlowDiagramRefinement ref) {
 
 		Node newProcess = copyNode(p);
 		newDFD.getNodes().add(newProcess);
@@ -185,15 +195,26 @@ public class Services {
 			DataFlow ndf = copyDataFlow(df);
 			ndf.setTarget(newProcess);
 			newDFD.getEdges().add(ndf);
+			addToRef(df, ndf, ref);
 		}
 
 		for (DataFlow df : out) {
 			DataFlow ndf = copyDataFlow(df);
 			ndf.setSource(newProcess);
 			newDFD.getEdges().add(ndf);
+			addToRef(df, ndf, ref);
 		}
+		// DFDUtil.validateDiagram(newDFD); // TODO: not working
 
-		DFDUtil.validateDiagram(newDFD); // TODO: not working
+	}
+
+	private void addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
+
+		EdgeRefinement er = DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement();
+		er.setRefinedEdge(df);
+		er.getRefiningEdges().add(ndf);
+		ref.getRefinedEdges().add(er);
+
 	}
 
 	public void loadResources(EObject self) {
@@ -210,141 +231,65 @@ public class Services {
 
 	}
 
+	private Map<DataFlowDiagram, List<DataFlow>> getDataflows(EObject n, String relation) {
+
+		Map<DataFlowDiagram, List<DataFlow>> dataFlows = new HashMap<DataFlowDiagram, List<DataFlow>>();
+		Collection<EObject> relatedObjects = new EObjectQuery(n).getInverseReferences(relation);
+		relatedObjects.forEach(o -> {
+			if (o instanceof DataFlow) {
+				DataFlow df = (DataFlow) o;
+				dataFlows.putIfAbsent((DataFlowDiagram) df.eContainer(), new ArrayList<DataFlow>(List.of(df)));
+				dataFlows.computeIfPresent((DataFlowDiagram) df.eContainer(),
+						(k, v) -> Stream.concat(v.stream(), Stream.of(df)).collect(Collectors.toList()));
+			}
+		});
+		return dataFlows;
+	}
 	/*
 	 * Semantic Validation Rules
 	 */
 
-	public boolean leveledInOutCorrect(EObject self) {
-		Process refinedProcess = getRefinedProcess(self); // may not (i.e., no longer) be part of current dfd
-		if (refinedProcess == null) {
+	private boolean isRefiningDiagram(DataFlowDiagram dfd) {
+		return !new EObjectQuery(dfd).getInverseReferences("refiningDiagram").isEmpty();
+	}
+
+	public boolean inputOutputIsConsistent(EObject self) {
+		Map<DataFlowDiagram, List<DataFlow>> incoming = getDataflows(self, "target");
+		Map<DataFlowDiagram, List<DataFlow>> outgoing = getDataflows(self, "source");
+
+		if (incoming.keySet().size() <= 1 && outgoing.keySet().size() <= 1) { // node only exists in one dfd
+			System.out.println("need not be refined");
 			return true;
 		}
 
-		// TODO: types
-		DataFlowDiagram dfd = (DataFlowDiagram) self;
-		Map<Node, Set<Data>> requiredInput = getInput(refinedProcess);
-		Map<Node, Set<Data>> requiredOutput = getOutput(refinedProcess);
-		Map<Node, Set<Data>> currentInput = new HashMap<Node, Set<Data>>();
-		Map<Node, Set<Data>> currentOutput = new HashMap<Node, Set<Data>>();
-		List<Node> ownedNodes = dfd.getNodes();
-		List<Edge> ownedEdges = dfd.getEdges();
+		// TODO refinement in general case
 
-		// find in- and output of all sources and sinks; check if they, in their union,
-		// contain all data objects that the old ones did
-		for (Edge e : ownedEdges) {
-			DataFlow df = (DataFlow) e;
-			Node source = df.getSource();
-			Node target = df.getTarget();
-			if (!ownedNodes.contains(source)) {
-				currentInput.computeIfPresent(source,
-						(k, v) -> Stream.concat(v.stream(), df.getData().stream()).collect(Collectors.toSet()));
-
-				currentInput.putIfAbsent(source, new HashSet<Data>(df.getData()));
-
-			} else if (!ownedNodes.contains(target)) {
-				currentOutput.computeIfPresent(target,
-						(k, v) -> Stream.concat(v.stream(), df.getData().stream()).collect(Collectors.toSet()));
-
-				currentOutput.putIfAbsent(target, new HashSet<Data>(df.getData()));
-
+		for (java.util.Map.Entry<DataFlowDiagram, List<DataFlow>> e : incoming.entrySet()) {
+			if (isRefiningDiagram(e.getKey()) && !isConsistent(getEdgeRefinements(e.getKey()), e.getValue())) {
+				return false;
 			}
-
 		}
 
-		Set<Data> newInput = new HashSet<Data>();
-		Set<Data> oldInput = new HashSet<Data>();
-		Set<Data> newOutput = new HashSet<Data>();
-		Set<Data> oldOutput = new HashSet<Data>();
-		requiredInput.values().stream().forEach(oldInput::addAll);
-		currentInput.values().stream().forEach(newInput::addAll);
-		requiredOutput.values().stream().forEach(oldInput::addAll);
-		currentOutput.values().stream().forEach(newInput::addAll);
-		System.out.println(oldInput);
-		System.out.println(newInput);
-		System.out.println(isSubset(oldInput, newInput));
-		
-		//return newInput.containsAll(oldInput) && newOutput.containsAll(oldOutput);
-		return isSubset(oldInput, newInput) && isSubset(oldInput, newOutput); // FIXME
-	}
-	
-	private boolean isSubset (Collection<Data> as, Collection<Data> bs){ // TODO override Data equals?
-		boolean result = true;
-		/*
-		for (Data a: as) {
-			for (Data b: bs) {
-				if (isSameData(a, b))
-					continue;
-				
-			}
-			return false;
-		}
-		*/
-		return result;
-	}
-
-	
-	private boolean isSameData(Data a, Data b) { // TODO
 		return true;
+	}
+
+	private boolean isConsistent(List<EdgeRefinement> original, List<DataFlow> actual) {
+		System.out.println("CHECK");
+		System.out.println(original);
+		System.out.println(actual);
 		
-	}
-	
-	public List<EObject> listDataTypes(EObject self) {
-		Session session = SessionManager.INSTANCE.getSession(self);
-		return DFDUtil.getDataTypes(session);
+		for (DataFlow a : actual) {
+			for (EdgeRefinement o : original) {
+				// TODO
+			}
+		}
+		
+		return true;
 	}
 
-	public boolean isRefined(EObject self) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
-		return !refs.isEmpty();
-	}
-	private Process getRefinedProcess(EObject dfd) {
+	private List<EdgeRefinement> getEdgeRefinements(DataFlowDiagram dfd) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
-		if (refs.isEmpty()) {
-			return null;
-		}
-		DataFlowDiagramRefinement ref = (DataFlowDiagramRefinement) refs.get(0);
-		return ref.getRefinedProcess();
+		return ((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges();
 
 	}
-
-	private Map<Node, Set<Data>> getInput(Process p) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(p).getInverseReferences("target")).stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
-		Map<Node, Set<Data>> input = new HashMap<Node, Set<Data>>();
-
-		for (EObject ref : refs) {
-			DataFlow df = (DataFlow) ref;
-			Node source = df.getSource();
-
-			input.computeIfPresent(source,
-					(k, v) -> Stream.concat(v.stream(), df.getData().stream()).collect(Collectors.toSet()));
-
-			input.putIfAbsent(source, new HashSet<Data>(df.getData()));
-
-		}
-
-		return input;
-
-	}
-
-	private Map<Node, Set<Data>> getOutput(Process p) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(p).getInverseReferences("source")).stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
-		Map<Node, Set<Data>> input = new HashMap<Node, Set<Data>>();
-
-		for (EObject ref : refs) {
-			DataFlow df = (DataFlow) ref;
-			Node target = df.getTarget();
-
-			input.computeIfPresent(target,
-					(k, v) -> Stream.concat(v.stream(), df.getData().stream()).collect(Collectors.toSet()));
-
-			input.putIfAbsent(target, new HashSet<Data>(df.getData()));
-
-		}
-
-		return input;
-
-	}
-
 }

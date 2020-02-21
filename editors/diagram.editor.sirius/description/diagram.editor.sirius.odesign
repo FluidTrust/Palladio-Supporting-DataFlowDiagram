@@ -10,8 +10,8 @@
         <ownedRules xsi:type="validation:SemanticValidationRule" name="noDataDF" level="ERROR" message="This dataflow has no data associated with it." targetClass="DataFlowDiagram::DataFlow">
           <audits auditExpression="aql:self.data->notEmpty()"/>
         </ownedRules>
-        <ownedRules xsi:type="validation:SemanticValidationRule" name="LeveledInOut" level="ERROR" targetClass="DataFlowDiagram::DataFlowDiagram">
-          <audits auditExpression="service:leveledInOutCorrect()"/>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="inputOutPutisConsistent" level="ERROR" targetClass="DataFlowDiagram::Node">
+          <audits auditExpression="service:inputOutputIsConsistent()"/>
         </ownedRules>
       </validationSet>
       <defaultLayer name="Default">
@@ -117,7 +117,7 @@
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagramRefinement" referenceName="refinedBy" variableName="refinement">
                       <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:refinement">
                         <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagram" referenceName="refiningDiagram" variableName="newDFD">
-                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(process,oldDFD)"/>
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(process,oldDFD,refinement)"/>
                           <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
                         </subModelOperations>
                         <subModelOperations xsi:type="tool_1:SetValue" featureName="refiningDiagram" valueExpression="aql:newDFD"/>
