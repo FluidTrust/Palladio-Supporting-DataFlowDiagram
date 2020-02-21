@@ -115,6 +115,7 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM);
+			childrenFeatures.add(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES);
 		}
 		return childrenFeatures;
 	}
@@ -181,6 +182,7 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 
 		switch (notification.getFeatureID(DataFlowDiagramRefinement.class)) {
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -202,6 +204,11 @@ public class DataFlowDiagramRefinementItemProvider extends IdentifierItemProvide
 			(createChildParameter
 				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM,
 				 DataFlowDiagramFactory.eINSTANCE.createDataFlowDiagram()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataFlowDiagramPackage.Literals.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES,
+				 DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement()));
 	}
 
 	/**

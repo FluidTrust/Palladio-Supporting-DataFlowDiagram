@@ -70,13 +70,13 @@ public interface DataFlowDiagramRefinement extends EObject, Identifier {
 	void setRefiningDiagram(DataFlowDiagram value);
 
 	/**
-	 * Returns the value of the '<em><b>Refined Edges</b></em>' reference list.
+	 * Returns the value of the '<em><b>Refined Edges</b></em>' containment reference list.
 	 * The list contents are of type {@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Refined Edges</em>' reference list.
+	 * @return the value of the '<em>Refined Edges</em>' containment reference list.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage#getDataFlowDiagramRefinement_RefinedEdges()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<EdgeRefinement> getRefinedEdges();

@@ -253,7 +253,7 @@ public class Services {
 		return !new EObjectQuery(dfd).getInverseReferences("refiningDiagram").isEmpty();
 	}
 
-	public boolean inputOutputIsConsistent(EObject self) {
+	public boolean inputOutputIsConsistent(EObject self) { //FIXME
 		Map<DataFlowDiagram, List<DataFlow>> incoming = getDataflows(self, "target");
 		Map<DataFlowDiagram, List<DataFlow>> outgoing = getDataflows(self, "source");
 
@@ -273,22 +273,33 @@ public class Services {
 		return true;
 	}
 
-	private boolean isConsistent(List<EdgeRefinement> original, List<DataFlow> actual) {
-		System.out.println("CHECK");
+	private boolean isConsistent(List<EdgeRefinement> original, List<DataFlow> actual) { //FIXME
 		System.out.println(original);
 		System.out.println(actual);
-		
-		for (DataFlow a : actual) {
-			for (EdgeRefinement o : original) {
-				// TODO
+		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>(EcoreUtil.copyAll(original));
+		List<DataFlow> dfs = new ArrayList<DataFlow>(EcoreUtil.copyAll(actual));
+
+		for (DataFlow df : dfs) {
+			for (EdgeRefinement r : refs) {
+				if (r.getRefiningEdges().contains(df)) {
+					dfs.remove(df);
+					r.getRefiningEdges().remove(df);
+					if (r.getRefiningEdges().isEmpty()) {
+						refs.remove(r);
+					}
+				}
 			}
 		}
-		
+
+		System.out.println(refs);
+		System.out.println(dfs);
+
 		return true;
 	}
 
 	private List<EdgeRefinement> getEdgeRefinements(DataFlowDiagram dfd) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
+		//åSystem.out.println(((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges());
 		return ((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges();
 
 	}

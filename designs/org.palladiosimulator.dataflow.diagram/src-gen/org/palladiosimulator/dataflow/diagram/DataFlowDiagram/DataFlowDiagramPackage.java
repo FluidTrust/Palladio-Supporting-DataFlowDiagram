@@ -465,7 +465,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 	int DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 				/**
-	 * The feature id for the '<em><b>Refined Edges</b></em>' reference list.
+	 * The feature id for the '<em><b>Refined Edges</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -817,10 +817,10 @@ public interface DataFlowDiagramPackage extends EPackage {
 	EReference getDataFlowDiagramRefinement_RefiningDiagram();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedEdges <em>Refined Edges</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedEdges <em>Refined Edges</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Refined Edges</em>'.
+	 * @return the meta object for the containment reference list '<em>Refined Edges</em>'.
 	 * @see org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement#getRefinedEdges()
 	 * @see #getDataFlowDiagramRefinement()
 	 * @generated
@@ -1109,7 +1109,7 @@ public interface DataFlowDiagramPackage extends EPackage {
 		 */
 		EReference DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM = eINSTANCE.getDataFlowDiagramRefinement_RefiningDiagram();
 		/**
-		 * The meta object literal for the '<em><b>Refined Edges</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Refined Edges</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -11,7 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramPackage;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
@@ -54,7 +55,7 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	protected DataFlowDiagram refiningDiagram;
 
 	/**
-	 * The cached value of the '{@link #getRefinedEdges() <em>Refined Edges</em>}' reference list.
+	 * The cached value of the '{@link #getRefinedEdges() <em>Refined Edges</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRefinedEdges()
@@ -170,7 +171,7 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 	 */
 	public EList<EdgeRefinement> getRefinedEdges() {
 		if (refinedEdges == null) {
-			refinedEdges = new EObjectResolvingEList<EdgeRefinement>(EdgeRefinement.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES);
+			refinedEdges = new EObjectContainmentEList<EdgeRefinement>(EdgeRefinement.class, this, DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES);
 		}
 		return refinedEdges;
 	}
@@ -185,6 +186,8 @@ public class DataFlowDiagramRefinementImpl extends IdentifierImpl implements Dat
 		switch (featureID) {
 			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINING_DIAGRAM:
 				return basicSetRefiningDiagram(null, msgs);
+			case DataFlowDiagramPackage.DATA_FLOW_DIAGRAM_REFINEMENT__REFINED_EDGES:
+				return ((InternalEList<?>)getRefinedEdges()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
