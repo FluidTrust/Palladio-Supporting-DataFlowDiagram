@@ -235,33 +235,95 @@ public class Services {
 	 */
 
 	private boolean isBorderNode(Node n) {
+
+		return getContexts(n).size() > 1; //TODO not working
+
+	}
+
+	private Set<DataFlowDiagram> getContexts(Node n) {
 		List<EObject> inputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("target").stream()
 				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
 		List<EObject> outputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("source").stream()
 				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
-		Set<EObject> contexts = new HashSet<EObject>();
+		Set<DataFlowDiagram> contexts = new HashSet<DataFlowDiagram>();
 		for (EObject eo : inputRefs) {
-			contexts.add(eo.eContainer());
+			contexts.add((DataFlowDiagram) eo.eContainer());
 		}
 		for (EObject eo : outputRefs) {
-			contexts.add(eo.eContainer());
+			contexts.add((DataFlowDiagram) eo.eContainer());
 		}
-		return contexts.size() > 1;
+
+		return contexts;
 
 	}
 
 	public boolean inputOutputIsConsistent(EObject self) {
 		Node n = (Node) self;
-		DataFlowDiagram context = (DataFlowDiagram) self.eContainer();
 		if (!isBorderNode(n)) {
+			System.out.println(n);
 			return true;
 		}
+
+		Set<DataFlowDiagram> contexts = getContexts(n);
+		for (DataFlowDiagram context : contexts) {
+			if (!isRefiningDiagram(context)) {
+				continue;
+			}
+			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> edgeRefinements = getEdgeRefinements(context, n);
+			List<EdgeRefinement> refinedInputs = edgeRefinements.getFirst();
+			List<EdgeRefinement> refinedOutputs = edgeRefinements.getSecond();
+			Tuple<List<Edge>, List<Edge>> actualDFs = getCurrentDataFlows(context, n);
+			List<Edge> actualInputs = actualDFs.getFirst();
+			List<Edge> actualOutputs = actualDFs.getSecond();
+			if (!isConsistent(refinedInputs, actualInputs) || !isConsistent(refinedOutputs, actualOutputs)) {
+				return false;
+			}
+		}
+
 		return true;
 	}
 
-	private List<EdgeRefinement> getEdgeRefinements(DataFlowDiagram dfd) {
+	private boolean isConsistent(List<EdgeRefinement> refined, List<Edge> actual) {
+		/*
+		if (refined.isEmpty() != actual.isEmpty()) {
+			return false;
+		}
+		*/
+		// TODO logic
+		return true;
+
+	}
+
+	private Tuple<List<EdgeRefinement>, List<EdgeRefinement>> getEdgeRefinements(DataFlowDiagram dfd, Node n) {
+		List<EdgeRefinement> inputs = new ArrayList<EdgeRefinement>();
+		List<EdgeRefinement> outputs = new ArrayList<EdgeRefinement>();
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
-		return ((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges();
+		List<EdgeRefinement> allEdges = ((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges();
+
+		for (EdgeRefinement er : allEdges) {
+			if (isEqual(er.getRefinedEdge().getSource(), n)) {
+				outputs.add(er);
+
+			} else if (isEqual(er.getRefinedEdge().getTarget(), n)) {
+				inputs.add(er);
+
+			}
+		}
+		return new Tuple<List<EdgeRefinement>, List<EdgeRefinement>>(inputs, outputs);
+	}
+
+	private Tuple<List<Edge>, List<Edge>> getCurrentDataFlows(DataFlowDiagram context, Node n) {
+		List<Edge> input = new ArrayList<Edge>();
+		List<Edge> output = new ArrayList<Edge>();
+		for (Edge e : context.getEdges()) {
+			if (isEqual(n, e.getSource())) {
+				output.add(e);
+			} else if (isEqual(n, e.getTarget())) {
+				input.add(e);
+			}
+		}
+
+		return new Tuple<List<Edge>, List<Edge>>(input, output);
 
 	}
 
