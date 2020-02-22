@@ -209,7 +209,6 @@ public class Services {
 	}
 
 	private void addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
-
 		EdgeRefinement er = DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement();
 		er.setRefinedEdge(df);
 		er.getRefiningEdges().add(ndf);
@@ -231,76 +230,42 @@ public class Services {
 
 	}
 
-	private Map<DataFlowDiagram, List<DataFlow>> getDataflows(EObject n, String relation) {
-
-		Map<DataFlowDiagram, List<DataFlow>> dataFlows = new HashMap<DataFlowDiagram, List<DataFlow>>();
-		Collection<EObject> relatedObjects = new EObjectQuery(n).getInverseReferences(relation);
-		relatedObjects.forEach(o -> {
-			if (o instanceof DataFlow) {
-				DataFlow df = (DataFlow) o;
-				dataFlows.putIfAbsent((DataFlowDiagram) df.eContainer(), new ArrayList<DataFlow>(List.of(df)));
-				dataFlows.computeIfPresent((DataFlowDiagram) df.eContainer(),
-						(k, v) -> Stream.concat(v.stream(), Stream.of(df)).collect(Collectors.toList()));
-			}
-		});
-		return dataFlows;
-	}
 	/*
 	 * Semantic Validation Rules
 	 */
 
-	private boolean isRefiningDiagram(DataFlowDiagram dfd) {
-		return !new EObjectQuery(dfd).getInverseReferences("refiningDiagram").isEmpty();
+	private boolean isBorderNode(Node n) {
+		List<EObject> inputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("target").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+		List<EObject> outputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("source").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+		Set<EObject> contexts = new HashSet<EObject>();
+		for (EObject eo : inputRefs) {
+			contexts.add(eo.eContainer());
+		}
+		for (EObject eo : outputRefs) {
+			contexts.add(eo.eContainer());
+		}
+		return contexts.size() > 1;
+
 	}
 
-	public boolean inputOutputIsConsistent(EObject self) { //FIXME
-		Map<DataFlowDiagram, List<DataFlow>> incoming = getDataflows(self, "target");
-		Map<DataFlowDiagram, List<DataFlow>> outgoing = getDataflows(self, "source");
-
-		if (incoming.keySet().size() <= 1 && outgoing.keySet().size() <= 1) { // node only exists in one dfd
-			System.out.println("need not be refined");
+	public boolean inputOutputIsConsistent(EObject self) {
+		Node n = (Node) self;
+		DataFlowDiagram context = (DataFlowDiagram) self.eContainer();
+		if (!isBorderNode(n)) {
 			return true;
 		}
-
-		// TODO refinement in general case
-
-		for (java.util.Map.Entry<DataFlowDiagram, List<DataFlow>> e : incoming.entrySet()) {
-			if (isRefiningDiagram(e.getKey()) && !isConsistent(getEdgeRefinements(e.getKey()), e.getValue())) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	private boolean isConsistent(List<EdgeRefinement> original, List<DataFlow> actual) { //FIXME
-		System.out.println(original);
-		System.out.println(actual);
-		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>(EcoreUtil.copyAll(original));
-		List<DataFlow> dfs = new ArrayList<DataFlow>(EcoreUtil.copyAll(actual));
-
-		for (DataFlow df : dfs) {
-			for (EdgeRefinement r : refs) {
-				if (r.getRefiningEdges().contains(df)) {
-					dfs.remove(df);
-					r.getRefiningEdges().remove(df);
-					if (r.getRefiningEdges().isEmpty()) {
-						refs.remove(r);
-					}
-				}
-			}
-		}
-
-		System.out.println(refs);
-		System.out.println(dfs);
-
 		return true;
 	}
 
 	private List<EdgeRefinement> getEdgeRefinements(DataFlowDiagram dfd) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
-		//åSystem.out.println(((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges());
 		return ((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges();
 
+	}
+
+	private boolean isRefiningDiagram(DataFlowDiagram dfd) {
+		return !new EObjectQuery(dfd).getInverseReferences("refiningDiagram").isEmpty();
 	}
 }
