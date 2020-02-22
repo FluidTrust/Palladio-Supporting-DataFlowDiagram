@@ -48,9 +48,4 @@
       <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
     </data>
   </edges>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_ApAUwFVrEeq20OYTyST1CA" name="new Data Flow" target="_RLELIFVmEeqc1tqRdErvhw" source="_OPjisiPWEeqMHZm4xBp56w"/>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_BNKxwFVrEeq20OYTyST1CA" name="new Data Flow" target="_RLELIFVmEeqc1tqRdErvhw" source="_psCWsSYrEeqwleBNcLMfgQ"/>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_CnpywFVrEeq20OYTyST1CA" name="new Data Flow" target="_RLELIFVmEeqc1tqRdErvhw" source="_psCWsSYrEeqwleBNcLMfgQ"/>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_Dlc3wFVrEeq20OYTyST1CA" name="new Data Flow" target="_RLELIFVmEeqc1tqRdErvhw" source="_OPjisiPWEeqMHZm4xBp56w"/>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_E4M5EFVrEeq20OYTyST1CA" name="new Data Flow" target="_RLELIFVmEeqc1tqRdErvhw" source="_fpdB8C5DEeqanrx-VUcwcQ"/>
 </DataFlowDiagram:DataFlowDiagram>

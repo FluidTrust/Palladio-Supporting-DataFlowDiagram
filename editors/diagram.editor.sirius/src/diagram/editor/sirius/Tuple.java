@@ -16,4 +16,10 @@ public class Tuple<T, V> {
 	public V getSecond() {
 		return second;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.first.toString() + ", " + this.second.toString();
+	}
 }

@@ -135,13 +135,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlow" referenceName="edges">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new Data Flow"/>
-                </subModelOperations>
-              </firstModelOperations>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addDF(source,target)"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DoubleClickDescription" name="refineDF" mappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']">

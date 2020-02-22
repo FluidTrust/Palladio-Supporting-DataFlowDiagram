@@ -230,13 +230,33 @@ public class Services {
 
 	}
 
+	public void addDF(EObject self, EObject source, EObject target) {
+		DataFlow df = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
+		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
+		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
+		df.setSource((Node) source);
+		df.setTarget((Node) target);
+		df.setName("new Data Flow");
+
+		sourceDFD.getEdges().add(df);
+		if (!isEqual(sourceDFD, targetDFD)) {
+			targetDFD.getEdges().add(copyDataFlow(df));
+		}
+
+		// TODO: cross-diagram
+		// System.out.println(((DataFlowDiagram)self.eContainer()).getNodes().contains(source));
+		// System.out.println(((DataFlowDiagram)self.eContainer()).getNodes().contains(target));
+		// System.out.println(self);
+		// System.out.println(((DataFlowDiagram) source.eContainer()).getId());
+		// System.out.println(((DataFlowDiagram) target.eContainer()).getId());
+	}
+
 	/*
 	 * Semantic Validation Rules
 	 */
 
 	private boolean isBorderNode(Node n) {
-
-		return getContexts(n).size() > 1; //TODO not working
+		return getContexts(n).size() > 1; // TODO not working
 
 	}
 
@@ -260,7 +280,6 @@ public class Services {
 	public boolean inputOutputIsConsistent(EObject self) {
 		Node n = (Node) self;
 		if (!isBorderNode(n)) {
-			System.out.println(n);
 			return true;
 		}
 
@@ -284,13 +303,63 @@ public class Services {
 	}
 
 	private boolean isConsistent(List<EdgeRefinement> refined, List<Edge> actual) {
-		/*
 		if (refined.isEmpty() != actual.isEmpty()) {
 			return false;
 		}
-		*/
-		// TODO logic
-		return true;
+
+		// TODO check composites etc.
+		Map<Edge, Integer> expectedDataflows = makeRefinementsMap(refined);
+		Map<Edge, Integer> actualDataflows = makeDataflowMap(actual);
+		for (Edge a : actualDataflows.keySet()) {
+			expectedDataflows.computeIfPresent(a, (k, v) -> v+1);
+			actualDataflows.compute(a, (k, v) -> v+1);
+		}
+		
+		Set<Integer> expectedResults = new HashSet<Integer>(expectedDataflows.values());
+		Set<Integer> actualResults = new HashSet<Integer>(actualDataflows.values());
+		return expectedResults.equals(actualResults);
+		
+		
+		
+		// Map<Edge, List<Tuple<Edge, Boolean>>> observations =
+		// makeObservationMap(refined);
+		// TODO early return? -> return statement
+		// TODO equivalence, two lists ...?
+
+		/*
+		 * for (Edge a : actual) { entryLoop: for (java.util.Map.Entry<Edge,
+		 * List<Tuple<Edge, Boolean>>> e : observations.entrySet()) { for (Tuple<Edge,
+		 * Boolean> t : e.getValue()) { if (isEqual(t.getFirst(), a) && !t.getSecond())
+		 * { List<Tuple<Edge, Boolean>> newValue = e.getValue(); newValue.remove(t);
+		 * newValue.add(new Tuple<Edge, Boolean>(a, true)); observations.put(e.getKey(),
+		 * newValue); break entryLoop; // TODO: better way } }
+		 * 
+		 * } } System.out.println("--"); System.out.println(observations);
+		 * System.out.println("--");
+		 */
+		//return true;
+
+	}
+
+	private Map<Edge, Integer> makeRefinementsMap(List<EdgeRefinement> refinements) {
+		Map<Edge, Integer> observations = new HashMap<Edge, Integer>();
+		for (EdgeRefinement r : refinements) {
+			for (Edge e : r.getRefiningEdges()) {
+				observations.put(e, 0);
+			}
+		}
+
+		return observations;
+
+	}
+
+	private Map<Edge, Integer> makeDataflowMap(List<Edge> dataflows) {
+		Map<Edge, Integer> observations = new HashMap<Edge, Integer>();
+		for (Edge d : dataflows) {
+			observations.put(d, 0);
+		}
+
+		return observations;
 
 	}
 
