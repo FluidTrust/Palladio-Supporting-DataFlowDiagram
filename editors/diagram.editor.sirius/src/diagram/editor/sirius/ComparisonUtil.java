@@ -1,5 +1,7 @@
 package diagram.editor.sirius;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
@@ -18,14 +20,14 @@ public class ComparisonUtil {
 
 	}
 
-	public static boolean isEquivalent(PrimitiveDataType a, PrimitiveDataType b) {
+	public static boolean isEquivalentPrimitiveDT(PrimitiveDataType a, PrimitiveDataType b) {
 		if (isEqual(a, b)) {
 			return true;
 		}
 		return a.getName().equals(b.getName());
 	}
 
-	public static boolean isEquivalent(CompositeDataType a, CompositeDataType b) {
+	public static boolean isEquivalentCompositeDT(CompositeDataType a, CompositeDataType b) {
 		if (isEqual(a, b)) {
 			return true;
 		}
@@ -55,14 +57,24 @@ public class ComparisonUtil {
 		return true;
 	}
 
-	public static boolean isEquivalent(CollectionDataType a, CollectionDataType b) {
+	public static boolean isEquivalentCollectionDT(CollectionDataType a, CollectionDataType b) {
 		if (isEqual(a, b)) {
 			return true;
 		}
 		return a.getName().equals(b.getName()) && isEquivalent(a.getType(), b.getType());
 	}
 
-	public static boolean isEquivalent(DataType a, DataType b) { 
+	public static boolean isEquivalent(DataType a, DataType b) {
+		if (a instanceof PrimitiveDataType && b instanceof PrimitiveDataType) {
+			return isEquivalentPrimitiveDT((PrimitiveDataType)a, (PrimitiveDataType)b);	
+		}
+		if (a instanceof CollectionDataType && b instanceof CollectionDataType) {
+			return isEquivalentCollectionDT((CollectionDataType)a, (CollectionDataType)b);
+		}
+		
+		if (a instanceof CompositeDataType && b instanceof CompositeDataType) {
+			return isEquivalentCompositeDT((CompositeDataType)a, (CompositeDataType)b);
+		}
 		return false;
 	}
 
@@ -77,7 +89,8 @@ public class ComparisonUtil {
 		if (isEqual(a, b)) {
 			return true;
 		}
-
+	
+		
 		return a.getName().equals(b.getName()) && isEquivalent(a.getType(), b.getType());
 	}
 
@@ -89,32 +102,32 @@ public class ComparisonUtil {
 			return false;
 		}
 
-
 		if (!isEqual(a.getTarget(), b.getTarget()) && !isEqual(a.getSource(), b.getSource())) { // must at least share
 																								// one of source or
 																								// target
 			return false;
 		}
-
 		// compare set of entries
 		for (Data d1 : a.getData()) {
-			for (Data d2 : b.getData()) {
-				if (isEquivalent(d1, d2)) {
-					break;
-				}
+			if(!findMatch(d1, b.getData())) {
+				return false;
 			}
-			return false;
 		}
-
 		for (Data d1 : b.getData()) {
-			for (Data d2 : a.getData()) {
-				if (isEquivalent(d1, d2)) {
-					break;
-				}
+			if(!findMatch(d1, a.getData())) {
+				return false;
 			}
-			return false;
 		}
-
 		return true;
+	}
+	
+	
+	private static boolean findMatch(Data d, List<Data> candidates) {
+		for (Data c : candidates) {
+			if (isEquivalent(d, c)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

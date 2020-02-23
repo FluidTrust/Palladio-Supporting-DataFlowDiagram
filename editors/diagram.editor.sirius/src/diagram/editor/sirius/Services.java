@@ -78,6 +78,10 @@ public class Services {
 		return refs.isEmpty();
 	}
 
+	private List<DataFlow> refineDF(DataFlow df) { // TODO
+		return new ArrayList<DataFlow>();
+	}
+
 	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
 		Session session = SessionManager.INSTANCE.getSession(df);
 
@@ -279,11 +283,11 @@ public class Services {
 			return true;
 		}
 		DataFlowDiagram originalContext = (DataFlowDiagram) self.eContainer();
-		Tuple<List<Edge>, List<Edge>> expectedDataFlows = getDataFlows(originalContext, n);
+		Tuple<List<DataFlow>, List<DataFlow>> expectedDataFlows = getDataFlows(originalContext, n);
 		Set<DataFlowDiagram> allContexts = getContexts(n);
 		allContexts.remove(originalContext);
 		for (DataFlowDiagram context : allContexts) {
-			Tuple<List<Edge>, List<Edge>> observedDataFlows = getDataFlows(context, n);
+			Tuple<List<DataFlow>, List<DataFlow>> observedDataFlows = getDataFlows(context, n);
 			if (!isConsistent(expectedDataFlows.getFirst(), observedDataFlows.getFirst())
 					|| !isConsistent(expectedDataFlows.getSecond(), observedDataFlows.getSecond())) {
 				return false;
@@ -297,48 +301,46 @@ public class Services {
 		return;
 	}
 
-	private void incrementIfEquivalent(DataFlow key, Map<DataFlow, Integer> map) {
-		for (DataFlow k : map.keySet()) {
-			if (ComparisonUtil.isEquivalent(key,  k)) {
-				map.compute(k, (u, v) -> v + 1);
-			}
-		}
-
-	}
-
-	private boolean isConsistent(List<Edge> expected, List<Edge> actual) {
+	private boolean isConsistent(List<DataFlow> expected, List<DataFlow> actual) {
 		if (expected.isEmpty() != actual.isEmpty()) {
 			return false;
 		}
-		// TODO: consistency algorithm; map not enough -> maybe still use refs, but only with static/manually managed entries
-		
-		return true;
-
-
-	}
-
-	private Map<DataFlow, Integer> makeDataFlowMap(List<Edge> dataflows) {
-		Map<DataFlow, Integer> observations = new HashMap<DataFlow, Integer>();
-		for (Edge d : dataflows) {
-			observations.put((DataFlow) d, 0);
-		}
-
-		return observations;
-
-	}
-
-	private Tuple<List<Edge>, List<Edge>> getDataFlows(DataFlowDiagram context, Node n) {
-		List<Edge> input = new ArrayList<Edge>();
-		List<Edge> output = new ArrayList<Edge>();
-		for (Edge e : context.getEdges()) {
-			if (ComparisonUtil.isEqual(n, e.getSource())) {
-				output.add(e);
-			} else if (ComparisonUtil.isEqual(n, e.getTarget())) {
-				input.add(e);
+		for (DataFlow edf : expected) {
+			if (attemptMarking(edf, actual)) {
+				expected.remove(edf);
+				//continue;
+			} else { // not directly equivalent; recursive refining
+				// TODO
 			}
 		}
 
-		return new Tuple<List<Edge>, List<Edge>>(input, output);
+		return expected.isEmpty() && actual.isEmpty(); // all are marked
+	}
+
+	private boolean attemptMarking(DataFlow expected, List<DataFlow> actual) {
+		for (DataFlow adf : actual) {
+			if (ComparisonUtil.isEquivalent(expected, adf)) {
+				actual.remove(adf);
+				return true;
+			}
+
+		}
+		return false;
+
+	}
+
+	private Tuple<List<DataFlow>, List<DataFlow>> getDataFlows(DataFlowDiagram context, Node n) {
+		List<DataFlow> input = new ArrayList<DataFlow>();
+		List<DataFlow> output = new ArrayList<DataFlow>();
+		for (Edge e : context.getEdges()) {
+			if (ComparisonUtil.isEqual(n, e.getSource())) {
+				output.add((DataFlow) e);
+			} else if (ComparisonUtil.isEqual(n, e.getTarget())) {
+				input.add((DataFlow) e);
+			}
+		}
+
+		return new Tuple<List<DataFlow>, List<DataFlow>>(input, output);
 
 	}
 }
