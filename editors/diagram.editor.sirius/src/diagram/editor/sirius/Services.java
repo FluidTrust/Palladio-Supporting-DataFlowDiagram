@@ -64,12 +64,6 @@ public class Services {
 		return dfd.eContainer().eContainer();
 	}
 	
-	public EObject navigateDown(EObject self, EObject dfd) {
-		DataFlowDiagram ndfd = (DataFlowDiagram) dfd;
-		// TODO find dfd pertaining to self
-		return dfd.eContainer();
-	}
-
 	public List<EObject> listDataTypes(EObject self) {
 		Session session = SessionManager.INSTANCE.getSession(self);
 		return DFDUtil.getDataTypes(session);
