@@ -15,7 +15,7 @@
         </ownedRules>
       </validationSet>
       <defaultLayer name="Default">
-        <nodeMappings name="ProcessNode" semanticCandidatesExpression="aql:self.nodes" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="DataFlowDiagram::Process">
+        <nodeMappings name="ProcessNode" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteNode']" semanticCandidatesExpression="aql:self.nodes" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineProcess']" domainClass="DataFlowDiagram::Process">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -27,37 +27,37 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="StoreNode" semanticCandidatesExpression="aql:self.nodes" domainClass="DataFlowDiagram::Store">
+        <nodeMappings name="StoreNode" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteNode']" semanticCandidatesExpression="aql:self.nodes" domainClass="DataFlowDiagram::Store">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ExternalActorNode" semanticCandidatesExpression="aql:self.nodes" domainClass="DataFlowDiagram::ExternalActor">
+        <nodeMappings name="ExternalActorNode" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteNode']" semanticCandidatesExpression="aql:self.nodes" domainClass="DataFlowDiagram::ExternalActor">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ReadOnlyProcessNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='navigateUp']" domainClass="DataFlowDiagram::Process">
+        <nodeMappings name="ReadOnlyProcessNode" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteNode']" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='navigateUp']" domainClass="DataFlowDiagram::Process">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ReadOnlyExternalActorNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='navigateUp']" domainClass="DataFlowDiagram::ExternalActor">
+        <nodeMappings name="ReadOnlyExternalActorNode" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteNode']" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='navigateUp']" domainClass="DataFlowDiagram::ExternalActor">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ReadOnlyStoreNode" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='navigateUp']" domainClass="DataFlowDiagram::Store">
+        <nodeMappings name="ReadOnlyStoreNode" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteNode']" semanticCandidatesExpression="aql:self.eInverse('refiningDiagram').refinedProcess.providingNodes->union(self.eInverse('refiningDiagram').refinedProcess.requiringNodes)" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='navigateUp']" domainClass="DataFlowDiagram::Store">
           <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="DataFlowEdge" semanticCandidatesExpression="aql:self.edges" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFTarget'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFSource']">
+        <edgeMappings name="DataFlowEdge" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteEdge']" semanticCandidatesExpression="aql:self.edges" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFTarget'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFSource']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
@@ -191,6 +191,22 @@
                 <subModelOperations xsi:type="tool:Navigation" diagramDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteEdge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteEdge()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteNode">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
