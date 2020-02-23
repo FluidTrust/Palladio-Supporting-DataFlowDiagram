@@ -58,6 +58,17 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
  * The services class used by VSM.
  */
 public class Services {
+	
+	
+	public EObject navigateUp(EObject self, EObject dfd) {
+		return dfd.eContainer().eContainer();
+	}
+	
+	public EObject navigateDown(EObject self, EObject dfd) {
+		DataFlowDiagram ndfd = (DataFlowDiagram) dfd;
+		// TODO find dfd pertaining to self
+		return dfd.eContainer();
+	}
 
 	public List<EObject> listDataTypes(EObject self) {
 		Session session = SessionManager.INSTANCE.getSession(self);
@@ -68,6 +79,13 @@ public class Services {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
 		return !refs.isEmpty();
 	}
+	
+
+	public boolean isNotRefined(EObject self) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
+		return refs.isEmpty();
+	}
+
 
 	private EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(refiningDF).getInverseReferences("refiningEdges"));
