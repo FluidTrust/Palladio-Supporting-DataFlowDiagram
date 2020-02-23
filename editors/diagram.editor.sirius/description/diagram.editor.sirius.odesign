@@ -10,7 +10,7 @@
         <ownedRules xsi:type="validation:SemanticValidationRule" name="noDataDF" level="ERROR" message="This dataflow has no data associated with it." targetClass="DataFlowDiagram::DataFlow">
           <audits auditExpression="aql:self.data->notEmpty()"/>
         </ownedRules>
-        <ownedRules xsi:type="validation:SemanticValidationRule" name="inputOutPutisConsistent" level="ERROR" targetClass="DataFlowDiagram::Node">
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="inputOutPutIsConsistent" level="ERROR" targetClass="DataFlowDiagram::Node">
           <audits auditExpression="service:inputOutputIsConsistent()"/>
         </ownedRules>
       </validationSet>
@@ -57,7 +57,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="DataFlowEdge" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteEdge']" semanticCandidatesExpression="aql:self.edges" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFTarget'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFSource']">
+        <edgeMappings name="DataFlowEdge" semanticCandidatesExpression="aql:self.edges" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFTarget'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFSource']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
@@ -182,16 +182,6 @@
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:navigateUp(dfd)">
                   <subModelOperations xsi:type="tool:Navigation" diagramDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
                 </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteEdge">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:deleteEdge()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

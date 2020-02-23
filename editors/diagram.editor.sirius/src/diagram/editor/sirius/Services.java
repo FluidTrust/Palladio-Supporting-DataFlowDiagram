@@ -58,12 +58,11 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
  * The services class used by VSM.
  */
 public class Services {
-	
-	
+
 	public EObject navigateUp(EObject self, EObject dfd) {
 		return dfd.eContainer().eContainer();
 	}
-	
+
 	public List<EObject> listDataTypes(EObject self) {
 		Session session = SessionManager.INSTANCE.getSession(self);
 		return DFDUtil.getDataTypes(session);
@@ -73,21 +72,10 @@ public class Services {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
 		return !refs.isEmpty();
 	}
-	
 
 	public boolean isNotRefined(EObject self) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
 		return refs.isEmpty();
-	}
-
-
-	private EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(refiningDF).getInverseReferences("refiningEdges"));
-		System.out.println(refs);
-		if (refs.isEmpty())
-			return null;
-		return (EdgeRefinement) refs.get(0);
-
 	}
 
 	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
@@ -96,19 +84,11 @@ public class Services {
 		if (df.getData().isEmpty()) {
 			return;
 		}
-		EdgeRefinement ref = getRefinedEdge(df);
-		if (ref == null) {
-			// TODO
-		} else {
-			ref.getRefiningEdges().remove(df);
-		}
-
 		if (df.getData().size() > 1) {
 			// one df per data
 			for (Data d : df.getData()) {
 				DataFlow ndf = makeSingleDataFlow(d, df);
 				dfd.getEdges().add(ndf);
-				ref.getRefiningEdges().add(ndf);
 
 			}
 			dfd.getEdges().remove(df);
@@ -127,8 +107,6 @@ public class Services {
 					DataFlow ndf = makeSingleDataFlow(data, df);
 					ndf.setName(name + suffix++);
 					dfs.add(ndf);
-					ref.getRefiningEdges().add(ndf);
-
 				}
 				dfd.getEdges().remove(df);
 				dfd.getEdges().addAll(dfs);
@@ -162,7 +140,7 @@ public class Services {
 
 			}
 		}
-		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD, ref);
+		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD);
 	}
 
 	private Node copyNode(Node n) { // simulated polymorphism! Naming schemes?
@@ -214,7 +192,7 @@ public class Services {
 	}
 
 	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD,
-			DataFlowDiagram newDFD, DataFlowDiagramRefinement ref) {
+			DataFlowDiagram newDFD) {
 
 		Node newProcess = copyNode(p);
 		newDFD.getNodes().add(newProcess);
@@ -223,24 +201,14 @@ public class Services {
 			DataFlow ndf = copyDataFlow(df);
 			ndf.setTarget(newProcess);
 			newDFD.getEdges().add(ndf);
-			addToRef(df, ndf, ref);
 		}
 
 		for (DataFlow df : out) {
 			DataFlow ndf = copyDataFlow(df);
 			ndf.setSource(newProcess);
 			newDFD.getEdges().add(ndf);
-			addToRef(df, ndf, ref);
 		}
 		// DFDUtil.validateDiagram(newDFD); // TODO: not working
-
-	}
-
-	private void addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
-		EdgeRefinement er = DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement();
-		er.setRefinedEdge(df);
-		er.getRefiningEdges().add(ndf);
-		ref.getRefinedEdges().add(er);
 
 	}
 
@@ -280,6 +248,14 @@ public class Services {
 		return getContexts(n).size() > 1;
 	}
 
+	private Set<DataFlow> getRef(Node n, String ref) { // "source" or "target"
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences(ref).stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+		Set<DataFlow> dfs = new HashSet<DataFlow>();
+		refs.forEach(i -> dfs.add((DataFlow) i));
+		return dfs;
+	}
+
 	private Set<DataFlowDiagram> getContexts(Node n) {
 		List<EObject> inputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("target").stream()
 				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
@@ -302,41 +278,18 @@ public class Services {
 		if (!isBorderNode(n)) {
 			return true;
 		}
-
-		Set<DataFlowDiagram> contexts = getContexts(n);
-		for (DataFlowDiagram context : contexts) {
-			if (!isRefiningDiagram(context)) {
-				continue;
-			}
-			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> edgeRefinements = getEdgeRefinements(context, n);
-			List<EdgeRefinement> refinedInputs = edgeRefinements.getFirst();
-			List<EdgeRefinement> refinedOutputs = edgeRefinements.getSecond();
-			Tuple<List<Edge>, List<Edge>> actualDFs = getCurrentDataFlows(context, n);
-			List<Edge> actualInputs = actualDFs.getFirst();
-			List<Edge> actualOutputs = actualDFs.getSecond();
-			if (!isConsistent(refinedInputs, actualInputs) || !isConsistent(refinedOutputs, actualOutputs)) {
+		DataFlowDiagram originalContext = (DataFlowDiagram) self.eContainer();
+		Tuple<List<Edge>, List<Edge>> expectedDataFlows = getDataFlows(originalContext, n);
+		Set<DataFlowDiagram> allContexts = getContexts(n);
+		allContexts.remove(originalContext);
+		for (DataFlowDiagram context : allContexts) {
+			Tuple<List<Edge>, List<Edge>> observedDataFlows = getDataFlows(context, n);
+			if (!isConsistent(expectedDataFlows.getFirst(), observedDataFlows.getFirst())
+					|| !isConsistent(expectedDataFlows.getSecond(), observedDataFlows.getSecond())) {
 				return false;
 			}
 		}
-
 		return true;
-	}
-
-	public void deleteEdge(EObject self) {
-		DataFlow df = (DataFlow) self;
-		EdgeRefinement er = getRefinedEdge(df);
-		if (er == null) {
-			DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
-			dfd.getEdges().remove(df);
-		} else {
-			// TODO: er change not working
-			DataFlow ndf = copyDataFlow(df);
-			DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
-			dfd.getEdges().remove(df);
-			er.getRefiningEdges().add(ndf);
-			System.out.println(er.getRefiningEdges());
-			System.out.println(er.getId());
-		}
 	}
 
 	public void deleteNode(EObject self) {
@@ -344,100 +297,37 @@ public class Services {
 		return;
 	}
 
-	private void incementIfEquivalent(Edge key, Map<Edge, Integer> map) {
-		for (Edge k : map.keySet()) {
-			if (ComparisonUtil.isEquivalent((DataFlow)key, (DataFlow)k)) {
+	private void incrementIfEquivalent(DataFlow key, Map<DataFlow, Integer> map) {
+		for (DataFlow k : map.keySet()) {
+			if (ComparisonUtil.isEquivalent(key,  k)) {
 				map.compute(k, (u, v) -> v + 1);
 			}
 		}
 
 	}
 
-	private boolean isConsistent(List<EdgeRefinement> refined, List<Edge> actual) {
-		if (refined.isEmpty() != actual.isEmpty()) {
+	private boolean isConsistent(List<Edge> expected, List<Edge> actual) {
+		if (expected.isEmpty() != actual.isEmpty()) {
 			return false;
 		}
-		Map<Edge, Integer> expectedDataflows = makeRefinementsMap(refined);
-		Map<Edge, Integer> actualDataflows = makeDataflowMap(actual);
+		// TODO: consistency algorithm; map not enough -> maybe still use refs, but only with static/manually managed entries
+		
+		return true;
 
-		for (Edge a : actualDataflows.keySet()) {
-			// expectedDataflows.computeIfPresent(a, (k, v) -> v + 1);
-			incementIfEquivalent(a, expectedDataflows);
-			actualDataflows.compute(a, (k, v) -> v + 1);
-		}
-		// first case: generated 1:1 (or 1:n) mapping of refined and refining edge
-		// second case: 1:1 mapping but manually created
-		// third case: 1:n mapping but manually created
-
-		Set<Integer> expectedResults = new HashSet<Integer>(expectedDataflows.values());
-		Set<Integer> actualResults = new HashSet<Integer>(actualDataflows.values());
-
-		System.out.println("RES: " + expectedResults.equals(actualResults));
-		System.out.println(expectedDataflows);
-		System.out.println(actualDataflows);
-		return expectedResults.equals(actualResults);
-
-		// Map<Edge, List<Tuple<Edge, Boolean>>> observations =
-		// makeObservationMap(refined);
-		// TODO early return? -> return statement
-		// TODO equivalence, two lists ...?
-
-		/*
-		 * for (Edge a : actual) { entryLoop: for (java.util.Map.Entry<Edge,
-		 * List<Tuple<Edge, Boolean>>> e : observations.entrySet()) { for (Tuple<Edge,
-		 * Boolean> t : e.getValue()) { if (isEqual(t.getFirst(), a) && !t.getSecond())
-		 * { List<Tuple<Edge, Boolean>> newValue = e.getValue(); newValue.remove(t);
-		 * newValue.add(new Tuple<Edge, Boolean>(a, true)); observations.put(e.getKey(),
-		 * newValue); break entryLoop; // TODO: better way } }
-		 * 
-		 * } } System.out.println("--"); System.out.println(observations);
-		 * System.out.println("--");
-		 */
-		// return true;
 
 	}
 
-	private Map<Edge, Integer> makeRefinementsMap(List<EdgeRefinement> refinements) {
-		Map<Edge, Integer> observations = new HashMap<Edge, Integer>();
-		for (EdgeRefinement r : refinements) {
-			for (Edge e : r.getRefiningEdges()) {
-				observations.put(e, 0);
-			}
-		}
-
-		return observations;
-
-	}
-
-	private Map<Edge, Integer> makeDataflowMap(List<Edge> dataflows) {
-		Map<Edge, Integer> observations = new HashMap<Edge, Integer>();
+	private Map<DataFlow, Integer> makeDataFlowMap(List<Edge> dataflows) {
+		Map<DataFlow, Integer> observations = new HashMap<DataFlow, Integer>();
 		for (Edge d : dataflows) {
-			observations.put(d, 0);
+			observations.put((DataFlow) d, 0);
 		}
 
 		return observations;
 
 	}
 
-	private Tuple<List<EdgeRefinement>, List<EdgeRefinement>> getEdgeRefinements(DataFlowDiagram dfd, Node n) {
-		List<EdgeRefinement> inputs = new ArrayList<EdgeRefinement>();
-		List<EdgeRefinement> outputs = new ArrayList<EdgeRefinement>();
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(dfd).getInverseReferences("refiningDiagram"));
-		List<EdgeRefinement> allEdges = ((DataFlowDiagramRefinement) refs.get(0)).getRefinedEdges();
-
-		for (EdgeRefinement er : allEdges) {
-			if (ComparisonUtil.isEqual(er.getRefinedEdge().getSource(), n)) {
-				outputs.add(er);
-
-			} else if (ComparisonUtil.isEqual(er.getRefinedEdge().getTarget(), n)) {
-				inputs.add(er);
-
-			}
-		}
-		return new Tuple<List<EdgeRefinement>, List<EdgeRefinement>>(inputs, outputs);
-	}
-
-	private Tuple<List<Edge>, List<Edge>> getCurrentDataFlows(DataFlowDiagram context, Node n) {
+	private Tuple<List<Edge>, List<Edge>> getDataFlows(DataFlowDiagram context, Node n) {
 		List<Edge> input = new ArrayList<Edge>();
 		List<Edge> output = new ArrayList<Edge>();
 		for (Edge e : context.getEdges()) {
@@ -450,9 +340,5 @@ public class Services {
 
 		return new Tuple<List<Edge>, List<Edge>>(input, output);
 
-	}
-
-	private boolean isRefiningDiagram(DataFlowDiagram dfd) {
-		return !new EObjectQuery(dfd).getInverseReferences("refiningDiagram").isEmpty();
 	}
 }
