@@ -334,7 +334,7 @@ public class Services {
 
 	private void incementIfEquivalent(Edge key, Map<Edge, Integer> map) {
 		for (Edge k : map.keySet()) {
-			if (ComparisonUtil.isEquivalent(key, k)) {
+			if (ComparisonUtil.isEquivalent((DataFlow)key, (DataFlow)k)) {
 				map.compute(k, (u, v) -> v + 1);
 			}
 		}

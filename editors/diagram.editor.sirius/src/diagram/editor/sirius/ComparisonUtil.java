@@ -30,10 +30,28 @@ public class ComparisonUtil {
 			return true;
 		}
 
-		if (!a.getName().equals(b.getName())) {
+		if (!a.getName().equals(b.getName()) || a.getComponents().size() != b.getComponents().size()) {
 			return false;
 		}
-		// TODO compare set of entries
+		// compare set of entries
+		for (Entry e1 : a.getComponents()) {
+			for (Entry e2 : b.getComponents()) {
+				if (isEquivalent(e1, e2)) {
+					break;
+				}
+			}
+			return false;
+		}
+
+		for (Entry e1 : b.getComponents()) {
+			for (Entry e2 : a.getComponents()) {
+				if (isEquivalent(e1, e2)) {
+					break;
+				}
+			}
+			return false;
+		}
+
 		return true;
 	}
 
@@ -44,8 +62,7 @@ public class ComparisonUtil {
 		return a.getName().equals(b.getName()) && isEquivalent(a.getType(), b.getType());
 	}
 
-	public static boolean isEquivalent(DataType a, DataType b) { // use most specific binding -> only called when types
-																	// different; cannot be equivalent
+	public static boolean isEquivalent(DataType a, DataType b) { 
 		return false;
 	}
 
@@ -60,19 +77,41 @@ public class ComparisonUtil {
 		if (isEqual(a, b)) {
 			return true;
 		}
-		return true;
-	}
 
-	public static boolean isEquivalent(Edge a, Edge b) { // use most specific binding -> only called when types
-															// different; cannot be equivalent
-		return false;
+		return a.getName().equals(b.getName()) && isEquivalent(a.getType(), b.getType());
 	}
 
 	public static boolean isEquivalent(DataFlow a, DataFlow b) {
 		if (isEqual(a, b)) {
 			return true;
 		}
-		if (a.getName().equals(b.getName())) {
+		if (!a.getName().equals(b.getName()) || a.getData().size() != b.getData().size()) {
+			return false;
+		}
+
+
+		if (!isEqual(a.getTarget(), b.getTarget()) && !isEqual(a.getSource(), b.getSource())) { // must at least share
+																								// one of source or
+																								// target
+			return false;
+		}
+
+		// compare set of entries
+		for (Data d1 : a.getData()) {
+			for (Data d2 : b.getData()) {
+				if (isEquivalent(d1, d2)) {
+					break;
+				}
+			}
+			return false;
+		}
+
+		for (Data d1 : b.getData()) {
+			for (Data d2 : a.getData()) {
+				if (isEquivalent(d1, d2)) {
+					break;
+				}
+			}
 			return false;
 		}
 
