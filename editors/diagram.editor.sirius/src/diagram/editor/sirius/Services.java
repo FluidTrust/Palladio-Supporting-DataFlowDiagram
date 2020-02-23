@@ -301,16 +301,42 @@ public class Services {
 		return;
 	}
 
+	private boolean isRefinable(DataFlow df) {
+		if (df.getData().size() > 1) {
+			return true;
+		}
+		if (df.getData().size() > 0 && df.getData().get(0).getType() instanceof CompositeDataType) {
+			return true;
+		}
+		
+		return false;
+		
+	}
+	
 	private boolean isConsistent(List<DataFlow> expected, List<DataFlow> actual) {
 		if (expected.isEmpty() != actual.isEmpty()) {
 			return false;
 		}
 		for (DataFlow edf : expected) {
-			if (attemptMarking(edf, actual)) {
+			if (attemptMarking(edf, actual)) { // directly equivalent
 				expected.remove(edf);
-				//continue;
-			} else { // not directly equivalent; recursive refining
-				// TODO
+			} else { // not directly equivalent; recursive refining with large runtime! 
+				List<DataFlow> prevRefinedDataFlows = new ArrayList<DataFlow>(List.of(edf));
+				List<DataFlow> nextRefinedDataFlows = new ArrayList<DataFlow>();
+				/*
+				while (prevRefinedDataFlows.stream().anyMatch(this::isRefinable)) {
+					for (DataFlow pdf : prevRefinedDataFlows) {
+						nextRefinedDataFlows.addAll(refineDF(pdf));
+						// TODO: edge cases?; dfs-like approach
+						
+						//...
+						
+						
+					}
+					
+				}
+				*/
+				
 			}
 		}
 
