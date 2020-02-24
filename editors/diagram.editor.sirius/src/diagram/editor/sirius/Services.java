@@ -36,6 +36,8 @@ import org.eclipse.sirius.business.api.session.SessionManager;
  */
 public class Services {
 
+	private final String ERROR_MESSAGE = "Node %s is in an inconsistent state because %s not consistently refined.";
+
 	public EObject navigateUp(EObject self, EObject dfd) {
 		return dfd.eContainer().eContainer();
 	}
@@ -261,33 +263,33 @@ public class Services {
 		}
 
 	}
-	
+
 	public List<EdgeRefinement> showRefinements(EObject self, EObject source, EObject target) {
-		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>(); 
-		System.out.println("show ref"); 
+		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>();
+		System.out.println("show ref");
 		if (!ComparisonUtil.isEqual(self.eContainer(), source.eContainer())) {
-			((DataFlowDiagram)target.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
+			((DataFlowDiagram) target.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
 		} else {
-			((DataFlowDiagram)source.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
+			((DataFlowDiagram) source.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
 		}
 		System.out.println(refs);
 		return refs;
-		
+
 	}
-	
-	
+
 	public void addToExistingRef(EObject self, EdgeRefinement er) {
 		System.out.println(self);
 		System.out.println(er);
 		System.out.println("!!!!");
 	}
+
 	public void addRefiningDF(EObject self, EObject source, EObject target, EdgeRefinement er) {
 		System.out.println("!!!");
 		System.out.println(self);
 		System.out.println(er);
-		DataFlow df = (DataFlow)self;
-		//df.setSource(source);
-		//df.setTarget(target);
+		DataFlow df = (DataFlow) self;
+		// df.setSource(source);
+		// df.setTarget(target);
 	}
 
 	public void addDF(EObject self, EObject source, EObject target, boolean isRefining) {
@@ -364,7 +366,11 @@ public class Services {
 
 		for (DataFlowDiagram context : allContexts) {
 			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = getEdgeRefinements(n, context);
-			if (!isConsistent(toCheck)) {
+			if (!isConsistent(toCheck.getFirst()).stream().allMatch(t -> t.getSecond())) { // check inputs
+				return false;
+			}
+
+			if (!isConsistent(toCheck.getSecond()).stream().allMatch(t -> t.getSecond())) { // check outputs
 				return false;
 			}
 		}
@@ -499,22 +505,58 @@ public class Services {
 		return false;
 	}
 
-	private boolean isConsistent(Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck) {
-		List<EdgeRefinement> inputs = toCheck.getFirst();
-		List<EdgeRefinement> outputs = toCheck.getSecond();
-		for (EdgeRefinement ref : inputs) {
-			Edge base = ref.getRefinedEdge();
-			if (!canMerge(base, ref.getRefiningEdges())) {
-				return false;
+	public String getErrorMessage(EObject self) {
+		List<String> inputErrors = new ArrayList<String>();
+		List<String> outputErrors = new ArrayList<String>();
+		Node n = (Node) self;
+
+		Set<DataFlowDiagram> allContexts = getContexts(n);
+
+		for (DataFlowDiagram context : allContexts) {
+			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = getEdgeRefinements(n, context);
+			for (Tuple<EdgeRefinement, Boolean> r : isConsistent(toCheck.getFirst())) {
+				if (!r.getSecond()) {
+					inputErrors.add(r.getFirst().getRefinedEdge().getName());
+				}
 			}
+			for (Tuple<EdgeRefinement, Boolean> r : isConsistent(toCheck.getSecond())) {
+				if (!r.getSecond()) {
+					outputErrors.add(r.getFirst().getRefinedEdge().getName());
+				}
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		String inputIntro = (inputErrors.size() > 1) ? " inputs" : " input ";
+		String outputIntro = (outputErrors.size() > 1) ? " outputs " : " output ";
+		String verb = ((!inputErrors.isEmpty() && !outputErrors.isEmpty()) || inputErrors.size() > 1
+				|| outputErrors.size() > 1) ? " are " : " is ";
+		String connective = (!inputErrors.isEmpty() && !outputErrors.isEmpty()) ? " and " : "";
+		if (!inputErrors.isEmpty()) {
+			sb.append(inputIntro);
+			sb.append(String.join(", ", inputErrors));
+			sb.append(connective);
 		}
 
-		for (EdgeRefinement ref : outputs) {
+		if (!outputErrors.isEmpty()) {
+			sb.append(outputIntro);
+			sb.append(String.join(", ", outputErrors));
+		}
+		sb.append(verb);
+
+		return String.format(ERROR_MESSAGE, n.getName(), sb.toString());
+	}
+
+	private List<Tuple<EdgeRefinement, Boolean>> isConsistent(List<EdgeRefinement> toCheck) {
+		List<Tuple<EdgeRefinement, Boolean>> results = new ArrayList<Tuple<EdgeRefinement, Boolean>>();
+		for (EdgeRefinement ref : toCheck) {
+			boolean currentResult = true;
 			Edge base = ref.getRefinedEdge();
 			if (!canMerge(base, ref.getRefiningEdges())) {
-				return false;
+				currentResult = false;
 			}
+			results.add(new Tuple<EdgeRefinement, Boolean>(ref, currentResult));
 		}
-		return true;
+
+		return results;
 	}
 }

@@ -10,7 +10,7 @@
         <ownedRules xsi:type="validation:SemanticValidationRule" name="noDataDF" level="ERROR" message="This dataflow has no data associated with it." targetClass="DataFlowDiagram::DataFlow">
           <audits auditExpression="aql:self.data->notEmpty()"/>
         </ownedRules>
-        <ownedRules xsi:type="validation:SemanticValidationRule" name="inputOutPutIsConsistent" level="ERROR" targetClass="DataFlowDiagram::Node">
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="inputOutPutIsConsistent" level="ERROR" message="service:getErrorMessage()" targetClass="DataFlowDiagram::Node">
           <audits auditExpression="service:inputOutputIsConsistent()"/>
         </ownedRules>
       </validationSet>
