@@ -4,8 +4,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PlatformUI;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
@@ -17,45 +15,21 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util.DataFlowDiagramSwitch;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType;
-
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
-import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationCommand;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
-import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
 /**
  * The services class used by VSM.
@@ -76,9 +50,8 @@ public class Services {
 		return !refs.isEmpty();
 	}
 
-	public boolean isNotRefined(EObject self) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
-		return refs.isEmpty();
+	public boolean needRef(EObject self, EObject source, EObject target) {
+		return !ComparisonUtil.isEqual(source.eContainer(), target.eContainer()); // <-> if cross-dfd;
 	}
 
 	private List<Edge> refineEdge(Edge edge) {
@@ -100,7 +73,7 @@ public class Services {
 			int suffix = 1;
 			List<DataFlow> dfs = new ArrayList<DataFlow>();
 			if (type instanceof CompositeDataType) {
-				List<Entry> entries = DFDUtil.refineDT(type, session); // TODO: error
+				List<Entry> entries = DFDUtil.refineDT(type, session);
 				for (Entry e : entries) {
 					Data data = makeData(e);
 					DataFlow ndf = makeSingleDataFlow(data, df);
@@ -288,17 +261,45 @@ public class Services {
 		}
 
 	}
+	
+	public List<EdgeRefinement> showRefinements(EObject self, EObject source, EObject target) {
+		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>(); 
+		System.out.println("show ref"); 
+		if (!ComparisonUtil.isEqual(self.eContainer(), source.eContainer())) {
+			((DataFlowDiagram)target.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
+		} else {
+			((DataFlowDiagram)source.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
+		}
+		System.out.println(refs);
+		return refs;
+		
+	}
+	
+	
+	public void addToExistingRef(EObject self, EdgeRefinement er) {
+		System.out.println(self);
+		System.out.println(er);
+		System.out.println("!!!!");
+	}
+	public void addRefiningDF(EObject self, EObject source, EObject target, EdgeRefinement er) {
+		System.out.println("!!!");
+		System.out.println(self);
+		System.out.println(er);
+		DataFlow df = (DataFlow)self;
+		//df.setSource(source);
+		//df.setTarget(target);
+	}
 
-	public void addDF(EObject self, EObject source, EObject target) {
+	public void addDF(EObject self, EObject source, EObject target, boolean isRefining) {
 		DataFlow df = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
 		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
 		df.setSource((Node) source);
 		df.setTarget((Node) target);
 		df.setName("new Data Flow");
-
+		// TODO ref creation, adding ...
 		sourceDFD.getEdges().add(df);
-		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO correct?
+		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for visibility?
 			targetDFD.getEdges().add(copyDataFlow(df));
 		}
 	}
@@ -398,7 +399,41 @@ public class Services {
 		return false;
 	}
 
+	private static boolean findMatchList(List<Edge> find, List<List<Edge>> candidates) {
+		for (Edge f : find) {
+			for (List<Edge> c : candidates)
+				if (findMatch(f, c)) {
+					return true;
+				}
+		}
+		return false;
+	}
+
+	private boolean isEquivalentList(List<List<Edge>> one, List<List<Edge>> two) {
+		System.out.println(one);
+		System.out.println(two);
+
+		for (List<Edge> o : one) {
+			if (!findMatchList(o, two)) {
+				return false;
+			}
+
+		}
+
+		for (List<Edge> t : two) {
+			if (!findMatchList(t, one)) {
+				return false;
+			}
+
+		}
+
+		return true;
+	}
+
 	private boolean isEquivalent(List<Edge> base, List<Edge> subFlows) {
+		System.out.println("isEQ");
+		System.out.println(base);
+		System.out.println(subFlows);
 
 		for (Edge b : base) {
 			if (!findMatch(b, subFlows)) {
@@ -448,33 +483,19 @@ public class Services {
 		}
 		// generate all candidates; initialized with first refinement
 		List<List<Edge>> candidates = new ArrayList<List<Edge>>(List.of(refineEdge(base)));
-
-		Iterator<List<Edge>> cIterator = candidates.iterator();
-
-		while (cIterator.hasNext()) {
-			List<Edge> c = cIterator.next();
-			System.out.println(c);
-			if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
-				System.out.println("---");
-				return true;
-			}
-			List<List<Edge>> newCandidates = refineAllButOne(c); // refine all but one candidate -> will over time
-																	// generate all possible combinations of refinements
-			//System.out.println(newCandidates);
-			//candidates.addAll(newCandidates);
-			/*
-			for (List<Edge> nc : newCandidates) { // stop adding to list if no new candidates are possible
-				if (!nc.isEmpty() && !candidates.contains(nc)) {
-					candidates.add(nc);
+		List<List<Edge>> newCandidates = new ArrayList<List<Edge>>();
+		while (!isEquivalentList(candidates, newCandidates)) {
+			newCandidates.clear();
+			for (List<Edge> c : candidates) { // TODO -> never true? -> format not correct?
+				if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
+					System.out.println("---");
+					return true;
 				}
+				newCandidates.addAll(refineAllButOne(c)); // refine all but one candidate -> will over time
+															// generate all possible combinations of refinements
 			}
-			*/
-
 		}
-
-
 		System.out.println("===");
-
 		return false;
 	}
 
