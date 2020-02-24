@@ -96,6 +96,26 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
         <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_999OcFZUEeqWq9eZSnZo0Q"/>
       </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_sC8JoVZwEeqBVsWX-MvdbQ" name="DFD Editor" repPath="#_sC2qEFZwEeqBVsWX-MvdbQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+        <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_r3JwYFZwEeqBVsWX-MvdbQ"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zRovg1ZxEeqBVsWX-MvdbQ" name="DFD Editor" repPath="#_zRm6UFZxEeqBVsWX-MvdbQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+        <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_zGzYgFZxEeqBVsWX-MvdbQ"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_NlzGwVbpEeqjgNL-xn3QJw" name="DFD Editor" repPath="#_NltnMFbpEeqjgNL-xn3QJw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+        <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_NaKegFbpEeqjgNL-xn3QJw"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_GD2bc1btEeqjgNL-xn3QJw" name="DFD Editor" repPath="#_GD0mQFbtEeqjgNL-xn3QJw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+        <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_F5j3AVbtEeqjgNL-xn3QJw"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_gJg8wVbtEeqPeJJ5pOt3Xw" name="DFD Editor" repPath="#_gJbdMFbtEeqPeJJ5pOt3Xw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+        <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_f8fNYVbtEeqPeJJ5pOt3Xw"/>
+      </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram uid="_ycnnwBjTEeqn-J_xJnYQrg" name="new DFD Editor">
@@ -336,9 +356,9 @@
           <children xmi:type="notation:Node" xmi:id="_2qIgkFLoEeqO_ZGpX_MYpg" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_2qIgkVLoEeqO_ZGpX_MYpg" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_-OdIkFZUEeqWq9eZSnZo0Q" type="3005" element="_-OHxYVZUEeqWq9eZSnZo0Q">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_-OdIkVZUEeqWq9eZSnZo0Q" fontName=".AppleSystemUIFont"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-OdIklZUEeqWq9eZSnZo0Q"/>
+          <children xmi:type="notation:Node" xmi:id="_gM6PAlbtEeqPeJJ5pOt3Xw" type="3005" element="_gMoiMFbtEeqPeJJ5pOt3Xw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gM6PA1btEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM6PBFbtEeqPeJJ5pOt3Xw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_2qH5gVLoEeqO_ZGpX_MYpg" fontName=".AppleSystemUIFont" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2qH5glLoEeqO_ZGpX_MYpg" x="328" y="100" width="181" height="181"/>
@@ -411,7 +431,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_-OHxYVZUEeqWq9eZSnZo0Q" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/reference.svg">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gMoiMFbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/reference.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
@@ -3672,5 +3692,958 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_-K9IoFZUEeqWq9eZSnZo0Q"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer"/>
     <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_999OcFZUEeqWq9eZSnZo0Q"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_sC2qEFZwEeqBVsWX-MvdbQ" name="DFD Editor">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_sC6UcFZwEeqBVsWX-MvdbQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_sC6UcVZwEeqBVsWX-MvdbQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_sDC3UFZwEeqBVsWX-MvdbQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_sDC3UVZwEeqBVsWX-MvdbQ" type="Sirius" element="_sC2qEFZwEeqBVsWX-MvdbQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_sDDeYFZwEeqBVsWX-MvdbQ" type="2001" element="_sC5GUFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_sDFTkFZwEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sDFTkVZwEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_sDJlAFZwEeqBVsWX-MvdbQ" type="3005" element="_sC5GUVZwEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_sDJlAVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sDJlAlZwEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sDDeYVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sDDeYlZwEeqBVsWX-MvdbQ" x="180" y="180" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_sHbBAFZwEeqBVsWX-MvdbQ" type="2001" element="_sHRQAFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_sHboEFZwEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sHboEVZwEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_sHpDcFZwEeqBVsWX-MvdbQ" type="3005" element="_sHRQAVZwEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_sHpDcVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHpDclZwEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sHbBAVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHbBAlZwEeqBVsWX-MvdbQ" y="-144" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_sHhHoFZwEeqBVsWX-MvdbQ" type="2001" element="_sHSeIFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_sHhHo1ZwEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sHhHpFZwEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_sHpDc1ZwEeqBVsWX-MvdbQ" type="3005" element="_sHSeIVZwEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_sHpDdFZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHpDdVZwEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sHhHoVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHhHolZwEeqBVsWX-MvdbQ" x="360" y="64" width="205" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_sHkyAFZwEeqBVsWX-MvdbQ" type="2001" element="_sHTFMFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_sHkyA1ZwEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sHkyBFZwEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_sHpqgFZwEeqBVsWX-MvdbQ" type="3005" element="_sHTFMVZwEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_sHpqgVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHpqglZwEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sHkyAVZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHkyAlZwEeqBVsWX-MvdbQ" x="-160" y="64" width="205" height="84"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_sDC3UlZwEeqBVsWX-MvdbQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_sHvKElZwEeqBVsWX-MvdbQ" type="4001" element="_sHUTVFZwEeqBVsWX-MvdbQ" source="_sHkyAFZwEeqBVsWX-MvdbQ" target="_sDDeYFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_sHvKFlZwEeqBVsWX-MvdbQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHvKF1ZwEeqBVsWX-MvdbQ" x="11" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_sHvKGFZwEeqBVsWX-MvdbQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHvKGVZwEeqBVsWX-MvdbQ" x="-15" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_sHvKGlZwEeqBVsWX-MvdbQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sHvKG1ZwEeqBVsWX-MvdbQ" x="-20" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_sHvKE1ZwEeqBVsWX-MvdbQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_sHvKFFZwEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sHvKFVZwEeqBVsWX-MvdbQ" points="[98, 84, -215, -183]$[313, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sHvxIFZwEeqBVsWX-MvdbQ" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sHvxIVZwEeqBVsWX-MvdbQ" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_dbT8cFZxEeqBVsWX-MvdbQ" type="4001" element="_dbOc6FZxEeqBVsWX-MvdbQ" source="_sHhHoFZwEeqBVsWX-MvdbQ" target="_sDDeYFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_dbT8dFZxEeqBVsWX-MvdbQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dbT8dVZxEeqBVsWX-MvdbQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dbT8dlZxEeqBVsWX-MvdbQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dbT8d1ZxEeqBVsWX-MvdbQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dbT8eFZxEeqBVsWX-MvdbQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dbT8eVZxEeqBVsWX-MvdbQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_dbT8cVZxEeqBVsWX-MvdbQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_dbT8clZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dbT8c1ZxEeqBVsWX-MvdbQ" points="[0, 0, 180, -74]$[-180, 74, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dbT8elZxEeqBVsWX-MvdbQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dbT8e1ZxEeqBVsWX-MvdbQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_ectvEFZxEeqBVsWX-MvdbQ" type="4001" element="_ecpdpFZxEeqBVsWX-MvdbQ" source="_sDDeYFZwEeqBVsWX-MvdbQ" target="_sHbBAFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_ecuWI1ZxEeqBVsWX-MvdbQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ecuWJFZxEeqBVsWX-MvdbQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ecuWJVZxEeqBVsWX-MvdbQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ecuWJlZxEeqBVsWX-MvdbQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ecuWJ1ZxEeqBVsWX-MvdbQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ecuWKFZxEeqBVsWX-MvdbQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_ecuWIFZxEeqBVsWX-MvdbQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_ecuWIVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ecuWIlZxEeqBVsWX-MvdbQ" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ecuWKVZxEeqBVsWX-MvdbQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ecuWKlZxEeqBVsWX-MvdbQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_ecuWK1ZxEeqBVsWX-MvdbQ" type="4001" element="_ecpdqVZxEeqBVsWX-MvdbQ" source="_sDDeYFZwEeqBVsWX-MvdbQ" target="_sHbBAFZwEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_ecuWL1ZxEeqBVsWX-MvdbQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ecuWMFZxEeqBVsWX-MvdbQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ecuWMVZxEeqBVsWX-MvdbQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ecuWMlZxEeqBVsWX-MvdbQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ecu9MFZxEeqBVsWX-MvdbQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ecu9MVZxEeqBVsWX-MvdbQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_ecuWLFZxEeqBVsWX-MvdbQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_ecuWLVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ecuWLlZxEeqBVsWX-MvdbQ" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ecu9MlZxEeqBVsWX-MvdbQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ecu9M1ZxEeqBVsWX-MvdbQ" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_sC5GUFZwEeqBVsWX-MvdbQ" name="P1" outgoingEdges="_ecpdpFZxEeqBVsWX-MvdbQ _ecpdqVZxEeqBVsWX-MvdbQ" incomingEdges="_sHUTVFZwEeqBVsWX-MvdbQ _dbOc6FZxEeqBVsWX-MvdbQ" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_r3K-gFZwEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_r3K-gFZwEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_sC5GUVZwEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_sHRQAFZwEeqBVsWX-MvdbQ" name="new Process" incomingEdges="_ecpdpFZxEeqBVsWX-MvdbQ _ecpdqVZxEeqBVsWX-MvdbQ" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_sHRQAVZwEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_sHSeIFZwEeqBVsWX-MvdbQ" name="A1" outgoingEdges="_dbOc6FZxEeqBVsWX-MvdbQ" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_sHSeIVZwEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_sHTFMFZwEeqBVsWX-MvdbQ" name="S1" outgoingEdges="_sHUTVFZwEeqBVsWX-MvdbQ" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <semanticElements xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_sHTFMVZwEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_sHUTVFZwEeqBVsWX-MvdbQ" name="new Data Flow" sourceNode="_sHTFMFZwEeqBVsWX-MvdbQ" targetNode="_sC5GUFZwEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_r3LlkFZwEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_r3LlkFZwEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_sHU6YFZwEeqBVsWX-MvdbQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_sHU6YVZwEeqBVsWX-MvdbQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_dbOc6FZxEeqBVsWX-MvdbQ" name="data5.1" sourceNode="_sHSeIFZwEeqBVsWX-MvdbQ" targetNode="_sC5GUFZwEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_dbIWQVZxEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_dbIWQVZxEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_dbPD8FZxEeqBVsWX-MvdbQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_dbPD8VZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ecpdpFZxEeqBVsWX-MvdbQ" name="data4" sourceNode="_sC5GUFZwEeqBVsWX-MvdbQ" targetNode="_sHRQAFZwEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_eciv8FZxEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_eciv8FZxEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ecpdpVZxEeqBVsWX-MvdbQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ecpdplZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ecpdqVZxEeqBVsWX-MvdbQ" name="Data3" sourceNode="_sC5GUFZwEeqBVsWX-MvdbQ" targetNode="_sHRQAFZwEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_eciv9FZxEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_eciv9FZxEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ecqEsFZxEeqBVsWX-MvdbQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ecqEsVZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_sC2qEVZwEeqBVsWX-MvdbQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer"/>
+    <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_r3JwYFZwEeqBVsWX-MvdbQ"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_zRm6UFZxEeqBVsWX-MvdbQ" name="DFD Editor">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_zRovgFZxEeqBVsWX-MvdbQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_zRovgVZxEeqBVsWX-MvdbQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_zRrLwFZxEeqBVsWX-MvdbQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_zRrLwVZxEeqBVsWX-MvdbQ" type="Sirius" element="_zRm6UFZxEeqBVsWX-MvdbQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_zRrLw1ZxEeqBVsWX-MvdbQ" type="2001" element="_zRoIcFZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_zRry0FZxEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_zRry0VZxEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zRtA8FZxEeqBVsWX-MvdbQ" type="3005" element="_zRoIcVZxEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_zRtA8VZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zRtA8lZxEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zRrLxFZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zRrLxVZxEeqBVsWX-MvdbQ" x="180" y="180" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zUEYcFZxEeqBVsWX-MvdbQ" type="2001" element="_zT9qwlZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_zUEYc1ZxEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_zUEYdFZxEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zUM7UFZxEeqBVsWX-MvdbQ" type="3005" element="_zT-R0FZxEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_zUM7UVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUM7UlZxEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zUEYcVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUEYclZxEeqBVsWX-MvdbQ" y="-144" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zUHbwFZxEeqBVsWX-MvdbQ" type="2001" element="_zT-R0lZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_zUHbw1ZxEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_zUHbxFZxEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zUNiYFZxEeqBVsWX-MvdbQ" type="3005" element="_zT-44FZxEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_zUNiYVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUNiYlZxEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zUHbwVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUHbwlZxEeqBVsWX-MvdbQ" x="-160" y="64" width="205" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zUJ4AFZxEeqBVsWX-MvdbQ" type="2001" element="_zT-44lZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_zUKfEFZxEeqBVsWX-MvdbQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_zUKfEVZxEeqBVsWX-MvdbQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zUNiY1ZxEeqBVsWX-MvdbQ" type="3005" element="_zT_f8FZxEeqBVsWX-MvdbQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_zUNiZFZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUNiZVZxEeqBVsWX-MvdbQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zUJ4AVZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUJ4AlZxEeqBVsWX-MvdbQ" x="360" y="64" width="205" height="84"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_zRrLwlZxEeqBVsWX-MvdbQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_zUOJclZxEeqBVsWX-MvdbQ" type="4001" element="_zUAHAlZxEeqBVsWX-MvdbQ" source="_zUJ4AFZxEeqBVsWX-MvdbQ" target="_zRrLw1ZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_zUOJdlZxEeqBVsWX-MvdbQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUOJd1ZxEeqBVsWX-MvdbQ" x="-19" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zUOJeFZxEeqBVsWX-MvdbQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUOJeVZxEeqBVsWX-MvdbQ" x="19" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zUOJelZxEeqBVsWX-MvdbQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zUOJe1ZxEeqBVsWX-MvdbQ" x="19" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_zUOJc1ZxEeqBVsWX-MvdbQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_zUOJdFZxEeqBVsWX-MvdbQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zUOJdVZxEeqBVsWX-MvdbQ" points="[-66, 84, 141, -183]$[-207, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zUOJfFZxEeqBVsWX-MvdbQ" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zUOJfVZxEeqBVsWX-MvdbQ" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_QjIwsFbgEeqjgNL-xn3QJw" type="4001" element="_QjA05FbgEeqjgNL-xn3QJw" source="_zRrLw1ZxEeqBVsWX-MvdbQ" target="_zUEYcFZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_QjLM8FbgEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjL0AFbgEeqjgNL-xn3QJw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QjMbEFbgEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjMbEVbgEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QjNCIFbgEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjNCIVbgEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_QjIwsVbgEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_QjIwslbgEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QjIws1bgEeqjgNL-xn3QJw" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QjRTkFbgEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QjRTkVbgEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_QjRTklbgEeqjgNL-xn3QJw" type="4001" element="_QjCDAlbgEeqjgNL-xn3QJw" source="_zRrLw1ZxEeqBVsWX-MvdbQ" target="_zUEYcFZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_QjRTllbgEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjRTl1bgEeqjgNL-xn3QJw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QjR6oFbgEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjR6oVbgEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QjR6olbgEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjR6o1bgEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_QjRTk1bgEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_QjRTlFbgEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QjRTlVbgEeqjgNL-xn3QJw" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QjR6pFbgEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QjR6pVbgEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_QZxfsFboEeqjgNL-xn3QJw" type="4001" element="_QZsnNFboEeqjgNL-xn3QJw" source="_zUHbwFZxEeqBVsWX-MvdbQ" target="_zRrLw1ZxEeqBVsWX-MvdbQ">
+          <children xmi:type="notation:Node" xmi:id="_QZxftFboEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZxftVboEeqjgNL-xn3QJw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QZxftlboEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZxft1boEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QZxfuFboEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QZxfuVboEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_QZxfsVboEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_QZxfslboEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QZxfs1boEeqjgNL-xn3QJw" points="[0, 0, -340, -74]$[340, 74, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QZyGwFboEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QZyGwVboEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_zRoIcFZxEeqBVsWX-MvdbQ" name="P1" outgoingEdges="_QjA05FbgEeqjgNL-xn3QJw _QjCDAlbgEeqjgNL-xn3QJw" incomingEdges="_zUAHAlZxEeqBVsWX-MvdbQ _QZsnNFboEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_zG1NsFZxEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_zG1NsFZxEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_zRoIcVZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_zT9qwlZxEeqBVsWX-MvdbQ" name="new Process" incomingEdges="_QjA05FbgEeqjgNL-xn3QJw _QjCDAlbgEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_zT-R0FZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_zT-R0lZxEeqBVsWX-MvdbQ" name="A1" outgoingEdges="_QZsnNFboEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_zT-44FZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_zT-44lZxEeqBVsWX-MvdbQ" name="S1" outgoingEdges="_zUAHAlZxEeqBVsWX-MvdbQ" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <semanticElements xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_zT_f8FZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_zUAHAlZxEeqBVsWX-MvdbQ" name="new Data Flow" sourceNode="_zT-44lZxEeqBVsWX-MvdbQ" targetNode="_zRoIcFZxEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_zG10wVZxEeqBVsWX-MvdbQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_zG10wVZxEeqBVsWX-MvdbQ"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_zUAHA1ZxEeqBVsWX-MvdbQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_zUAHBFZxEeqBVsWX-MvdbQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_QjA05FbgEeqjgNL-xn3QJw" name="data4" sourceNode="_zRoIcFZxEeqBVsWX-MvdbQ" targetNode="_zT9qwlZxEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_Qi5gIFbgEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_Qi5gIFbgEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_QjBb8FbgEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QjBb8VbgEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_QjCDAlbgEeqjgNL-xn3QJw" name="Data3" sourceNode="_zRoIcFZxEeqBVsWX-MvdbQ" targetNode="_zT9qwlZxEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_Qi6HMFbgEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_Qi6HMFbgEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_QjCDA1bgEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QjCDBFbgEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_QZsnNFboEeqjgNL-xn3QJw" name="data5.1" sourceNode="_zT-R0lZxEeqBVsWX-MvdbQ" targetNode="_zRoIcFZxEeqBVsWX-MvdbQ">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_QZlScVboEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_QZlScVboEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_QZsnNVboEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QZsnNlboEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_zRm6UVZxEeqBVsWX-MvdbQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer"/>
+    <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_zGzYgFZxEeqBVsWX-MvdbQ"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_NltnMFbpEeqjgNL-xn3QJw" name="DFD Editor">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Nlx4oFbpEeqjgNL-xn3QJw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_Nlx4oVbpEeqjgNL-xn3QJw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Nl50cFbpEeqjgNL-xn3QJw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_Nl50cVbpEeqjgNL-xn3QJw" type="Sirius" element="_NltnMFbpEeqjgNL-xn3QJw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_Nl6bgFbpEeqjgNL-xn3QJw" type="2001" element="_NlwDcFbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_Nl7CkFbpEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Nl7CkVbpEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Nl-F4FbpEeqjgNL-xn3QJw" type="3005" element="_NlxRkFbpEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Nl-F4VbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nl-F4lbpEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Nl6bgVbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nl6bglbpEeqjgNL-xn3QJw" x="180" y="180" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NpIHkFbpEeqjgNL-xn3QJw" type="2001" element="_NpBZ4FbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_NpIuoFbpEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_NpIuoVbpEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NpQqcFbpEeqjgNL-xn3QJw" type="3005" element="_NpBZ4VbpEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_NpQqcVbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpQqclbpEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_NpIHkVbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpIHklbpEeqjgNL-xn3QJw" x="16" y="-116" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NpLx8FbpEeqjgNL-xn3QJw" type="2001" element="_NpCA8VbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_NpLx81bpEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_NpLx9FbpEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NpQqc1bpEeqjgNL-xn3QJw" type="3005" element="_NpCA8lbpEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_NpQqdFbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpQqdVbpEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_NpLx8VbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpLx8lbpEeqjgNL-xn3QJw" x="-160" y="64" width="205" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_NpNnIFbpEeqjgNL-xn3QJw" type="2001" element="_NpCoAVbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_NpOOMFbpEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_NpOOMVbpEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NpRRgFbpEeqjgNL-xn3QJw" type="3005" element="_NpCoAlbpEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_NpRRgVbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpRRglbpEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_NpNnIVbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpNnIlbpEeqjgNL-xn3QJw" x="360" y="64" width="205" height="84"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_Nl50clbpEeqjgNL-xn3QJw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_NpR4klbpEeqjgNL-xn3QJw" type="4001" element="_NpD2IFbpEeqjgNL-xn3QJw" source="_NpNnIFbpEeqjgNL-xn3QJw" target="_Nl6bgFbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_NpR4llbpEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpR4l1bpEeqjgNL-xn3QJw" x="-19" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NpR4mFbpEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpR4mVbpEeqjgNL-xn3QJw" x="19" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_NpSfoFbpEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NpSfoVbpEeqjgNL-xn3QJw" x="19" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_NpR4k1bpEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_NpR4lFbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NpR4lVbpEeqjgNL-xn3QJw" points="[-66, 84, 141, -183]$[-207, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NpSfolbpEeqjgNL-xn3QJw" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NpSfo1bpEeqjgNL-xn3QJw" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_OxuHUlbpEeqjgNL-xn3QJw" type="4001" element="_Oxp16VbpEeqjgNL-xn3QJw" source="_Nl6bgFbpEeqjgNL-xn3QJw" target="_NpIHkFbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_OxuHVlbpEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OxuHV1bpEeqjgNL-xn3QJw" x="1" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_OxuHWFbpEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OxuHWVbpEeqjgNL-xn3QJw" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_OxuHWlbpEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OxuHW1bpEeqjgNL-xn3QJw" x="-1" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_OxuHU1bpEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_OxuHVFbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OxuHVVbpEeqjgNL-xn3QJw" points="[-42, -75, 122, 221]$[-122, -220, 42, 76]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OxuHXFbpEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OxuHXVbpEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_RLgpMFbpEeqjgNL-xn3QJw" type="4001" element="_RLainFbpEeqjgNL-xn3QJw" source="_Nl6bgFbpEeqjgNL-xn3QJw" target="_NpIHkFbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_RLgpNFbpEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RLgpNVbpEeqjgNL-xn3QJw" x="25" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RLhQQFbpEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RLhQQVbpEeqjgNL-xn3QJw" x="8" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RLhQQlbpEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RLhQQ1bpEeqjgNL-xn3QJw" x="8" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_RLgpMVbpEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_RLgpMlbpEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RLgpM1bpEeqjgNL-xn3QJw" points="[-42, -63, 122, 233]$[-78, -169, 86, 127]$[-113, -220, 51, 76]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RLhQRFbpEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RLhQRVbpEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_zuX48FbsEeqjgNL-xn3QJw" type="4001" element="_zuU1rFbsEeqjgNL-xn3QJw" source="_NpLx8FbpEeqjgNL-xn3QJw" target="_Nl6bgFbpEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_zuYgAFbsEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuYgAVbsEeqjgNL-xn3QJw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zuYgAlbsEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuYgA1bsEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_zuYgBFbsEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuYgBVbsEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_zuX48VbsEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_zuX48lbsEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zuX481bsEeqjgNL-xn3QJw" points="[0, 0, -340, -74]$[340, 74, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zuYgBlbsEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zuYgB1bsEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_NlwDcFbpEeqjgNL-xn3QJw" name="P1" outgoingEdges="_Oxp16VbpEeqjgNL-xn3QJw _RLainFbpEeqjgNL-xn3QJw" incomingEdges="_NpD2IFbpEeqjgNL-xn3QJw _zuU1rFbsEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_NaLFkFbpEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_NaLFkFbpEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_NlxRkFbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_NpBZ4FbpEeqjgNL-xn3QJw" name="new Process" incomingEdges="_Oxp16VbpEeqjgNL-xn3QJw _RLainFbpEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_NpBZ4VbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_NpCA8VbpEeqjgNL-xn3QJw" name="A1" outgoingEdges="_zuU1rFbsEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_NpCA8lbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_NpCoAVbpEeqjgNL-xn3QJw" name="S1" outgoingEdges="_NpD2IFbpEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <semanticElements xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_NpCoAlbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_NpD2IFbpEeqjgNL-xn3QJw" name="new Data Flow" sourceNode="_NpCoAVbpEeqjgNL-xn3QJw" targetNode="_NlwDcFbpEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_NaMTsVbpEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_NaMTsVbpEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_NpD2IVbpEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_NpD2IlbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Oxp16VbpEeqjgNL-xn3QJw" name="Data3" sourceNode="_NlwDcFbpEeqjgNL-xn3QJw" targetNode="_NpBZ4FbpEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_OxihJFbpEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_OxihJFbpEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Oxqc8FbpEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Oxqc8VbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RLainFbpEeqjgNL-xn3QJw" name="data4.1" sourceNode="_NlwDcFbpEeqjgNL-xn3QJw" targetNode="_NpBZ4FbpEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_RLWRIVbpEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_RLWRIVbpEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RLainVbpEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RLainlbpEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_zuU1rFbsEeqjgNL-xn3QJw" name="data5.1" sourceNode="_NpCA8VbpEeqjgNL-xn3QJw" targetNode="_NlwDcFbpEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_zuP9IVbsEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_zuP9IVbsEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_zuU1rVbsEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_zuU1rlbsEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Nlu1UFbpEeqjgNL-xn3QJw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer"/>
+    <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_NaKegFbpEeqjgNL-xn3QJw"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_GD0mQFbtEeqjgNL-xn3QJw" name="DFD Editor">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_GD2bcFbtEeqjgNL-xn3QJw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_GD2bcVbtEeqjgNL-xn3QJw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_GD4QoFbtEeqjgNL-xn3QJw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_GD4QoVbtEeqjgNL-xn3QJw" type="Sirius" element="_GD0mQFbtEeqjgNL-xn3QJw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_GD4Qo1btEeqjgNL-xn3QJw" type="2001" element="_GD10YFbtEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_GD4QplbtEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_GD4Qp1btEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GD6F0FbtEeqjgNL-xn3QJw" type="3005" element="_GD10YVbtEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GD6F0VbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GD6F0lbtEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_GD4QpFbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GD4QpVbtEeqjgNL-xn3QJw" x="180" y="180" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_GGPoIFbtEeqjgNL-xn3QJw" type="2001" element="_GGLWsFbtEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_GGQPMFbtEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_GGQPMVbtEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGWV0FbtEeqjgNL-xn3QJw" type="3005" element="_GGLWsVbtEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GGWV0VbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGWV0lbtEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_GGPoIVbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGPoIlbtEeqjgNL-xn3QJw" y="-144" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_GGSEYFbtEeqjgNL-xn3QJw" type="2001" element="_GGLWs1btEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_GGSEY1btEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_GGSEZFbtEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGW84FbtEeqjgNL-xn3QJw" type="3005" element="_GGLWtFbtEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GGW84VbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGW84lbtEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_GGSEYVbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGSEYlbtEeqjgNL-xn3QJw" x="-160" y="64" width="205" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_GGUgoFbtEeqjgNL-xn3QJw" type="2001" element="_GGL9wFbtEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_GGUgo1btEeqjgNL-xn3QJw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_GGUgpFbtEeqjgNL-xn3QJw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGW841btEeqjgNL-xn3QJw" type="3005" element="_GGL9wVbtEeqjgNL-xn3QJw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_GGW85FbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGW85VbtEeqjgNL-xn3QJw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_GGUgoVbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGUgolbtEeqjgNL-xn3QJw" x="360" y="64" width="205" height="84"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_GD4QolbtEeqjgNL-xn3QJw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_GGW85lbtEeqjgNL-xn3QJw" type="4001" element="_GGL9w1btEeqjgNL-xn3QJw" source="_GGSEYFbtEeqjgNL-xn3QJw" target="_GD4Qo1btEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_GGXj8FbtEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGXj8VbtEeqjgNL-xn3QJw" x="11" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGXj8lbtEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGXj81btEeqjgNL-xn3QJw" x="-15" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGXj9FbtEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGXj9VbtEeqjgNL-xn3QJw" x="-20" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GGW851btEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_GGW86FbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GGW86VbtEeqjgNL-xn3QJw" points="[98, 84, -215, -183]$[313, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GGXj9lbtEeqjgNL-xn3QJw" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GGXj91btEeqjgNL-xn3QJw" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_GGXj-FbtEeqjgNL-xn3QJw" type="4001" element="_GGMk1FbtEeqjgNL-xn3QJw" source="_GGUgoFbtEeqjgNL-xn3QJw" target="_GD4Qo1btEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_GGXj_FbtEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGXj_VbtEeqjgNL-xn3QJw" x="-19" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGXj_lbtEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGXj_1btEeqjgNL-xn3QJw" x="19" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_GGXkAFbtEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGXkAVbtEeqjgNL-xn3QJw" x="19" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GGXj-VbtEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_GGXj-lbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GGXj-1btEeqjgNL-xn3QJw" points="[-66, 84, 141, -183]$[-207, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GGXkAlbtEeqjgNL-xn3QJw" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GGXkA1btEeqjgNL-xn3QJw" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_IF_SUFbtEeqjgNL-xn3QJw" type="4001" element="_IF6Z0FbtEeqjgNL-xn3QJw" source="_GD4Qo1btEeqjgNL-xn3QJw" target="_GGPoIFbtEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_IF_SVFbtEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IF_SVVbtEeqjgNL-xn3QJw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IF_SVlbtEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IF_SV1btEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IF_SWFbtEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IF_SWVbtEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_IF_SUVbtEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_IF_SUlbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IF_SU1btEeqjgNL-xn3QJw" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IF_SWlbtEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IF_SW1btEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Ju5J0FbtEeqjgNL-xn3QJw" type="4001" element="_JuzqTFbtEeqjgNL-xn3QJw" source="_GD4Qo1btEeqjgNL-xn3QJw" target="_GGPoIFbtEeqjgNL-xn3QJw">
+          <children xmi:type="notation:Node" xmi:id="_Ju5w4FbtEeqjgNL-xn3QJw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ju5w4VbtEeqjgNL-xn3QJw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Ju6X8FbtEeqjgNL-xn3QJw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ju6X8VbtEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Ju6X8lbtEeqjgNL-xn3QJw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ju6X81btEeqjgNL-xn3QJw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Ju5J0VbtEeqjgNL-xn3QJw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Ju5J0lbtEeqjgNL-xn3QJw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ju5J01btEeqjgNL-xn3QJw" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ju6_AFbtEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ju6_AVbtEeqjgNL-xn3QJw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_GD10YFbtEeqjgNL-xn3QJw" name="P1" outgoingEdges="_IF6Z0FbtEeqjgNL-xn3QJw _JuzqTFbtEeqjgNL-xn3QJw" incomingEdges="_GGL9w1btEeqjgNL-xn3QJw _GGMk1FbtEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_F5lsMFbtEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_F5lsMFbtEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_GD10YVbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_GGLWsFbtEeqjgNL-xn3QJw" name="new Process" incomingEdges="_IF6Z0FbtEeqjgNL-xn3QJw _JuzqTFbtEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_GGLWsVbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_GGLWs1btEeqjgNL-xn3QJw" name="A1" outgoingEdges="_GGL9w1btEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_GGLWtFbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_GGL9wFbtEeqjgNL-xn3QJw" name="S1" outgoingEdges="_GGMk1FbtEeqjgNL-xn3QJw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <semanticElements xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_GGL9wVbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GGL9w1btEeqjgNL-xn3QJw" name="DF1" sourceNode="_GGLWs1btEeqjgNL-xn3QJw" targetNode="_GD10YFbtEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_F5lsMVbtEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_F5lsMVbtEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GGMk0FbtEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GGMk0VbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GGMk1FbtEeqjgNL-xn3QJw" name="new Data Flow" sourceNode="_GGL9wFbtEeqjgNL-xn3QJw" targetNode="_GD10YFbtEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_F5m6UVbtEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_F5m6UVbtEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GGMk1VbtEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GGMk1lbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_IF6Z0FbtEeqjgNL-xn3QJw" name="Data3" sourceNode="_GD10YFbtEeqjgNL-xn3QJw" targetNode="_GGLWsFbtEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_IF1hVFbtEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_IF1hVFbtEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_IF6Z0VbtEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_IF6Z0lbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_JuzqTFbtEeqjgNL-xn3QJw" name="data4.2" sourceNode="_GD10YFbtEeqjgNL-xn3QJw" targetNode="_GGLWsFbtEeqjgNL-xn3QJw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_Juwm8VbtEeqjgNL-xn3QJw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_Juwm8VbtEeqjgNL-xn3QJw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Ju0RUFbtEeqjgNL-xn3QJw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Ju0RUVbtEeqjgNL-xn3QJw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_GD0mQVbtEeqjgNL-xn3QJw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer"/>
+    <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_F5j3AVbtEeqjgNL-xn3QJw"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_gJbdMFbtEeqPeJJ5pOt3Xw" name="DFD Editor">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_gJfHkFbtEeqPeJJ5pOt3Xw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_gJfHkVbtEeqPeJJ5pOt3Xw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_gJlOMFbtEeqPeJJ5pOt3Xw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_gJlOMVbtEeqPeJJ5pOt3Xw" type="Sirius" element="_gJbdMFbtEeqPeJJ5pOt3Xw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_gJl1QFbtEeqPeJJ5pOt3Xw" type="2001" element="_gJd5cFbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_gJnqcFbtEeqPeJJ5pOt3Xw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_gJnqcVbtEeqPeJJ5pOt3Xw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gJrU0FbtEeqPeJJ5pOt3Xw" type="3005" element="_gJd5cVbtEeqPeJJ5pOt3Xw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gJrU0VbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gJrU0lbtEeqPeJJ5pOt3Xw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gJl1QVbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gJl1QlbtEeqPeJJ5pOt3Xw" x="180" y="180" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_gMsMkFbtEeqPeJJ5pOt3Xw" type="2001" element="_gMjpsFbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_gMsMk1btEeqPeJJ5pOt3Xw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_gMsMlFbtEeqPeJJ5pOt3Xw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gMzhUFbtEeqPeJJ5pOt3Xw" type="3005" element="_gMkQwFbtEeqPeJJ5pOt3Xw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gMzhUVbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMzhUlbtEeqPeJJ5pOt3Xw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gMsMkVbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMsMklbtEeqPeJJ5pOt3Xw" y="-144" width="151" height="151"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_gMuo0FbtEeqPeJJ5pOt3Xw" type="2001" element="_gMk30FbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_gMuo01btEeqPeJJ5pOt3Xw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_gMuo1FbtEeqPeJJ5pOt3Xw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gMzhU1btEeqPeJJ5pOt3Xw" type="3005" element="_gMk30VbtEeqPeJJ5pOt3Xw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gMzhVFbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMzhVVbtEeqPeJJ5pOt3Xw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gMuo0VbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMuo0lbtEeqPeJJ5pOt3Xw" x="360" y="64" width="205" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_gMweAFbtEeqPeJJ5pOt3Xw" type="2001" element="_gMle4FbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_gMxFEFbtEeqPeJJ5pOt3Xw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_gMxFEVbtEeqPeJJ5pOt3Xw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gM0IYFbtEeqPeJJ5pOt3Xw" type="3005" element="_gMle4VbtEeqPeJJ5pOt3Xw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gM0IYVbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM0IYlbtEeqPeJJ5pOt3Xw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gMweAVbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gMweAlbtEeqPeJJ5pOt3Xw" x="-160" y="64" width="205" height="84"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_gJlOMlbtEeqPeJJ5pOt3Xw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_gM1WgFbtEeqPeJJ5pOt3Xw" type="4001" element="_gMle41btEeqPeJJ5pOt3Xw" source="_gMuo0FbtEeqPeJJ5pOt3Xw" target="_gJl1QFbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_gM19kFbtEeqPeJJ5pOt3Xw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM19kVbtEeqPeJJ5pOt3Xw" x="-19" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gM2koFbtEeqPeJJ5pOt3Xw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM2koVbtEeqPeJJ5pOt3Xw" x="19" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gM2kolbtEeqPeJJ5pOt3Xw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM2ko1btEeqPeJJ5pOt3Xw" x="19" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_gM1WgVbtEeqPeJJ5pOt3Xw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_gM1WglbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gM1Wg1btEeqPeJJ5pOt3Xw" points="[-66, 84, 141, -183]$[-207, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gM5A4FbtEeqPeJJ5pOt3Xw" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gM5A4VbtEeqPeJJ5pOt3Xw" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_gM5A4lbtEeqPeJJ5pOt3Xw" type="4001" element="_gMmF9FbtEeqPeJJ5pOt3Xw" source="_gMweAFbtEeqPeJJ5pOt3Xw" target="_gJl1QFbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_gM5A5lbtEeqPeJJ5pOt3Xw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM5A51btEeqPeJJ5pOt3Xw" x="11" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gM5A6FbtEeqPeJJ5pOt3Xw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM5A6VbtEeqPeJJ5pOt3Xw" x="-15" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gM5n8FbtEeqPeJJ5pOt3Xw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gM5n8VbtEeqPeJJ5pOt3Xw" x="-20" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_gM5A41btEeqPeJJ5pOt3Xw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_gM5A5FbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gM5A5VbtEeqPeJJ5pOt3Xw" points="[98, 84, -215, -183]$[313, 267, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gM5n8lbtEeqPeJJ5pOt3Xw" id="(0.4975609756097561,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gM5n81btEeqPeJJ5pOt3Xw" id="(0.4966887417218543,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_iy29kFbtEeqPeJJ5pOt3Xw" type="4001" element="_iyyFElbtEeqPeJJ5pOt3Xw" source="_gJl1QFbtEeqPeJJ5pOt3Xw" target="_gMsMkFbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_iy29lFbtEeqPeJJ5pOt3Xw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy29lVbtEeqPeJJ5pOt3Xw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iy3koFbtEeqPeJJ5pOt3Xw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy3koVbtEeqPeJJ5pOt3Xw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iy3kolbtEeqPeJJ5pOt3Xw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy3ko1btEeqPeJJ5pOt3Xw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_iy29kVbtEeqPeJJ5pOt3Xw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_iy29klbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iy29k1btEeqPeJJ5pOt3Xw" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iy3kpFbtEeqPeJJ5pOt3Xw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iy3kpVbtEeqPeJJ5pOt3Xw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_iy3kplbtEeqPeJJ5pOt3Xw" type="4001" element="_iyyFF1btEeqPeJJ5pOt3Xw" source="_gJl1QFbtEeqPeJJ5pOt3Xw" target="_gMsMkFbtEeqPeJJ5pOt3Xw">
+          <children xmi:type="notation:Node" xmi:id="_iy3kqlbtEeqPeJJ5pOt3Xw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy3kq1btEeqPeJJ5pOt3Xw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iy3krFbtEeqPeJJ5pOt3Xw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy3krVbtEeqPeJJ5pOt3Xw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iy3krlbtEeqPeJJ5pOt3Xw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy3kr1btEeqPeJJ5pOt3Xw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_iy3kp1btEeqPeJJ5pOt3Xw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_iy3kqFbtEeqPeJJ5pOt3Xw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iy3kqVbtEeqPeJJ5pOt3Xw" points="[0, 0, 180, 324]$[-180, -324, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iy3ksFbtEeqPeJJ5pOt3Xw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iy3ksVbtEeqPeJJ5pOt3Xw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gJd5cFbtEeqPeJJ5pOt3Xw" name="P1" outgoingEdges="_iyyFElbtEeqPeJJ5pOt3Xw _iyyFF1btEeqPeJJ5pOt3Xw" incomingEdges="_gMle41btEeqPeJJ5pOt3Xw _gMmF9FbtEeqPeJJ5pOt3Xw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_f8gbgFbtEeqPeJJ5pOt3Xw"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_f8gbgFbtEeqPeJJ5pOt3Xw"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gJd5cVbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gMjpsFbtEeqPeJJ5pOt3Xw" name="new Process" incomingEdges="_iyyFElbtEeqPeJJ5pOt3Xw _iyyFF1btEeqPeJJ5pOt3Xw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:Process" href="sample.dataflowdiagram#_fpdB8C5DEeqanrx-VUcwcQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gMkQwFbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/process-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gMk30FbtEeqPeJJ5pOt3Xw" name="A1" outgoingEdges="_gMle41btEeqPeJJ5pOt3Xw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <semanticElements xmi:type="DataFlowDiagram:ExternalActor" href="sample.dataflowdiagram#_psCWsSYrEeqwleBNcLMfgQ"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gMk30VbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/externalactor-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gMle4FbtEeqPeJJ5pOt3Xw" name="S1" outgoingEdges="_gMmF9FbtEeqPeJJ5pOt3Xw" width="-1" height="-1">
+      <target xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <semanticElements xmi:type="DataFlowDiagram:Store" href="sample.dataflowdiagram#_OPjisiPWEeqMHZm4xBp56w"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_gMle4VbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false" labelPosition="node" workspacePath="/diagram.editor.sirius/icons/store-unmodifiable.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_gMle41btEeqPeJJ5pOt3Xw" name="DF1" sourceNode="_gMk30FbtEeqPeJJ5pOt3Xw" targetNode="_gJd5cFbtEeqPeJJ5pOt3Xw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_f8gbgVbtEeqPeJJ5pOt3Xw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_f8gbgVbtEeqPeJJ5pOt3Xw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_gMmF8FbtEeqPeJJ5pOt3Xw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_gMmF8VbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_gMmF9FbtEeqPeJJ5pOt3Xw" name="new Data Flow" sourceNode="_gMle4FbtEeqPeJJ5pOt3Xw" targetNode="_gJd5cFbtEeqPeJJ5pOt3Xw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_f8hpoFbtEeqPeJJ5pOt3Xw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_f8hpoFbtEeqPeJJ5pOt3Xw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_gMmtAFbtEeqPeJJ5pOt3Xw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_gMmtAVbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_iyyFElbtEeqPeJJ5pOt3Xw" name="data4" sourceNode="_gJd5cFbtEeqPeJJ5pOt3Xw" targetNode="_gMjpsFbtEeqPeJJ5pOt3Xw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_iyqJQFbtEeqPeJJ5pOt3Xw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_iyqJQFbtEeqPeJJ5pOt3Xw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iyyFE1btEeqPeJJ5pOt3Xw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_iyyFFFbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_iyyFF1btEeqPeJJ5pOt3Xw" name="Data3" sourceNode="_gJd5cFbtEeqPeJJ5pOt3Xw" targetNode="_gMjpsFbtEeqPeJJ5pOt3Xw">
+      <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_iyqJRFbtEeqPeJJ5pOt3Xw"/>
+      <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_iyqJRFbtEeqPeJJ5pOt3Xw"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iyysIFbtEeqPeJJ5pOt3Xw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_iyysIVbtEeqPeJJ5pOt3Xw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_gJbdMVbtEeqPeJJ5pOt3Xw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer"/>
+    <target xmi:type="DataFlowDiagram:DataFlowDiagram" href="sample.dataflowdiagram#_f8fNYVbtEeqPeJJ5pOt3Xw"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

@@ -24,6 +24,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataDictionary;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType;
+
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -78,21 +79,60 @@ public class Services {
 		return refs.isEmpty();
 	}
 
-	private List<DataFlow> refineDF(DataFlow df) { // TODO
-		return new ArrayList<DataFlow>();
+	private List<Edge> refineEdge(Edge edge) {
+		DataFlow df = (DataFlow) edge;
+		Session session = SessionManager.INSTANCE.getSession(df);
+		List<Edge> results = new ArrayList<Edge>();
+		if (df.getData().size() > 1) {
+			// one df per data
+			for (Data d : df.getData()) {
+				DataFlow ndf = makeSingleDataFlow(d, df);
+				results.add(ndf);
+			}
+
+		} else {
+			// one df per type
+			Data origin = df.getData().get(0);
+			DataType type = origin.getType();
+			String name = origin.getName() + ".";
+			int suffix = 1;
+			List<DataFlow> dfs = new ArrayList<DataFlow>();
+			if (type instanceof CompositeDataType) {
+				List<Entry> entries = DFDUtil.refineDT(type, session); // TODO error
+				for (Entry e : entries) {
+					Data data = makeData(e);
+					DataFlow ndf = makeSingleDataFlow(data, df);
+					ndf.setName(name + suffix++);
+					dfs.add(ndf);
+				}
+				results.addAll(dfs);
+			}
+
+		}
+		return results;
+
 	}
 
 	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
 		Session session = SessionManager.INSTANCE.getSession(df);
 
-		if (df.getData().isEmpty()) {
+		if (df.getData().isEmpty() || !isRefinable(df)) {
 			return;
 		}
+
+		EdgeRefinement ref = getRefinedEdge(df);
+		if (ref == null) {
+			return;// TODO correct?
+		} else {
+			ref.getRefiningEdges().remove(df);
+		}
+
 		if (df.getData().size() > 1) {
 			// one df per data
 			for (Data d : df.getData()) {
 				DataFlow ndf = makeSingleDataFlow(d, df);
 				dfd.getEdges().add(ndf);
+				ref.getRefiningEdges().add(ndf);
 
 			}
 			dfd.getEdges().remove(df);
@@ -111,6 +151,7 @@ public class Services {
 					DataFlow ndf = makeSingleDataFlow(data, df);
 					ndf.setName(name + suffix++);
 					dfs.add(ndf);
+					ref.getRefiningEdges().add(ndf);
 				}
 				dfd.getEdges().remove(df);
 				dfd.getEdges().addAll(dfs);
@@ -118,6 +159,21 @@ public class Services {
 
 		}
 
+	}
+
+	private void addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
+		EdgeRefinement er = DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement();
+		er.setRefinedEdge(df);
+		er.getRefiningEdges().add(ndf);
+		ref.getRefinedEdges().add(er);
+
+	}
+
+	private EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(refiningDF).getInverseReferences("refiningEdges"));
+		if (refs.isEmpty())
+			return null;
+		return (EdgeRefinement) refs.get(0);
 	}
 
 	private Data makeData(Entry e) {
@@ -144,7 +200,7 @@ public class Services {
 
 			}
 		}
-		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD);
+		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD, ref);
 	}
 
 	private Node copyNode(Node n) { // simulated polymorphism! Naming schemes?
@@ -196,7 +252,7 @@ public class Services {
 	}
 
 	public void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD,
-			DataFlowDiagram newDFD) {
+			DataFlowDiagram newDFD, DataFlowDiagramRefinement ref) {
 
 		Node newProcess = copyNode(p);
 		newDFD.getNodes().add(newProcess);
@@ -205,12 +261,14 @@ public class Services {
 			DataFlow ndf = copyDataFlow(df);
 			ndf.setTarget(newProcess);
 			newDFD.getEdges().add(ndf);
+			addToRef(df, ndf, ref);
 		}
 
 		for (DataFlow df : out) {
 			DataFlow ndf = copyDataFlow(df);
 			ndf.setSource(newProcess);
 			newDFD.getEdges().add(ndf);
+			addToRef(df, ndf, ref);
 		}
 		// DFDUtil.validateDiagram(newDFD); // TODO: not working
 
@@ -277,22 +335,39 @@ public class Services {
 
 	}
 
+	private Tuple<List<EdgeRefinement>, List<EdgeRefinement>> getEdgeRefinements(Node n, DataFlowDiagram context) {
+		List<EdgeRefinement> inputs = new ArrayList<EdgeRefinement>();
+		List<EdgeRefinement> outputs = new ArrayList<EdgeRefinement>();
+		for (DataFlowDiagramRefinement ref : context.getRefinedBy()) {
+			for (EdgeRefinement er : ref.getRefinedEdges()) {
+				if (ComparisonUtil.isEqual(n, er.getRefinedEdge().getSource())) {
+					outputs.add(er);
+				}
+				if (ComparisonUtil.isEqual(n, er.getRefinedEdge().getTarget())) {
+					inputs.add(er);
+				}
+			}
+		}
+
+		return new Tuple<List<EdgeRefinement>, List<EdgeRefinement>>(inputs, outputs);
+
+	}
+
 	public boolean inputOutputIsConsistent(EObject self) {
 		Node n = (Node) self;
+		System.out.println(n);
 		if (!isBorderNode(n)) {
 			return true;
 		}
-		DataFlowDiagram originalContext = (DataFlowDiagram) self.eContainer();
-		Tuple<List<DataFlow>, List<DataFlow>> expectedDataFlows = getDataFlows(originalContext, n);
 		Set<DataFlowDiagram> allContexts = getContexts(n);
-		allContexts.remove(originalContext);
+
 		for (DataFlowDiagram context : allContexts) {
-			Tuple<List<DataFlow>, List<DataFlow>> observedDataFlows = getDataFlows(context, n);
-			if (!isConsistent(expectedDataFlows.getFirst(), observedDataFlows.getFirst())
-					|| !isConsistent(expectedDataFlows.getSecond(), observedDataFlows.getSecond())) {
+			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = getEdgeRefinements(n, context);
+			if (!isConsistent(toCheck)) {
 				return false;
 			}
 		}
+
 		return true;
 	}
 
@@ -301,72 +376,115 @@ public class Services {
 		return;
 	}
 
-	private boolean isRefinable(DataFlow df) {
+	private boolean isRefinable(Edge e) {
+		DataFlow df = (DataFlow) e;
 		if (df.getData().size() > 1) {
 			return true;
 		}
 		if (df.getData().size() > 0 && df.getData().get(0).getType() instanceof CompositeDataType) {
 			return true;
 		}
-		
+
 		return false;
-		
-	}
-	
-	private boolean isConsistent(List<DataFlow> expected, List<DataFlow> actual) {
-		if (expected.isEmpty() != actual.isEmpty()) {
-			return false;
-		}
-		for (DataFlow edf : expected) {
-			if (attemptMarking(edf, actual)) { // directly equivalent
-				expected.remove(edf);
-			} else { // not directly equivalent; recursive refining with large runtime! 
-				List<DataFlow> prevRefinedDataFlows = new ArrayList<DataFlow>(List.of(edf));
-				List<DataFlow> nextRefinedDataFlows = new ArrayList<DataFlow>();
-				/*
-				while (prevRefinedDataFlows.stream().anyMatch(this::isRefinable)) {
-					for (DataFlow pdf : prevRefinedDataFlows) {
-						nextRefinedDataFlows.addAll(refineDF(pdf));
-						// TODO: edge cases?; dfs-like approach
-						
-						//...
-						
-						
-					}
-					
-				}
-				*/
-				
-			}
-		}
 
-		return expected.isEmpty() && actual.isEmpty(); // all are marked
 	}
 
-	private boolean attemptMarking(DataFlow expected, List<DataFlow> actual) {
-		for (DataFlow adf : actual) {
-			if (ComparisonUtil.isEquivalent(expected, adf)) {
-				actual.remove(adf);
+	private static boolean findMatch(Edge d, List<Edge> candidates) {
+		for (Edge c : candidates) {
+			if (ComparisonUtil.isEquivalent((DataFlow) d, (DataFlow) c)) {
 				return true;
 			}
-
 		}
 		return false;
+	}
+
+	private boolean isEquivalent(List<Edge> base, List<Edge> subFlows) {
+
+		for (Edge b : base) {
+			if (!findMatch(b, subFlows)) {
+				return false;
+			}
+
+		}
+		for (Edge s : subFlows) {
+			if (!findMatch(s, base)) {
+				return false;
+			}
+
+		}
+		return true;
+	}
+
+	private List<List<Edge>> refineAllButOne(List<Edge> input) {
+		List<List<Edge>> results = new ArrayList<List<Edge>>();
+
+		for (int exception = 0; exception < input.size(); exception++) {
+			List<Edge> currentResults = new ArrayList<Edge>();
+
+			for (int i = 0; i < input.size(); i++) {
+				if (i == exception || !isRefinable(input.get(i))) {
+					currentResults.add(input.get(i));
+					continue;
+				}
+				currentResults.addAll(refineEdge(input.get(i)));
+			}
+
+			results.add(currentResults);
+
+		}
+
+		return results;
 
 	}
 
-	private Tuple<List<DataFlow>, List<DataFlow>> getDataFlows(DataFlowDiagram context, Node n) {
-		List<DataFlow> input = new ArrayList<DataFlow>();
-		List<DataFlow> output = new ArrayList<DataFlow>();
-		for (Edge e : context.getEdges()) {
-			if (ComparisonUtil.isEqual(n, e.getSource())) {
-				output.add((DataFlow) e);
-			} else if (ComparisonUtil.isEqual(n, e.getTarget())) {
-				input.add((DataFlow) e);
+	private boolean canMerge(Edge base, List<Edge> refiningEdges) {
+
+		if (isEquivalent(new ArrayList<Edge>(List.of(base)), refiningEdges)) {
+			return true;
+		}
+
+		if (!isRefinable(base)) {
+			return false;
+		}
+		// generate all candidates; initialized with first refinement
+		List<List<Edge>> candidates = new ArrayList<List<Edge>>(List.of(refineEdge(base)));
+
+		for (List<Edge> c : candidates) {
+			if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
+				return true;
+			}
+			
+			// TODO error
+			List<List<Edge>> newCandidates = refineAllButOne(c); // refine all but one candidate -> will over time
+																	// generate all possible combinations of refinements
+
+			for (List<Edge> nc : newCandidates) { // stop adding to list if no new candidates are possible
+				if (!nc.isEmpty() && !candidates.contains(nc)) {
+					candidates.add(nc);
+				}
+			}
+
+		}
+
+		return false;
+	}
+
+	private boolean isConsistent(Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck) {
+		List<EdgeRefinement> inputs = toCheck.getFirst();
+		List<EdgeRefinement> outputs = toCheck.getSecond();
+		for (EdgeRefinement ref : inputs) {
+			Edge base = ref.getRefinedEdge();
+			if (!canMerge(base, ref.getRefiningEdges())) {
+				return false;
 			}
 		}
 
-		return new Tuple<List<DataFlow>, List<DataFlow>>(input, output);
-
+		for (EdgeRefinement ref : outputs) {
+			Edge base = ref.getRefinedEdge();
+			if (!canMerge(base, ref.getRefiningEdges())) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
