@@ -35,7 +35,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -81,7 +83,7 @@ public class Services {
 
 	private List<Edge> refineEdge(Edge edge) {
 		DataFlow df = (DataFlow) edge;
-		Session session = SessionManager.INSTANCE.getSession(df);
+		Session session = new ArrayList<Session>(SessionManager.INSTANCE.getSessions()).get(0);
 		List<Edge> results = new ArrayList<Edge>();
 		if (df.getData().size() > 1) {
 			// one df per data
@@ -98,7 +100,7 @@ public class Services {
 			int suffix = 1;
 			List<DataFlow> dfs = new ArrayList<DataFlow>();
 			if (type instanceof CompositeDataType) {
-				List<Entry> entries = DFDUtil.refineDT(type, session); // TODO error
+				List<Entry> entries = DFDUtil.refineDT(type, session); // TODO: error
 				for (Entry e : entries) {
 					Data data = makeData(e);
 					DataFlow ndf = makeSingleDataFlow(data, df);
@@ -107,7 +109,6 @@ public class Services {
 				}
 				results.addAll(dfs);
 			}
-
 		}
 		return results;
 
@@ -355,7 +356,6 @@ public class Services {
 
 	public boolean inputOutputIsConsistent(EObject self) {
 		Node n = (Node) self;
-		System.out.println(n);
 		if (!isBorderNode(n)) {
 			return true;
 		}
@@ -419,20 +419,20 @@ public class Services {
 		List<List<Edge>> results = new ArrayList<List<Edge>>();
 
 		for (int exception = 0; exception < input.size(); exception++) {
+
 			List<Edge> currentResults = new ArrayList<Edge>();
 
 			for (int i = 0; i < input.size(); i++) {
+
 				if (i == exception || !isRefinable(input.get(i))) {
 					currentResults.add(input.get(i));
 					continue;
 				}
 				currentResults.addAll(refineEdge(input.get(i)));
 			}
-
 			results.add(currentResults);
 
 		}
-
 		return results;
 
 	}
@@ -449,22 +449,31 @@ public class Services {
 		// generate all candidates; initialized with first refinement
 		List<List<Edge>> candidates = new ArrayList<List<Edge>>(List.of(refineEdge(base)));
 
-		for (List<Edge> c : candidates) {
+		Iterator<List<Edge>> cIterator = candidates.iterator();
+
+		while (cIterator.hasNext()) {
+			List<Edge> c = cIterator.next();
+			System.out.println(c);
 			if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
+				System.out.println("---");
 				return true;
 			}
-			
-			// TODO error
 			List<List<Edge>> newCandidates = refineAllButOne(c); // refine all but one candidate -> will over time
 																	// generate all possible combinations of refinements
-
+			//System.out.println(newCandidates);
+			//candidates.addAll(newCandidates);
+			/*
 			for (List<Edge> nc : newCandidates) { // stop adding to list if no new candidates are possible
 				if (!nc.isEmpty() && !candidates.contains(nc)) {
 					candidates.add(nc);
 				}
 			}
+			*/
 
 		}
+
+
+		System.out.println("===");
 
 		return false;
 	}

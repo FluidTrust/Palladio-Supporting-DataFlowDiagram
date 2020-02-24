@@ -56,6 +56,7 @@ public class DFDUtil {
 		List<Resource> resources = session.getSemanticResources().stream()
 				.filter(r -> r.getURI().fileExtension().equals(DD_EXTENSTION)).collect(Collectors.toList());
 
+		
 		for (Resource r : resources) {
 			for (EObject typeDefinition : r.getContents()) {
 				for (EObject datatype : typeDefinition.eContents()) {

@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_VIcyMBHEEeqyJ8uK88pYJw">
-  <refinedBy id="_f8fNYFbtEeqPeJJ5pOt3Xw" refinedProcess="_UVls0yPWEeqMHZm4xBp56w">
-    <refiningDiagram id="_f8fNYVbtEeqPeJJ5pOt3Xw">
-      <nodes xsi:type="DataFlowDiagram:Process" id="_f8gbgFbtEeqPeJJ5pOt3Xw" name="P1"/>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_f8gbgVbtEeqPeJJ5pOt3Xw" name="DF1" target="_f8gbgFbtEeqPeJJ5pOt3Xw" source="_psCWsSYrEeqwleBNcLMfgQ">
-        <data id="_f8gbglbtEeqPeJJ5pOt3Xw" name="data5">
-          <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_D8btERUwEeqdRtp9sharTg"/>
-        </data>
-      </edges>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_f8hpoFbtEeqPeJJ5pOt3Xw" name="new Data Flow" target="_f8gbgFbtEeqPeJJ5pOt3Xw" source="_OPjisiPWEeqMHZm4xBp56w">
-        <data id="_f8hpoVbtEeqPeJJ5pOt3Xw" name="A">
-          <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
-        </data>
-      </edges>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_iyqJQFbtEeqPeJJ5pOt3Xw" name="data4" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_f8gbgFbtEeqPeJJ5pOt3Xw">
-        <data id="_iyqJQ1btEeqPeJJ5pOt3Xw" name="data4">
+  <refinedBy id="_INlC4Fb_EeqfmOZyiEUmvA" refinedProcess="_UVls0yPWEeqMHZm4xBp56w">
+    <refiningDiagram id="_INmRAFb_EeqfmOZyiEUmvA">
+      <nodes xsi:type="DataFlowDiagram:Process" id="_INnfIFb_EeqfmOZyiEUmvA" name="P1"/>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_INnfIVb_EeqfmOZyiEUmvA" name="DF1" target="_INnfIFb_EeqfmOZyiEUmvA" source="_psCWsSYrEeqwleBNcLMfgQ">
+        <data id="_INnfIlb_EeqfmOZyiEUmvA" name="data5">
           <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_zDy6cBweEeqkzqskNeypDg"/>
         </data>
       </edges>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_iyqJRFbtEeqPeJJ5pOt3Xw" name="Data3" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_f8gbgFbtEeqPeJJ5pOt3Xw">
-        <data id="_iyqJR1btEeqPeJJ5pOt3Xw" name="Data3">
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_INotQFb_EeqfmOZyiEUmvA" name="new Data Flow" target="_INnfIFb_EeqfmOZyiEUmvA" source="_OPjisiPWEeqMHZm4xBp56w">
+        <data id="_INotQVb_EeqfmOZyiEUmvA" name="A">
+          <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
+        </data>
+      </edges>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_KHvCdFb_EeqfmOZyiEUmvA" name="Data3" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_INnfIFb_EeqfmOZyiEUmvA">
+        <data id="_KHvCd1b_EeqfmOZyiEUmvA" name="Data3">
+          <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
+        </data>
+      </edges>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_L7rFQVb_EeqfmOZyiEUmvA" name="data4.1" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_INnfIFb_EeqfmOZyiEUmvA">
+        <data id="_L7rFQ1b_EeqfmOZyiEUmvA" name="e1">
+          <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_7keq0Bd4EeqmI7JLCCCR2w"/>
+        </data>
+      </edges>
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_L7rFRVb_EeqfmOZyiEUmvA" name="data4.2" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_INnfIFb_EeqfmOZyiEUmvA">
+        <data id="_L7rFR1b_EeqfmOZyiEUmvA" name="e2">
           <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
         </data>
       </edges>
     </refiningDiagram>
-    <refinedEdges id="_f8hCkFbtEeqPeJJ5pOt3Xw" refinedEdge="_bH440C7TEeqyYbofd9wuMg" refiningEdges="_f8gbgVbtEeqPeJJ5pOt3Xw"/>
-    <refinedEdges id="_f8hpolbtEeqPeJJ5pOt3Xw" refinedEdge="_fkzVwDFUEeqtN9LfzvEOIw" refiningEdges="_f8hpoFbtEeqPeJJ5pOt3Xw"/>
-    <refinedEdges id="_f8hpplbtEeqPeJJ5pOt3Xw" refinedEdge="_V3rRgC7VEeqyYbofd9wuMg" refiningEdges="_iyqJQFbtEeqPeJJ5pOt3Xw _iyqJRFbtEeqPeJJ5pOt3Xw"/>
+    <refinedEdges id="_INoGMFb_EeqfmOZyiEUmvA" refinedEdge="_bH440C7TEeqyYbofd9wuMg" refiningEdges="_INnfIVb_EeqfmOZyiEUmvA"/>
+    <refinedEdges id="_INotQlb_EeqfmOZyiEUmvA" refinedEdge="_fkzVwDFUEeqtN9LfzvEOIw" refiningEdges="_INotQFb_EeqfmOZyiEUmvA"/>
+    <refinedEdges id="_INotRlb_EeqfmOZyiEUmvA" refinedEdge="_V3rRgC7VEeqyYbofd9wuMg" refiningEdges="_KHvCdFb_EeqfmOZyiEUmvA _L7rFQVb_EeqfmOZyiEUmvA _L7rFRVb_EeqfmOZyiEUmvA"/>
   </refinedBy>
   <nodes xsi:type="DataFlowDiagram:Store" id="_OPjisiPWEeqMHZm4xBp56w" name="S1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
@@ -34,7 +39,7 @@
   <nodes xsi:type="DataFlowDiagram:Process" id="_fpdB8C5DEeqanrx-VUcwcQ" name="new Process"/>
   <edges xsi:type="DataFlowDiagram:DataFlow" id="_bH440C7TEeqyYbofd9wuMg" name="DF1" target="_UVls0yPWEeqMHZm4xBp56w" source="_psCWsSYrEeqwleBNcLMfgQ">
     <data id="_XTsxQEWXEeqdXuVkQHm7qg" name="data5">
-      <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_D8btERUwEeqdRtp9sharTg"/>
+      <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_zDy6cBweEeqkzqskNeypDg"/>
     </data>
   </edges>
   <edges xsi:type="DataFlowDiagram:DataFlow" id="_V3rRgC7VEeqyYbofd9wuMg" name="new Data Flow" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_UVls0yPWEeqMHZm4xBp56w">
