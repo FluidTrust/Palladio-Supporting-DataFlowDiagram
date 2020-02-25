@@ -57,8 +57,12 @@ public class Services {
 		return refs.isEmpty();
 	}
 
-	public boolean needRef(EObject self, EObject source, EObject target) {
-		return !ComparisonUtil.isEqual(source.eContainer(), target.eContainer()); // <-> if cross-dfd;
+	public boolean needsRef(EObject self, EObject source, EObject target) {
+		boolean sameDFD = ComparisonUtil.isEqual(source.eContainer(), target.eContainer());
+		boolean toRef = isRefined(source);
+		boolean fromRef = isRefined(target); 
+		// TODO what if both refined
+		return !sameDFD || toRef || fromRef; // <-> if cross-dfd;
 	}
 
 	private List<Edge> refineEdge(Edge edge) {
@@ -280,22 +284,27 @@ public class Services {
 
 	}
 
-	public void addToExistingRef(EObject self, EdgeRefinement er) {
+	public EdgeRefinement addToExistingRef(EObject self, EdgeRefinement er) {
 		System.out.println(self);
 		System.out.println(er);
 		System.out.println("!!!!");
+		return er;
 	}
 
-	public void addRefiningDF(EObject self, EObject source, EObject target, EdgeRefinement er) {
+	public void addRefiningDF(EObject self, EObject source, EObject target) {
 		System.out.println("!!!");
 		System.out.println(self);
-		System.out.println(er);
 		DataFlow df = (DataFlow) self;
-		// df.setSource(source);
-		// df.setTarget(target);
+		df.setSource((Node) source);
+		df.setTarget((Node) target);
 	}
 
-	public void addDF(EObject self, EObject source, EObject target, boolean isRefining) {
+	public void addDF(EObject self, EObject source, EObject target) {
+		System.out.println("!!!");
+		createDF(self, source, target);
+	}
+
+	private void createDF(EObject self, EObject source, EObject target) {
 		DataFlow df = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
 		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
@@ -304,9 +313,11 @@ public class Services {
 		df.setName("new Data Flow");
 		// TODO ref creation, adding ...
 		sourceDFD.getEdges().add(df);
-		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for visibility?
-			targetDFD.getEdges().add(copyDataFlow(df));
-		}
+		System.out.println(df);
+		/*
+		 * if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for
+		 * visibility? targetDFD.getEdges().add(copyDataFlow(df)); }
+		 */
 	}
 
 	/*
@@ -474,7 +485,7 @@ public class Services {
 		return results;
 
 	}
-	
+
 	private List<List<Edge>> refineOne(List<Edge> input) {
 		List<List<Edge>> results = new ArrayList<List<Edge>>();
 
@@ -518,8 +529,9 @@ public class Services {
 					System.out.println("---");
 					return true;
 				}
-				
-				for (List<Edge> r : refineOne(c)) { //refine one df of each candidate -> will over time generate all possible combinations of refinements
+
+				for (List<Edge> r : refineOne(c)) { // refine one df of each candidate -> will over time generate all
+													// possible combinations of refinements
 					if (!contains(r, newCandidates)) { // do not consider duplicates
 						newCandidates.add(r);
 					}

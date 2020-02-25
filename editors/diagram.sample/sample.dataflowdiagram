@@ -51,6 +51,8 @@
   <nodes xsi:type="DataFlowDiagram:Process" id="_UVls0yPWEeqMHZm4xBp56w" name="P1"/>
   <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_psCWsSYrEeqwleBNcLMfgQ" name="A1"/>
   <nodes xsi:type="DataFlowDiagram:Process" id="_fpdB8C5DEeqanrx-VUcwcQ" name="new Process"/>
+  <nodes xsi:type="DataFlowDiagram:Process" id="_8WVo4FffEeq_bNT-mp_v1Q" name="new Process"/>
+  <nodes xsi:type="DataFlowDiagram:Process" id="_83Io0FffEeq_bNT-mp_v1Q" name="new Process"/>
   <edges xsi:type="DataFlowDiagram:DataFlow" id="_bH440C7TEeqyYbofd9wuMg" name="DF1" target="_UVls0yPWEeqMHZm4xBp56w" source="_psCWsSYrEeqwleBNcLMfgQ">
     <data id="_XTsxQEWXEeqdXuVkQHm7qg" name="data5">
       <type xsi:type="DataDictionary:CompositeDataType" href="../dictionary.sample/sample.datadictionary#_zDy6cBweEeqkzqskNeypDg"/>
