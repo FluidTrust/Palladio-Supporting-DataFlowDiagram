@@ -141,26 +141,21 @@
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlow" referenceName="edges">
                       <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add DataFlow">
                         <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                          <initialOperation/>
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:stopDFCreation()"/>
+                          </initialOperation>
                         </buttons>
-                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                        <buttons labelExpression="OK" isEnabledExpression="service:canCreateDF()" default="true" closeDialogOnClick="true">
                           <initialOperation>
                             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addRefiningDF(source, target)"/>
                           </initialOperation>
                         </buttons>
                         <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='createDF']/@initialOperation/@firstModelOperations/@subModelOperations.0/@cases.0/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
-                        <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
-                          <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name">
-                            <initialOperation>
-                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newValue"/>
-                              </firstModelOperations>
-                            </initialOperation>
-                          </controls>
+                        <groups name="Default Group" labelExpression="Set the data flow to refine" semanticCandidateExpression="var:self">
                           <controls xsi:type="properties:RadioDescription" name="References" labelExpression="Available References" candidatesExpression="service:showRefinements(source, target)" candidateDisplayExpression="aql:candidate.refinedEdge.oclAsType(DataFlowDiagram::DataFlow).name" numberOfColumns="2">
                             <initialOperation>
                               <firstModelOperations xsi:type="tool_1:Let" variableName="ref" valueExpression="aql:newValue">
-                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addToExistingRef(ref)"/>
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:setRef(ref)"/>
                               </firstModelOperations>
                             </initialOperation>
                           </controls>

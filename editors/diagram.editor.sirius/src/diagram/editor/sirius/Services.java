@@ -37,6 +37,7 @@ import org.eclipse.sirius.business.api.session.SessionManager;
 public class Services {
 
 	private final String ERROR_MESSAGE = "Node %s is in an inconsistent state because %s not consistently refined.";
+	private EdgeRefinement currentRefinement = null;
 
 	public EObject navigateUp(EObject self, EObject dfd) {
 		return dfd.eContainer().eContainer();
@@ -60,7 +61,7 @@ public class Services {
 	public boolean needsRef(EObject self, EObject source, EObject target) {
 		boolean sameDFD = ComparisonUtil.isEqual(source.eContainer(), target.eContainer());
 		boolean toRef = isRefined(source);
-		boolean fromRef = isRefined(target); 
+		boolean fromRef = isRefined(target);
 		// TODO what if both refined
 		return !sameDFD || toRef || fromRef; // <-> if cross-dfd;
 	}
@@ -284,23 +285,25 @@ public class Services {
 
 	}
 
-	public EdgeRefinement addToExistingRef(EObject self, EdgeRefinement er) {
-		System.out.println(self);
-		System.out.println(er);
-		System.out.println("!!!!");
-		return er;
+	public boolean canCreateDF(EObject self) {
+		return this.currentRefinement != null;
+	}
+
+	public void stopDFCreation(EObject self) {
+		this.currentRefinement = null;
+	}
+
+	public void setRef(EObject self, EdgeRefinement er) {
+		this.currentRefinement = er;
 	}
 
 	public void addRefiningDF(EObject self, EObject source, EObject target) {
-		System.out.println("!!!");
-		System.out.println(self);
-		DataFlow df = (DataFlow) self;
-		df.setSource((Node) source);
-		df.setTarget((Node) target);
+		addDF(self, source, target);
+		// TODO handle ref
+		
 	}
 
 	public void addDF(EObject self, EObject source, EObject target) {
-		System.out.println("!!!");
 		createDF(self, source, target);
 	}
 
@@ -314,10 +317,11 @@ public class Services {
 		// TODO ref creation, adding ...
 		sourceDFD.getEdges().add(df);
 		System.out.println(df);
-		/*
-		 * if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for
-		 * visibility? targetDFD.getEdges().add(copyDataFlow(df)); }
-		 */
+
+		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for visibility? -> need to keep consistent?
+			targetDFD.getEdges().add(copyDataFlow(df));
+		}
+
 	}
 
 	/*
