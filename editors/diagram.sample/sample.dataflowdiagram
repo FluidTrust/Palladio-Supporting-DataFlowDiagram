@@ -23,7 +23,7 @@
           <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_7keq0Bd4EeqmI7JLCCCR2w"/>
         </data>
       </edges>
-      <edges xsi:type="DataFlowDiagram:DataFlow" id="_4YUnJVcOEeqWxuxIIu5dUw" name="data4.2.2" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_ssQooFcOEeqWxuxIIu5dUw">
+      <edges xsi:type="DataFlowDiagram:DataFlow" id="_4YUnJVcOEeqWxuxIIu5dUw" name="data4.2" target="_fpdB8C5DEeqanrx-VUcwcQ" source="_ssQooFcOEeqWxuxIIu5dUw">
         <data id="_4YUnJ1cOEeqWxuxIIu5dUw" name="e2">
           <type xsi:type="DataDictionary:CollectionDataType" href="../dictionary.sample/sample.datadictionary#_-r3yYBUvEeqdRtp9sharTg"/>
         </data>

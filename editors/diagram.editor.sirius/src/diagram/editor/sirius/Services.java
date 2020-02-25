@@ -271,13 +271,11 @@ public class Services {
 
 	public List<EdgeRefinement> showRefinements(EObject self, EObject source, EObject target) {
 		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>();
-		System.out.println("show ref");
 		if (!ComparisonUtil.isEqual(self.eContainer(), source.eContainer())) {
 			((DataFlowDiagram) target.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
 		} else {
 			((DataFlowDiagram) source.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
 		}
-		System.out.println(refs);
 		return refs;
 
 	}
@@ -421,8 +419,6 @@ public class Services {
 	}
 
 	private boolean isEquivalentList(List<List<Edge>> one, List<List<Edge>> two) {
-		System.out.println(one);
-		System.out.println(two);
 		if (one.size() != two.size()) {
 			return false;
 		}
@@ -442,10 +438,6 @@ public class Services {
 	}
 
 	private boolean isEquivalent(List<Edge> base, List<Edge> subFlows) {
-		// System.out.println("isEQ");
-		// System.out.println(base);
-		// System.out.println(subFlows);
-
 		for (Edge b : base) {
 			if (!findMatch(b, subFlows)) {
 				return false;
@@ -458,7 +450,6 @@ public class Services {
 			}
 
 		}
-		// System.out.println("true");
 		return true;
 	}
 
@@ -515,28 +506,25 @@ public class Services {
 			return false;
 		}
 		// generate all candidates; initialized with first refinement
-		List<List<Edge>> candidates = new ArrayList<List<Edge>>(List.of(refineEdge(base)));
-		List<List<Edge>> newCandidates = new ArrayList<List<Edge>>();
+		List<List<Edge>> candidates = new ArrayList<List<Edge>>();
+		List<List<Edge>> newCandidates = new ArrayList<List<Edge>>(List.of(refineEdge(base)));
 
-		// while (true) {
-		for (int i = 0; i < 3; i++) {
+		while (!isEquivalentList(candidates, newCandidates)) {
+			candidates.clear();
+			candidates.addAll(newCandidates);
 			newCandidates.clear();
 			for (List<Edge> c : candidates) {
 				if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
 					System.out.println("---");
 					return true;
 				}
-				newCandidates.addAll(refineOne(c)); // refine one df of each candidate -> will over time
-															// generate all possible combinations of refinements
+				
+				for (List<Edge> r : refineOne(c)) { //refine one df of each candidate -> will over time generate all possible combinations of refinements
+					if (!contains(r, newCandidates)) { // do not consider duplicates
+						newCandidates.add(r);
+					}
+				}
 			}
-
-			if (isEquivalentList(candidates, newCandidates)) { // TODO stop criterion not working
-				System.out.println("BREAK");
-				break;
-			}
-			candidates.clear();
-			candidates.addAll(newCandidates);
-			System.out.println(i);
 		}
 		System.out.println("===");
 		return false;

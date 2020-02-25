@@ -6319,7 +6319,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/diagram.editor.sirius/description/diagram.editor.sirius.odesign#//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@edgeMappings[name='DataFlowEdge']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_4YeYIlcOEeqWxuxIIu5dUw" name="data4.2.2" sourceNode="_s3hdcFcOEeqWxuxIIu5dUw" targetNode="_s78DYFcOEeqWxuxIIu5dUw">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_4YeYIlcOEeqWxuxIIu5dUw" name="data4.2" sourceNode="_s3hdcFcOEeqWxuxIIu5dUw" targetNode="_s78DYFcOEeqWxuxIIu5dUw">
       <target xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_4YUnJVcOEeqWxuxIIu5dUw"/>
       <semanticElements xmi:type="DataFlowDiagram:DataFlow" href="sample.dataflowdiagram#_4YUnJVcOEeqWxuxIIu5dUw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_4YeYI1cOEeqWxuxIIu5dUw" size="2">
