@@ -52,6 +52,11 @@ public class Services {
 		return !refs.isEmpty();
 	}
 
+	public boolean isNotRefined(EObject self) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
+		return refs.isEmpty();
+	}
+
 	public boolean needRef(EObject self, EObject source, EObject target) {
 		return !ComparisonUtil.isEqual(source.eContainer(), target.eContainer()); // <-> if cross-dfd;
 	}
@@ -358,12 +363,12 @@ public class Services {
 	}
 
 	public boolean inputOutputIsConsistent(EObject self) {
+
 		Node n = (Node) self;
 		if (!isBorderNode(n)) {
 			return true;
 		}
 		Set<DataFlowDiagram> allContexts = getContexts(n);
-
 		for (DataFlowDiagram context : allContexts) {
 			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = getEdgeRefinements(n, context);
 			if (!isConsistent(toCheck.getFirst()).stream().allMatch(t -> t.getSecond())) { // check inputs
@@ -405,41 +410,41 @@ public class Services {
 		return false;
 	}
 
-	private static boolean findMatchList(List<Edge> find, List<List<Edge>> candidates) {
-		for (Edge f : find) {
-			for (List<Edge> c : candidates)
-				if (findMatch(f, c)) {
-					return true;
-				}
+	private boolean contains(List<Edge> target, List<List<Edge>> test) {
+		for (List<Edge> t : test) {
+			if (isEquivalent(t, target)) {
+				return true;
+			}
 		}
+
 		return false;
 	}
 
 	private boolean isEquivalentList(List<List<Edge>> one, List<List<Edge>> two) {
 		System.out.println(one);
 		System.out.println(two);
+		if (one.size() != two.size()) {
+			return false;
+		}
 
 		for (List<Edge> o : one) {
-			if (!findMatchList(o, two)) {
+			if (!contains(o, two)) {
 				return false;
 			}
-
 		}
 
 		for (List<Edge> t : two) {
-			if (!findMatchList(t, one)) {
+			if (!contains(t, one))
 				return false;
-			}
-
 		}
 
 		return true;
 	}
 
 	private boolean isEquivalent(List<Edge> base, List<Edge> subFlows) {
-		System.out.println("isEQ");
-		System.out.println(base);
-		System.out.println(subFlows);
+		// System.out.println("isEQ");
+		// System.out.println(base);
+		// System.out.println(subFlows);
 
 		for (Edge b : base) {
 			if (!findMatch(b, subFlows)) {
@@ -453,6 +458,7 @@ public class Services {
 			}
 
 		}
+		// System.out.println("true");
 		return true;
 	}
 
@@ -477,9 +483,30 @@ public class Services {
 		return results;
 
 	}
+	
+	private List<List<Edge>> refineOne(List<Edge> input) {
+		List<List<Edge>> results = new ArrayList<List<Edge>>();
+
+		for (int exception = 0; exception < input.size(); exception++) {
+
+			List<Edge> currentResults = new ArrayList<Edge>();
+
+			for (int i = 0; i < input.size(); i++) {
+
+				if (i == exception && isRefinable(input.get(i))) {
+					currentResults.addAll(refineEdge(input.get(i)));
+					continue;
+				}
+				currentResults.add(input.get(i));
+			}
+			results.add(currentResults);
+
+		}
+		return results;
+
+	}
 
 	private boolean canMerge(Edge base, List<Edge> refiningEdges) {
-
 		if (isEquivalent(new ArrayList<Edge>(List.of(base)), refiningEdges)) {
 			return true;
 		}
@@ -490,16 +517,26 @@ public class Services {
 		// generate all candidates; initialized with first refinement
 		List<List<Edge>> candidates = new ArrayList<List<Edge>>(List.of(refineEdge(base)));
 		List<List<Edge>> newCandidates = new ArrayList<List<Edge>>();
-		while (!isEquivalentList(candidates, newCandidates)) {
+
+		// while (true) {
+		for (int i = 0; i < 3; i++) {
 			newCandidates.clear();
-			for (List<Edge> c : candidates) { // TODO -> never true? -> format not correct?
+			for (List<Edge> c : candidates) {
 				if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
 					System.out.println("---");
 					return true;
 				}
-				newCandidates.addAll(refineAllButOne(c)); // refine all but one candidate -> will over time
+				newCandidates.addAll(refineOne(c)); // refine one df of each candidate -> will over time
 															// generate all possible combinations of refinements
 			}
+
+			if (isEquivalentList(candidates, newCandidates)) { // TODO stop criterion not working
+				System.out.println("BREAK");
+				break;
+			}
+			candidates.clear();
+			candidates.addAll(newCandidates);
+			System.out.println(i);
 		}
 		System.out.println("===");
 		return false;
