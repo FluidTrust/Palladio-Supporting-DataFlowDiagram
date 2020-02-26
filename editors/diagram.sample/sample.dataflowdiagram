@@ -79,6 +79,4 @@
       <type xsi:type="DataDictionary:PrimitiveDataType" href="../dictionary.sample/sample.datadictionary#_1QGgkBHDEeqyJ8uK88pYJw"/>
     </data>
   </edges>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_NokjsFf2EeqbNMYfabtRwQ"/>
-  <edges xsi:type="DataFlowDiagram:DataFlow" id="_PlBCQFf2EeqbNMYfabtRwQ" name="new Data Flow" target="_ssQooFcOEeqWxuxIIu5dUw" source="_OPjisiPWEeqMHZm4xBp56w"/>
 </DataFlowDiagram:DataFlowDiagram>

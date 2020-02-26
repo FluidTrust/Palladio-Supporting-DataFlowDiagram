@@ -107,9 +107,7 @@ public class Services {
 		}
 
 		EdgeRefinement ref = getRefinedEdge(df);
-		if (ref == null) {
-			return;// TODO correct?
-		} else {
+		if (ref != null) {
 			ref.getRefiningEdges().remove(df);
 		}
 
@@ -118,7 +116,9 @@ public class Services {
 			for (Data d : df.getData()) {
 				DataFlow ndf = makeSingleDataFlow(d, df);
 				dfd.getEdges().add(ndf);
-				ref.getRefiningEdges().add(ndf);
+				if (ref != null) {
+					ref.getRefiningEdges().add(ndf);
+				}
 
 			}
 			dfd.getEdges().remove(df);
@@ -137,7 +137,9 @@ public class Services {
 					DataFlow ndf = makeSingleDataFlow(data, df);
 					ndf.setName(name + suffix++);
 					dfs.add(ndf);
-					ref.getRefiningEdges().add(ndf);
+					if (ref != null) {
+						ref.getRefiningEdges().add(ndf);
+					}
 				}
 				dfd.getEdges().remove(df);
 				dfd.getEdges().addAll(dfs);
@@ -293,7 +295,6 @@ public class Services {
 
 	}
 
-	// TODO
 	private List<EdgeRefinement> getInputRefs(DataFlowDiagram sourceDFD, DataFlowDiagram targetDFD, Node source,
 			Node target) {
 		List<EdgeRefinement> refs = targetDFD.getRefinedBy().stream()
@@ -325,30 +326,30 @@ public class Services {
 	}
 
 	public void addRefiningDF(EObject self, EObject source, EObject target) {
-		addDF(self, source, target);
-		// TODO handle ref
+		createDF(self, source, target, true);
 
 	}
 
 	public void addDF(EObject self, EObject source, EObject target) {
-		createDF(self, source, target);
+		createDF(self, source, target, false);
 	}
 
-	private void createDF(EObject self, EObject source, EObject target) {
+	private void createDF(EObject self, EObject source, EObject target, boolean needsRef) {
 		DataFlow df = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
 		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
 		df.setSource((Node) source);
 		df.setTarget((Node) target);
 		df.setName("new Data Flow");
-		// TODO ref creation, adding ...
 		sourceDFD.getEdges().add(df);
-		System.out.println(df);
+		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for visibility; also used in validation?!
+			targetDFD.getEdges().add(df);
 
-		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for visibility? -> need to keep consistent?
-			DataFlow ndf = copyDataFlow(df);
-			targetDFD.getEdges().add(ndf);
+		}
 
+		if (needsRef) {
+			this.currentRefinement.getRefiningEdges().add(df);
+			System.out.println(this.currentRefinement.getRefiningEdges());
 		}
 
 	}
@@ -424,12 +425,30 @@ public class Services {
 
 		return true;
 	}
+	
+	private void removeFromRefs(DataFlow df) {
+		// TODO
+	}
 
 	public void deleteNode(EObject self) {
+		DataFlowDiagram dfd = (DataFlowDiagram)self.eContainer();
+		dfd.getNodes().remove(self);
+		// TODO: what about related refs, dfs...
 		System.out.println("called"); // TODO remove underlying dfds if deleted
 		return;
 	}
 
+	
+	public void deleteEdge(EObject self) {
+		System.out.println(self);
+		System.out.println(self.eContainer());
+		DataFlowDiagram dfd = (DataFlowDiagram)self.eContainer();
+		dfd.getEdges().remove(self);
+		// TODO: keep refs consistent!
+		removeFromRefs((DataFlow)self);
+		
+		return;
+	}
 	private boolean isRefinable(Edge e) {
 		DataFlow df = (DataFlow) e;
 		if (df.getData().size() > 1) {
