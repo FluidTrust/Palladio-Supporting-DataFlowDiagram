@@ -274,15 +274,42 @@ public class Services {
 
 	}
 
+	private boolean isRefinedBy(DataFlowDiagram upper, DataFlowDiagram lower) {
+		return upper.getRefinedBy().stream().map(r -> r.getRefiningDiagram())
+				.anyMatch(d -> ComparisonUtil.isEqual(d, lower));
+	}
+
 	public List<EdgeRefinement> showRefinements(EObject self, EObject source, EObject target) {
 		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>();
-		if (!ComparisonUtil.isEqual(self.eContainer(), source.eContainer())) {
-			((DataFlowDiagram) target.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
+
+		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
+		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
+		if (isRefinedBy(sourceDFD, targetDFD)) {
+			refs.addAll(getOutputRefs(sourceDFD, targetDFD, (Node) source, (Node) target));
 		} else {
-			((DataFlowDiagram) source.eContainer()).getRefinedBy().forEach(r -> refs.addAll(r.getRefinedEdges()));
+			refs.addAll(getInputRefs(sourceDFD, targetDFD, (Node) source, (Node) target));
 		}
 		return refs;
 
+	}
+
+	// TODO
+	private List<EdgeRefinement> getInputRefs(DataFlowDiagram sourceDFD, DataFlowDiagram targetDFD, Node source,
+			Node target) {
+		List<EdgeRefinement> refs = targetDFD.getRefinedBy().stream()
+				.filter(r -> ComparisonUtil.isEqual(r.getRefiningDiagram(), sourceDFD)).map(r -> r.getRefinedEdges())
+				.flatMap(List::stream).collect(Collectors.toList());
+		return refs.stream().filter(r -> ComparisonUtil.isEqual(r.getRefinedEdge().getTarget(), target))
+				.collect(Collectors.toList());
+	}
+
+	private List<EdgeRefinement> getOutputRefs(DataFlowDiagram sourceDFD, DataFlowDiagram targetDFD, Node source,
+			Node target) {
+		List<EdgeRefinement> refs = sourceDFD.getRefinedBy().stream()
+				.filter(r -> ComparisonUtil.isEqual(r.getRefiningDiagram(), targetDFD)).map(r -> r.getRefinedEdges())
+				.flatMap(List::stream).collect(Collectors.toList());
+		return refs.stream().filter(r -> ComparisonUtil.isEqual(r.getRefinedEdge().getSource(), source))
+				.collect(Collectors.toList());
 	}
 
 	public boolean canCreateDF(EObject self) {
@@ -300,7 +327,7 @@ public class Services {
 	public void addRefiningDF(EObject self, EObject source, EObject target) {
 		addDF(self, source, target);
 		// TODO handle ref
-		
+
 	}
 
 	public void addDF(EObject self, EObject source, EObject target) {
@@ -319,7 +346,9 @@ public class Services {
 		System.out.println(df);
 
 		if (!ComparisonUtil.isEqual(sourceDFD, targetDFD)) { // TODO needed for visibility? -> need to keep consistent?
-			targetDFD.getEdges().add(copyDataFlow(df));
+			DataFlow ndf = copyDataFlow(df);
+			targetDFD.getEdges().add(ndf);
+
 		}
 
 	}
