@@ -1,7 +1,7 @@
 package diagram.editor.sirius;
 
 import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
@@ -425,34 +425,66 @@ public class Services {
 
 		return true;
 	}
-	
+
 	private void removeFromRefs(DataFlow df) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(df).getInverseReferences("refiningEdges"));
 		for (EObject r : refs) {
-			EdgeRefinement er = (EdgeRefinement)r;
+			EdgeRefinement er = (EdgeRefinement) r;
 			er.getRefiningEdges().remove(df);
 		}
 
 	}
 
 	public void deleteNode(EObject self) {
-		DataFlowDiagram dfd = (DataFlowDiagram)self.eContainer();
+
+		List<EObject> refiningRefs = new ArrayList<EObject>(
+				new EObjectQuery(self).getInverseReferences("refinedProcess"));
+		List<EObject> targetRefs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("target").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+		List<EObject> sourceRefs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("source").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+
+		for (EObject r : refiningRefs) {
+			DataFlowDiagram ndfd = (DataFlowDiagram) r.eContainer();
+			ndfd.getRefinedBy().remove(r);
+		}
+
+		for (EObject t : targetRefs) {
+			DataFlowDiagram ndfd = (DataFlowDiagram) t.eContainer();
+			ndfd.getEdges().remove(t);
+		}
+
+		for (EObject s : sourceRefs) {
+			DataFlowDiagram ndfd = (DataFlowDiagram) s.eContainer();
+			ndfd.getEdges().remove(s);
+		}
+		// EcoreUtil.delete(self, true);
+		DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
 		dfd.getNodes().remove(self);
-		// TODO: what about related refs, dfs...
-		System.out.println("called"); // TODO remove underlying dfds if deleted
+		for (DataFlowDiagramRefinement r : dfd.getRefinedBy()) {
+			List<EdgeRefinement> toDelete = new ArrayList<EdgeRefinement>();
+			for (EdgeRefinement er : r.getRefinedEdges()) {
+				System.out.println(er.getRefinedEdge());
+				if (er.getRefinedEdge() == null || ComparisonUtil.isEqual(er.getRefinedEdge().getSource(), self)
+						|| ComparisonUtil.isEqual(er.getRefinedEdge().getTarget(), self)) {
+					System.out.println("delete it");
+
+				}
+			}
+			r.getRefinedEdges().removeAll(toDelete); // TODO not working
+			//EcoreUtil.deleteAll(toDelete, true);
+		}
+
+	}
+
+	public void deleteEdge(EObject self) {
+		DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
+		removeFromRefs((DataFlow) self);
+		dfd.getEdges().remove(self);
+
 		return;
 	}
 
-	
-	public void deleteEdge(EObject self) {
-		System.out.println(self);
-		System.out.println(self.eContainer());
-		DataFlowDiagram dfd = (DataFlowDiagram)self.eContainer();
-		removeFromRefs((DataFlow)self);
-		dfd.getEdges().remove(self);
-		
-		return;
-	}
 	private boolean isRefinable(Edge e) {
 		DataFlow df = (DataFlow) e;
 		if (df.getData().size() > 1) {
