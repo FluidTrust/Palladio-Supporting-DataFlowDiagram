@@ -427,7 +427,12 @@ public class Services {
 	}
 	
 	private void removeFromRefs(DataFlow df) {
-		// TODO
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(df).getInverseReferences("refiningEdges"));
+		for (EObject r : refs) {
+			EdgeRefinement er = (EdgeRefinement)r;
+			er.getRefiningEdges().remove(df);
+		}
+
 	}
 
 	public void deleteNode(EObject self) {
@@ -443,9 +448,8 @@ public class Services {
 		System.out.println(self);
 		System.out.println(self.eContainer());
 		DataFlowDiagram dfd = (DataFlowDiagram)self.eContainer();
-		dfd.getEdges().remove(self);
-		// TODO: keep refs consistent!
 		removeFromRefs((DataFlow)self);
+		dfd.getEdges().remove(self);
 		
 		return;
 	}
