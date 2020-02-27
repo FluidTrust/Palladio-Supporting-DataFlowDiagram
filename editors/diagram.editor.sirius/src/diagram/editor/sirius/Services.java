@@ -58,12 +58,60 @@ public class Services {
 		return refs.isEmpty();
 	}
 
+	private boolean needsRef(EObject a, EObject b) {
+		boolean sameDFD = isSameDFD(a, b);
+		boolean toRef = isRefined(a);
+		boolean fromRef = isRefined(b);
+		return (!sameDFD || toRef || fromRef);
+	}
+
+	private boolean isSameDFD(EObject a, EObject b) {
+		return ComparisonUtil.isEqual(a.eContainer(), b.eContainer());
+	}
+
+	public boolean needsRefDialog(EObject self, EObject source, EObject target) {
+		return needsRef(source, target) && !getAllRefinements(self, source, target).isEmpty(); // <-> if cross-dfd;
+	}
+
 	public boolean needsRef(EObject self, EObject source, EObject target) {
-		boolean sameDFD = ComparisonUtil.isEqual(source.eContainer(), target.eContainer());
-		boolean toRef = isRefined(source);
-		boolean fromRef = isRefined(target);
-		// TODO what if both refined
-		return !sameDFD || toRef || fromRef; // <-> if cross-dfd;
+		return needsRef(source, target) && getAllRefinements(self, source, target).isEmpty();
+	}
+
+	private DataFlowDiagramRefinement getRefinement(EObject node) {
+		return (DataFlowDiagramRefinement) new ArrayList<EObject>(
+				new EObjectQuery(node).getInverseReferences("refinedProcess")).get(0);
+	}
+
+	public void addNewRefinedDF(EObject self, EObject source, EObject target) {
+
+		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
+		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
+		DataFlow df = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
+		df.setSource((Node) source);
+		df.setTarget((Node) target);
+		df.setName("new Data Flow");
+		if (isSameDFD(source, target)) { // to/from refinedNode 
+			sourceDFD.getEdges().add(df);
+
+			if (isRefined(source) && isRefined(target)) {
+				DataFlowDiagramRefinement sourceRef = getRefinement(source);
+				addToRef(df, null, sourceRef);
+				DataFlowDiagramRefinement targetRef = getRefinement(target);
+				addToRef(df, null, targetRef);			
+			} else {
+				DataFlowDiagramRefinement ref = isRefined(source) ? getRefinement(source) : getRefinement(target);
+				addToRef(df, null, ref);
+			}
+			// TODO: is allowed?
+		} else { // to/from border node
+			if (isRefinedBy(sourceDFD, targetDFD)) {
+				// add ref to output refs of source-node
+			} else {
+				// add ref to input refs of target-node
+			}
+
+		}
+
 	}
 
 	private List<Edge> refineEdge(Edge edge) {
@@ -149,12 +197,14 @@ public class Services {
 
 	}
 
-	private void addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
+	private EdgeRefinement addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
 		EdgeRefinement er = DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement();
 		er.setRefinedEdge(df);
-		er.getRefiningEdges().add(ndf);
+		if (ndf != null) {
+			er.getRefiningEdges().add(ndf);
+		}
 		ref.getRefinedEdges().add(er);
-
+		return er;
 	}
 
 	private EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
@@ -281,7 +331,7 @@ public class Services {
 				.anyMatch(d -> ComparisonUtil.isEqual(d, lower));
 	}
 
-	public List<EdgeRefinement> showRefinements(EObject self, EObject source, EObject target) {
+	public List<EdgeRefinement> getAllRefinements(EObject self, EObject source, EObject target) {
 		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>();
 
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
@@ -358,16 +408,14 @@ public class Services {
 	 * Semantic Validation Rules
 	 */
 
+	public boolean canConnect(EObject self, EObject source, EObject target) {
+		
+		return !(isBorderNode((Node)source) && isBorderNode((Node)target)) && !getAllRefinements(self, source, target).isEmpty();
+		
+	}
+	
 	private boolean isBorderNode(Node n) {
 		return getContexts(n).size() > 1;
-	}
-
-	private Set<DataFlow> getRef(Node n, String ref) { // "source" or "target"
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences(ref).stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
-		Set<DataFlow> dfs = new HashSet<DataFlow>();
-		refs.forEach(i -> dfs.add((DataFlow) i));
-		return dfs;
 	}
 
 	private Set<DataFlowDiagram> getContexts(Node n) {
@@ -472,7 +520,7 @@ public class Services {
 				}
 			}
 			r.getRefinedEdges().removeAll(toDelete); // TODO not working
-			//EcoreUtil.deleteAll(toDelete, true);
+			// EcoreUtil.deleteAll(toDelete, true);
 		}
 
 	}
