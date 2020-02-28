@@ -271,7 +271,7 @@
             </firstModelOperations>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:CustomDescription" name="com.example.awesomeproject.sirius.properties.ext.widgets.table">
+        <controls xsi:type="properties:CustomDescription" name="org.eclipse.eef.sample.custom.widget.colorpicker">
           <customExpressions name="valueExpression" customExpression="aql:self"/>
           <customExpressions name="onClickExpression" customExpression="aql:self"/>
         </controls>

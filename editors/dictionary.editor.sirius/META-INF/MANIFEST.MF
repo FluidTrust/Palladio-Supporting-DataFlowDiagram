@@ -11,8 +11,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
  org.palladiosimulator.dataflow.dictionary;bundle-version="0.1.0",
+ org.palladiosimulator.dataflow.ui.table;bundle-version="1.0.0",
  com.example.awesomeproject.eef.ide.ui.ext.widgets.table;bundle-version="1.0.0",
- org.palladiosimulator.dataflow.ui.table;bundle-version="1.0.0"
+ com.widget.colorpicker;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName

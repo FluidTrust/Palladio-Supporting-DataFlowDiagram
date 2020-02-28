@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+      <descriptor
+            class="com.widget.colorpicker.ColorPickerProvider"
+            description="description"
+            id="com.widget.colorpicker.descriptor"
+            label="label">
+      </descriptor>
+   </extension>
+
+</plugin>
