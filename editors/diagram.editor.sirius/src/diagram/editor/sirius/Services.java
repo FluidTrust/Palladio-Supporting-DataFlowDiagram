@@ -90,14 +90,14 @@ public class Services {
 		df.setSource((Node) source);
 		df.setTarget((Node) target);
 		df.setName("new Data Flow");
-		if (isSameDFD(source, target)) { // to/from refinedNode 
+		if (isSameDFD(source, target)) { // to/from refinedNode
 			sourceDFD.getEdges().add(df);
 
 			if (isRefined(source) && isRefined(target)) {
 				DataFlowDiagramRefinement sourceRef = getRefinement(source);
 				addToRef(df, null, sourceRef);
 				DataFlowDiagramRefinement targetRef = getRefinement(target);
-				addToRef(df, null, targetRef);			
+				addToRef(df, null, targetRef);
 			} else {
 				DataFlowDiagramRefinement ref = isRefined(source) ? getRefinement(source) : getRefinement(target);
 				addToRef(df, null, ref);
@@ -409,11 +409,12 @@ public class Services {
 	 */
 
 	public boolean canConnect(EObject self, EObject source, EObject target) {
-		
-		return !(isBorderNode((Node)source) && isBorderNode((Node)target)) && !getAllRefinements(self, source, target).isEmpty();
-		
+
+		return !(isBorderNode((Node) source) && isBorderNode((Node) target))
+				&& !getAllRefinements(self, source, target).isEmpty();
+
 	}
-	
+
 	private boolean isBorderNode(Node n) {
 		return getContexts(n).size() > 1;
 	}
@@ -506,9 +507,25 @@ public class Services {
 			DataFlowDiagram ndfd = (DataFlowDiagram) s.eContainer();
 			ndfd.getEdges().remove(s);
 		}
-		// EcoreUtil.delete(self, true);
 		DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
 		dfd.getNodes().remove(self);
+		for (DataFlowDiagramRefinement r : dfd.getRefinedBy()) {
+			List<EdgeRefinement> toDelete = new ArrayList<EdgeRefinement>();
+			for (EdgeRefinement er : r.getRefinedEdges()) {
+				if (er.getRefinedEdge() == null || ComparisonUtil.isEqual(er.getRefinedEdge().getSource(), self)
+						|| ComparisonUtil.isEqual(er.getRefinedEdge().getTarget(), self)) {
+					toDelete.add(er);
+
+				}
+			}
+			r.getRefinedEdges().removeAll(toDelete);
+		}
+
+	}
+
+	public void deleteRefs(EObject self) {
+		System.out.println(self);
+		DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
 		for (DataFlowDiagramRefinement r : dfd.getRefinedBy()) {
 			List<EdgeRefinement> toDelete = new ArrayList<EdgeRefinement>();
 			for (EdgeRefinement er : r.getRefinedEdges()) {
@@ -522,7 +539,6 @@ public class Services {
 			r.getRefinedEdges().removeAll(toDelete); // TODO not working
 			// EcoreUtil.deleteAll(toDelete, true);
 		}
-
 	}
 
 	public void deleteEdge(EObject self) {
