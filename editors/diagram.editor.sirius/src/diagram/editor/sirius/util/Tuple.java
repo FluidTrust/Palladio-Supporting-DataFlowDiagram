@@ -1,4 +1,4 @@
-package diagram.editor.sirius;
+package diagram.editor.sirius.util;
 
 public class Tuple<T, V> {
 	private final T first;

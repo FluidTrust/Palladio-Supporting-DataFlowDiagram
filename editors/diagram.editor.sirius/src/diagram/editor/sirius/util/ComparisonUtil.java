@@ -1,4 +1,4 @@
-package diagram.editor.sirius;
+package diagram.editor.sirius.util;
 
 import java.util.List;
 

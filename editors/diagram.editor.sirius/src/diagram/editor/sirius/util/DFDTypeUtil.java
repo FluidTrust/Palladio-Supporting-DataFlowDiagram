@@ -1,4 +1,4 @@
-package diagram.editor.sirius;
+package diagram.editor.sirius.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,7 +27,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataTyp
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
-public class DFDUtil {
+public class DFDTypeUtil {
 
 	/**
 	 * 
@@ -75,48 +75,7 @@ public class DFDUtil {
 		return entries;
 	}
 
-	/**
-	 * TODO you can get the current representation in two steps:
-	 * 
-	 * 1. retrieve current session from
-	 * org.eclipse.sirius.business.api.session.SessionManager.INSTANCE.sessions 2.
-	 * get list of representations from
-	 * org.eclipse.sirius.business.api.dialect.DialectManager.INSTANCE.getAllRepresentations(session)
-	 * 
-	 * 
-	 * Another solution, that should be more efficient, you can also retrieve the
-	 * DDiagram by using the crossreference[1]: Collection<EObject> result = new
-	 * EObjectQuery(mySemanticElement).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
-	 * 
-	 * This will give you the diagram element representing your semantic element.
-	 * From this element, all you need to do is find the container that is a
-	 * DRepresentation (here a DDiagram) and you will have the name of the diagram.
-	 * 
-	 * @param session
-	 * @param diagram
-	 */
 
-	public static void validateDiagram(DataFlowDiagram dfd) {
-		Session session = SessionManager.INSTANCE.getSession(dfd);
-		DRepresentation diagram = getRepresentation(session, dfd);
-		IEditorPart editorPart = DialectUIManager.INSTANCE.openEditor(session, diagram, new NullProgressMonitor());
-		WorkbenchPartDescriptor workbenchPartDescriptor = new WorkbenchPartDescriptor(editorPart.getSite().getId(),
-				editorPart.getClass(), editorPart.getSite().getPage());
-		ValidateAction va = new ValidateAction(workbenchPartDescriptor);
-		va.run();
-	}
-
-	private static DRepresentation getRepresentation(Session session, DataFlowDiagram dfd) { // TODO
-		/*
-		for (DRepresentation r : DialectManager.INSTANCE.getAllRepresentations(session)) {
-			System.out.println(r);
-			System.out.println(r.eContents());
-			
-		}
-		*/
-		return null;
-		
-	}
 	
 	public static List<EObject> getDataTypes(Session session) {
 		List<EObject> types = new ArrayList<EObject>();
