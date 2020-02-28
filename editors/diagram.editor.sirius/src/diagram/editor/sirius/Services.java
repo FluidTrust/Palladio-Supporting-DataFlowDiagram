@@ -22,6 +22,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 import diagram.editor.sirius.util.ComparisonUtil;
 import diagram.editor.sirius.util.DFDErrorMessageUtil;
 import diagram.editor.sirius.util.DFDModificationUtil;
+import diagram.editor.sirius.util.DFDRefinementUtil;
 import diagram.editor.sirius.util.DFDTypeUtil;
 import diagram.editor.sirius.util.DFDValidationUtil;
 import diagram.editor.sirius.util.Tuple;
@@ -54,31 +55,31 @@ public class Services {
 	}
 
 	public boolean isRefined(EObject self) {
-		return DFDModificationUtil.isRefined(self);
+		return DFDRefinementUtil.isRefined(self);
 	}
 
 	public boolean isNotRefined(EObject self) {
-		return !DFDModificationUtil.isRefined(self);
+		return !DFDRefinementUtil.isRefined(self);
 	}
 
 	public boolean needsRefDialog(EObject self, EObject source, EObject target) {
-		return DFDModificationUtil.needsRef(source, target) && !getAllRefinements(self, source, target).isEmpty(); // <-> if cross-dfd;
+		return DFDRefinementUtil.needsRef(source, target) && !getAllRefinements(self, source, target).isEmpty(); // <-> if cross-dfd;
 	}
 
 	public boolean needsRef(EObject self, EObject source, EObject target) {
-		return DFDModificationUtil.needsRef(source, target) && getAllRefinements(self, source, target).isEmpty();
+		return DFDRefinementUtil.needsRef(source, target) && getAllRefinements(self, source, target).isEmpty();
 	}
 
 
 
 	public void addNewRefinedDF(EObject self, EObject source, EObject target) {
 
-		DFDModificationUtil.addNewRefinedDF(self, source, target);
+		DFDRefinementUtil.addNewRefinedDF(self, source, target);
 
 	}
 
 	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
-		DFDModificationUtil.refineDF(self, df, dfd);
+		DFDRefinementUtil.refineDF(self, df, dfd);
 	}
 
 	public void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD, DataFlowDiagramRefinement ref) {
@@ -107,20 +108,20 @@ public class Services {
 	}
 
 	public List<EdgeRefinement> getAllRefinements(EObject self, EObject source, EObject target) {
-		return DFDModificationUtil.getAllRefinements(self, source, target);
+		return DFDRefinementUtil.getAllRefinements(self, source, target);
 
 	}
 
 	public boolean canCreateDF(EObject self) {
-		return DFDModificationUtil.getCurrentRefinement() != null;
+		return DFDRefinementUtil.getCurrentRefinement() != null;
 	}
 
 	public void stopDFCreation(EObject self) {
-		DFDModificationUtil.setCurrentRefinement(null);
+		DFDRefinementUtil.setCurrentRefinement(null);
 	}
 
 	public void setRef(EObject self, EdgeRefinement er) {
-		DFDModificationUtil.setCurrentRefinement(er);
+		DFDRefinementUtil.setCurrentRefinement(er);
 	}
 
 	public void addRefiningDF(EObject self, EObject source, EObject target) {

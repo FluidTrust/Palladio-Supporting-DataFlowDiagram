@@ -111,7 +111,7 @@ public class DFDValidationUtil {
 		}
 		// generate all candidates; initialized with first refinement
 		List<List<Edge>> candidates = new ArrayList<List<Edge>>();
-		List<List<Edge>> newCandidates = new ArrayList<List<Edge>>(List.of(DFDModificationUtil.refineEdge(base)));
+		List<List<Edge>> newCandidates = new ArrayList<List<Edge>>(List.of(DFDRefinementUtil.refineEdge(base)));
 
 		while (!isEquivalentList(candidates, newCandidates)) {
 			candidates.clear();
@@ -214,7 +214,7 @@ public class DFDValidationUtil {
 					currentResults.add(input.get(i));
 					continue;
 				}
-				currentResults.addAll(DFDModificationUtil.refineEdge(input.get(i)));
+				currentResults.addAll(DFDRefinementUtil.refineEdge(input.get(i)));
 			}
 			results.add(currentResults);
 
@@ -233,7 +233,7 @@ public class DFDValidationUtil {
 			for (int i = 0; i < input.size(); i++) {
 
 				if (i == exception && isRefinable(input.get(i))) {
-					currentResults.addAll(DFDModificationUtil.refineEdge(input.get(i)));
+					currentResults.addAll(DFDRefinementUtil.refineEdge(input.get(i)));
 					continue;
 				}
 				currentResults.add(input.get(i));
