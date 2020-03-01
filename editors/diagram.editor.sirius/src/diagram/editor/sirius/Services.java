@@ -63,14 +63,14 @@ public class Services {
 	}
 
 	public boolean needsRefDialog(EObject self, EObject source, EObject target) {
-		return DFDRefinementUtil.needsRef(source, target) && !getAllRefinements(self, source, target).isEmpty(); // <-> if cross-dfd;
+		return DFDRefinementUtil.needsRef(source, target) && !getAllRefinements(self, source, target).isEmpty(); // <->
+																													// if
+																													// cross-dfd;
 	}
 
 	public boolean needsRef(EObject self, EObject source, EObject target) {
 		return DFDRefinementUtil.needsRef(source, target) && getAllRefinements(self, source, target).isEmpty();
 	}
-
-
 
 	public void addNewRefinedDF(EObject self, EObject source, EObject target) {
 
@@ -134,6 +134,9 @@ public class Services {
 	}
 
 	public boolean canConnect(EObject self, EObject source, EObject target) {
+		if (!DFDRefinementUtil.isRefinedDFD(self.eContainer())) {
+			return true;
+		}
 
 		return !(DFDModificationUtil.isBorderNode((Node) source) && DFDModificationUtil.isBorderNode((Node) target))
 				&& !getAllRefinements(self, source, target).isEmpty();

@@ -87,6 +87,11 @@ public class DFDRefinementUtil {
 		return !refs.isEmpty();
 	}
 	
+	public static boolean isRefinedDFD(EObject self) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refiningDiagram"));
+		return !refs.isEmpty();
+	}
+	
 	public static void addNewRefinedDF(EObject self, EObject source, EObject target) {
 
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
