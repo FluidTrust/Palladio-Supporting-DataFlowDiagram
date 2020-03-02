@@ -107,6 +107,18 @@ public class Services {
 
 	}
 
+	public boolean isValidData(EObject self) {
+		Data data = (Data) self;
+		return data.getName() != null && !data.getName().isBlank() && data.getType() != null;
+
+	}
+
+	public boolean isValidData(EObject self, EObject entry) {
+		Data data = (Data) entry;
+		return data.getName() != null && !data.getName().isBlank() && data.getType() != null;
+
+	}
+
 	public List<EdgeRefinement> getAllRefinements(EObject self, EObject source, EObject target) {
 		return DFDRefinementUtil.getAllRefinements(self, source, target);
 
