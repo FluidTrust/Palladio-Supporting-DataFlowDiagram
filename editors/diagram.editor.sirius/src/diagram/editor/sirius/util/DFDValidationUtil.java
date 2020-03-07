@@ -2,11 +2,14 @@ package diagram.editor.sirius.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.ui.util.WorkbenchPartDescriptor;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.ui.part.ValidateAction;
@@ -68,9 +71,14 @@ public class DFDValidationUtil {
 	public static boolean inputOutputIsConsistent(EObject self) {
 
 		Node n = (Node) self;
+
+		if (hasEmptyEdgeRefinements(n)) {
+			return false;
+		}
 		if (!DFDModificationUtil.isBorderNode(n)) {
 			return true;
 		}
+
 		Set<DataFlowDiagram> allContexts = DFDModificationUtil.getContexts(n);
 		for (DataFlowDiagram context : allContexts) {
 			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = DFDModificationUtil.getEdgeRefinements(n,
@@ -85,6 +93,26 @@ public class DFDValidationUtil {
 		}
 
 		return true;
+	}
+
+	private static boolean hasEmptyEdgeRefinements(Node n) {
+		Tuple<List<EdgeRefinement>, List<EdgeRefinement>> refinements = DFDModificationUtil.getEdgeRefinements(n,
+				(DataFlowDiagram) n.eContainer());
+
+		for (EdgeRefinement er : refinements.getFirst()) {
+			if (er.getRefiningEdges().isEmpty()) {
+				return true;
+			}
+		}
+
+		for (EdgeRefinement er : refinements.getSecond()) {
+			if (er.getRefiningEdges().isEmpty()) {
+				return true;
+			}
+		}
+
+		return false;
+
 	}
 
 	public static List<Tuple<EdgeRefinement, Boolean>> isConsistent(List<EdgeRefinement> toCheck) {
@@ -186,6 +214,7 @@ public class DFDValidationUtil {
 	}
 
 	private static boolean isEquivalent(List<Edge> base, List<Edge> subFlows) {
+		// TODO consider duplicates
 		for (Edge b : base) {
 			if (!findMatch(b, subFlows)) {
 				return false;
