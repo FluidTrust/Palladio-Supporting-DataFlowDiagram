@@ -25,10 +25,18 @@ public class DFDModificationUtil {
 
 	private static void removeFromRefs(DataFlow df) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(df).getInverseReferences("refiningEdges"));
+		refs.addAll(new EObjectQuery(df).getInverseReferences("refinedEdge"));
+		List<EObject> toDelete = new ArrayList<EObject>();
 		for (EObject r : refs) {
 			EdgeRefinement er = (EdgeRefinement) r;
 			er.getRefiningEdges().remove(df);
+			if (er.getRefinedEdge() == null || ComparisonUtil.isEqual(er.getRefinedEdge(), df)) {
+				toDelete.add(er);
+			}
 		}
+		
+		refs.removeAll(toDelete);
+		
 
 	}
 	

@@ -1,6 +1,7 @@
 package diagram.editor.sirius.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -25,48 +26,7 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataTyp
 
 public class DFDValidationUtil {
 
-	/**
-	 * TODO you can get the current representation in two steps:
-	 * 
-	 * 1. retrieve current session from
-	 * org.eclipse.sirius.business.api.session.SessionManager.INSTANCE.sessions 2.
-	 * get list of representations from
-	 * org.eclipse.sirius.business.api.dialect.DialectManager.INSTANCE.getAllRepresentations(session)
-	 * 
-	 * 
-	 * Another solution, that should be more efficient, you can also retrieve the
-	 * DDiagram by using the crossreference[1]: Collection<EObject> result = new
-	 * EObjectQuery(mySemanticElement).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
-	 * 
-	 * This will give you the diagram element representing your semantic element.
-	 * From this element, all you need to do is find the container that is a
-	 * DRepresentation (here a DDiagram) and you will have the name of the diagram.
-	 * 
-	 * @param session
-	 * @param diagram
-	 */
 
-	public static void validateDiagram(DataFlowDiagram dfd) {
-		Session session = SessionManager.INSTANCE.getSession(dfd);
-		DRepresentation diagram = getRepresentation(session, dfd);
-		IEditorPart editorPart = DialectUIManager.INSTANCE.openEditor(session, diagram, new NullProgressMonitor());
-		WorkbenchPartDescriptor workbenchPartDescriptor = new WorkbenchPartDescriptor(editorPart.getSite().getId(),
-				editorPart.getClass(), editorPart.getSite().getPage());
-		ValidateAction va = new ValidateAction(workbenchPartDescriptor);
-		va.run();
-	}
-
-	private static DRepresentation getRepresentation(Session session, DataFlowDiagram dfd) { // TODO
-		/*
-		 * for (DRepresentation r :
-		 * DialectManager.INSTANCE.getAllRepresentations(session)) {
-		 * System.out.println(r); System.out.println(r.eContents());
-		 * 
-		 * }
-		 */
-		return null;
-
-	}
 
 	public static boolean inputOutputIsConsistent(EObject self) {
 
@@ -147,7 +107,6 @@ public class DFDValidationUtil {
 			newCandidates.clear();
 			for (List<Edge> c : candidates) {
 				if (isEquivalent(c, refiningEdges)) { // check if current candidate is solution
-					System.out.println("---");
 					return true;
 				}
 
@@ -175,13 +134,14 @@ public class DFDValidationUtil {
 
 	}
 
-	private static boolean findMatch(Edge d, List<Edge> candidates) {
+	private static List<Integer> findMatches(Edge d, List<Edge> candidates) {
+		List<Integer> matches = new ArrayList<Integer>();
 		for (Edge c : candidates) {
 			if (ComparisonUtil.isEquivalent((DataFlow) d, (DataFlow) c)) {
-				return true;
+				matches.add(candidates.indexOf(c));
 			}
 		}
-		return false;
+		return matches;
 	}
 
 	private static boolean contains(List<Edge> target, List<List<Edge>> test) {
@@ -214,15 +174,37 @@ public class DFDValidationUtil {
 	}
 
 	private static boolean isEquivalent(List<Edge> base, List<Edge> subFlows) {
-		// TODO consider duplicates
+		Map<Edge, Integer> baseMatches = new HashMap<Edge, Integer>();
+		Map<Edge, Integer> subFlowMatches = new HashMap<Edge, Integer>();
 		for (Edge b : base) {
-			if (!findMatch(b, subFlows)) {
+			List<Integer> matches = findMatches(b, subFlows);
+
+			if (matches.isEmpty()) {
+				return false;
+			}
+			for (Integer pos : matches) {
+				if (!baseMatches.containsValue(pos)) {
+					baseMatches.put(b, pos);
+
+				}
+			}
+			if (!baseMatches.containsKey(b)) {
 				return false;
 			}
 
 		}
 		for (Edge s : subFlows) {
-			if (!findMatch(s, base)) {
+			List<Integer> matches = findMatches(s, base);
+			if (matches.isEmpty()) {
+				return false;
+			}
+			for (Integer pos : matches) {
+				if (!subFlowMatches.containsValue(pos)) {
+					subFlowMatches.put(s, pos);
+
+				}
+			}
+			if (!subFlowMatches.containsKey(s)) {
 				return false;
 			}
 
