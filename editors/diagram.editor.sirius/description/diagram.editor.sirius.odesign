@@ -107,25 +107,34 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" precondition="service:isNotRefined()" mappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="refineProcess" mappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:Let" variableName="oldDFD" valueExpression="aql:self.eContainer().target">
-                <subModelOperations xsi:type="tool_1:Let" variableName="process" valueExpression="aql:self.target">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().target">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagramRefinement" referenceName="refinedBy" variableName="refinement">
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:refinement">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagram" referenceName="refiningDiagram" variableName="newDFD">
-                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(process,oldDFD,refinement)"/>
-                          <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="service:isNotRefined(element)">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="oldDFD" valueExpression="aql:self.eContainer().target">
+                    <subModelOperations xsi:type="tool_1:Let" variableName="process" valueExpression="aql:self.target">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().target">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagramRefinement" referenceName="refinedBy" variableName="refinement">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:refinement">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DataFlowDiagram::DataFlowDiagram" referenceName="refiningDiagram" variableName="newDFD">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:refineProcess(process,oldDFD,refinement)"/>
+                              <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+                            </subModelOperations>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="refiningDiagram" valueExpression="aql:newDFD"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="refinedProcess" valueExpression="aql:process"/>
+                          </subModelOperations>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="refiningDiagram" valueExpression="aql:newDFD"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="refinedProcess" valueExpression="aql:process"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                </subModelOperations>
+                </cases>
+                <default>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:navigateDown(element)">
+                    <subModelOperations xsi:type="tool:Navigation" diagramDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']"/>
+                  </subModelOperations>
+                </default>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

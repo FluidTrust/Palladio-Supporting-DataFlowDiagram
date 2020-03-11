@@ -77,7 +77,7 @@ public class DFDRefinementUtil {
 		return (!sameDFD || toRef || fromRef);
 	}
 	
-	private static DataFlowDiagramRefinement getRefinement(EObject node) {
+	public static DataFlowDiagramRefinement getRefinement(EObject node) {
 		return (DataFlowDiagramRefinement) new ArrayList<EObject>(
 				new EObjectQuery(node).getInverseReferences("refinedProcess")).get(0);
 	}

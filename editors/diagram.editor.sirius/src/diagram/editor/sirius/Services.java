@@ -49,6 +49,11 @@ public class Services {
 		return dfd.eContainer().eContainer();
 	}
 
+	public EObject navigateDown(EObject self, EObject element) {
+		return DFDRefinementUtil.getRefinement(element).getRefiningDiagram();
+
+	}
+
 	public List<EObject> listDataTypes(EObject self) {
 		Session session = SessionManager.INSTANCE.getSession(self);
 		return DFDTypeUtil.getDataTypes(session);
@@ -58,8 +63,8 @@ public class Services {
 		return DFDRefinementUtil.isRefined(self);
 	}
 
-	public boolean isNotRefined(EObject self) {
-		return !DFDRefinementUtil.isRefined(self);
+	public boolean isNotRefined(EObject self, EObject element) {
+		return !DFDRefinementUtil.isRefined(element);
 	}
 
 	public boolean needsRefDialog(EObject self, EObject source, EObject target) {
@@ -149,8 +154,8 @@ public class Services {
 		if (!DFDRefinementUtil.isRefinedDFD(self.eContainer())) {
 			return true;
 		}
-		
-		if (!DFDModificationUtil.isBorderNode((Node)source) && !DFDModificationUtil.isBorderNode((Node)target)){
+
+		if (!DFDModificationUtil.isBorderNode((Node) source) && !DFDModificationUtil.isBorderNode((Node) target)) {
 			return true;
 		}
 

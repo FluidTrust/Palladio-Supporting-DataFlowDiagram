@@ -35,9 +35,9 @@ public class DFDErrorMessageUtil {
 		}
 		StringBuilder sb = new StringBuilder();
 		String inputIntro = (inputErrors.size() > 1) ? " inputs" : " input ";
-		String outputIntro = (outputErrors.size() > 1) ? " outputs " : " output ";
+		String outputIntro = (outputErrors.size() > 1) ? "outputs " : "output ";
 		String verb = ((!inputErrors.isEmpty() && !outputErrors.isEmpty()) || inputErrors.size() > 1
-				|| outputErrors.size() > 1) ? " are " : " is ";
+				|| outputErrors.size() > 1) ? " are" : " is";
 		String connective = (!inputErrors.isEmpty() && !outputErrors.isEmpty()) ? " and " : "";
 		if (!inputErrors.isEmpty()) {
 			sb.append(inputIntro);
