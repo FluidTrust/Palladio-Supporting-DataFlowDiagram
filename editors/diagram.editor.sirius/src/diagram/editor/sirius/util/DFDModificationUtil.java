@@ -26,16 +26,21 @@ public class DFDModificationUtil {
 	private static void removeFromRefs(DataFlow df) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(df).getInverseReferences("refiningEdges"));
 		refs.addAll(new EObjectQuery(df).getInverseReferences("refinedEdge"));
-		List<EObject> toDelete = new ArrayList<EObject>();
+		List<EdgeRefinement> toDelete = new ArrayList<EdgeRefinement>();
 		for (EObject r : refs) {
 			EdgeRefinement er = (EdgeRefinement) r;
 			er.getRefiningEdges().remove(df);
 			if (er.getRefinedEdge() == null || ComparisonUtil.isEqual(er.getRefinedEdge(), df)) {
-				toDelete.add(er);
+				toDelete.add((EdgeRefinement) er);
 			}
 		}
 		
-		refs.removeAll(toDelete);
+		for (EdgeRefinement er: toDelete) {
+			DataFlowDiagramRefinement ref = (DataFlowDiagramRefinement) er.eContainer();
+			ref.getRefinedEdges().remove(er);
+			
+			
+		}
 		
 
 	}

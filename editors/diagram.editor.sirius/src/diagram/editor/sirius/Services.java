@@ -149,6 +149,10 @@ public class Services {
 		if (!DFDRefinementUtil.isRefinedDFD(self.eContainer())) {
 			return true;
 		}
+		
+		if (!DFDModificationUtil.isBorderNode((Node)source) && !DFDModificationUtil.isBorderNode((Node)target)){
+			return true;
+		}
 
 		return !(DFDModificationUtil.isBorderNode((Node) source) && DFDModificationUtil.isBorderNode((Node) target))
 				&& !getAllRefinements(self, source, target).isEmpty();
