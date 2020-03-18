@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Data Flow Diagram MWE2
+Bundle-SymbolicName: org.palladiosimulator.dataflow.diagram.mwe2
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: org.palladiosimulator.dataflow.diagram.mwe2
+Require-Bundle: org.eclipse.emf.mwe2.launch;bundle-version="2.10.0",
+ tools.mdsd.ecoreworkflow.mwe2lib;bundle-version="0.1.0",
+ org.eclipse.xtext.generator;bundle-version="2.19.0",
+ org.apache.log4j;bundle-version="1.2.15",
+ org.eclipse.core.runtime;bundle-version="3.16.0",
+ org.apache.commons.logging;bundle-version="1.2.0",
+ de.uka.ipd.sdq.identifier;bundle-version="4.2.0"
