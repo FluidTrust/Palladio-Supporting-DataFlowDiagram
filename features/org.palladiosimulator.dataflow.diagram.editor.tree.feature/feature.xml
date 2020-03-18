@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.palladiosimulator.dataflow.diagram.editor.tree.feature"
+      label="Data Flow Diagram Tree Editor"
+      version="0.1.0.qualifier"
+      plugin="org.palladiosimulator.branding"
+      license-feature="org.palladiosimulator.license.epl2"
+      license-feature-version="1.0.0">
+
+   <includes
+         id="org.palladiosimulator.dataflow.dictionary.editor.tree.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.palladiosimulator.dataflow.diagram.model.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.palladiosimulator.dataflow.diagram.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.dataflow.diagram.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
