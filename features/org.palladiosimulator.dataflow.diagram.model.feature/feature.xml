@@ -4,7 +4,7 @@
       label="Data Flow Diagram Meta Model"
       version="0.1.0.qualifier"
       plugin="org.palladiosimulator.branding"
-      license-feature="org.palladiosimulator.license.epl2"
+      license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
 
    <includes
