@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util.leveling;
 
 import java.util.List;
 
@@ -13,12 +13,27 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.PrimitiveDataType;
 
+/**
+ * 
+ * Utility class handling all comparisons between Ecore-objects.
+ *
+ */
+
 public class ComparisonUtil {
 
 	public static boolean isEqual(EObject e1, EObject e2) {
 		return EcoreUtil.equals(e1, e2);
 
 	}
+
+	/**
+	 * 
+	 * All following methods use recursive comparison to determine if two objects
+	 * are equivalent. That is, whether they are equal wrt. all attributes except
+	 * their id. These may be modified to achieve a less strict concept of
+	 * "equivalence".
+	 * 
+	 */
 
 	public static boolean isEquivalentPrimitiveDT(PrimitiveDataType a, PrimitiveDataType b) {
 		if (isEqual(a, b)) {
@@ -66,14 +81,14 @@ public class ComparisonUtil {
 
 	public static boolean isEquivalent(DataType a, DataType b) {
 		if (a instanceof PrimitiveDataType && b instanceof PrimitiveDataType) {
-			return isEquivalentPrimitiveDT((PrimitiveDataType)a, (PrimitiveDataType)b);	
+			return isEquivalentPrimitiveDT((PrimitiveDataType) a, (PrimitiveDataType) b);
 		}
 		if (a instanceof CollectionDataType && b instanceof CollectionDataType) {
-			return isEquivalentCollectionDT((CollectionDataType)a, (CollectionDataType)b);
+			return isEquivalentCollectionDT((CollectionDataType) a, (CollectionDataType) b);
 		}
-		
+
 		if (a instanceof CompositeDataType && b instanceof CompositeDataType) {
-			return isEquivalentCompositeDT((CompositeDataType)a, (CompositeDataType)b);
+			return isEquivalentCompositeDT((CompositeDataType) a, (CompositeDataType) b);
 		}
 		return false;
 	}
@@ -89,8 +104,7 @@ public class ComparisonUtil {
 		if (isEqual(a, b)) {
 			return true;
 		}
-	
-		
+
 		return a.getName().equals(b.getName()) && isEquivalent(a.getType(), b.getType());
 	}
 
@@ -109,19 +123,18 @@ public class ComparisonUtil {
 		}
 		// compare set of entries
 		for (Data d1 : a.getData()) {
-			if(!findMatch(d1, b.getData())) {
+			if (!findMatch(d1, b.getData())) {
 				return false;
 			}
 		}
 		for (Data d1 : b.getData()) {
-			if(!findMatch(d1, a.getData())) {
+			if (!findMatch(d1, a.getData())) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
-	
+
 	private static boolean findMatch(Data d, List<Data> candidates) {
 		for (Data c : candidates) {
 			if (isEquivalent(d, c)) {

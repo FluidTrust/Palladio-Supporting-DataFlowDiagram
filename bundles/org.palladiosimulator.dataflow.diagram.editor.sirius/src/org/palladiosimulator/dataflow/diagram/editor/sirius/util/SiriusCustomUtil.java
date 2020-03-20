@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -27,6 +27,8 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
  * Class containing some useful static methods to work with Sirius
  * @see {@link SiriusUtil}
  * @author Amine Kechaou
+ * 
+ * NOTE: Directly copied from Palladio simulator
  *
  */
 public class SiriusCustomUtil {

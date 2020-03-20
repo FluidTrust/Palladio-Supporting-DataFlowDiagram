@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius;
+package diagram.editor.sirius;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -15,16 +15,20 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.ComparisonUtil;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.DFDErrorMessageUtil;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.DFDModificationUtil;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.DFDRefinementUtil;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.DFDTypeUtil;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.DFDValidationUtil;
-import org.palladiosimulator.dataflow.diagram.editor.sirius.util.Tuple;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
+
+import diagram.editor.sirius.util.datastructures.Tuple;
+import diagram.editor.sirius.util.leveling.ComparisonUtil;
+import diagram.editor.sirius.util.leveling.DFDErrorMessageUtil;
+import diagram.editor.sirius.util.leveling.DFDRefinementUtil;
+import diagram.editor.sirius.util.leveling.DFDTypeUtil;
+import diagram.editor.sirius.util.leveling.DFDValidationUtil;
+import diagram.editor.sirius.util.modification.ComponentFactory;
+import diagram.editor.sirius.util.modification.DFDModificationUtil;
+import diagram.editor.sirius.util.modification.QueryUtil;
+
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -39,7 +43,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 
 /**
- * The services class used by VSM.
+ * This class is the interface to Sirius-level operations and delegates actual functionality.
  */
 public class Services {
 
@@ -50,6 +54,20 @@ public class Services {
 	public EObject navigateDown(EObject self, EObject element) {
 		return DFDRefinementUtil.getRefinement(element).getRefiningDiagram();
 
+	}
+
+	public boolean canReconnectSource(EObject self) {
+		return !QueryUtil.isBorderNode(((DataFlow) self).getSource());
+
+	}
+
+	public boolean canReconnectTarget(EObject self) {
+		return !QueryUtil.isBorderNode(((DataFlow) self).getTarget());
+
+	}
+
+	public boolean canReconnect(EObject self, EObject source, EObject target) {
+	return QueryUtil.canReconnect(self,source,target);
 	}
 
 	public List<EObject> listDataTypes(EObject self) {
@@ -82,6 +100,9 @@ public class Services {
 	}
 
 	public void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
+		if (DFDRefinementUtil.isRefined(df.getSource()) || DFDRefinementUtil.isRefined(df.getTarget())) {
+			return;
+		}
 		DFDRefinementUtil.refineDF(self, df, dfd);
 	}
 
@@ -140,12 +161,12 @@ public class Services {
 	}
 
 	public void addRefiningDF(EObject self, EObject source, EObject target) {
-		DFDModificationUtil.createDF(self, source, target, true);
+		ComponentFactory.createDF(self, source, target, true);
 
 	}
 
 	public void addDF(EObject self, EObject source, EObject target) {
-		DFDModificationUtil.createDF(self, source, target, false);
+		ComponentFactory.createDF(self, source, target, false);
 	}
 
 	public boolean canConnect(EObject self, EObject source, EObject target) {
@@ -153,11 +174,11 @@ public class Services {
 			return true;
 		}
 
-		if (!DFDModificationUtil.isBorderNode((Node) source) && !DFDModificationUtil.isBorderNode((Node) target)) {
+		if (!QueryUtil.isBorderNode((Node) source) && !QueryUtil.isBorderNode((Node) target)) {
 			return true;
 		}
 
-		return !(DFDModificationUtil.isBorderNode((Node) source) && DFDModificationUtil.isBorderNode((Node) target))
+		return !(QueryUtil.isBorderNode((Node) source) && QueryUtil.isBorderNode((Node) target))
 				&& !getAllRefinements(self, source, target).isEmpty();
 
 	}

@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,22 +20,28 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataTyp
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
+import diagram.editor.sirius.util.modification.ComponentFactory;
+import diagram.editor.sirius.util.modification.QueryUtil;
+import diagram.editor.sirius.util.naming.NamingScheme;
+import diagram.editor.sirius.util.naming.NumberedSuffixes;
+
+/**
+ * 
+ * Utility class implementing references between refining dfds and edges.
+ *
+ */
 public class DFDRefinementUtil {
-	
+
 	private static EdgeRefinement currentRefinement = null;
-	
+
 	public static void setCurrentRefinement(EdgeRefinement ncurrentRefinement) {
 		currentRefinement = ncurrentRefinement;
 	}
-	
+
 	public static EdgeRefinement getCurrentRefinement() {
 		return currentRefinement;
 	}
 
-	private static boolean isSameDFD(EObject a, EObject b) {
-		return ComparisonUtil.isEqual(a.eContainer(), b.eContainer());
-	}
-	
 	public static List<Edge> refineEdge(Edge edge) {
 		DataFlow df = (DataFlow) edge;
 		Session session = new ArrayList<Session>(SessionManager.INSTANCE.getSessions()).get(0);
@@ -43,7 +49,7 @@ public class DFDRefinementUtil {
 		if (df.getData().size() > 1) {
 			// one df per data
 			for (Data d : df.getData()) {
-				DataFlow ndf = DFDModificationUtil.makeSingleDataFlow(d, df);
+				DataFlow ndf = ComponentFactory.makeSingleDataFlow(d, df);
 				results.add(ndf);
 			}
 
@@ -51,15 +57,15 @@ public class DFDRefinementUtil {
 			// one df per type
 			Data origin = df.getData().get(0);
 			DataType type = origin.getType();
-			String name = origin.getName() + ".";
-			int suffix = 1;
+			String name = origin.getName();
+			NamingScheme namingScheme = new NumberedSuffixes(1);
 			List<DataFlow> dfs = new ArrayList<DataFlow>();
 			if (type instanceof CompositeDataType) {
 				List<Entry> entries = DFDTypeUtil.refineDT(type, session);
 				for (Entry e : entries) {
-					Data data = DFDModificationUtil.makeData(e);
-					DataFlow ndf = DFDModificationUtil.makeSingleDataFlow(data, df);
-					ndf.setName(name + suffix++);
+					Data data = ComponentFactory.makeData(e);
+					DataFlow ndf = ComponentFactory.makeSingleDataFlow(data, df);
+					ndf.setName(namingScheme.makeSuffix(name));
 					dfs.add(ndf);
 				}
 				results.addAll(dfs);
@@ -68,30 +74,36 @@ public class DFDRefinementUtil {
 		return results;
 
 	}
-	
 
 	public static boolean needsRef(EObject a, EObject b) {
-		boolean sameDFD = isSameDFD(a, b);
+		boolean sameDFD = QueryUtil.isSameDFD(a, b);
 		boolean toRef = isRefined(a);
 		boolean fromRef = isRefined(b);
 		return (!sameDFD || toRef || fromRef);
 	}
-	
+
 	public static DataFlowDiagramRefinement getRefinement(EObject node) {
 		return (DataFlowDiagramRefinement) new ArrayList<EObject>(
 				new EObjectQuery(node).getInverseReferences("refinedProcess")).get(0);
 	}
-	
+
+	public static EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
+		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(refiningDF).getInverseReferences("refiningEdges"));
+		if (refs.isEmpty())
+			return null;
+		return (EdgeRefinement) refs.get(0);
+	}
+
 	public static boolean isRefined(EObject self) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
 		return !refs.isEmpty();
 	}
-	
+
 	public static boolean isRefinedDFD(EObject self) {
 		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refiningDiagram"));
 		return !refs.isEmpty();
 	}
-	
+
 	public static void addNewRefinedDF(EObject self, EObject source, EObject target) {
 
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
@@ -100,7 +112,7 @@ public class DFDRefinementUtil {
 		df.setSource((Node) source);
 		df.setTarget((Node) target);
 		df.setName("new Data Flow");
-		if (isSameDFD(source, target)) { // to/from refinedNode
+		if (QueryUtil.isSameDFD(source, target)) { // to/from refinedNode
 			sourceDFD.getEdges().add(df);
 
 			if (isRefined(source) && isRefined(target)) {
@@ -112,22 +124,14 @@ public class DFDRefinementUtil {
 				DataFlowDiagramRefinement ref = isRefined(source) ? getRefinement(source) : getRefinement(target);
 				addToRef(df, null, ref);
 			}
-			// TODO: is allowed?
-		} else { // to/from border node
-			if (isRefinedBy(sourceDFD, targetDFD)) {
-				// add ref to output refs of source-node
-			} else {
-				// add ref to input refs of target-node
-			}
-
 		}
-
 	}
-	
+
 	private static boolean isRefinedBy(DataFlowDiagram upper, DataFlowDiagram lower) {
 		return upper.getRefinedBy().stream().map(r -> r.getRefiningDiagram())
 				.anyMatch(d -> ComparisonUtil.isEqual(d, lower));
 	}
+
 	public static List<EdgeRefinement> getAllRefinements(EObject self, EObject source, EObject target) {
 		List<EdgeRefinement> refs = new ArrayList<EdgeRefinement>();
 
@@ -141,7 +145,7 @@ public class DFDRefinementUtil {
 		return refs;
 
 	}
-	
+
 	private static List<EdgeRefinement> getInputRefs(DataFlowDiagram sourceDFD, DataFlowDiagram targetDFD, Node source,
 			Node target) {
 		List<EdgeRefinement> refs = targetDFD.getRefinedBy().stream()
@@ -159,7 +163,7 @@ public class DFDRefinementUtil {
 		return refs.stream().filter(r -> ComparisonUtil.isEqual(r.getRefinedEdge().getSource(), source))
 				.collect(Collectors.toList());
 	}
-	
+
 	public static EdgeRefinement addToRef(DataFlow df, DataFlow ndf, DataFlowDiagramRefinement ref) {
 		EdgeRefinement er = DataFlowDiagramFactory.eINSTANCE.createEdgeRefinement();
 		er.setRefinedEdge(df);
@@ -170,13 +174,6 @@ public class DFDRefinementUtil {
 		return er;
 	}
 
-	private static EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(refiningDF).getInverseReferences("refiningEdges"));
-		if (refs.isEmpty())
-			return null;
-		return (EdgeRefinement) refs.get(0);
-	}
-	
 	public static void refineDF(EObject self, DataFlow df, DataFlowDiagram dfd) {
 		Session session = SessionManager.INSTANCE.getSession(df);
 
@@ -192,7 +189,7 @@ public class DFDRefinementUtil {
 		if (df.getData().size() > 1) {
 			// one df per data
 			for (Data d : df.getData()) {
-				DataFlow ndf = DFDModificationUtil.makeSingleDataFlow(d, df);
+				DataFlow ndf = ComponentFactory.makeSingleDataFlow(d, df);
 				dfd.getEdges().add(ndf);
 				if (ref != null) {
 					ref.getRefiningEdges().add(ndf);
@@ -211,8 +208,8 @@ public class DFDRefinementUtil {
 			if (type instanceof CompositeDataType) {
 				List<Entry> entries = DFDTypeUtil.refineDT(type, session);
 				for (Entry e : entries) {
-					Data data = DFDModificationUtil.makeData(e);
-					DataFlow ndf = DFDModificationUtil.makeSingleDataFlow(data, df);
+					Data data = ComponentFactory.makeData(e);
+					DataFlow ndf = ComponentFactory.makeSingleDataFlow(data, df);
 					ndf.setName(name + suffix++);
 					dfs.add(ndf);
 					if (ref != null) {

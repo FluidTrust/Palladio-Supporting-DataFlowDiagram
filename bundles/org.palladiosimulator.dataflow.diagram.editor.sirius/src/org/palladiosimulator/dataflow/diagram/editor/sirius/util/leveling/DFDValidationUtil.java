@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,25 +24,30 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 
+import diagram.editor.sirius.util.datastructures.Tuple;
+import diagram.editor.sirius.util.modification.QueryUtil;
+
+/**
+ * 
+ * Utility class implementing the validation algorithm.
+ *
+ */
 public class DFDValidationUtil {
-
-
 
 	public static boolean inputOutputIsConsistent(EObject self) {
 
 		Node n = (Node) self;
 
-		if (hasEmptyEdgeRefinements(n)) {
+		if (QueryUtil.hasEmptyEdgeRefinements(n)) {
 			return false;
 		}
-		if (!DFDModificationUtil.isBorderNode(n)) {
+		if (!QueryUtil.isBorderNode(n)) {
 			return true;
 		}
 
-		Set<DataFlowDiagram> allContexts = DFDModificationUtil.getContexts(n);
+		Set<DataFlowDiagram> allContexts = QueryUtil.getContexts(n);
 		for (DataFlowDiagram context : allContexts) {
-			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = DFDModificationUtil.getEdgeRefinements(n,
-					context);
+			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = QueryUtil.getEdgeRefinements(n, context);
 			if (!isConsistent(toCheck.getFirst()).stream().allMatch(t -> t.getSecond())) { // check inputs
 				return false;
 			}
@@ -53,26 +58,6 @@ public class DFDValidationUtil {
 		}
 
 		return true;
-	}
-
-	private static boolean hasEmptyEdgeRefinements(Node n) {
-		Tuple<List<EdgeRefinement>, List<EdgeRefinement>> refinements = DFDModificationUtil.getEdgeRefinements(n,
-				(DataFlowDiagram) n.eContainer());
-
-		for (EdgeRefinement er : refinements.getFirst()) {
-			if (er.getRefiningEdges().isEmpty()) {
-				return true;
-			}
-		}
-
-		for (EdgeRefinement er : refinements.getSecond()) {
-			if (er.getRefiningEdges().isEmpty()) {
-				return true;
-			}
-		}
-
-		return false;
-
 	}
 
 	public static List<Tuple<EdgeRefinement, Boolean>> isConsistent(List<EdgeRefinement> toCheck) {
@@ -212,6 +197,12 @@ public class DFDValidationUtil {
 		return true;
 	}
 
+	/**
+	 * 
+	 * This method is a first attempt at a "greedy" strategy for validation; it is
+	 * currently not used but should be equally correct.
+	 * 
+	 */
 	private static List<List<Edge>> refineAllButOne(List<Edge> input) {
 		List<List<Edge>> results = new ArrayList<List<Edge>>();
 
@@ -233,6 +224,13 @@ public class DFDValidationUtil {
 		return results;
 
 	}
+
+	/**
+	 * 
+	 * This method is currently used and represents a conservative strategy for
+	 * generating candidates.
+	 * 
+	 */
 
 	private static List<List<Edge>> refineOne(List<Edge> input) {
 		List<List<Edge>> results = new ArrayList<List<Edge>>();

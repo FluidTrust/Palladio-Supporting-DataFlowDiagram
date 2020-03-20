@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,17 +26,19 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
-
+/**
+ * 
+ * Utility class for interacting with data dictionary models.
+ *
+ */
 public class DFDTypeUtil {
+	private static final String DD_EXTENSTION = "datadictionary";
 
 	/**
 	 * 
-	 * Palladio Simulator Classes
-	 *
+	 * The next two methods are directly copied from Palladio.
+	 * 
 	 */
-
-	private static final String DD_EXTENSTION = "datadictionary";
-
 	public static boolean uriAlreadyLoaded(URI uri, Session session) {
 		return getResourceByURI(uri, session) != null;
 	}
@@ -56,7 +58,6 @@ public class DFDTypeUtil {
 		List<Resource> resources = session.getSemanticResources().stream()
 				.filter(r -> r.getURI().fileExtension().equals(DD_EXTENSTION)).collect(Collectors.toList());
 
-		
 		for (Resource r : resources) {
 			for (EObject typeDefinition : r.getContents()) {
 				for (EObject datatype : typeDefinition.eContents()) {
@@ -75,8 +76,6 @@ public class DFDTypeUtil {
 		return entries;
 	}
 
-
-	
 	public static List<EObject> getDataTypes(Session session) {
 		List<EObject> types = new ArrayList<EObject>();
 		List<Resource> resources = session.getSemanticResources().stream()
@@ -84,7 +83,6 @@ public class DFDTypeUtil {
 
 		for (Resource r : resources) {
 			for (EObject typeDefinition : r.getContents()) {
-				//System.out.println(typeDefinition.eContents());
 				for (EObject datatype : typeDefinition.eContents()) {
 					types.add(datatype);
 
@@ -94,6 +92,5 @@ public class DFDTypeUtil {
 		}
 		return types;
 	}
-
 
 }

@@ -1,4 +1,10 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util.datastructures;
+
+/**
+ * 
+ * Simple Utility class
+ * 
+ */
 
 public class Tuple<T, V> {
 	private final T first;
@@ -16,10 +22,9 @@ public class Tuple<T, V> {
 	public V getSecond() {
 		return second;
 	}
-	
+
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return this.first.toString() + ", " + this.second.toString();
 	}
 }

@@ -1,4 +1,4 @@
-package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
+package diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,14 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 
+import diagram.editor.sirius.util.datastructures.Tuple;
+import diagram.editor.sirius.util.modification.QueryUtil;
+
+/**
+ * 
+ * Utility class to generate error messages centrally.
+ *
+ */
 public class DFDErrorMessageUtil {
 
 	private final static String ERROR_MESSAGE = "Node %s is in an inconsistent state because %s not consistently refined.";
@@ -18,10 +26,10 @@ public class DFDErrorMessageUtil {
 		List<String> outputErrors = new ArrayList<String>();
 		Node n = (Node) self;
 
-		Set<DataFlowDiagram> allContexts = DFDModificationUtil.getContexts(n);
+		Set<DataFlowDiagram> allContexts = QueryUtil.getContexts(n);
 
 		for (DataFlowDiagram context : allContexts) {
-			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = DFDModificationUtil.getEdgeRefinements(n, context);
+			Tuple<List<EdgeRefinement>, List<EdgeRefinement>> toCheck = QueryUtil.getEdgeRefinements(n, context);
 			for (Tuple<EdgeRefinement, Boolean> r : DFDValidationUtil.isConsistent(toCheck.getFirst())) {
 				if (!r.getSecond()) {
 					inputErrors.add(r.getFirst().getRefinedEdge().getName());
