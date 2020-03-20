@@ -83,31 +83,29 @@ public class DFDRefinementUtil {
 	}
 
 	public static DataFlowDiagramRefinement getRefinement(EObject node) {
-		return (DataFlowDiagramRefinement) new ArrayList<EObject>(
-				new EObjectQuery(node).getInverseReferences("refinedProcess")).get(0);
+		return (DataFlowDiagramRefinement) QueryUtil.getInverseReferences(node, "refinedProcess").get(0);
 	}
 
 	public static EdgeRefinement getRefinedEdge(DataFlow refiningDF) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(refiningDF).getInverseReferences("refiningEdges"));
+		List<EObject> refs = QueryUtil.getInverseReferences(refiningDF, "refiningEdges");
 		if (refs.isEmpty())
 			return null;
 		return (EdgeRefinement) refs.get(0);
 	}
 
 	public static boolean isRefined(EObject self) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refinedProcess"));
+		List<EObject> refs = QueryUtil.getInverseReferences(self, "refinedProcess");
 		return !refs.isEmpty();
 	}
 
 	public static boolean isRefinedDFD(EObject self) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("refiningDiagram"));
+		List<EObject> refs = QueryUtil.getInverseReferences(self, "refiningDiagram");
 		return !refs.isEmpty();
 	}
 
 	public static void addNewRefinedDF(EObject self, EObject source, EObject target) {
 
 		DataFlowDiagram sourceDFD = (DataFlowDiagram) source.eContainer();
-		DataFlowDiagram targetDFD = (DataFlowDiagram) target.eContainer();
 		DataFlow df = DataFlowDiagramFactory.eINSTANCE.createDataFlow();
 		df.setSource((Node) source);
 		df.setTarget((Node) target);
@@ -202,15 +200,15 @@ public class DFDRefinementUtil {
 			// one df per type
 			Data origin = df.getData().get(0);
 			DataType type = origin.getType();
-			String name = origin.getName() + ".";
-			int suffix = 1;
+			String name = origin.getName();
+			NamingScheme namingScheme = new NumberedSuffixes(1);
 			List<DataFlow> dfs = new ArrayList<DataFlow>();
 			if (type instanceof CompositeDataType) {
 				List<Entry> entries = DFDTypeUtil.refineDT(type, session);
 				for (Entry e : entries) {
 					Data data = ComponentFactory.makeData(e);
 					DataFlow ndf = ComponentFactory.makeSingleDataFlow(data, df);
-					ndf.setName(name + suffix++);
+					ndf.setName(namingScheme.makeSuffix(name));
 					dfs.add(ndf);
 					if (ref != null) {
 						ref.getRefiningEdges().add(ndf);

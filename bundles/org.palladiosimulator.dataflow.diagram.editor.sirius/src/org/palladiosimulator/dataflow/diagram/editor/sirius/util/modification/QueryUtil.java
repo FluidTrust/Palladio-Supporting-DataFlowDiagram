@@ -22,7 +22,6 @@ public class QueryUtil {
 	
 	public static boolean canReconnect(EObject self, EObject source, EObject target) {
 		DataFlow df = (DataFlow) self;
-		Node newSource = (Node) source;
 		Node newTarget = (Node) target;
 		Node oldTarget = df.getTarget();
 		Node oldSource = df.getSource();		
@@ -30,6 +29,10 @@ public class QueryUtil {
 
 	}
 	
+	
+	public static List<EObject> getInverseReferences(EObject o, String ref){
+		return new ArrayList<EObject>(new EObjectQuery(o).getInverseReferences(ref));
+	}
 
 	
 	public static boolean isSameDFD(EObject a, EObject b) {
@@ -61,10 +64,10 @@ public class QueryUtil {
 	}
 	
 	public static Set<DataFlowDiagram> getContexts(Node n) {
-		List<EObject> inputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("target").stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
-		List<EObject> outputRefs = new ArrayList<EObject>(new EObjectQuery(n).getInverseReferences("source").stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+		List<EObject> inputRefs = getInverseReferences(n, "target").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
+		List<EObject> outputRefs = getInverseReferences(n, "source").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
 		Set<DataFlowDiagram> contexts = new HashSet<DataFlowDiagram>();
 		for (EObject eo : inputRefs) {
 			contexts.add((DataFlowDiagram) eo.eContainer());

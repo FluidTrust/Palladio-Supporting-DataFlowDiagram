@@ -24,14 +24,17 @@ import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 import diagram.editor.sirius.util.leveling.ComparisonUtil;
 import diagram.editor.sirius.util.leveling.DFDRefinementUtil;
 
+/**
+ * 
+ * Utility class handling modification of existing dfds as well as creation of
+ * new (i.e., refining) ones.
+ *
+ */
 public class DFDModificationUtil {
 
-	
-
-	
 	private static void removeFromRefs(DataFlow df) {
-		List<EObject> refs = new ArrayList<EObject>(new EObjectQuery(df).getInverseReferences("refiningEdges"));
-		refs.addAll(new EObjectQuery(df).getInverseReferences("refinedEdge"));
+		List<EObject> refs = QueryUtil.getInverseReferences(df, "refiningEdges");
+		refs.addAll(QueryUtil.getInverseReferences(df, "refinedEdge"));
 		List<EdgeRefinement> toDelete = new ArrayList<EdgeRefinement>();
 		for (EObject r : refs) {
 			EdgeRefinement er = (EdgeRefinement) r;
@@ -40,33 +43,29 @@ public class DFDModificationUtil {
 				toDelete.add((EdgeRefinement) er);
 			}
 		}
-		
-		for (EdgeRefinement er: toDelete) {
+
+		for (EdgeRefinement er : toDelete) {
 			DataFlowDiagramRefinement ref = (DataFlowDiagramRefinement) er.eContainer();
 			ref.getRefinedEdges().remove(er);
-			
-			
+
 		}
-		
 
 	}
-	
-	
+
 	public static void deleteEdge(EObject self) {
 		DataFlowDiagram dfd = (DataFlowDiagram) self.eContainer();
 		removeFromRefs((DataFlow) self);
 		dfd.getEdges().remove(self);
 	}
-	
-	
+
 	public static void deleteNode(EObject self) {
 
-		List<EObject> refiningRefs = new ArrayList<EObject>(
-				new EObjectQuery(self).getInverseReferences("refinedProcess"));
-		List<EObject> targetRefs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("target").stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
-		List<EObject> sourceRefs = new ArrayList<EObject>(new EObjectQuery(self).getInverseReferences("source").stream()
-				.filter(r -> r instanceof DataFlow).collect(Collectors.toList()));
+		List<EObject> refiningRefs = QueryUtil.getInverseReferences(self, "refinedProcess");
+
+		List<EObject> targetRefs = QueryUtil.getInverseReferences(self, "target").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
+		List<EObject> sourceRefs = QueryUtil.getInverseReferences(self, "source").stream()
+				.filter(r -> r instanceof DataFlow).collect(Collectors.toList());
 
 		for (EObject r : refiningRefs) {
 			DataFlowDiagram ndfd = (DataFlowDiagram) r.eContainer();
@@ -97,7 +96,7 @@ public class DFDModificationUtil {
 		}
 
 	}
-	
+
 	public static void refineProcess(EObject newDFD, EObject p, DataFlowDiagram oldDFD, DataFlowDiagramRefinement ref) {
 		List<Edge> edges = oldDFD.getEdges();
 		List<DataFlow> incoming = new ArrayList<DataFlow>();
@@ -117,9 +116,7 @@ public class DFDModificationUtil {
 		}
 		createLeveledDFD(incoming, outgoing, (Process) p, oldDFD, (DataFlowDiagram) newDFD, ref);
 	}
-	
-	
-	
+
 	public static void createLeveledDFD(List<DataFlow> inc, List<DataFlow> out, Process p, DataFlowDiagram oldDFD,
 			DataFlowDiagram newDFD, DataFlowDiagramRefinement ref) {
 
@@ -140,6 +137,5 @@ public class DFDModificationUtil {
 			DFDRefinementUtil.addToRef(df, ndf, ref);
 		}
 	}
-	
-	
+
 }

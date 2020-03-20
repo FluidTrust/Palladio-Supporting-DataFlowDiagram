@@ -1,5 +1,11 @@
 package diagram.editor.sirius.util.naming;
 
+/**
+ * 
+ * Simple class generating suffixes simply consisting of (incrementing) numbers
+ *
+ */
+
 public class NumberedSuffixes implements NamingScheme {
 
 	private int index = 0;
