@@ -1,6 +1,7 @@
-package diagram.editor.sirius.util.leveling;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,14 +17,14 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRef
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.ComponentFactory;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.QueryUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.naming.NamingScheme;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.naming.NumberedSuffixes;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
-import diagram.editor.sirius.util.modification.ComponentFactory;
-import diagram.editor.sirius.util.modification.QueryUtil;
-import diagram.editor.sirius.util.naming.NamingScheme;
-import diagram.editor.sirius.util.naming.NumberedSuffixes;
 
 /**
  * 

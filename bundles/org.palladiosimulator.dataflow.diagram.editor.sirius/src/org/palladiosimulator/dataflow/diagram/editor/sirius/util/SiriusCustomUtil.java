@@ -1,4 +1,4 @@
-package diagram.editor.sirius.util;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util;
 
 import java.util.Collection;
 import java.util.HashSet;

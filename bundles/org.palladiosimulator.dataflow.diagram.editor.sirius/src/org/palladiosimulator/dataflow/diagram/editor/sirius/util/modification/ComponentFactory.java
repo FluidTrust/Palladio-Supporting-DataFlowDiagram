@@ -1,6 +1,7 @@
-package diagram.editor.sirius.util.modification;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
@@ -9,10 +10,11 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.ComparisonUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDRefinementUtil;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
-import diagram.editor.sirius.util.leveling.ComparisonUtil;
-import diagram.editor.sirius.util.leveling.DFDRefinementUtil;
+
 
 public class ComponentFactory {
 

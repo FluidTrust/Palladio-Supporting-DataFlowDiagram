@@ -1,4 +1,4 @@
-package diagram.editor.sirius.util.datastructures;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.datastructures;
 
 /**
  * 

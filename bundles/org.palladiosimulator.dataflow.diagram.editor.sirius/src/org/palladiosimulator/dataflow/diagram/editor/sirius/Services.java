@@ -1,6 +1,7 @@
-package diagram.editor.sirius;
+package org.palladiosimulator.dataflow.diagram.editor.sirius;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
@@ -15,19 +16,18 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDErrorMessageUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDRefinementUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDTypeUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDValidationUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.ComponentFactory;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.DFDModificationUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.QueryUtil;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
-import diagram.editor.sirius.util.datastructures.Tuple;
-import diagram.editor.sirius.util.leveling.ComparisonUtil;
-import diagram.editor.sirius.util.leveling.DFDErrorMessageUtil;
-import diagram.editor.sirius.util.leveling.DFDRefinementUtil;
-import diagram.editor.sirius.util.leveling.DFDTypeUtil;
-import diagram.editor.sirius.util.leveling.DFDValidationUtil;
-import diagram.editor.sirius.util.modification.ComponentFactory;
-import diagram.editor.sirius.util.modification.DFDModificationUtil;
-import diagram.editor.sirius.util.modification.QueryUtil;
+
 
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.core.runtime.NullProgressMonitor;

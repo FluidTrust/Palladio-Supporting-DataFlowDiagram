@@ -1,6 +1,7 @@
-package diagram.editor.sirius.util.modification;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification;
 
 import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,10 +20,11 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.ComparisonUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDRefinementUtil;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
-import diagram.editor.sirius.util.leveling.ComparisonUtil;
-import diagram.editor.sirius.util.leveling.DFDRefinementUtil;
+
 
 /**
  * 

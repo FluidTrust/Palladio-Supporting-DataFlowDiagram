@@ -1,6 +1,7 @@
-package diagram.editor.sirius.util.modification;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification;
 
 import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,9 +14,9 @@ import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.datastructures.Tuple;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.ComparisonUtil;
 
-import diagram.editor.sirius.util.datastructures.Tuple;
-import diagram.editor.sirius.util.leveling.ComparisonUtil;
 
 public class QueryUtil {
 

@@ -1,4 +1,4 @@
-package diagram.editor.sirius.util.naming;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.naming;
 
 /**
  * 

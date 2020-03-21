@@ -1,4 +1,4 @@
-package diagram.editor.sirius.util.leveling;
+package org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
 import java.util.Collection;
