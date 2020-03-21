@@ -8,9 +8,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
-
-import diagram.editor.sirius.util.datastructures.Tuple;
-import diagram.editor.sirius.util.modification.QueryUtil;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.datastructures.Tuple;
+import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.QueryUtil;
 
 /**
  * 
