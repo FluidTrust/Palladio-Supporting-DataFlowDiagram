@@ -25,9 +25,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refinedEdges" upperBound="-1"
         eType="#//EdgeRefinement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//Edge">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" upperBound="-1"
-        eType="#//Data" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="#//DataFlowEdge">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="atLeastOneDataEntryRequired"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="atLeastOneDataEntryRequired" value="not self.data->isEmpty()"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.dataflow.dictionary/model/DataDictionary.ecore#//DataType"/>
@@ -37,6 +41,10 @@
         eType="#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlowEdge" abstract="true" eSuperTypes="#//Edge">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiringNodes" upperBound="-1"
