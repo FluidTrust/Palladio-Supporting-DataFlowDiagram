@@ -7,7 +7,6 @@ import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
-import org.eclipse.swt.widgets.Composite;
 
 public class TableLifeCycleManagerProvider implements IEEFLifecycleManagerProvider {
 	/**

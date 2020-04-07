@@ -1,28 +1,19 @@
 package org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification;
 
 import java.util.ArrayList;
-
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.business.api.query.EObjectQuery;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.ComparisonUtil;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDRefinementUtil;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
 
 
 

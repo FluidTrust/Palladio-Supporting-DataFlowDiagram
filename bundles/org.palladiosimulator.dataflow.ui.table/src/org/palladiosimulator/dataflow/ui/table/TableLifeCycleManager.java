@@ -1,8 +1,5 @@
 package org.palladiosimulator.dataflow.ui.table;
 
-import java.util.function.Consumer;
-
-
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;

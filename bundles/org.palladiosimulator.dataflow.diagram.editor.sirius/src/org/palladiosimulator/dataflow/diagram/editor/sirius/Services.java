@@ -1,21 +1,22 @@
 package org.palladiosimulator.dataflow.diagram.editor.sirius;
 
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramFactory;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagramRefinement;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.EdgeRefinement;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.ExternalActor;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Node;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Process;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Store;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDErrorMessageUtil;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDRefinementUtil;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDTypeUtil;
@@ -23,24 +24,6 @@ import org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling.DFDVal
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.ComponentFactory;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.DFDModificationUtil;
 import org.palladiosimulator.dataflow.diagram.editor.sirius.util.modification.QueryUtil;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
-import org.palladiosimulator.dataflow.dictionary.DataDictionary.Entry;
-
-
-
-import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.URI;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import org.eclipse.sirius.business.api.query.EObjectQuery;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.SessionManager;
 
 /**
  * This class is the interface to Sirius-level operations and delegates actual functionality.

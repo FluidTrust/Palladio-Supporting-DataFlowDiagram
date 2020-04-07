@@ -1,12 +1,10 @@
 package org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;

@@ -1,23 +1,12 @@
 package org.palladiosimulator.dataflow.diagram.editor.sirius.util.leveling;
 
 import java.util.ArrayList;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.common.ui.util.WorkbenchPartDescriptor;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.diagram.ui.part.ValidateAction;
-import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.ui.IEditorPart;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
@@ -224,7 +213,6 @@ public class DFDValidationUtil {
 
 		}
 		return results;
-
 	}
 
 	/**

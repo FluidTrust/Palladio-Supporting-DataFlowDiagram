@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Data;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlow;
-import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Edge;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CollectionDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.CompositeDataType;
 import org.palladiosimulator.dataflow.dictionary.DataDictionary.DataType;
