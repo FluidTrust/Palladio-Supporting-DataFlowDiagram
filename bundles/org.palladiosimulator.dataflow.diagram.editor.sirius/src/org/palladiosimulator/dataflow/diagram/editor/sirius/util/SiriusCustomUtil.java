@@ -4,11 +4,11 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -17,8 +17,7 @@ import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationCommand;
 import org.eclipse.sirius.business.api.helper.SiriusUtil;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
-import org.eclipse.sirius.ui.business.internal.commands.ChangeViewpointSelectionCommand;
+import org.eclipse.sirius.ui.business.api.session.UserSession;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
@@ -38,16 +37,13 @@ public class SiriusCustomUtil {
 	}
 	
 	public static void selectViewpoints(Session session, HashSet<Viewpoint> viewpoints, boolean createRepresentation, IProgressMonitor monitor) {
-        final ViewpointSelectionCallback selectionCallback = new ViewpointSelectionCallback();
-        final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
         Collection<Viewpoint> selectedViewpoints = session.getSelectedViewpoints(false);
         for (Viewpoint v : viewpoints) {
         	if (selectedViewpoints.contains(v))
         		viewpoints.remove(v);
         }
-		@SuppressWarnings("restriction")
-		final Command command = new ChangeViewpointSelectionCommand(session, selectionCallback, viewpoints, new HashSet<Viewpoint>(), createRepresentation, SubMonitor.convert(monitor));
-        domain.getCommandStack().execute(command);
+        Collection<String> viewpointNames = viewpoints.stream().map(Viewpoint::getName).collect(Collectors.toList());
+        UserSession.from(session).selectViewpoints(viewpointNames);
 	}
 	
 	public static void selectViewpoints(Session session, List<String> viewpointNames, boolean createRepresentation, IProgressMonitor monitor) {
