@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DataDictionary:DataDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" id="_PUZKkGOiEeqt9-JYNZ6Hzw">
-  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_kiL-AGOiEeqt9-JYNZ6Hzw" name="Integer"/>
-  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_5sEEUGOuEeq8uOsZqLWZEg" name="Hour"/>
-  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_Q-r2QGOvEeq8uOsZqLWZEg" name="Boolean"/>
-  <entries xsi:type="DataDictionary:CollectionDataType" id="_NCIZwGOyEeq8uOsZqLWZEg" name="Fragenkatalog" type="_N5ffkGOyEeq8uOsZqLWZEg"/>
-  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_N5ffkGOyEeq8uOsZqLWZEg" name="String"/>
-</DataDictionary:DataDictionary>
