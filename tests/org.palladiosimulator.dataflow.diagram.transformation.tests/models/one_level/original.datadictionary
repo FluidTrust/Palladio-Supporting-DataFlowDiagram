@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataDictionary:DataDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" id="_fFCCELlzEeq1l7DS5E43Tw">
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_fdgzgLlzEeq1l7DS5E43Tw" name="Basket">
+    <components id="_vIoBgLlzEeq1l7DS5E43Tw" type="_tms7wLlzEeq1l7DS5E43Tw" name="items"/>
+    <components id="_zAdOsLlzEeq1l7DS5E43Tw" type="_ma5cYrlzEeq1l7DS5E43Tw" name="itemLimit"/>
+  </entries>
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_g1O0YblzEeq1l7DS5E43Tw" name="Product">
+    <components id="_oiTNwLlzEeq1l7DS5E43Tw" type="_ma5cYrlzEeq1l7DS5E43Tw" name="id"/>
+    <components id="_qScVsLlzEeq1l7DS5E43Tw" type="_rJ2e0rlzEeq1l7DS5E43Tw" name="name"/>
+  </entries>
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_i_pdgblzEeq1l7DS5E43Tw" name="Item">
+    <components id="_kIMZ8LlzEeq1l7DS5E43Tw" type="_g1O0YblzEeq1l7DS5E43Tw" name="product"/>
+    <components id="_lQNx8LlzEeq1l7DS5E43Tw" type="_ma5cYrlzEeq1l7DS5E43Tw" name="quantity"/>
+  </entries>
+  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_ma5cYrlzEeq1l7DS5E43Tw" name="Integer"/>
+  <entries xsi:type="DataDictionary:PrimitiveDataType" id="_rJ2e0rlzEeq1l7DS5E43Tw" name="String"/>
+  <entries xsi:type="DataDictionary:CollectionDataType" id="_tms7wLlzEeq1l7DS5E43Tw" name="ItemList" type="_i_pdgblzEeq1l7DS5E43Tw"/>
+  <entries xsi:type="DataDictionary:CompositeDataType" id="_7XP6gblzEeq1l7DS5E43Tw" name="Confirmation"/>
+</DataDictionary:DataDictionary>

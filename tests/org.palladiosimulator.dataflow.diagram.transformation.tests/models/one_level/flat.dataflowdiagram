@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowDiagram:DataFlowDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionary="http://palladiosimulator.org/dataflow/dictionary/1.0" xmlns:DataFlowDiagram="http://palladiosimulator.org/dataflow/diagram/1.0" id="_D4EhgLlzEeq1l7DS5E43Tw">
+  <nodes xsi:type="DataFlowDiagram:ExternalActor" id="_XhqXQLlzEeq1l7DS5E43Tw" name="User"/>
+  <nodes xsi:type="DataFlowDiagram:Process" id="_Cydu4Ll0Eeq1l7DS5E43Tw" name="validate items"/>
+  <nodes xsi:type="DataFlowDiagram:Process" id="_FOj94Ll0Eeq1l7DS5E43Tw" name="validate limit"/>
+  <nodes xsi:type="DataFlowDiagram:Process" id="_NteD4Ll0Eeq1l7DS5E43Tw" name="process order"/>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_Haj7YLl0Eeq1l7DS5E43Tw" name="items" target="_Cydu4Ll0Eeq1l7DS5E43Tw" source="_XhqXQLlzEeq1l7DS5E43Tw">
+    <data id="_H_3n4Ll0Eeq1l7DS5E43Tw" name="items">
+      <type xsi:type="DataDictionary:CollectionDataType" href="original.datadictionary#_tms7wLlzEeq1l7DS5E43Tw"/>
+    </data>
+  </edges>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_K5jx0Ll0Eeq1l7DS5E43Tw" name="limit" target="_FOj94Ll0Eeq1l7DS5E43Tw" source="_XhqXQLlzEeq1l7DS5E43Tw">
+    <data id="_Lh2g4Ll0Eeq1l7DS5E43Tw" name="limit">
+      <type xsi:type="DataDictionary:PrimitiveDataType" href="original.datadictionary#_ma5cYrlzEeq1l7DS5E43Tw"/>
+    </data>
+  </edges>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_P76RYLl0Eeq1l7DS5E43Tw" name="validated items" target="_NteD4Ll0Eeq1l7DS5E43Tw" source="_Cydu4Ll0Eeq1l7DS5E43Tw">
+    <data id="_Q8ngcLl0Eeq1l7DS5E43Tw" name="items">
+      <type xsi:type="DataDictionary:CollectionDataType" href="original.datadictionary#_tms7wLlzEeq1l7DS5E43Tw"/>
+    </data>
+  </edges>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_Su1E8Ll0Eeq1l7DS5E43Tw" name="validated limit" target="_NteD4Ll0Eeq1l7DS5E43Tw" source="_FOj94Ll0Eeq1l7DS5E43Tw">
+    <data id="_UybUYLl0Eeq1l7DS5E43Tw" name="limit">
+      <type xsi:type="DataDictionary:PrimitiveDataType" href="original.datadictionary#_ma5cYrlzEeq1l7DS5E43Tw"/>
+    </data>
+  </edges>
+  <edges xsi:type="DataFlowDiagram:DataFlow" id="_sXWdpLl8Eeq-zvnod3u31Q" name="confirmation" target="_XhqXQLlzEeq1l7DS5E43Tw" source="_NteD4Ll0Eeq1l7DS5E43Tw">
+    <data id="_yXolELl8Eeq-zvnod3u31Q" name="confirmation">
+      <type xsi:type="DataDictionary:CompositeDataType" href="original.datadictionary#_7XP6gblzEeq1l7DS5E43Tw"/>
+    </data>
+  </edges>
+</DataFlowDiagram:DataFlowDiagram>

@@ -18,6 +18,9 @@
    <feature id="org.palladiosimulator.dataflow.dictionary.model.feature">
       <category name="org.palladiosimulator.dataflow.diagram.updatesite"/>
    </feature>
+   <feature id="org.palladiosimulator.dataflow.diagram.transformation.feature">
+      <category name="org.palladiosimulator.dataflow.diagram.updatesite"/>
+   </feature>
    <feature id="org.palladiosimulator.dataflow.diagram.editor.sirius.feature.source">
       <category name="org.palladiosimulator.dataflow.diagram.updatesite.source"/>
    </feature>
@@ -34,6 +37,9 @@
       <category name="org.palladiosimulator.dataflow.diagram.updatesite.source"/>
    </feature>
    <feature id="org.palladiosimulator.dataflow.dictionary.model.feature.source">
+      <category name="org.palladiosimulator.dataflow.diagram.updatesite.source"/>
+   </feature>
+   <feature id="org.palladiosimulator.dataflow.diagram.transformation.feature.source">
       <category name="org.palladiosimulator.dataflow.diagram.updatesite.source"/>
    </feature>
    <category-def name="org.palladiosimulator.dataflow.diagram.updatesite" label="Data Flow Diagram"/>
