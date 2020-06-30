@@ -12,6 +12,7 @@ Export-Package: org.palladiosimulator.dataflow.diagram.DataFlowDiagram,
  org.palladiosimulator.dataflow.diagram.DataFlowDiagram.impl,
  org.palladiosimulator.dataflow.diagram.DataFlowDiagram.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.cdo;visibility:=reexport,
  org.palladiosimulator.dataflow.dictionary;visibility:=reexport,
  org.eclipse.core.runtime,
  de.uka.ipd.sdq.identifier;bundle-version="2.1.0";visibility:=reexport
