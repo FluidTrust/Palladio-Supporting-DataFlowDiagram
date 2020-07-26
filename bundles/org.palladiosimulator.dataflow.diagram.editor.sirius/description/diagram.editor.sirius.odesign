@@ -3,6 +3,7 @@
   <ownedViewpoints name="Dataflows">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DFD Editor" initialisation="true" domainClass="DataFlowDiagram::DataFlowDiagram" enablePopupBars="true">
       <metamodel href="http://palladiosimulator.org/dataflow/diagram/1.0#/"/>
+      <metamodel href="http://palladiosimulator.org/dataflow/dictionary/1.0#/"/>
       <validationSet>
         <ownedRules xsi:type="validation:SemanticValidationRule" name="loopDF" level="WARNING" message="This dataflow is a loop." targetClass="DataFlowDiagram::DataFlow">
           <audits auditExpression="aql:self.target &lt;> self.source"/>
@@ -60,7 +61,7 @@
         <edgeMappings name="DataFlowEdge" deletionDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='deleteEdge']" semanticCandidatesExpression="aql:self.edges" doubleClickDescription="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='refineDF']" sourceMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode']" targetMapping="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='StoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyProcessNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyStoreNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ReadOnlyExternalActorNode'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ExternalActorNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="DataFlowDiagram::DataFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFTarget'] //@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@toolSections.0/@ownedTools[name='changeDFSource']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.data.name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -73,7 +74,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <toolSections>
+        <toolSections name="DFD Tools">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="createProcess" label="new Process" nodeMappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']" extraMappings="//@ownedViewpoints[name='Dataflows']/@ownedRepresentations[name='DFD%20Editor']/@defaultLayer/@nodeMappings[name='ProcessNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -248,9 +249,11 @@
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.palladiosimulator.dataflow.diagram.editor.sirius.Services"/>
   </ownedViewpoints>
-  <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Properties DFD">
+    <metamodels href="http://palladiosimulator.org/dataflow/diagram/1.0#/"/>
+    <metamodels href="http://palladiosimulator.org/dataflow/dictionary/1.0#/"/>
     <categories name="Default Category">
-      <pages name="Default Page" labelExpression="Edit" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
+      <pages name="DF Editor Page" labelExpression="Edit" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
       <groups name="Store" labelExpression="Properties" domainClass="DataFlowDiagram::Store" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="StoreName" labelExpression="Name" valueExpression="aql:self.name">
           <initialOperation>
@@ -261,7 +264,7 @@
         </controls>
         <validationSet>
           <propertyValidationRules name="StoreNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.0/@controls.0">
-            <audits auditExpression="aql:self.name.size() > 0"/>
+            <audits auditExpression="aql:self->size() > 0"/>
           </propertyValidationRules>
         </validationSet>
       </groups>
@@ -275,7 +278,7 @@
         </controls>
         <validationSet>
           <propertyValidationRules name="ProcessNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.1/@controls.0">
-            <audits auditExpression="aql:self.name.size() > 0"/>
+            <audits auditExpression="aql:self->size() > 0"/>
           </propertyValidationRules>
         </validationSet>
       </groups>
@@ -289,7 +292,7 @@
         </controls>
         <validationSet>
           <propertyValidationRules name="ExternalActorNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.2/@controls.0">
-            <audits auditExpression="aql:self.name.size() > 0"/>
+            <audits auditExpression="aql:self->size() > 0"/>
           </propertyValidationRules>
         </validationSet>
       </groups>
@@ -386,7 +389,7 @@
         </controls>
         <validationSet>
           <propertyValidationRules name="DataFlowNameValidation" level="WARNING" message="The name should not be empty." targets="//@extensions.0/@categories.0/@groups.4/@controls.0">
-            <audits auditExpression="aql:self.name.size() > 0"/>
+            <audits auditExpression="aql:self->size() > 0"/>
           </propertyValidationRules>
         </validationSet>
       </groups>
