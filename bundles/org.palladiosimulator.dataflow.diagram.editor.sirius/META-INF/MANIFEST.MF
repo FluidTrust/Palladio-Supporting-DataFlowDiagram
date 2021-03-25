@@ -20,3 +20,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
 Automatic-Module-Name: org.palladiosimulator.dataflow.diagram.editor.sirius
+Export-Package: org.palladiosimulator.dataflow.diagram.editor.sirius.api
