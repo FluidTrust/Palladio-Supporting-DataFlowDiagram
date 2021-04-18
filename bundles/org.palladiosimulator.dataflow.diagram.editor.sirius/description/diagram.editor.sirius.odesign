@@ -253,7 +253,7 @@
     <metamodels href="http://palladiosimulator.org/dataflow/diagram/1.0#/"/>
     <metamodels href="http://palladiosimulator.org/dataflow/dictionary/1.0#/"/>
     <categories name="Default Category">
-      <pages name="DF Editor Page" labelExpression="Edit" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
+      <pages name="DF Editor Page" labelExpression="Edit" semanticCandidateExpression="var:self" preconditionExpression="aql:self.oclIsTypeOf(DataFlowDiagram::Store) or self.oclIsTypeOf(DataFlowDiagram::Process) or self.oclIsTypeOf(DataFlowDiagram::ExternalActor) or self.oclIsTypeOf(DataFlowDiagram::DataFlow)" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
       <groups name="Store" labelExpression="Properties" domainClass="DataFlowDiagram::Store" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="StoreName" labelExpression="Name" valueExpression="aql:self.name">
           <initialOperation>
