@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Data Flow Diagram MWE2
 Bundle-SymbolicName: org.palladiosimulator.dataflow.diagram.mwe2
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.dataflow.diagram.mwe2
 Require-Bundle: org.eclipse.emf.mwe2.launch;bundle-version="2.10.0",
  org.eclipse.emf.mwe2.lib,

@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DFD Transformation Tests
 Bundle-SymbolicName: org.palladiosimulator.dataflow.diagram.transformation.tests
-Bundle-Version: 0.1.0.qualifier
-Fragment-Host: org.palladiosimulator.dataflow.diagram.transformation;bundle-version="0.1.0"
+Bundle-Version: 5.1.0.qualifier
+Fragment-Host: org.palladiosimulator.dataflow.diagram.transformation;bundle-version="5.1.0"
 Automatic-Module-Name: org.palladiosimulator.dataflow.diagram.transformation.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.emf.compare;bundle-version="3.5.3",
